@@ -13,6 +13,7 @@ funct! Exec(command)
 endfunct!
 
 " Open URL in browser
+" TODO: add quotation marks e.g., open "https://...*..."
 function! Browser()
 	let line = getline(".")
 	let line = matchstr(line, "http[^ `)]*")
