@@ -78,8 +78,8 @@ inoremap j; <Esc>O
 "
 
 " Horizontal resize mainly for nerdtree windows
-nnoremap <C-a> <C-w><
-nnoremap <C-s> <C-w>>
+nnoremap <C-a> 3<C-w><
+nnoremap <C-s> 3<C-w>>
 
 " Move between windows
 let i = 1
