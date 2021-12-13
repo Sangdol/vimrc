@@ -1,0 +1,26 @@
+#
+# https://github.com/honza/vim-snippets/
+# https://brigade.engineering/sharpen-your-vim-with-snippets-767b693886db
+#
+
+snippet ex "module.exports"
+module.exports = $1;
+endsnippet
+
+snippet cl "console.log(...)" b
+console.log($0);
+endsnippet
+
+snippet re "require" b
+const `!p
+def formatVariableName(path):
+	lastPart = path.split('/')[-1]
+	if lastPart == 'underscore':
+		return '_'
+	elif lastPart == 'jquery':
+		return '$'
+	else:
+		return re.sub(r'[_\-]', '', lastPart.title())
+snip.rv = formatVariableName(t[1])
+` = require('${1}');$0
+endsnippet

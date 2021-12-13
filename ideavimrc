@@ -1,0 +1,20 @@
+" https://stackoverflow.com/questions/446269/can-i-use-space-as-mapleader-in-vim
+let mapleader=" "
+
+vnoremap <Space>p "0p
+nnoremap <silent> zj o<Esc>
+nnoremap <silent> zk O<Esc>
+nnoremap <silent> zh i<Space><Right><Esc>
+nnoremap <silent> zl a<Space><Left><Esc>
+inoremap jk <Esc>
+inoremap jl <Esc>o
+inoremap j; <Esc>O
+set incsearch
+set clipboard=unnamed
+
+" https://github.com/AlexPl292/IdeaVim-EasyMotion
+set easymotion
+nmap <Leader>f <Leader><Leader>f
+nmap <Leader>F <Leader><Leader>F
+nmap <Leader>j <Leader><Leader>j
+nmap <Leader>k <Leader><Leader>k
