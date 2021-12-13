@@ -217,16 +217,38 @@ vnoremap <silent> <C-Space> y:Rg <C-r>"<CR>
 " TODO - update Voom window when the main window changes
 Plug 'vim-voom/VOoM' " :Voomhelp
 
-nnoremap <silent> <Leader>vq :Voomquit<CR>
 let g:voom_tree_width = 45
 
 autocmd FileType markdown nnoremap <silent> <Leader>m :Voom pandoc<CR>
 autocmd FileType python nnoremap <silent> <Leader>m :Voom python<CR>
 autocmd FileType vim nnoremap <silent> <Leader>m :Voom fmr<CR>
 
-" close vim if the only window left open is a VOom tree
-autocmd bufenter * if (winnr("$") == 1 && expand("%:e") =~ "VOOM") | q | endif
+" Open
+function VoomPandoc()
+  :Voom pandoc
+  :2wincmd w
+endfunction
 
+autocmd BufEnter *.md if (winnr("$") == 1) | call VoomPandoc() | endif
+
+" Close
+autocmd BufEnter * if (winnr("$") == 1 && expand("%:e") =~ "VOOM") | q | endif
+
+" Update
+function VoomUpdate()
+  let l:win1name = bufname(winbufnr(1))
+  let l:filename = bufname(winbufnr(2))
+  " multiple conditions: https://vi.stackexchange.com/a/8241/3225
+  " =~ comparison: https://vi.stackexchange.com/a/31086/3225
+  if (win1name =~ "VOOM") > 0 && (win1name =~ filename) == 0
+    " excute these only if the current VOOM window is not for the current file
+    :Voom pandoc
+    :2wincmd w
+    :q
+  endif
+endfunction
+
+autocmd BufEnter *.md if (winnr("$") == 2) | call VoomUpdate() | endif
 "}}}
 
 "
