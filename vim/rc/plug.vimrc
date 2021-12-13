@@ -114,12 +114,15 @@ let g:Illuminate_ftblacklist = ['nerdtree', 'markdown']
 
 "
 " vim-rooter {{{1
+" https://github.com/airblade/vim-rooter
 "
 Plug 'airblade/vim-rooter' " Changes Vim working directory to project root.
-" :Rooter to go to the root
-let g:rooter_manual_only = 1
+
+" Go to the current dir
 " https://vim.fandom.com/wiki/Set_working_directory_to_the_current_file
 nnoremap <localleader>2 :cd %:p:h<CR> :pwd<CR>
+
+" Go to the root
 nnoremap <localleader>3 :Rooter<CR>
 
 "}}}
