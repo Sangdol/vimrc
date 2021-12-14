@@ -24,8 +24,8 @@ inoremap <C-F> <C-C>ea
 
 " Intellij-like Up / down
 " https://vim.fandom.com/wiki/Moving_lines_up_or_down
-nnoremap <localleader>k :m .-2<CR>
-nnoremap <localleader>j :m .+1<CR>
+nnoremap <localleader>i :m .-2<CR>
+nnoremap <localleader>u :m .+1<CR>
 
 "}}}
 
