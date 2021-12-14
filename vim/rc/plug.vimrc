@@ -20,6 +20,21 @@ Plug 'MTDL9/vim-log-highlighting'
 "}}}
 
 "
+" Cutlass {{{1
+" https://github.com/svermeulen/vim-cutlass
+"
+Plug 'svermeulen/vim-cutlass'
+
+" Need to use dl now
+nnoremap x d
+xnoremap x d
+
+nnoremap xx dd
+nnoremap X D
+
+"}}}
+
+"
 " Nerdtree {{{1
 "
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
