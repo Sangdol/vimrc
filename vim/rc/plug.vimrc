@@ -229,7 +229,7 @@ function VoomPandoc()
   :2wincmd w
 endfunction
 
-autocmd BufEnter *.md if (winnr("$") == 1) | call VoomPandoc() | endif
+autocmd BufWinEnter *.md if (winnr("$") == 1) | call VoomPandoc() | endif
 
 " Close
 autocmd BufEnter * if (winnr("$") == 1 && expand("%:e") =~ "VOOM") | q | endif
