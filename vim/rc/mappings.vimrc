@@ -24,11 +24,8 @@ inoremap <C-F> <C-C>ea
 
 " Intellij-like Up / down
 " https://vim.fandom.com/wiki/Moving_lines_up_or_down
-
-" N.B. <C-i> conflicts with <Tab>
-" - https://unix.stackexchange.com/questions/563469/conflict-ctrl-i-with-tab-in-normal-mode
-nnoremap <C-i> :m .-2<CR>
-nnoremap <C-u> :m .+1<CR>
+nnoremap <localleader>k :m .-2<CR>
+nnoremap <localleader>j :m .+1<CR>
 
 "}}}
 
