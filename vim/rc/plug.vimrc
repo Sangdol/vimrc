@@ -29,9 +29,13 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 map <C-n> :NERDTreeToggle<CR>
 map <C-m> :NERDTree %:p:h<CR>
+nnoremap <localleader>1 :NERDTreeFind<CR>
+
+" auto open
+autocmd VimEnter *.yaml,*.yml NERDTree | wincmd p
+
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-nnoremap <localleader>1 :NERDTreeFind<CR>
 
 "}}}
 
