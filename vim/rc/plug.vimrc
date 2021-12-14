@@ -226,6 +226,8 @@ autocmd FileType vim nnoremap <silent> <Leader>m :Voom fmr<CR>
 " Open
 function VoomPandoc()
   :Voom pandoc
+
+  " why doesn't it work when vim is started?
   :2wincmd w
 endfunction
 
