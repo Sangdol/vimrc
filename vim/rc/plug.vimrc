@@ -235,20 +235,26 @@ autocmd BufEnter *.md if (winnr("$") == 1) | call VoomPandoc() | endif
 autocmd BufEnter * if (winnr("$") == 1 && expand("%:e") =~ "VOOM") | q | endif
 
 " Update
+" bug - window disappears when changing tabs
 function VoomUpdate()
   let l:win1name = bufname(winbufnr(1))
   let l:filename = bufname(winbufnr(2))
-  " multiple conditions: https://vi.stackexchange.com/a/8241/3225
-  " =~ comparison: https://vi.stackexchange.com/a/31086/3225
+  "" multiple conditions: https://vi.stackexchange.com/a/8241/3225
+  "" =~ comparison: https://vi.stackexchange.com/a/31086/3225
   if (win1name =~ "VOOM") > 0 && (win1name =~ filename) == 0
-    " excute these only if the current VOOM window is not for the current file
+    "" excute these only if the current VOOM tree window is not for the current file
+
+    " close the existing Voom tree window
+    :1wincmd w
+    :Voomquit
+
+    " why does it get unstable when calling VoomPandoc()?
     :Voom pandoc
     :2wincmd w
-    :q
   endif
 endfunction
 
-autocmd BufEnter *.md if (winnr("$") == 2) | call VoomUpdate() | endif
+autocmd BufWinEnter *.md if (winnr("$") == 2) | call VoomUpdate() | endif
 "}}}
 
 "
