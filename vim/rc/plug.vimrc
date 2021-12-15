@@ -197,8 +197,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'Lokaltog/vim-easymotion'  " :h easymotion.txt
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_use_smartsign_us = 1 " US layout
-nmap <localleader>f <Leader><Leader>f
-nmap <localleader>d <Leader><Leader>F
 nmap <Leader>j <Leader><Leader>j
 nmap <Leader>k <Leader><Leader>k
 
