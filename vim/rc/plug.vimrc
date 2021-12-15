@@ -26,11 +26,11 @@ Plug 'MTDL9/vim-log-highlighting'
 Plug 'svermeulen/vim-cutlass'
 
 " Need to use dl now
-nnoremap x d
-xnoremap x d
+nnoremap m d
+xnoremap m d
 
-nnoremap xx dd
-nnoremap X D
+nnoremap mm dd
+nnoremap M D
 
 "}}}
 
