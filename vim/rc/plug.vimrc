@@ -79,7 +79,10 @@ nmap <leader>ee :call SemshiNext()<CR>
 " markdown-preview {{{1
 " https://github.com/iamcco/markdown-preview.nvim
 "
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+
+" Need to manually install for some reason - :call mkdp#util#install()
+" https://github.com/iamcco/markdown-preview.nvim/issues/41
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 'markdown' }
 let g:mkdp_auto_close = 0
 
 "}}}
