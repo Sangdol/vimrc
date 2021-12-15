@@ -20,6 +20,12 @@ Plug 'MTDL9/vim-log-highlighting'
 "}}}
 
 "
+" vim-move
+"
+Plug 'matze/vim-move'
+let g:move_key_modifier = 'C'
+
+"
 " Cutlass {{{1
 " https://github.com/svermeulen/vim-cutlass
 "

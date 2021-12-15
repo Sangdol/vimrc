@@ -22,11 +22,6 @@ inoremap <C-a> <Esc>I
 inoremap <C-B> <C-C>bhi
 inoremap <C-F> <C-C>ea
 
-" Intellij-like Up / down
-" https://vim.fandom.com/wiki/Moving_lines_up_or_down
-nnoremap <localleader>i :m .-2<CR>
-nnoremap <localleader>u :m .+1<CR>
-
 "}}}
 
 "
@@ -35,17 +30,6 @@ nnoremap <localleader>u :m .+1<CR>
 
 " New Tab
 nnoremap <C-t> :tabnew<CR>
-
-" Next Tab
-nnoremap <silent> <C-k> :tabnext<CR>
-
-" Previous Tab
-" N.B. <C-j> = <NL>
-" - https://vi.stackexchange.com/questions/4246/what-is-the-difference-between-j-ctrl-j-nl-and-ctrl-n-in-normal-mode
-nnoremap <silent> <C-j> :tabprevious<CR>
-
-" New Tab
-nnoremap <silent> <C-t> :tabnew<CR>
 
 " Up and down are more logical with g..
 nnoremap <silent> k gk
@@ -153,6 +137,8 @@ nnoremap <silent> <leader>do :diffoff<CR>
 
 " Edit vimrc
 nnoremap <silent> <Leader>ev :tabnew<CR>:e ~/.vimrc<CR>
+nnoremap <silent> <Leader>ep :tabnew<CR>:e ~/.vim/rc/plug.vimrc<CR>
+nnoremap <silent> <Leader>em :tabnew<CR>:e ~/.vim/rc/mappings.vimrc<CR>
 
 " Turn off highlight
 nnoremap <silent> <Leader>n :noh<CR>
