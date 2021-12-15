@@ -245,10 +245,14 @@ autocmd FileType vim nnoremap <silent> <Leader>m :Voom fmr<CR>
 
 " Open
 function VoomPandoc()
-  :Voom pandoc
+  let l:filepath = expand('%:p')
 
-  " why doesn't it work when vim is started?
-  :2wincmd w
+  if filepath !~ 'workbench\/notes'
+    :Voom pandoc
+
+    " why doesn't it work when vim is started?
+    :2wincmd w
+  endif
 endfunction
 
 autocmd BufWinEnter *.md if (winnr("$") == 1) | call VoomPandoc() | endif
