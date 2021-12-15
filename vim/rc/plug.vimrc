@@ -20,12 +20,6 @@ Plug 'MTDL9/vim-log-highlighting'
 "}}}
 
 "
-" vim-move
-"
-Plug 'matze/vim-move'
-let g:move_key_modifier = 'C'
-
-"
 " Cutlass {{{1
 " https://github.com/svermeulen/vim-cutlass
 "
@@ -49,7 +43,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 map <C-n> :NERDTreeToggle<CR>
-map <C-m> :NERDTree %:p:h<CR>
 nnoremap <localleader>1 :NERDTreeFind<CR>
 
 " auto open
@@ -217,7 +210,7 @@ nmap <Leader>k <Leader><Leader>k
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-nmap <C-L> :Files<Enter>
+nmap <C-l> :Files<Enter>
 nmap <localleader>af :Files<Enter>
 nmap <localleader>ab :Buffers<Enter>
 nmap <localleader>aa :Ack<Space>
