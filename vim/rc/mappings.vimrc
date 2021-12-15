@@ -24,15 +24,20 @@ inoremap <C-F> <C-C>ea
 
 " Line up/down
 " https://vim.fandom.com/wiki/Moving_lines_up_or_down
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
+nnoremap <DOWN> :m .+1<CR>==
+nnoremap <UP> :m .-2<CR>==
+vnoremap <DOWN> :m '>+1<CR>gv=gv
+vnoremap <UP> :m '<-2<CR>gv=gv
+
 "}}}
 
 "
 " Tab {{{1
 "
+
+" Next / prev tab
+nnoremap <silent> <C-k> :tabnext<CR>
+nnoremap <silent> <C-j> :tabprevious<CR>
 
 " New Tab
 nnoremap <C-t> :tabnew<CR>
