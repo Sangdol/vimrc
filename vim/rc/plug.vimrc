@@ -157,7 +157,7 @@ set conceallevel=2 " to conceal _, * used for italic or bold
 " https://coderwall.com/p/ftqcla/markdown-with-fenced-code-blocks-in-vim
 " https://github.com/github/linguist/blob/master/lib/linguist/languages.yml
 " delete most of them as it slows down file loading - ['coffee', 'css', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sql', 'xml', 'java', 'python', 'sh', 'html', 'clojure', 'yaml', 'applescript', 'go', 'vim', 'awk', 'groovy']
-let g:markdown_fenced_languages = ['javascript', 'js=javascript', 'json=javascript', 'bash', 'sh', 'sql', 'python', 'clojure', 'scala', 'log']
+let g:markdown_fenced_languages = ['javascript', 'js=javascript', 'json=javascript', 'bash', 'sh', 'python', 'clojure', 'scala', 'log', 'vim']
 
 "}}}
 
