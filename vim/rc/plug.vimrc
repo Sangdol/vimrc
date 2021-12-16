@@ -247,10 +247,10 @@ function VoomPandoc()
   let l:filepath = expand('%:p')
 
   if filepath !~ 'workbench\/notes'
-    :Voom pandoc
+    Voom pandoc
 
     " why doesn't it work when vim is started?
-    :2wincmd w
+    2wincmd w
   endif
 endfunction
 
@@ -270,12 +270,12 @@ function VoomUpdate()
     "" excute these only if the current VOOM tree window is not for the current file
 
     " close the existing Voom tree window
-    :1wincmd w
-    :Voomquit
+    1wincmd w
+    Voomquit
 
     " why does it get unstable when calling VoomPandoc()?
-    :Voom pandoc
-    :2wincmd w
+    Voom pandoc
+    2wincmd w
   endif
 endfunction
 
