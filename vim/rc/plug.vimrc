@@ -217,14 +217,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 nmap <C-l> :Files<Enter>
-nmap <localleader>af :Files<Enter>
-nmap <localleader>ab :Buffers<Enter>
-nmap <localleader>aa :Ack<Space>
 nmap <localleader>al :Lines<Space>
-nmap <localleader>ac :Commits<Enter>
-" BCommits: commits for the current buffer
-nmap <localleader>av :BCommits<Enter>
-nmap <localleader>az :Commands<Enter>
+nmap <localleader>ac :Commands<Enter>
 nmap <localleader>a: :History:<Enter>
 nmap <localleader>a/ :History/<Enter>
 
