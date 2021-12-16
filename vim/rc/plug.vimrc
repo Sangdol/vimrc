@@ -16,6 +16,7 @@ Plug 'danro/rename.vim'
 Plug 'inside/vim-search-pulse'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'MTDL9/vim-log-highlighting'
+Plug 'junegunn/vim-peekaboo'
 
 "}}}
 
