@@ -18,6 +18,10 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'MTDL9/vim-log-highlighting'
 Plug 'junegunn/vim-peekaboo'
 
+" A git commit browser
+" https://github.com/junegunn/gv.vim
+Plug 'junegunn/gv.vim'
+
 "}}}
 
 "
