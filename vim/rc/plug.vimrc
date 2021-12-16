@@ -21,21 +21,6 @@ Plug 'junegunn/vim-peekaboo'
 "}}}
 
 "
-" Cutlass {{{1
-" https://github.com/svermeulen/vim-cutlass
-"
-Plug 'svermeulen/vim-cutlass'
-
-" Need to use dl now
-nnoremap m d
-xnoremap m d
-
-nnoremap mm dd
-nnoremap M D
-
-"}}}
-
-"
 " Nerdtree {{{1
 "
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
