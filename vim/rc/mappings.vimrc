@@ -139,7 +139,7 @@ cnoremap :W<CR> :w<CR>
 cnoremap :Q<CR> :q<CR>
 cnoremap :Q!<CR> :q!<CR>
 command! Wq wq
-command! Qq qa
+command! Qa qa
 
 " Diff shortcuts
 nnoremap <silent> <Leader>dl :diffthis<CR> <C-w>l :diffthis<CR> <C-w>h
