@@ -24,6 +24,13 @@ Plug 'junegunn/gv.vim'
 
 "}}}
 
+
+"
+" vim-fish
+" https://github.com/dag/vim-fish
+"
+Plug 'dag/vim-fish'
+
 "
 " ReplaceWithRegister {{{1
 "
