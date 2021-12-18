@@ -209,6 +209,7 @@ nnoremap <leader>gs :Git status<CR>
 nnoremap <leader>gp :Git push<CR>
 nnoremap <leader>gd :tab Git diff<CR>
 nnoremap <leader>gid :tab Git diff --cached<CR>
+nnoremap <leader>gq :Git commit --amend --reuse-message HEAD
 
 "}}}
 
