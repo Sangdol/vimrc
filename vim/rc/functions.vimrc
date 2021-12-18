@@ -1,5 +1,6 @@
 "
 " Functions
+" TODO scope for variables (is it needed for the variables in functions?)
 "
 
 " Insert the output of a vim command
