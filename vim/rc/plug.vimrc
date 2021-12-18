@@ -24,6 +24,14 @@ Plug 'junegunn/gv.vim'
 
 "}}}
 
+"
+" vim-numbertoggle
+" https://github.com/jeffkreeftmeijer/vim-numbertoggle
+" https://jeffkreeftmeijer.com/vim-number/
+"
+" relative / absolute / hybrid line numbers
+"
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
 "
 " vim-fish
@@ -265,8 +273,9 @@ function VoomPandoc()
 
   if filepath !~ 'workbench\/notes'
     Voom pandoc
-
     " why doesn't it work when vim is started?
+    "   probably there's some event that triggers the cursor to
+    "   go to the first window after everything is loaded.
     2wincmd w
   endif
 endfunction
