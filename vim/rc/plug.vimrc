@@ -207,8 +207,8 @@ nnoremap <leader>ga :Git add .<CR>
 nnoremap <leader>gg :Git add . \| :tab Git commit -v<CR>
 nnoremap <leader>gs :Git status<CR>
 nnoremap <leader>gp :Git push<CR>
-nnoremap <leader>gd :Git diff<CR>
-nnoremap <leader>gid :Git diff --cached<CR>
+nnoremap <leader>gd :tab Git diff<CR>
+nnoremap <leader>gid :tab Git diff --cached<CR>
 
 "}}}
 
