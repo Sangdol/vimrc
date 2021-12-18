@@ -204,6 +204,9 @@ Plug 'tpope/vim-fugitive'
 " https://stackoverflow.com/questions/24835386/git-commit-verbose-in-fugitive
 command -bar -bang -nargs=* Gc :Git commit<bang> -v <args>
 
+nmap <leader>gc :tab Git commit -v<CR>
+nmap <leader>gw :Gw<CR>
+
 "}}}
 
 "
