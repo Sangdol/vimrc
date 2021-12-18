@@ -201,9 +201,6 @@ let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 "   :Gvdiffsplit
 Plug 'tpope/vim-fugitive'
 
-" https://stackoverflow.com/questions/24835386/git-commit-verbose-in-fugitive
-command -bar -bang -nargs=* Gc :Git commit<bang> -v <args>
-
 nnoremap <leader>gc :tab Git commit -v<CR>
 nnoremap <leader>gw :Gw<CR>
 nnoremap <leader>ga :Git add .<CR>
