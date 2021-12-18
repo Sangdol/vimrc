@@ -13,7 +13,6 @@ funct! Exec(command)
 endfunct!
 
 " Open URL in browser
-" TODO: add quotation marks e.g., open "https://...*..."
 function! Browser()
 	let line = getline(".")
 	let line = matchstr(line, "http[^ `)]*")
@@ -22,9 +21,9 @@ function! Browser()
 	if !empty(line)
 		if has("mac")
       " Need chrome script in $PATH
-			exec "!open ".line
+			exec "!open '"..line.."'"
 		elseif has("unix")
-			exec "!google-chrome ".line
+			exec "!google-chrome '"..line.."'"
 		endif
 	else
 		echo "No URL found"
