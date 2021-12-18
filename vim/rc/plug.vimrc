@@ -227,7 +227,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 nmap <C-l> :Files<Enter>
-nmap <localleader>al :Lines<Space>
+nmap <leader>/ :Lines<CR>
 nmap <localleader>ac :Commands<Enter>
 nmap <localleader>a: :History:<Enter>
 nmap <localleader>a/ :History/<Enter>
