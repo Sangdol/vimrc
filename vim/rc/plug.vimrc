@@ -243,18 +243,18 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 nmap <C-l> :Files<Enter>
-nmap <leader>/ :Lines<CR>
-nmap <leader>ac :Commands<Enter>
-nmap <leader>a: :History:<Enter>
-nmap <leader>a/ :History/<Enter>
-nmap <leader>ah :Helptags<Enter>
-nmap <leader>am :Maps<Enter>
+nmap <leader>fl :Lines<CR>
+nmap <leader>fc :Commands<Enter>
+nmap <leader>f: :History:<Enter>
+nmap <leader>f/ :History/<Enter>
+nmap <leader>fh :Helptags<Enter>
+nmap <leader>fm :Maps<Enter>
 
 " fzf Rg to search words under the cursor
 " https://news.ycombinator.com/item?id=26634419
 nnoremap <silent> <C-Space> yiw:Rg <C-r>"<CR>
 vnoremap <silent> <C-Space> y:Rg <C-r>"<CR>
-noremap <silent> <leader>f :Rg<CR>
+noremap <silent> <leader>ff :Rg<CR>
 "}}}
 
 "
