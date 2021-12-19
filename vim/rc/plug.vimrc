@@ -247,6 +247,7 @@ nmap <leader>/ :Lines<CR>
 nmap <localleader>ac :Commands<Enter>
 nmap <localleader>a: :History:<Enter>
 nmap <localleader>a/ :History/<Enter>
+nmap <localleader>ah :Helptags<Enter>
 
 " fzf Rg to search words under the cursor
 " https://news.ycombinator.com/item?id=26634419
