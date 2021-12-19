@@ -251,7 +251,7 @@ nmap <localleader>a/ :History/<Enter>
 " https://news.ycombinator.com/item?id=26634419
 nnoremap <silent> <C-Space> yiw:Rg <C-r>"<CR>
 vnoremap <silent> <C-Space> y:Rg <C-r>"<CR>
-noremap <silent> <leader>f :Rg<CR>
+noremap <silent> <leader>c :Rg<CR>
 "}}}
 
 "
