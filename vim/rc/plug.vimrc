@@ -244,10 +244,11 @@ Plug 'junegunn/fzf.vim'
 
 nmap <C-l> :Files<Enter>
 nmap <leader>/ :Lines<CR>
-nmap <localleader>ac :Commands<Enter>
-nmap <localleader>a: :History:<Enter>
-nmap <localleader>a/ :History/<Enter>
-nmap <localleader>ah :Helptags<Enter>
+nmap <leader>ac :Commands<Enter>
+nmap <leader>a: :History:<Enter>
+nmap <leader>a/ :History/<Enter>
+nmap <leader>ah :Helptags<Enter>
+nmap <leader>am :Maps<Enter>
 
 " fzf Rg to search words under the cursor
 " https://news.ycombinator.com/item?id=26634419

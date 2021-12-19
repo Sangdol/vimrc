@@ -110,7 +110,7 @@ nnoremap <leader>wk :topleft new<CR>
 nnoremap <silent> <Leader>dd ggdG
 
 " Yank all
-nnoremap <Leader>a :%y<CR>
+nnoremap <Leader>aa :%y<CR>
 
 " Create Blank Newlines and stay in Normal mode
 " http://superuser.com/a/607193/81915
