@@ -30,7 +30,8 @@ Plug 'junegunn/gv.vim'
 "
 Plug 'junegunn/vader.vim'
 
-nnoremap <silent> <Leader>vt :Vader %<CR>
+nnoremap <silent> <Leader>va :w \| Vader %<CR>
+inoremap <silent> <Leader>va <ESC>:w \| Vader %<CR>
 
 "
 " vim-numbertoggle
