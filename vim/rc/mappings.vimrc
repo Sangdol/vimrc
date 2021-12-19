@@ -147,9 +147,9 @@ nnoremap <silent> <Leader>dh :diffthis<CR> <C-w>h :diffthis<CR> <C-w>l
 nnoremap <silent> <leader>do :diffoff<CR>
 
 " Edit vimrc
-nnoremap <silent> <Leader>ev :tabnew<CR>:e ~/.vimrc<CR>
-nnoremap <silent> <Leader>ep :tabnew<CR>:e ~/.vim/rc/plug.vimrc<CR>
-nnoremap <silent> <Leader>em :tabnew<CR>:e ~/.vim/rc/mappings.vimrc<CR>
+nnoremap <silent> <Leader>vv :tabnew<CR>:e ~/.vimrc<CR>
+nnoremap <silent> <Leader>vp :tabnew<CR>:e ~/.vim/rc/plug.vimrc<CR>
+nnoremap <silent> <Leader>vm :tabnew<CR>:e ~/.vim/rc/mappings.vimrc<CR>
 
 " Turn off highlight
 nnoremap <silent> <Leader>n :noh<CR>
