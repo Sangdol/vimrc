@@ -3,15 +3,27 @@
 " TODO scope for variables (is it needed for the variables in functions?)
 "
 
-" Insert the output of a vim command
-" how to: (insert mode) ^R=Exec('ls')
-" https://unix.stackexchange.com/a/8296/8610
-funct! Exec(command)
-    redir =>output
-    silent exec a:command
-    redir END
-    return output
-endfunct!
+" From https://vim.fandom.com/wiki/Append_output_of_an_external_command
+" which is way better than the one from
+" https://unix.stackexchange.com/questions/8101/how-to-insert-the-result-of-a-command-into-the-text-in-vim/8296#8296
+"
+" Usage:
+"   :TabMessage ls
+"   :TabMessage echo g:
+function! TabMessage(cmd)
+  redir => message
+  silent execute a:cmd
+  redir END
+  if empty(message)
+    echoerr "no output"
+  else
+    " use "new" instead of "tabnew" below if you prefer split windows instead of tabs
+    tabnew
+    setlocal buftype=nofile bufhidden=wipe noswapfile nobuflisted nomodified
+    silent put=message
+  endif
+endfunction
+command! -nargs=+ -complete=command TabMessage call TabMessage(<q-args>)
 
 " Open URL in browser
 function! Browser()
