@@ -31,7 +31,7 @@ Plug 'junegunn/gv.vim'
 Plug 'junegunn/vader.vim'
 
 nnoremap <silent> <Leader>va :w \| Vader %<CR>
-inoremap <silent> <Leader>va <ESC>:w \| Vader %<CR>
+inoremap ;va <ESC>:w \| Vader %<CR>
 
 "
 " vim-numbertoggle
@@ -222,6 +222,7 @@ nnoremap <leader>gc :tab Git commit -v<CR>
 nnoremap <leader>gw :Gw<CR>
 nnoremap <leader>ga :Git add .<CR>
 nnoremap <leader>gg :Git add . \| :tab Git commit -v<CR>
+nnoremap <leader>gk :Gw \| :tab Git commit -v<CR>
 nnoremap <leader>gs :Git status<CR>
 nnoremap <leader>gp :Git push<CR>
 nnoremap <leader>gd :tab Git diff<CR>
