@@ -252,6 +252,7 @@ Plug 'junegunn/fzf.vim'
 nmap <C-l> :Files<Enter>
 nmap <leader>fl :Lines<CR>
 nmap <leader>fc :Commands<Enter>
+nmap <leader>fi :History<Enter>
 nmap <leader>f: :History:<Enter>
 nmap <leader>f/ :History/<Enter>
 nmap <leader>fh :Helptags<Enter>
