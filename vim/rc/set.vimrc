@@ -21,6 +21,7 @@ set softtabstop=2 " for backspace
 set tabstop=2
 set expandtab
 set autoindent
+set smartindent
 
 autocmd FileType python setlocal shiftwidth=4 softtabstop=4 tabstop=4
 autocmd FileType java setlocal shiftwidth=4 softtabstop=4 tabstop=4
