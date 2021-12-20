@@ -260,9 +260,9 @@ nmap <leader>fm :Maps<Enter>
 
 " fzf Rg to search words under the cursor
 " https://news.ycombinator.com/item?id=26634419
-nnoremap <silent> <C-Space> yiw:Rg <C-r>"<CR>
-vnoremap <silent> <C-Space> y:Rg <C-r>"<CR>
-noremap <silent> <leader>ff :Rg<CR>
+nnoremap <silent> <leader>ff yiw:Rg <C-r>"<CR>
+vnoremap <silent> <leader>ff y:Rg <C-r>"<CR>
+noremap <silent> <C-Space> :Rg<CR>
 "}}}
 
 "
