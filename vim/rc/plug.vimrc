@@ -307,14 +307,23 @@ function VoomPandoc()
 
   if filepath !~ 'workbench\/notes'
     Voom pandoc
-    " why doesn't it work when vim is started?
-    "   probably there's some event that triggers the cursor to
-    "   go to the first window after everything is loaded.
-    2wincmd w
+    function s:init()
+      2wincmd w
+    endfunction
+
+    " wincmd command doesn't work when it's called
+    " as vim started since vim is not completely ready.
+    " Adding this to make it work.
+    " The code is from the vim autocmd help page.
+    if v:vim_did_enter
+      call s:init()
+    else
+      au VimEnter * call s:init()
+    endif
   endif
 endfunction
 
-autocmd BufWinEnter *.md if (winnr("$") == 1) | call VoomPandoc() | endif
+autocmd BufWinEnter,VimEnter *.md if (winnr("$") == 1) | call VoomPandoc() | endif
 
 " Close
 autocmd BufEnter * if (winnr("$") == 1 && expand("%:e") =~ "VOOM") | q | endif
