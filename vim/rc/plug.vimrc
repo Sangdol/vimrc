@@ -13,7 +13,6 @@ call plug#begin('~/.vim/plugged')
 " - PlugUpgrade
 " - PlugStatus
 Plug 'danro/rename.vim'
-Plug 'inside/vim-search-pulse'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'MTDL9/vim-log-highlighting'
 Plug 'junegunn/vim-peekaboo'
@@ -25,13 +24,25 @@ Plug 'junegunn/gv.vim'
 "}}}
 
 "
-" Vader
+" vim-slash {{{1
+"
+Plug 'junegunn/vim-slash'
+noremap <plug>(slash-after) zz
+if has('timers')
+  " Blink 2 times with 50ms interval
+  noremap <expr> <plug>(slash-after) slash#blink(3, 50)
+endif
+
+"
+" Vader {{{1
 " https://github.com/junegunn/vader.vim
 "
 Plug 'junegunn/vader.vim'
 
 nnoremap <silent> <Leader>va :w \| Vader %<CR>
 inoremap ;va <ESC>:w \| Vader %<CR>
+
+"}}}
 
 "
 " vim-numbertoggle
