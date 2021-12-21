@@ -2,7 +2,7 @@
 
 " set <Leader>
 let mapleader="\<Space>"
-let maplocalleader="\<CR>"
+let maplocalleader="\<Space>"
 
 " Use vim settings, rather then vi settings
 " This must be first, because it changes other options as a side effect.

@@ -24,6 +24,14 @@ Plug 'junegunn/gv.vim'
 "}}}
 
 "
+" Repeat {{{1
+" to a map as a while
+"
+Plug 'tpope/vim-repeat'
+
+"}}}
+
+"
 " vim-slash {{{1
 "
 Plug 'junegunn/vim-slash'

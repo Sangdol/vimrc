@@ -71,10 +71,6 @@ inoremap j; <Esc>O
 " Buffer and windows {{{1
 "
 
-" Horizontal resize mainly for nerdtree windows
-nnoremap <localleader>h 5<C-w><
-nnoremap <localleader>l 5<C-w>>
-
 " Move between windows
 let i = 1
 while i <= 9
@@ -97,6 +93,14 @@ nnoremap <leader>wh :vnew<CR>
 nnoremap <leader>wl :rightbelow vertical new<CR>
 nnoremap <leader>wj :below new<CR>
 nnoremap <leader>wk :topleft new<CR>
+
+" Horizontal resize with Repeat
+nmap <leader>w< <Plug>DecreaseWindowWidth
+nmap <leader>w> <Plug>IncreaseWindowWidth
+nnoremap <Plug>DecreaseWindowWidth 3<C-w><
+  \ :call repeat#set("\<Plug>DecreaseWindowWidth")<CR>
+nnoremap <Plug>IncreaseWindowWidth 3<C-w>>
+  \ :call repeat#set("\<Plug>IncreaseWindowWidth")<CR>
 
 "}}}
 
