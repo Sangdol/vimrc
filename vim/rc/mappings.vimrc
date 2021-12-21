@@ -134,6 +134,9 @@ nnoremap <Leader>t yg_:echo "Copied"<CR>
 " Etc. {{{1
 "
 
+" Help in a new tab
+command -narg=1 H tab help
+
 " Mistake proofing
 cnoremap :W<CR> :w<CR>
 cnoremap :Q<CR> :q<CR>
