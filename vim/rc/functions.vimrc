@@ -23,6 +23,9 @@ function! TabMessage(cmd)
     silent put=message
   endif
 endfunction
+
+" -complete=command: completion to make the command work with a shorter form
+"  such as :Tab
 command! -nargs=+ -complete=command TabMessage call TabMessage(<q-args>)
 
 " Open URL in browser
