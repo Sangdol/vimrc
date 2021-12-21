@@ -30,24 +30,26 @@ command! -nargs=+ -complete=command TabMessage call TabMessage(<q-args>)
 
 " Open URL in browser
 function! Browser()
-	let line = getline(".")
-	let line = matchstr(line, "http[^ `)]*")
-	" Should escape to prevent replaced with registers
-	let line = escape(line, "#?&;|%")
-	if !empty(line)
-		if has("mac")
+  let linenumber = get(a:, 'firstline', '.')
+  let line = getline(linenumber)
+  let line = matchstr(line, "http[^ `)]*")
+  " Should escape to prevent replaced with registers
+  let line = escape(line, "#?&;|%")
+  if !empty(line)
+    if has("mac")
       " Need chrome script in $PATH
-			exec "!open '"..line.."'"
-		elseif has("unix")
-			exec "!google-chrome '"..line.."'"
-		endif
-	else
-		echo "No URL found"
-	endif
+      exec "!open '"..line.."'"
+    elseif has("unix")
+      exec "!google-chrome '"..line.."'"
+    endif
+  else
+    echo "No URL found"
+  endif
 endfunction
 
 " (Remove the last <CR> to debug)
 nnoremap <Leader>b :call Browser()<CR><CR><CR>
+command! -range Browser <line1>call Browser()
 
 " Google it
 " https://vi.stackexchange.com/a/9002/3225
