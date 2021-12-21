@@ -73,14 +73,14 @@ inoremap j; <Esc>O
 
 " Move between windows
 let i = 1
-while i <= 9
+while i <= 6
   execute 'nnoremap <Leader>' . i . ' :' . i . 'wincmd w<CR>'
   let i = i + 1
 endwhile
 
 " Close windows
 let i = 1
-while i <= 9
+while i <= 6
   execute 'nnoremap <Leader>c' . i . ' :' . i . 'wincmd w<CR>:q<CR>'
   let i = i + 1
 endwhile

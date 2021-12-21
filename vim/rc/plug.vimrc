@@ -92,7 +92,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 map <C-n> :NERDTreeToggle<CR>
-nnoremap <localleader>1 :NERDTreeFind<CR>
+nnoremap <leader>0 :NERDTreeFind<CR>
 
 " auto open
 autocmd VimEnter *.yaml,*.yml NERDTree | wincmd p
@@ -190,10 +190,10 @@ Plug 'airblade/vim-rooter' " Changes Vim working directory to project root.
 
 " Go to the current dir
 " https://vim.fandom.com/wiki/Set_working_directory_to_the_current_file
-nnoremap <localleader>2 :cd %:p:h<CR> :pwd<CR>
+nnoremap <leader>9 :cd %:p:h<CR> :pwd<CR>
 
 " Go to the root
-nnoremap <localleader>3 :Rooter<CR>
+nnoremap <leader>8 :Rooter<CR>
 
 "}}}
 
