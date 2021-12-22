@@ -24,6 +24,13 @@ Plug 'junegunn/gv.vim'
 "}}}
 
 "
+" Markdown folding
+"
+Plug 'masukomi/vim-markdown-folding'
+
+autocmd FileType markdown set foldexpr=NestedMarkdownFolds()
+
+"
 " Repeat {{{1
 " to a map as a while
 "
