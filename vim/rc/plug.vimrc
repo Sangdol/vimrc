@@ -314,7 +314,7 @@ function VoomPandoc()
 
   if filepath !~ 'workbench\/notes'
     Voom pandoc
-    function s:init()
+    function! s:init()
       2wincmd w
     endfunction
 
