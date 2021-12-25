@@ -28,19 +28,6 @@ endfunction
 "  such as :Tab
 command! -nargs=+ -complete=command TabMessage call TabMessage(<q-args>)
 
-function! s:openUrl(url)
-  if !empty(a:url)
-    if has("mac")
-      " Need chrome script in $PATH
-      exec "!open '"..a:url.."'"
-    elseif has("unix")
-      exec "!google-chrome '"..a:url.."'"
-    endif
-  else
-    echo "No URL found"
-  endif
-endfunction
-
 " https://vim.fandom.com/wiki/Delete_files_with_a_Vim_command#Comments
 function! DeleteFile(...)
   if(exists('a:1'))
@@ -68,6 +55,20 @@ com! Rm call DeleteFile()
 "delete the file and quit the buffer (quits vim if this was the last file)
 com! RM call DeleteFile() <Bar> q!
 
+function! s:openUrl(url)
+  echom 'Opening "' .. a:url .. '"'
+  if !empty(a:url)
+    if has("mac")
+      " Need chrome script in $PATH
+      exec "!open '"..a:url.."'"
+    elseif has("unix")
+      exec "!google-chrome '"..a:url.."'"
+    endif
+  else
+    echom "No URL found"
+  endif
+endfunction
+
 " Open URL in browser
 function! Browser()
   let linenumber = get(a:, 'firstline', '.')
@@ -78,7 +79,7 @@ function! Browser()
     let url = 'https://github.com/' .. path
     call s:openUrl(url)
   else
-    let url = matchstr(line, "http[^ `)]*")
+    let line = matchstr(line, "http[^ `)]*")
     " Should escape to prevent replaced with registers
     let url = escape(line, "#?&;|%")
     call s:openUrl(url)
@@ -86,7 +87,7 @@ function! Browser()
 endfunction
 
 " (Remove the last <CR> to debug)
-nnoremap <Leader>b :call Browser()<CR><CR><CR>
+nnoremap <Leader>b :call Browser()<CR><CR>
 command! -range Browser <line1>call Browser()
 
 " Google it
