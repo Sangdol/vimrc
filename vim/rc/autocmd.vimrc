@@ -15,3 +15,8 @@ autocmd BufRead,BufNewFile *.md set filetype=markdown
 " for html close tag shortcut
 autocmd FileType html set omnifunc=xmlcomplete#CompleteTags
 
+" Moves the cursor to the last position
+autocmd BufReadPost *
+  \ if line("'\"") > 1 && line("'\"") <= line("$") |
+  \   exe "normal! g`\""
+  \ endif
