@@ -40,7 +40,7 @@ nnoremap <silent> <C-k> :tabnext<CR>
 nnoremap <silent> <C-j> :tabprevious<CR>
 
 " New Tab
-nnoremap <C-t> :tabnew<CR>
+nnoremap <silent> <Leader>n :tabnew<CR>
 
 " Up and down are more logical with g..
 nnoremap <silent> k gk
@@ -159,9 +159,6 @@ nnoremap <silent> <Leader>vp :tabnew<CR>:e ~/.vim/rc/plug.vimrc<CR>
 nnoremap <silent> <Leader>vm :tabnew<CR>:e ~/.vim/rc/mappings.vimrc<CR>
 nnoremap <silent> <Leader>vf :tabnew<CR>:e ~/.vim/rc/functions.vimrc<CR>
 nnoremap <silent> <Leader>vs :tabnew<CR>:e ~/.vim/rc/set.vimrc<CR>
-
-" Turn off highlight
-nnoremap <silent> <Leader>n :noh<CR>
 
 " Toggle invisibles
 set lcs=tab:›\ ,trail:·,eol:¬,nbsp:_
