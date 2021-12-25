@@ -251,6 +251,8 @@ nnoremap <leader>gp :Git push<CR>
 nnoremap <leader>gd :tab Git diff<CR>
 nnoremap <leader>gid :tab Git diff --cached<CR>
 nnoremap <leader>gq :Git commit --amend --reuse-message HEAD
+nnoremap <leader>gz :Git stash save --include-untracked<CR>
+nnoremap <leader>gx :Git stash pop<CR>
 
 "}}}
 
