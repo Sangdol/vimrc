@@ -114,7 +114,7 @@ nnoremap <Plug>IncreaseWindowWidth 3<C-w>>
 nnoremap <silent> <Leader>dd ggdG
 
 " Yank all
-nnoremap <Leader>aa :%y<CR>
+nnoremap <Leader>a :%y<CR>
 
 " Create Blank Newlines and stay in Normal mode
 " http://superuser.com/a/607193/81915
