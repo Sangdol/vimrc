@@ -24,6 +24,11 @@ Plug 'junegunn/gv.vim'
 "}}}
 
 "
+" COC (Conquer of Completion)
+"
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+"
 " Repeat {{{1
 " to a map as a while
 "
