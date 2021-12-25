@@ -28,22 +28,33 @@ endfunction
 "  such as :Tab
 command! -nargs=+ -complete=command TabMessage call TabMessage(<q-args>)
 
+function! s:openUrl(url)
+  if !empty(a:url)
+    if has("mac")
+      " Need chrome script in $PATH
+      exec "!open '"..a:url.."'"
+    elseif has("unix")
+      exec "!google-chrome '"..a:url.."'"
+    endif
+  else
+    echo "No URL found"
+  endif
+endfunction
+
 " Open URL in browser
 function! Browser()
   let linenumber = get(a:, 'firstline', '.')
   let line = getline(linenumber)
-  let line = matchstr(line, "http[^ `)]*")
-  " Should escape to prevent replaced with registers
-  let line = escape(line, "#?&;|%")
-  if !empty(line)
-    if has("mac")
-      " Need chrome script in $PATH
-      exec "!open '"..line.."'"
-    elseif has("unix")
-      exec "!google-chrome '"..line.."'"
-    endif
+  let isPlug = stridx(line, 'Plug') == 0
+  if isPlug
+    let path = substitute(line, '\vPlug [''"](.+)[''"]', '\1', '')
+    let url = 'https://github.com/' .. path
+    call s:openUrl(url)
   else
-    echo "No URL found"
+    let url = matchstr(line, "http[^ `)]*")
+    " Should escape to prevent replaced with registers
+    let url = escape(line, "#?&;|%")
+    call s:openUrl(url)
   endif
 endfunction
 
