@@ -142,9 +142,9 @@ nnoremap <Leader>t yg_:echo "Copied"<CR>
 command -narg=1 H tab help <args>
 
 " Mistake proofing
-cnoremap :W<CR> :w<CR>
-cnoremap :Q<CR> :q<CR>
-cnoremap :Q!<CR> :q!<CR>
+" https://stackoverflow.com/questions/10590165/is-there-a-way-in-vim-to-make-w-to-do-the-same-thing-as-w
+command! W w
+command! -bang Q q<bang>
 command! Wq wq
 command! Qa qa
 
