@@ -60,6 +60,7 @@ set fileformats=unix,dos
 " Windows related
 set splitright
 set splitbelow
+set scrolloff=3
 
 " clipboard
 " https://stackoverflow.com/questions/30691466/what-is-difference-between-vims-clipboard-unnamed-and-unnamedplus-settings
