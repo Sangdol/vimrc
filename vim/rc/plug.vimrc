@@ -197,6 +197,9 @@ nnoremap <leader>9 :cd %:p:h<CR> :pwd<CR>
 " Go to the root
 nnoremap <leader>8 :Rooter<CR>
 
+" Added custom root (.rooter)
+let g:rooter_patterns = ['.git', 'Makefile', 'package.json', '.rooter']
+
 "}}}
 
 "
