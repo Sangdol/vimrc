@@ -19,13 +19,12 @@ Plug 'MTDL9/vim-log-highlighting'
 Plug 'junegunn/vim-peekaboo'
 Plug 'junegunn/gv.vim' " A git commit browser
 Plug 'tpope/vim-surround'
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " COC (Conquer of Completion)
+Plug 'dag/vim-fish'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'vim-scripts/ReplaceWithRegister'
 
 "}}}
-
-"
-" COC (Conquer of Completion)
-"
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "
 " Repeat {{{1
@@ -55,37 +54,6 @@ Plug 'junegunn/vader.vim'
 
 nnoremap <silent> <Leader>va :w \| Vader %<CR>
 inoremap ;va <ESC>:w \| Vader %<CR>
-
-"}}}
-
-"
-" vim-numbertoggle
-" https://github.com/jeffkreeftmeijer/vim-numbertoggle
-" https://jeffkreeftmeijer.com/vim-number/
-"
-" relative / absolute / hybrid line numbers
-"
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
-
-"
-" vim-fish
-" https://github.com/dag/vim-fish
-"
-Plug 'dag/vim-fish'
-
-"
-" ReplaceWithRegister {{{1
-"
-" USAGE
-" [count]["x]gr{motion}   Replace {motion} text with the contents of register x.
-"                         Especially when using the unnamed register, this is
-"                         quicker than "_d{motion}P or "_c{motion}<C-R>"
-" [count]["x]grr          Replace [count] lines with the contents of register x.
-"                         To replace from the cursor position to the end of the
-"                         line use ["x]gr$
-" {Visual}["x]gr          Replace the selection with the contents of register x.
-"
-Plug 'vim-scripts/ReplaceWithRegister'
 
 "}}}
 
