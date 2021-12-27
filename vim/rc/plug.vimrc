@@ -12,14 +12,13 @@ call plug#begin('~/.vim/plugged')
 " - PlugClean[!]
 " - PlugUpgrade
 " - PlugStatus
+
 Plug 'danro/rename.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'MTDL9/vim-log-highlighting'
 Plug 'junegunn/vim-peekaboo'
-
-" A git commit browser
-" https://github.com/junegunn/gv.vim
-Plug 'junegunn/gv.vim'
+Plug 'junegunn/gv.vim' " A git commit browser
+Plug 'tpope/vim-surround'
 
 "}}}
 
