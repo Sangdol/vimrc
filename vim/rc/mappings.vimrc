@@ -94,6 +94,17 @@ nnoremap <leader>wl :rightbelow vertical new<CR>
 nnoremap <leader>wj :below new<CR>
 nnoremap <leader>wk :topleft new<CR>
 
+" Close (wq is hard to type)
+nnoremap <leader>we :wq<CR>
+nnoremap <leader>ww :wqa<CR>
+
+" Mostly for git commit message windows
+inoremap ;we <ESC>:wq<CR>
+
+" Save
+nnoremap <Leader>s :up<CR>
+nnoremap <Leader>q :q<CR>
+
 " Horizontal resize with Repeat
 nmap <leader>w< <Plug>DecreaseWindowWidth
 nmap <leader>w> <Plug>IncreaseWindowWidth
@@ -123,10 +134,6 @@ nnoremap <silent> zk :call append(line('.')-1, '')<CR>
 
 nnoremap <silent> zh i<Space><Right><Esc>
 nnoremap <silent> zl a<Space><Left><Esc>
-
-" Save / quit
-nnoremap <Leader>s :up<CR>
-nnoremap <Leader>q :q<CR>
 
 " copy without newline
 " https://stackoverflow.com/questions/20165596/select-entire-line-in-vim-without-the-new-line-character
