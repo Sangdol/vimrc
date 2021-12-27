@@ -28,7 +28,6 @@ Plug 'vim-scripts/ReplaceWithRegister'
 
 "
 " Repeat {{{1
-" to a map as a while
 "
 " Tutorial: http://vimcasts.org/episodes/creating-repeatable-mappings-with-repeat-vim/
 "
