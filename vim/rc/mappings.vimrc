@@ -148,6 +148,7 @@ command! -bang Q q<bang>
 command! Wa wa
 command! Wq wq
 command! Qa qa
+command! Wqa wqa
 
 " Diff shortcuts
 nnoremap <silent> <Leader>dl :diffthis<CR> <C-w>l :diffthis<CR> <C-w>h
