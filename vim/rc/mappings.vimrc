@@ -143,7 +143,7 @@ command -narg=1 H tab help <args>
 
 " Mistake proofing
 " https://stackoverflow.com/questions/10590165/is-there-a-way-in-vim-to-make-w-to-do-the-same-thing-as-w
-command! W w
+command! -nargs=* W w <args>
 command! -bang Q q<bang>
 command! Wa wa
 command! Wq wq
