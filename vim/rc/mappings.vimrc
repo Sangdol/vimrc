@@ -186,4 +186,7 @@ cmap w!! w !sudo tee > /dev/null %
 " Spell check
 nnoremap <Leader><Leader>s :set spell!<CR>
 
+" qq to record, Q to replay
+nnoremap Q @q
+
 "}}}
