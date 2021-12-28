@@ -40,7 +40,7 @@ nnoremap <silent> <C-k> :tabnext<CR>
 nnoremap <silent> <C-j> :tabprevious<CR>
 
 " New Tab
-nnoremap <silent> <Leader>n :tabnew<CR>
+nnoremap <silent> <Leader>l :tabnew<CR>
 
 " Up and down are more logical with g..
 nnoremap <silent> k gk
@@ -144,6 +144,8 @@ nnoremap <Leader>t yg_:echo "Copied"<CR>
 "
 " Etc. {{{1
 "
+
+nnoremap <silent> <Leader>n :noh<CR>
 
 " Help in a new tab
 command -narg=1 H tab help <args>
