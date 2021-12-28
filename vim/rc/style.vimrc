@@ -16,10 +16,23 @@ function CurrentDir()
 endfunction
 
 "Status line
-set laststatus=2 " keep statusline always visible
-set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
-set statusline+=%=
-set statusline+=[%{CurrentDir()}]
+"set laststatus=2 " keep statusline always visible
+"set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%] %{exists('g:loaded_fugitive') ? fugitive#statusline() : ''}
+"set statusline+=%=
+
+function! s:statusline_expr()
+  let mod = "%{&modified ? '[+] ' : !&modifiable ? '[x] ' : ''}"
+  let ro  = "%{&readonly ? '[RO] ' : ''}"
+  let ft  = "%{len(&filetype) ? '['.&filetype.'] ' : ''}"
+  let fug = "%{exists('g:loaded_fugitive') ? fugitive#statusline() : ''}"
+  let sep = ' %= '
+  let pos = ' %-12(%l : %c%V%) '
+  let pct = ' %P'
+  let dir = ' [%{CurrentDir()}]'
+
+  return '[%n] %F %<'.mod.ro.ft.fug.sep.pos.'%*'.pct.dir
+endfunction
+let &statusline = s:statusline_expr()
 
 " Change cursor shape in different modes(In OSX)
 " http://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes
