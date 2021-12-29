@@ -75,7 +75,7 @@ function! Browser()
   let line = getline(linenumber)
   let isPlug = stridx(line, 'Plug') == 0
   if isPlug
-    let path = substitute(line, '\vPlug [''"](.{-})[''"].+', '\1', '')
+    let path = substitute(line, '\vPlug [''"](.{-})[''"].*', '\1', '')
     let url = 'https://github.com/' .. path
     call s:openUrl(url)
   else
