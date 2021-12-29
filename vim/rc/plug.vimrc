@@ -26,7 +26,7 @@ Plug 'vim-scripts/ReplaceWithRegister'
 "}}}
 
 "
-" " COC (Conquer of Completion)
+" COC (Conquer of Completion) {{{1
 "
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -47,7 +47,7 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gl <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -68,6 +68,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 
+"}}}
+
 "
 " Repeat {{{1
 "
@@ -76,16 +78,6 @@ nmap <leader>rn <Plug>(coc-rename)
 Plug 'tpope/vim-repeat'
 
 "}}}
-
-"
-" vim-slash {{{1
-"
-Plug 'junegunn/vim-slash'
-noremap <plug>(slash-after) zz
-if has('timers')
-  " Blink 2 times with 50ms interval
-  noremap <expr> <plug>(slash-after) slash#blink(3, 50)
-endif
 
 "
 " Vader {{{1
