@@ -26,6 +26,29 @@ Plug 'vim-scripts/ReplaceWithRegister'
 "}}}
 
 "
+" Semantic Highlighting for Python in Neovim {{{1
+" https://github.com/numirias/semshi
+"
+
+"  Do `pip3 install pynvim --upgrade`
+Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
+
+autocmd FileType python nnoremap <buffer> <leader>re :Semshi rename<CR>
+autocmd FileType python nnoremap <buffer> <Tab> :Semshi goto name next<CR>
+autocmd FileType python nnoremap <buffer> <S-Tab> :Semshi goto name prev<CR>
+
+" All in one like IntelliJ F2
+function! SemshiNext()
+  execute('Semshi goto parameterUnused first')
+  execute('Semshi goto unresolved first')
+  execute('Semshi goto error')
+endfunction
+
+autocmd FileType python nnoremap <buffer> <leader>ee :call SemshiNext()<CR>
+
+"}}}
+
+"
 " Kanggaroo {{{1
 " jumpstack manager
 " zp: push
@@ -111,7 +134,7 @@ Plug 'tpope/vim-repeat'
 " Vader {{{1
 " https://github.com/junegunn/vader.vim
 "
-Plug 'junegunn/vader.vim'
+Plug 'junegunn/vader.vim', {'on': 'Vader', 'for': 'vader'}
 
 nnoremap <silent> <Leader>va :w \| Vader %<CR>
 inoremap ;va <ESC>:w \| Vader %<CR>
