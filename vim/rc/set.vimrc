@@ -83,3 +83,6 @@ set mouse=a
 " zm - gives more folding by closing one level
 " zM - close all
 set foldmethod=marker
+
+" neovim only. browser-like jump stack.
+set jumpoptions+=stack
