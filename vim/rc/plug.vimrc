@@ -26,10 +26,18 @@ Plug 'vim-scripts/ReplaceWithRegister'
 "}}}
 
 "
+" Kanggaroo {{{1
+" jumpstack manager
+" zp: push
+" zP: pop
+"
+Plug 'tommcdo/vim-kangaroo'
+
+"
 " Abolish {{{1
 "
 " :Abolish
-" :Subvert
+" :Subvert :S
 "
 " Coercion
 "  [crs] some_long_identifier
@@ -370,6 +378,6 @@ Plug 'scrooloose/nerdcommenter'
 nmap <silent> <C-_> <Leader>c<Space>
 vmap <silent> <C-_> <Leader>c<Space>
 
-call plug#end()
-
 "}}}
+
+call plug#end()
