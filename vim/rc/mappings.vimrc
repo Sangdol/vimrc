@@ -174,7 +174,7 @@ nnoremap <silent> <Leader>vs :tabnew<CR>:e ~/.vim/rc/set.vimrc<CR>
 nnoremap <Leader>vr :source ~/.vimrc<CR>
 
 " To navigate the nvim runtime directory
-nnoremap <silent> <Leader>vx :tabnew<CR>:e /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/filetype.vim<CR>
+nnoremap <silent> <Leader>vx :tabnew<CR>:e $VIMRUNTIME/filetype.vim<CR>
 
 " Toggle invisibles
 set lcs=tab:›\ ,trail:·,eol:¬,nbsp:_
