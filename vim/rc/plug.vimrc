@@ -26,6 +26,26 @@ Plug 'vim-scripts/ReplaceWithRegister'
 "}}}
 
 "
+" Abolish {{{1
+"
+" :Abolish
+" :Subvert
+"
+" Coercion
+"  [crs] some_long_identifier
+"  [crm] SomeLongIdentifier
+"  [crc] someLongIdentifier
+"  [cru] SOME_LONG_IDENTIFIER
+"  [cr-] some-long-identifier
+"  [cr.] some.long.identifier
+"  [cr ] some long identifier
+"  [crt] Some Long Identifier
+"
+Plug 'tpope/vim-abolish'
+
+"}}}
+
+"
 " COC (Conquer of Completion) {{{1
 "
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
