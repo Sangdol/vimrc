@@ -110,31 +110,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 "}}}
 
 "
-" Semantic Highlighting for Python in Neovim {{{1
-" https://github.com/numirias/semshi
-"
-" Disable due to a bug which happens when Ctrl-O / Ctrl-I or some other
-" activities
-" https://github.com/numirias/semshi/issues?q=is%3Aissue+%22error+detected+while+processing+function+remote%23define%23request%22+
-"
-"Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' } "  `pip3 install pynvim --upgrade`
-
-"nmap <silent> <leader>rr :Semshi rename<CR>
-"nmap <silent> <Tab> :Semshi goto name next<CR>
-"nmap <silent> <S-Tab> :Semshi goto name prev<CR>
-
-"" All in one like IntelliJ F2
-"function SemshiNext()
-  "execute('Semshi goto parameterUnused first')
-  "execute('Semshi goto unresolved first')
-  "execute('Semshi goto error')
-"endfunction
-
-"nmap <leader>ee :call SemshiNext()<CR>
-
-"}}}
-
-"
 " markdown-preview {{{1
 " https://github.com/iamcco/markdown-preview.nvim
 "
