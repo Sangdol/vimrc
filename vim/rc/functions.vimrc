@@ -73,6 +73,7 @@ endfunction
 function! Browser()
   let linenumber = get(a:, 'firstline', '.')
   let line = getline(linenumber)
+  let line = trim(line)
   let isPlug = stridx(line, 'Plug') == 0
   if isPlug
     let path = substitute(line, '\vPlug [''"](.{-})[''"].*', '\1', '')
@@ -87,7 +88,7 @@ function! Browser()
 endfunction
 
 " (Remove the last <CR> to debug)
-nnoremap <Leader>b :call Browser()<CR><CR>
+nnoremap <Leader>b :call Browser()<CR>
 command! -range Browser <line1>call Browser()
 
 " Google it
