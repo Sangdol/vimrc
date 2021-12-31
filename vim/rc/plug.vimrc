@@ -144,7 +144,7 @@ inoremap ;va <ESC>:w \| Vader %<CR>
 "
 " Nerdtree {{{1
 "
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
