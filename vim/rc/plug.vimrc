@@ -315,14 +315,23 @@ nmap <Leader>k <Leader><Leader>k
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-nmap <C-l> :Files<Enter>
-nmap <leader>fl :Lines<CR>
-nmap <leader>fc :Commands<Enter>
-nmap <leader>fi :History<Enter>
-nmap <leader>f: :History:<Enter>
-nmap <leader>f/ :History/<Enter>
-nmap <leader>fh :Helptags<Enter>
-nmap <leader>fm :Maps<Enter>
+" To avoid to load a file to a VOOM window
+function! EscapeVoomAnd(cmd)
+  if bufname() =~ 'VOOM'
+    2wincmd w
+  endif
+
+  execute(a:cmd)
+endfunction
+
+nnoremap <C-L>      :call EscapeVoomAnd('Files')<CR>
+nnoremap <leader>fl :call EscapeVoomAnd('Lines')<CR>
+nnoremap <leader>fc :call EscapeVoomAnd('Commands')<CR>
+nnoremap <leader>fi :call EscapeVoomAnd('History')<CR>
+nnoremap <leader>f: :call EscapeVoomAnd('History'):<CR>
+nnoremap <leader>f/ :call EscapeVoomAnd('History')/<CR>
+nnoremap <leader>fh :call EscapeVoomAnd('Helptags')<CR>
+nnoremap <leader>fm :call EscapeVoomAnd('Maps')<CR>
 
 " fzf Rg to search words under the cursor
 " https://news.ycombinator.com/item?id=26634419
