@@ -88,7 +88,7 @@ function! Browser()
 endfunction
 
 " (Remove the last <CR> to debug)
-nnoremap <Leader>b :call Browser()<CR>
+nnoremap <Leader>b :call Browser()<CR><CR>
 command! -range Browser <line1>call Browser()
 
 " Google it
