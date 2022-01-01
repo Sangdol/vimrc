@@ -98,4 +98,4 @@ function! GoogleSearch()
     let escapedTerm = substitute(searchterm, ' ', '+', "g")
     exec "!open \"http://google.com/search?q=" . escapedTerm . "\" &"
 endfunction
-vnoremap <Leader>g "gy<Esc>:call GoogleSearch()<CR>
+vnoremap <Leader>g "gy<Esc>:call GoogleSearch()<CR><CR>
