@@ -89,7 +89,7 @@ endwhile
 nnoremap <silent> <Leader>;; :b#<CR>
 
 " Open new window
-nnoremap <leader>wh :vnew<CR>
+nnoremap <leader>wh :leftabove vnew<CR>
 nnoremap <leader>wl :rightbelow vertical new<CR>
 nnoremap <leader>wj :below new<CR>
 nnoremap <leader>wk :topleft new<CR>
