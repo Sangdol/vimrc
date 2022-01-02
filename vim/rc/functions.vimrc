@@ -96,6 +96,8 @@ command! -range Browser <line1>call Browser()
 function! GoogleSearch()
     let searchterm = getreg("g")
     let escapedTerm = substitute(searchterm, ' ', '+', "g")
-    exec "!open \"http://google.com/search?q=" . escapedTerm . "\" &"
+    let escapedTerm = substitute(escapedTerm, '\n', '+', "g")
+    let escapedTerm = substitute(escapedTerm, '*', '', "g")
+    exec '!open "http://google.com/search?q=' . escapedTerm . '" &'
 endfunction
 vnoremap <Leader>g "gy<Esc>:call GoogleSearch()<CR><CR>
