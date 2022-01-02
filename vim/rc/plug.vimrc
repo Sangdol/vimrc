@@ -26,6 +26,14 @@ Plug 'vim-scripts/ReplaceWithRegister'
 "}}}
 
 "
+" Symlink {{{1
+"
+Plug 'aymericbeaumet/vim-symlink'
+Plug 'moll/vim-bbye' " optional dependency
+
+"}}}
+
+"
 " Semantic Highlighting for Python in Neovim {{{1
 " https://github.com/numirias/semshi
 "
