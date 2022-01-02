@@ -194,9 +194,13 @@ endif
 "}}}
 
 "
-" Conjure {{{1
+" Clojure: Conjure, parinfer {{{1
+"
+" Conjure
 "   Interactive evaluation for Neovim (Clojure, Fennel, Janet, Racket, Hy, MIT Scheme, Guile)
-" parinfer-rust: A Rust port of parinfer.
+"
+" parinfer-rust
+"   A Rust port of parinfer.
 "
 if has("mac")
   Plug 'Olical/conjure', {'tag': 'v3.0.0'}
