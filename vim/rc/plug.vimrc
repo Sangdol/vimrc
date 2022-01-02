@@ -211,8 +211,26 @@ endif
 "   A Rust port of parinfer.
 "
 if has("mac")
-  Plug 'Olical/conjure', {'tag': 'v3.0.0'}
+  Plug 'Olical/conjure'
+  Plug 'Olical/AnsiEsc' " To show ANSI highlighting
   Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
+
+  function! ToggleAnsiEsc()
+    let bufname = split(bufname(), '\.')[0] " ex) bufname: clojure-log-1.cljc
+    let bufname = substitute(bufname, '-', '_', 'g')
+    let flagname =  bufname .. '_ansi_esc_enabled'
+    if !get(g:, flagname, 0)
+      exe 'AnsiEsc'
+      exe 'let g:' .. flagname .. ' = 1'
+    endif
+  endfunction
+
+  " https://github.com/Olical/conjure/wiki/Displaying-ANSI-escape-code-colours-in-the-log-buffer
+  " The code provided from the wiki doesn't work well
+  " probably it toggles a state.
+  " The ToggleAnsiEsc function mostly works well.
+  " Not sure why it doesn't work sometimes.
+  autocmd BufEnter conjure-log-* :call ToggleAnsiEsc()
 endif
 
 " turn on by default
