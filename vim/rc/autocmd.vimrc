@@ -24,3 +24,19 @@ autocmd BufReadPost *
 " Json supports comments
 " https://github.com/neoclide/coc.nvim/wiki/Using-the-configuration-file
 autocmd FileType json syntax match Comment +\/\/.\+$+
+
+" Autosave
+augroup autosave
+  autocmd!
+  autocmd TextChanged,InsertLeave *
+        \  if get(g:, 'autosave_enabled', 1) &&
+        \     empty(&buftype) && !empty(bufname(''))
+        \|   update
+        \| endif
+augroup END
+
+function! ToggleAutosave()
+  let g:autosave_enabled = !get(g:, 'autosave_enabled', 1)
+endfunction
+
+nnoremap <leader>wa :call ToggleAutosave()<CR>
