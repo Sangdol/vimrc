@@ -28,9 +28,11 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 " Autosave
 augroup autosave
   autocmd!
-  autocmd TextChanged,InsertLeave *
+  autocmd InsertLeave *
         \  if get(g:, 'autosave_enabled', 1) &&
-        \     empty(&buftype) && !empty(bufname(''))
+        \     empty(&buftype) &&
+        \     !empty(bufname()) &&
+        \     !stridx(bufname(), 'zipfile')
         \|   update
         \| endif
 augroup END
