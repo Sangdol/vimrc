@@ -101,3 +101,12 @@ function! GoogleSearch()
     exec '!open "http://google.com/search?q=' . escapedTerm . '" &'
 endfunction
 vnoremap <Leader>g "gy<Esc>:call GoogleSearch()<CR><CR>
+
+" Save to /tmp
+function! SaveToTempWithTimestamp()
+  let timestamp = strftime("%Y-%m-%d_%H:%M:%S")
+  let filename = 'vim_' .. timestamp .. '.md'
+
+  exe 'w ' .. '/tmp/' .. filename
+endfunction
+noremap <Leader>wt :call SaveToTempWithTimestamp()<CR>
