@@ -35,7 +35,7 @@ syn match mkdInlineCode /\v`[^`]+`/
 hi def link mkdInlineCode              Comment
 
 " Deep list highlight
-syn match markdownListMarker "\%(\t\| \{0,8\}\)[-*+]\%(\s\+\S\)\@=" contained
+syn match markdownListMarker "\%(\t\| \{0,12\}\)[-*+]\%(\s\+\S\)\@=" contained
 
 "
 " Diabling hiding code block fences
