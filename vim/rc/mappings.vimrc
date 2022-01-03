@@ -102,7 +102,6 @@ nnoremap <leader>ww :wqa<CR>
 inoremap ;we <ESC>:wq<CR>
 
 " Save
-nnoremap <Leader>s :up<CR>
 nnoremap <Leader>q :q<CR>
 
 " Horizontal resize with Repeat
