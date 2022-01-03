@@ -224,6 +224,7 @@ endif
 "
 if has("mac")
   Plug 'Olical/conjure'
+  Plug 'chrisbra/Colorizer'
   Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 endif
 

@@ -22,17 +22,19 @@ autocmd BufReadPost *
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " Autosave
-augroup autosave
-  autocmd!
-  " This can be extended by adding a separator '\|'.
-  " An SO thread about execuding files:
-  " https://stackoverflow.com/questions/6496778/vim-run-autocmd-on-all-filetypes-except
-  autocmd TextChanged,InsertLeave \(zipfile\)\@!*
+function! AutoSaveAutoCmd()
+  autocmd TextChanged,InsertLeave <buffer>
         \  if get(g:, 'autosave_enabled', 1) &&
         \     empty(&buftype) &&
         \     !empty(bufname())
         \|   update
         \| endif
+endfunction
+
+" Autosave
+augroup autosave
+  autocmd!
+  autocmd BufReadPost * if !StartsWith(bufname(), 'zipfile') | :call AutoSaveAutoCmd() | endif
 augroup END
 
 function! ToggleAutosave()
