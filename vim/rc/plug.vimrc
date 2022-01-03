@@ -26,6 +26,16 @@ Plug 'vim-scripts/ReplaceWithRegister'
 "}}}
 
 "
+" Maximizer {{{1
+"
+Plug 'szw/vim-maximizer'
+nnoremap <silent><c-w>m :MaximizerToggle<CR>
+vnoremap <silent><c-w>m :MaximizerToggle<CR>gv
+inoremap <silent><c-w>m <C-o>:MaximizerToggle<CR>
+
+"}}}
+
+"
 " Symlink {{{1
 "
 Plug 'aymericbeaumet/vim-symlink'
