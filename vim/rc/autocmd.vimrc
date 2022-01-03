@@ -24,11 +24,11 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 " Autosave
 augroup autosave
   autocmd!
-  autocmd InsertLeave *
+  " This can be extended by adding a separator '\|'.
+  autocmd TextChanged,InsertLeave \(zipfile\)\@!*
         \  if get(g:, 'autosave_enabled', 1) &&
         \     empty(&buftype) &&
-        \     !empty(bufname()) &&
-        \     stridx(bufname(), 'zipfile') != 0
+        \     !empty(bufname())
         \|   update
         \| endif
 augroup END
