@@ -74,7 +74,7 @@ function! Browser()
   let linenumber = get(a:, 'firstline', '.')
   let line = getline(linenumber)
   let line = trim(line)
-  let isPlug = stridx(line, 'Plug') == 0
+  let isPlug = StartsWith(line, 'Plug')
   if isPlug
     let path = substitute(line, '\vPlug [''"](.{-})[''"].*', '\1', '')
     let url = 'https://github.com/' .. path

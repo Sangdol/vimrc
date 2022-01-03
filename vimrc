@@ -2,6 +2,7 @@
 " Sang's Vim Configuration
 "
 
+source $HOME/.vim/rc/utility.vimrc
 source $HOME/.vim/rc/set.vimrc
 source $HOME/.vim/rc/plug.vimrc
 source $HOME/.vim/rc/autocmd.vimrc
