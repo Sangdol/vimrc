@@ -39,6 +39,8 @@ Plug 'moll/vim-bbye' " optional dependency
 "
 
 "  Do `pip3 install pynvim --upgrade`
+"  E117: Unknown function: SemshiBufWipeout #60 => :UpdateRemotePlugins
+" https://github.com/numirias/semshi/issues/60
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 
 autocmd FileType python nnoremap <buffer> <leader>re :Semshi rename<CR>
