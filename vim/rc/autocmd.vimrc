@@ -25,6 +25,8 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 augroup autosave
   autocmd!
   " This can be extended by adding a separator '\|'.
+  " An SO thread about execuding files:
+  " https://stackoverflow.com/questions/6496778/vim-run-autocmd-on-all-filetypes-except
   autocmd TextChanged,InsertLeave \(zipfile\)\@!*
         \  if get(g:, 'autosave_enabled', 1) &&
         \     empty(&buftype) &&
