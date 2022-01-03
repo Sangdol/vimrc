@@ -24,8 +24,6 @@ function! TabMessage(cmd)
   endif
 endfunction
 
-" -complete=command: completion to make the command work with a shorter form
-"  such as :Tab
 command! -nargs=+ -complete=command TabMessage call TabMessage(<q-args>)
 
 " https://vim.fandom.com/wiki/Delete_files_with_a_Vim_command#Comments
