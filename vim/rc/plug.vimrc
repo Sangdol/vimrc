@@ -31,7 +31,6 @@ Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'szw/vim-maximizer'
 nnoremap <silent><c-w>m :MaximizerToggle<CR>
 vnoremap <silent><c-w>m :MaximizerToggle<CR>gv
-inoremap <silent><c-w>m <C-o>:MaximizerToggle<CR>
 
 "}}}
 
