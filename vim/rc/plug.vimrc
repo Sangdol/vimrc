@@ -349,6 +349,7 @@ function! EscapeVoomAnd(cmd)
 endfunction
 
 nnoremap <C-L>      :call EscapeVoomAnd('Files')<CR>
+inoremap <C-L>      <ESC>:call EscapeVoomAnd('Files')<CR>
 nnoremap <leader>fl :call EscapeVoomAnd('Lines')<CR>
 nnoremap <leader>fc :call EscapeVoomAnd('Commands')<CR>
 nnoremap <leader>fi :call EscapeVoomAnd('History')<CR>
