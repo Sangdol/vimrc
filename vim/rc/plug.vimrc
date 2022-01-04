@@ -353,8 +353,8 @@ nnoremap <C-L>      :call EscapeVoomAnd('Files')<CR>
 nnoremap <leader>fl :call EscapeVoomAnd('Lines')<CR>
 nnoremap <leader>fc :call EscapeVoomAnd('Commands')<CR>
 nnoremap <leader>fi :call EscapeVoomAnd('History')<CR>
-nnoremap <leader>f: :call EscapeVoomAnd('History'):<CR>
-nnoremap <leader>f/ :call EscapeVoomAnd('History')/<CR>
+nnoremap <leader>f: :call EscapeVoomAnd('History:')<CR>
+nnoremap <leader>f/ :call EscapeVoomAnd('History/)<CR>
 nnoremap <leader>fh :call EscapeVoomAnd('Helptags')<CR>
 nnoremap <leader>fm :call EscapeVoomAnd('Maps')<CR>
 
