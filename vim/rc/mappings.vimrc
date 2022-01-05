@@ -138,6 +138,12 @@ nnoremap <silent> zl a<Space><Left><Esc>
 " https://stackoverflow.com/questions/20165596/select-entire-line-in-vim-without-the-new-line-character
 nnoremap <Leader>t yg_:echo "Copied"<CR>
 
+"
+" Terminal {{{1
+"
+tnoremap <ESC> <C-\><C-n>
+tnoremap jk <C-\><C-n>
+
 "}}}
 
 "
