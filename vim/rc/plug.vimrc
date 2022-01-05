@@ -292,6 +292,12 @@ let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 "}}}
 
 "
+" Git messenger
+"
+Plug 'rhysd/git-messenger.vim'
+nnoremap <leader>gm :GitMessenger<CR>
+
+"
 " Fugitive {{{1
 " https://github.com/tpope/vim-fugitive
 "
