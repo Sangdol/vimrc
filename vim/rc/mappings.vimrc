@@ -89,10 +89,10 @@ endwhile
 nnoremap <silent> <Leader>;; :b#<CR>
 
 " Open new window
-nnoremap <leader>wh :leftabove vnew<CR>
-nnoremap <leader>wl :rightbelow vertical new<CR>
-nnoremap <leader>wj :below new<CR>
-nnoremap <leader>wk :topleft new<CR>
+nnoremap <Leader>wh :leftabove vnew<CR>
+nnoremap <Leader>wl :rightbelow vertical new<CR>
+nnoremap <Leader>wj :below new<CR>
+nnoremap <Leader>wk :topleft new<CR>
 
 " Close (wq is hard to type)
 nnoremap <leader>we :wq<CR>
@@ -134,13 +134,15 @@ nnoremap <silent> zk :call append(line('.')-1, '')<CR>
 nnoremap <silent> zh i<Space><Right><Esc>
 nnoremap <silent> zl a<Space><Left><Esc>
 
-" copy without newline
-" https://stackoverflow.com/questions/20165596/select-entire-line-in-vim-without-the-new-line-character
-nnoremap <Leader>t yg_:echo "Copied"<CR>
-
 "
 " Terminal {{{1
 "
+" https://github.com/neovim/neovim/issues/3192
+nnoremap <Leader>th :leftabove vertical split \| terminal<CR>
+nnoremap <Leader>tl :rightbelow vertical split \| terminal<CR>
+nnoremap <Leader>tj :below split \| terminal<CR>
+nnoremap <Leader>tk :topleft split \| terminal<CR>
+nnoremap <Leader>tt :tabnew \| terminal<CR>
 tnoremap <ESC> <C-\><C-n>
 tnoremap jk <C-\><C-n>
 
