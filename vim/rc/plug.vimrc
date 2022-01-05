@@ -14,7 +14,6 @@ call plug#begin('~/.vim/plugged')
 " - PlugStatus
 
 Plug 'danro/rename.vim'
-Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'MTDL9/vim-log-highlighting'
 Plug 'junegunn/vim-peekaboo'
 Plug 'junegunn/gv.vim' " A git commit browser
@@ -223,9 +222,10 @@ endif
 "
 if has("mac")
   Plug 'Olical/conjure'
-  Plug 'chrisbra/Colorizer'
   Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 endif
+
+Plug 'junegunn/rainbow_parentheses.vim'
 
 " turn on by default
 augroup rainbow_lisp
