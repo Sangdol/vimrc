@@ -214,7 +214,7 @@ endif
 "
 if has("mac")
   Plug 'Olical/conjure'
-  Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
+  Plug 'bhurlow/vim-parinfer'
 endif
 
 Plug 'junegunn/rainbow_parentheses.vim'
