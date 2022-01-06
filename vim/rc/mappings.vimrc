@@ -143,7 +143,6 @@ nnoremap <Leader>tl :rightbelow vertical split \| terminal<CR>
 nnoremap <Leader>tj :below split \| terminal<CR>
 nnoremap <Leader>tk :topleft split \| terminal<CR>
 nnoremap <Leader>tt :tabnew \| terminal<CR>
-tnoremap <ESC> <C-\><C-n>
 tnoremap jk <C-\><C-n>
 
 "}}}
