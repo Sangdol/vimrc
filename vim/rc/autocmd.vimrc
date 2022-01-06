@@ -23,6 +23,7 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " Autosave
 function! AutoSaveAutoCmd()
+  echom 'Turning on AutoSave'
   autocmd TextChanged,InsertLeave <buffer>
         \  if get(g:, 'autosave_enabled', 1) &&
         \     empty(&buftype) &&
@@ -34,7 +35,8 @@ endfunction
 " Autosave
 augroup autosave
   autocmd!
-  autocmd BufReadPost * if !StartsWith(bufname(), 'zipfile') | :call AutoSaveAutoCmd() | endif
+  autocmd BufWinEnter * if !StartsWith(bufname(), 'zipfile') && !StartsWith(bufname(), 'term://')
+    \| :call AutoSaveAutoCmd() | endif
 augroup END
 
 function! ToggleAutosave()
