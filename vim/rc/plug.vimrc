@@ -1,11 +1,3 @@
-"
-" Vim Plug {{{1
-"
-" Specify a directory for plugins
-" - For Neovim: ~/.local/share/nvim/plugged
-" - Avoid using standard Vim directory names like 'plugin'
-call plug#begin('~/.vim/plugged')
-
 " Plug Commands
 " - PlugInstall [name ...]
 " - PlugUpdate [name ...]
@@ -443,5 +435,3 @@ nmap <silent> <C-_> <Leader>c<Space>
 vmap <silent> <C-_> <Leader>c<Space>
 
 "}}}
-
-call plug#end()
