@@ -5,9 +5,6 @@
 " Remove any trailing whitespace that is in the file
 autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 
-" Improve syntax highlighting
-autocmd BufRead,BufNewFile *.md set filetype=markdown
-
 " for html close tag shortcut
 autocmd FileType html set omnifunc=xmlcomplete#CompleteTags
 
