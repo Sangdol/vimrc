@@ -109,7 +109,7 @@ nnoremap <leader>ww :wqa<CR>
 inoremap ;we <ESC>:wq<CR>
 
 " Save
-nnoremap <Leader>q :q<CR>
+nnoremap <silent> <Leader>q :bdelete<CR>
 
 " Horizontal resize with Repeat
 nmap <leader>w< <Plug>DecreaseWindowWidth
