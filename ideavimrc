@@ -6,8 +6,8 @@ nnoremap <silent> zj o<Esc>
 nnoremap <silent> zk O<Esc>
 nnoremap <silent> zh i<Space><Right><Esc>
 nnoremap <silent> zl a<Space><Left><Esc>
-inoremap jk <Esc>
-inoremap jl <Esc>o
+inoremap jl <Esc>
+inoremap j' <Esc>o
 inoremap j; <Esc>O
 set incsearch
 set clipboard=unnamed
