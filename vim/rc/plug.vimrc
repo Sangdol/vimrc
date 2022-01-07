@@ -469,4 +469,6 @@ Plug 'scrooloose/nerdcommenter'
 nmap <silent> <C-_> <Leader>c<Space>
 vmap <silent> <C-_> <Leader>c<Space>
 
+let g:NERDCreateDefaultMappings = 0
+
 "}}}
