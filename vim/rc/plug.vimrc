@@ -339,7 +339,7 @@ nnoremap <leader>gw :Gw<CR>
 nnoremap <leader>ga :Git add .<CR>
 nnoremap <leader>gg :Git add . \| :tab Git commit -v<CR>
 nnoremap <leader>gk :Gw \| :tab Git commit -v<CR>
-nnoremap <leader>gs :Git status<CR>
+nnoremap <leader>gs :Git<CR>
 nnoremap <leader>gp :Git push<CR>
 nnoremap <leader>gd :tab Git diff<CR>
 nnoremap <leader>gid :tab Git diff --cached<CR>
