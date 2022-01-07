@@ -36,3 +36,4 @@ nnoremap <leader>wa :call ToggleAutosave()<CR>
 
 " Terminal
 autocmd TermOpen * startinsert
+autocmd TermOpen * setlocal nonumber norelativenumber
