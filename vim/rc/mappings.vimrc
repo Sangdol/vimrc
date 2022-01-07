@@ -138,6 +138,7 @@ nnoremap <silent> zl a<Space><Left><Esc>
 " Terminal {{{1
 "
 " https://github.com/neovim/neovim/issues/3192
+nnoremap <Leader>ti :terminal<CR>
 nnoremap <Leader>th :leftabove vertical split \| terminal<CR>
 nnoremap <Leader>tl :rightbelow vertical split \| terminal<CR>
 nnoremap <Leader>tj :below split \| terminal<CR>
