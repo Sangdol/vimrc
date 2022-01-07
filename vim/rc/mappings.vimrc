@@ -85,6 +85,21 @@ while i <= 6
   let i = i + 1
 endwhile
 
+function! CloseVisibleWindows()
+  for i in range(winnr('$'), 1, -1)
+    echom 'Closing ' .. i
+    " Keep closing the first windows
+    " This shouldn't go backward since Nerdtree or Voom windows
+    " could be closed automatically which cause it to try to close
+    " other buffers.
+    1wincmd w
+    bd
+    echom 'Closing finished ' .. i
+  endfor
+endfunction
+
+nnoremap <silent> <Leader>cc :call CloseVisibleWindows()<CR>
+
 " Easy buffer switch
 nnoremap <silent> <Leader>;; :b#<CR>
 
