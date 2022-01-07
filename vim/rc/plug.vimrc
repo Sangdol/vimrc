@@ -389,6 +389,7 @@ nnoremap <leader>f/ :call EscapeVoomAnd('History/)<CR>
 nnoremap <leader>fh :call EscapeVoomAnd('Helptags')<CR>
 nnoremap <leader>fm :call EscapeVoomAnd('Maps')<CR>
 nnoremap <leader>fb :call EscapeVoomAnd('Buffers')<CR>
+nnoremap <leader>fp :call EscapeVoomAnd('FZF ~/projects')<CR>
 
 " fzf Rg to search words under the cursor
 " https://news.ycombinator.com/item?id=26634419
