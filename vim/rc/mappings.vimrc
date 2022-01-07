@@ -94,6 +94,13 @@ nnoremap <Leader>wl :rightbelow vertical new<CR>
 nnoremap <Leader>wj :below new<CR>
 nnoremap <Leader>wk :topleft new<CR>
 
+" Duplicate windows
+nnoremap <Leader>wdh :leftabove vnew \| :b#<CR>
+nnoremap <Leader>wdl :rightbelow vertical new \| :b#<CR>
+nnoremap <Leader>wdj :below new \| :b#<CR>
+nnoremap <Leader>wdk :topleft new \| :b#<CR>
+nnoremap <Leader>wdt :tabnew \| :b#<CR>
+
 " Close (wq is hard to type)
 nnoremap <leader>we :wq<CR>
 nnoremap <leader>ww :wqa<CR>
