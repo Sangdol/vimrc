@@ -61,9 +61,7 @@ map N Nzz
 map n nzz
 
 " Easy escape
-inoremap jk <Esc>
-inoremap jl <Esc>o
-inoremap j; <Esc>O
+inoremap jl <Esc>
 
 "}}}
 
@@ -144,7 +142,7 @@ nnoremap <Leader>tl :rightbelow vertical split \| terminal<CR>
 nnoremap <Leader>tj :below split \| terminal<CR>
 nnoremap <Leader>tk :topleft split \| terminal<CR>
 nnoremap <Leader>tt :tabnew \| terminal<CR>
-tnoremap jk <C-\><C-n>
+tnoremap jl <C-\><C-n>
 
 "}}}
 
