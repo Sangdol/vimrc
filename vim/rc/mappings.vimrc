@@ -110,6 +110,11 @@ nnoremap <Plug>DecreaseWindowWidth 3<C-w><
 nnoremap <Plug>IncreaseWindowWidth 3<C-w>>
   \ :call repeat#set("\<Plug>IncreaseWindowWidth")<CR>
 
+" Insert mode scroll
+inoremap ;zt <ESC>zti
+inoremap ;zz <ESC>zzi
+inoremap ;z- <ESC>z-i
+
 "}}}
 
 "
