@@ -124,8 +124,9 @@ nnoremap <leader>wq :wqa<CR>
 " Mostly for git commit message windows
 inoremap ;we <ESC>:wq<CR>
 
-" Save
-nnoremap <silent> <Leader>q :bdelete<CR>
+" Quit but don't close the last window
+" https://vi.stackexchange.com/questions/22695/how-can-i-ensure-vim-doesnt-quit-entirely-when-the-last-window-is-closed-unles
+nnoremap <silent> <Leader>q :close<CR>
 
 " Horizontal resize with Repeat
 nmap <leader>w< <Plug>DecreaseWindowWidth
