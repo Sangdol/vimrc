@@ -82,7 +82,7 @@ for i in range(1, 6)
 endfor
 
 function! CloseVisibleWindows()
-  for i in range(winnr('$'), 1, -1)
+  for i in range(1, winnr('$'))
     echom 'Closing ' .. i
     " Keep closing the first windows
     " This shouldn't go backward since Nerdtree or Voom windows
