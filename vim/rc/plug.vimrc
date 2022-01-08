@@ -417,19 +417,6 @@ function VoomPandoc()
 
   if filepath !~ 'workbench\/notes'
     Voom pandoc
-    function! s:init()
-      2wincmd w
-    endfunction
-
-    " wincmd command doesn't work when it's called
-    " as vim started since vim is not completely ready.
-    " Adding this to make it work.
-    " The code is from the vim autocmd help page.
-    if v:vim_did_enter
-      call s:init()
-    else
-      au VimEnter * call s:init()
-    endif
   endif
 endfunction
 

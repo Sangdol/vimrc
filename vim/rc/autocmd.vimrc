@@ -39,4 +39,7 @@ autocmd TermOpen * startinsert
 autocmd TermOpen * setlocal nonumber norelativenumber
 
 " For moving windows across screens
-autocmd VimResized * :wincmd =
+autocmd VimResized * wincmd =
+
+" For Voom, NERDTree, etc.
+autocmd VimEnter * wincmd l
