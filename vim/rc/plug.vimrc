@@ -320,6 +320,10 @@ let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 "
 Plug 'mhinz/vim-signify'
 
+highlight SignifySignAdd    ctermfg=green  guifg=#00ff00 cterm=NONE gui=NONE
+highlight SignifySignDelete ctermfg=red    guifg=#ff0000 cterm=NONE gui=NONE
+highlight SignifySignChange ctermfg=yellow guifg=#ffff00 cterm=NONE gui=NONE
+
 "
 " GV {{{1
 "
