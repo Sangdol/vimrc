@@ -230,4 +230,10 @@ nnoremap <Leader><Leader>s :set spell!<CR>
 " qq to record, Q to replay
 nnoremap Q @q
 
+" Markdown headings
+nnoremap <leader><leader>1 m`o===<esc>``
+nnoremap <leader><leader>2 m`o---<esc>``
+nnoremap <leader><leader>3 m`^i### <esc>``4l
+nnoremap <leader><leader>4 m`^i#### <esc>``5l
+
 "}}}
