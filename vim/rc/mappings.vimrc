@@ -193,6 +193,7 @@ command! Wa wa
 command! Wq wq
 command! Qa qa
 command! Wqa wqa
+command! -nargs=1 -complete=file Cd cd <args>
 
 " Diff shortcuts
 nnoremap <silent> <Leader>dl :diffthis<CR> <C-w>l :diffthis<CR> <C-w>h
