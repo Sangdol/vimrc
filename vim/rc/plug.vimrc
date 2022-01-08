@@ -11,7 +11,17 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'tpope/vim-surround'
 Plug 'dag/vim-fish'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
+
+"}}}
+
+"
+" ReplaceWithRegister {{{1
+"
 Plug 'vim-scripts/ReplaceWithRegister'
+
+nmap <Leader>ro <Plug>ReplaceWithRegisterOperator
+nmap <Leader>rr <Plug>ReplaceWithRegisterLine
+xmap <Leader>rv <Plug>ReplaceWithRegisterVisual
 
 "}}}
 
@@ -140,7 +150,7 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gl <Plug>(coc-references)
+nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -303,7 +313,7 @@ let g:markdown_fenced_languages = ['javascript', 'js=javascript', 'json=javascri
 "
 " Syntastic {{{1
 "
-" To avoid "syntastic: error: checker racket/racket: checks disabled for security reasons; set g:syntastic_enable_racket_racket_checker to 1 to override"
+" To avoid "syntastic: enror: checker racket/racket: checks disabled for security reasons; set g:syntastic_enable_racket_racket_checker to 1 to override"
 " - https://github.com/vim-syntastic/syntastic/blob/master/doc/syntastic-checkers.txt#L5372
 "
 Plug 'scrooloose/syntastic'
