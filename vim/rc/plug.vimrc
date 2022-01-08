@@ -259,7 +259,7 @@ endif
 "
 if has("mac")
   Plug 'Olical/conjure'
-  Plug 'bhurlow/vim-parinfer'
+  Plug 'Sangdol/vim-parinfer' " Forked to change mappings
 endif
 
 Plug 'junegunn/rainbow_parentheses.vim'
