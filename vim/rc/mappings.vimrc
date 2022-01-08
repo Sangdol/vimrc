@@ -186,7 +186,6 @@ command -narg=1 -complete=help Hv vert help <args>
 command -narg=1 -complete=help Ht tab help <args>
 
 " Mistake proofing
-" https://stackoverflow.com/questions/10590165/is-there-a-way-in-vim-to-make-w-to-do-the-same-thing-as-w
 command! -nargs=* W w <args>
 command! -bang Q q<bang>
 command! Wa wa
