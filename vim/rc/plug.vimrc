@@ -335,7 +335,12 @@ function! s:gv_expand()
   call search('\V'.line, 'c')
   normal! zz
 endfunction
+
 autocmd! FileType GV nnoremap <buffer> <silent> + :call <sid>gv_expand()<cr>
+
+nnoremap <leader>gv :GV<CR>
+nnoremap <leader>g! :GV!<CR>
+
 "}}}
 
 "
