@@ -75,19 +75,11 @@ inoremap j' <Esc>o
 nnoremap <tab>   <c-w>w
 nnoremap <S-tab> <c-w>W
 
-" Move between windows
-let i = 1
-while i <= 6
+" Switch and close windows
+for i in range(1, 6)
   execute 'nnoremap <Leader>' . i . ' :' . i . 'wincmd w<CR>'
-  let i = i + 1
-endwhile
-
-" Close windows
-let i = 1
-while i <= 6
   execute 'nnoremap <Leader>c' . i . ' :' . i . 'wincmd w<CR>:q<CR>'
-  let i = i + 1
-endwhile
+endfor
 
 function! CloseVisibleWindows()
   for i in range(winnr('$'), 1, -1)
