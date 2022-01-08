@@ -422,6 +422,13 @@ nnoremap <leader>fp :call EscapeVoomAnd('FZF ~/projects')<CR>
 nnoremap <silent> <leader>ff yiw:Rg <C-r>"<CR>
 vnoremap <silent> <leader>ff y:Rg <C-r>"<CR>
 noremap <silent> <C-Space> :Rg<CR>
+
+" https://github.com/junegunn/fzf.vim/issues/251#issuecomment-769787221
+command! -bang -bar -nargs=? -complete=dir Cd
+    \ call fzf#run(fzf#wrap(
+    \ {'source': 'find '.( empty("<args>") ? ( <bang>0 ? "~" : "." ) : "<args>" ) .' -type d',
+    \ 'sink': 'cd'}))
+
 "}}}
 
 "
