@@ -22,12 +22,14 @@ inoremap <C-a> <Esc>I
 inoremap <C-B> <C-C>bhi
 inoremap <C-F> <C-C>ea
 
-" Line up/down
+" Line up/down/left/right
 " https://vim.fandom.com/wiki/Moving_lines_up_or_down
-nnoremap <DOWN> :m .+1<CR>==
-nnoremap <UP> :m .-2<CR>==
-vnoremap <DOWN> :m '>+1<CR>gv=gv
-vnoremap <UP> :m '<-2<CR>gv=gv
+nnoremap <silent> <C-j> :m .+1<CR>==
+nnoremap <silent> <C-k> :m .-2<CR>==
+vnoremap <silent> <C-j> :m '>+1<CR>gv=gv
+vnoremap <silent> <C-k> :m '<-2<CR>gv=gv
+nnoremap <silent> <C-h> <<
+nnoremap <silent> <C-l> >>
 
 "}}}
 
@@ -36,8 +38,8 @@ vnoremap <UP> :m '<-2<CR>gv=gv
 "
 
 " Next / prev tab
-nnoremap <silent> <C-k> :tabnext<CR>
-nnoremap <silent> <C-j> :tabprevious<CR>
+nnoremap <silent> <UP> :tabnext<CR>
+nnoremap <silent> <DOWN> :tabprevious<CR>
 
 " New Tab
 nnoremap <silent> <Leader>l :tabnew<CR>
@@ -52,9 +54,6 @@ nnoremap <silent> gk k
 nnoremap <silent> gj j
 vnoremap <silent> gk k
 vnoremap <silent> gj j
-
-inoremap <silent> <Up> <Esc>gka
-inoremap <silent> <Down> <Esc>gja
 
 " Scroll to put the searched word in the middle
 map N Nzz
@@ -177,9 +176,6 @@ tnoremap jl <C-\><C-n>
 " Etc. {{{1
 "
 
-nnoremap <silent> <C-h> <<
-nnoremap <silent> <C-l> >>
-
 nnoremap <silent> <Leader>n :noh<CR>
 
 " Help
@@ -193,7 +189,6 @@ command! Wa wa
 command! Wq wq
 command! Qa qa
 command! Wqa wqa
-command! -nargs=1 -complete=file Cd cd <args>
 
 " Diff shortcuts
 nnoremap <silent> <Leader>dl :diffthis<CR> <C-w>l :diffthis<CR> <C-w>h
