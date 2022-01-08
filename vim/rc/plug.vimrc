@@ -499,8 +499,8 @@ autocmd BufWinEnter *.md if (winnr("$") == 2) | call VoomUpdate() | endif
 "
 Plug 'scrooloose/nerdcommenter'
 
-nmap <silent> <C-_> <plug>NERDCommenterComment
-vmap <silent> <C-_> <plug>NERDCommenterComment
+nmap <silent> <C-_> <plug>NERDCommenterToggle
+vmap <silent> <C-_> <plug>NERDCommenterToggle
 
 let g:NERDCreateDefaultMappings = 0
 
