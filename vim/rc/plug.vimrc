@@ -254,9 +254,6 @@ endif
 " Conjure
 "   Interactive evaluation for Neovim (Clojure, Fennel, Janet, Racket, Hy, MIT Scheme, Guile)
 "
-" parinfer-rust
-"   A Rust port of parinfer.
-"
 if has("mac")
   Plug 'Olical/conjure'
   Plug 'Sangdol/vim-parinfer' " Forked to change mappings
