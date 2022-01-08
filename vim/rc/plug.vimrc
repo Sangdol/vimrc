@@ -316,6 +316,11 @@ let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 "}}}
 
 "
+" vim-signify
+"
+Plug 'mhinz/vim-signify'
+
+"
 " GV {{{1
 "
 Plug 'junegunn/gv.vim'
