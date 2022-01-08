@@ -177,6 +177,9 @@ tnoremap jl <C-\><C-n>
 " Etc. {{{1
 "
 
+nnoremap <silent> <C-h> <<
+nnoremap <silent> <C-l> >>
+
 nnoremap <silent> <Leader>n :noh<CR>
 
 " Help
