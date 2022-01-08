@@ -116,9 +116,10 @@ nnoremap <Leader>wdj :below new \| :b#<CR>
 nnoremap <Leader>wdk :topleft new \| :b#<CR>
 nnoremap <Leader>wdt :tabnew \| :b#<CR>
 
-" Close (wq is hard to type)
+" Write and quit
 nnoremap <leader>we :wq<CR>
-nnoremap <leader>ww :wqa<CR>
+nnoremap <leader>ww :wa<CR>
+nnoremap <leader>wq :wqa<CR>
 
 " Mostly for git commit message windows
 inoremap ;we <ESC>:wq<CR>
