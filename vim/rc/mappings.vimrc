@@ -71,6 +71,10 @@ inoremap j' <Esc>o
 " Buffer and windows {{{1
 "
 
+" Easy window navigation
+nnoremap <tab>   <c-w>w
+nnoremap <S-tab> <c-w>W
+
 " Move between windows
 let i = 1
 while i <= 6
