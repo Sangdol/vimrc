@@ -8,7 +8,6 @@
 Plug 'danro/rename.vim'
 Plug 'MTDL9/vim-log-highlighting'
 Plug 'junegunn/vim-peekaboo'
-Plug 'junegunn/gv.vim' " A git commit browser
 Plug 'tpope/vim-surround'
 Plug 'dag/vim-fish'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
@@ -314,6 +313,20 @@ let g:syntastic_enable_racket_racket_checker=1
 " https://vi.stackexchange.com/questions/2954/how-do-i-disable-syntastic-for-python-files
 let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 
+"}}}
+
+"
+" GV {{{1
+"
+Plug 'junegunn/gv.vim'
+
+function! s:gv_expand()
+  let line = getline('.')
+  GV --name-status
+  call search('\V'.line, 'c')
+  normal! zz
+endfunction
+autocmd! FileType GV nnoremap <buffer> <silent> + :call <sid>gv_expand()<cr>
 "}}}
 
 "
