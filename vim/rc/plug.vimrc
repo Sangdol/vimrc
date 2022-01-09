@@ -150,10 +150,10 @@ nmap <silent> [e <Plug>(coc-diagnostic-prev-error)
 nmap <silent> ]e <Plug>(coc-diagnostic-next-error)
 
 " GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent> sd <Plug>(coc-definition)
+nmap <silent> sy <Plug>(coc-type-definition)
+nmap <silent> si <Plug>(coc-implementation)
+nmap <silent> sr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -365,7 +365,7 @@ nnoremap <leader>gg :Git add . \| :tab Git commit -v<CR>
 nnoremap <leader>gk :Gw \| :tab Git commit -v<CR>
 nnoremap <leader>gs :Git<CR>
 nnoremap <leader>gp :Git push<CR>
-nnoremap <leader>gf :tab Git diff<CR>
+nnoremap <leader>gd :tab Git diff<CR>
 nnoremap <leader>gid :tab Git diff --cached<CR>
 nnoremap <leader>gq :Git commit --amend --reuse-message HEAD
 nnoremap <leader>gz :Git stash save --include-untracked<CR>
