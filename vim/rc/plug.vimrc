@@ -394,32 +394,34 @@ nmap <Leader>k <Leader><Leader>k
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-" To avoid to load a file to a VOOM window
-function! EscapeVoomAnd(cmd)
-  if bufname() =~ 'VOOM'
+" Move out of NERDTree, VOOM, etc. buffers.
+" This doesn't work if the second buffer is not a normal buffer.
+" Fix it if it bothers.
+function! EscapeAbnormalBufAnd(cmd)
+  if !empty(&buftype)
     2wincmd w
   endif
 
   execute(a:cmd)
 endfunction
 
-nnoremap <leader>'  :call EscapeVoomAnd('Files')<CR>
-nnoremap <leader>fl :call EscapeVoomAnd('Lines')<CR>
-nnoremap <leader>fc :call EscapeVoomAnd('Commands')<CR>
-nnoremap <leader>fi :call EscapeVoomAnd('History')<CR>
-nnoremap <leader>f: :call EscapeVoomAnd('History:')<CR>
-nnoremap <leader>f/ :call EscapeVoomAnd('History/)<CR>
-nnoremap <leader>fh :call EscapeVoomAnd('Helptags')<CR>
-nnoremap <leader>fm :call EscapeVoomAnd('Maps')<CR>
-nnoremap <leader>fb :call EscapeVoomAnd('Buffers')<CR>
-nnoremap <leader>fp :call EscapeVoomAnd('FZF ~/projects')<CR>
-nnoremap <leader>fo :call EscapeVoomAnd('FZF ~')<CR>
+nnoremap <leader>'  :call EscapeAbnormalBufAnd('Files')<CR>
+nnoremap <leader>fl :call EscapeAbnormalBufAnd('Lines')<CR>
+nnoremap <leader>fc :call EscapeAbnormalBufAnd('Commands')<CR>
+nnoremap <leader>fi :call EscapeAbnormalBufAnd('History')<CR>
+nnoremap <leader>f: :call EscapeAbnormalBufAnd('History:')<CR>
+nnoremap <leader>f/ :call EscapeAbnormalBufAnd('History/)<CR>
+nnoremap <leader>fh :call EscapeAbnormalBufAnd('Helptags')<CR>
+nnoremap <leader>fm :call EscapeAbnormalBufAnd('Maps')<CR>
+nnoremap <leader>fb :call EscapeAbnormalBufAnd('Buffers')<CR>
+nnoremap <leader>fp :call EscapeAbnormalBufAnd('FZF ~/projects')<CR>
+nnoremap <leader>fo :call EscapeAbnormalBufAnd('FZF ~')<CR>
 
 " fzf Rg to search words under the cursor
 " https://news.ycombinator.com/item?id=26634419
 nnoremap <silent> <leader>ff yiw:Rg <C-r>"<CR>
 vnoremap <silent> <leader>ff y:Rg <C-r>"<CR>
-noremap <silent> <C-Space> :Rg<CR>
+noremap <silent> <C-Space> :call EscapeAbnormalBufAnd('Rg')<CR>
 
 " https://github.com/junegunn/fzf.vim/issues/251#issuecomment-769787221
 command! -bang -bar -nargs=? -complete=dir Cd
