@@ -326,17 +326,17 @@ let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 "}}}
 
 "
-" vim-signify
+" Git {{{1
 "
+
+" vim-signify
 Plug 'mhinz/vim-signify'
 
 highlight SignifySignAdd    ctermfg=darkblue  guifg=#00ff00 cterm=NONE gui=NONE
 highlight SignifySignDelete ctermfg=darkred    guifg=#ff0000 cterm=NONE gui=NONE
 highlight SignifySignChange ctermfg=darkyellow guifg=#ffff00 cterm=NONE gui=NONE
 
-"
-" GV {{{1
-"
+" GV
 Plug 'junegunn/gv.vim'
 
 function! s:gv_expand()
@@ -351,24 +351,11 @@ autocmd! FileType GV nnoremap <buffer> <silent> + :call <sid>gv_expand()<cr>
 nnoremap <leader>gv :GV<CR>
 nnoremap <leader>g! :GV!<CR>
 
-"}}}
-
-"
 " Git messenger
-"
 Plug 'rhysd/git-messenger.vim'
 nnoremap <leader>gm :GitMessenger<CR>
 
-"
-" Fugitive {{{1
-" https://github.com/tpope/vim-fugitive
-"
-" Commands:
-"   :Git (commit|status|diff|blame)
-"   :Grep
-"   :Gwrite " add
-"   :Gdiffsplit
-"   :Gvdiffsplit
+" Fugitive
 Plug 'tpope/vim-fugitive'
 
 nnoremap <leader>gc :tab Git commit -v<CR>
