@@ -1,14 +1,11 @@
 "
 " Sang's Vim Configuration
 "
-
-source $HOME/.vim/rc/utility.vimrc
 source $HOME/.vim/rc/set.vimrc
+source $HOME/.vim/rc/utility.vimrc
 source $HOME/.vim/rc/autocmd.vimrc
 source $HOME/.vim/rc/functions.vimrc
 source $HOME/.vim/rc/mappings.vimrc
-source $HOME/.vim/rc/style.vimrc
-
 
 "
 " Vim Plug {{{1
@@ -21,3 +18,8 @@ call plug#begin('~/.vim/plugged')
 source $HOME/.vim/rc/plug.vimrc
 
 call plug#end()
+
+" This has to run after `plug#end()` for `coloescheme`.
+" https://github.com/junegunn/vim-plug/issues/124
+source $HOME/.vim/rc/style.vimrc
+

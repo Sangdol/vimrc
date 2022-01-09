@@ -408,6 +408,7 @@ endfunction
 nnoremap <leader>'  :call EscapeAbnormalBufAnd('Files')<CR>
 nnoremap <leader>fl :call EscapeAbnormalBufAnd('Lines')<CR>
 nnoremap <leader>fc :call EscapeAbnormalBufAnd('Commands')<CR>
+nnoremap <leader>fr :call EscapeAbnormalBufAnd('Colors')<CR>
 nnoremap <leader>fi :call EscapeAbnormalBufAnd('History')<CR>
 nnoremap <leader>f: :call EscapeAbnormalBufAnd('History:')<CR>
 nnoremap <leader>f/ :call EscapeAbnormalBufAnd('History/)<CR>
@@ -492,3 +493,8 @@ vmap <silent> <C-_> <plug>NERDCommenterToggle
 let g:NERDCreateDefaultMappings = 0
 
 "}}}
+
+"
+" Colors
+"
+Plug 'srcery-colors/srcery-vim'
