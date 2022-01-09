@@ -332,10 +332,6 @@ let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 " vim-signify
 Plug 'mhinz/vim-signify'
 
-highlight SignifySignAdd    ctermfg=darkblue  guifg=#00ff00 cterm=NONE gui=NONE
-highlight SignifySignDelete ctermfg=darkred    guifg=#ff0000 cterm=NONE gui=NONE
-highlight SignifySignChange ctermfg=darkyellow guifg=#ffff00 cterm=NONE gui=NONE
-
 " GV
 Plug 'junegunn/gv.vim'
 
@@ -497,4 +493,4 @@ let g:NERDCreateDefaultMappings = 0
 "
 " Colors
 "
-Plug 'srcery-colors/srcery-vim'
+"Plug 'srcery-colors/srcery-vim'
