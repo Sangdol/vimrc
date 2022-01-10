@@ -394,7 +394,7 @@ Plug 'junegunn/fzf.vim'
 " This doesn't work if the second buffer is not a normal buffer.
 " Fix it if it bothers.
 function! EscapeAbnormalBufAnd(cmd)
-  if !empty(&buftype)
+  if winnr('$') > 1 && !empty(&buftype)
     2wincmd w
   endif
 
