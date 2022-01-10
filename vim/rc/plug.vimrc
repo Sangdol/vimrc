@@ -74,14 +74,15 @@ Plug 'aymericbeaumet/vim-symlink'
 Plug 'moll/vim-bbye' " optional dependency
 
 "}}}
-
-"
-" Semantic Highlighting for Python in Neovim {{{1
-" https://github.com/numirias/semshi
 "
 
-"  Do `pip3 install pynvim --upgrade`
-"  E117: Unknown function: SemshiBufWipeout #60 => :UpdateRemotePlugins
+"
+" Python {{{1
+"
+
+" Semantic Highlighting for Python in Neovim
+" Do `pip3 install pynvim --upgrade`
+" E117: Unknown function: SemshiBufWipeout #60 => :UpdateRemotePlugins
 " https://github.com/numirias/semshi/issues/60
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 
@@ -97,6 +98,9 @@ function! SemshiNext()
 endfunction
 
 autocmd FileType python nnoremap <buffer> <leader>ee :call SemshiNext()<CR>
+
+" Poet-v: Poetry and Pipenv integration
+Plug 'petobens/poet-v'
 
 "}}}
 
