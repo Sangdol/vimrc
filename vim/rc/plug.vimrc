@@ -20,8 +20,8 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'vim-scripts/ReplaceWithRegister'
 
 nmap <Leader>ro <Plug>ReplaceWithRegisterOperator
-nmap <Leader>rr <Plug>ReplaceWithRegisterLine
-xmap <Leader>rv <Plug>ReplaceWithRegisterVisual
+nmap <Leader>rl <Plug>ReplaceWithRegisterLine
+xmap <Leader>rr <Plug>ReplaceWithRegisterVisual
 
 "}}}
 
