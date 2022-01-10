@@ -169,8 +169,8 @@ nnoremap <Leader>tt :tabnew \| terminal<CR>
 tnoremap jl <C-\><C-n>
 
 " iTerm-like shortcuts
-tnoremap <C-]> <C-\><C-n><C-w>l
-tnoremap <C-[> <C-\><C-n><C-w>h
+tnoremap <C-k> <C-\><C-n><C-w>l
+tnoremap <C-j> <C-\><C-n><C-w>h
 
 "}}}
 
