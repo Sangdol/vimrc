@@ -168,6 +168,10 @@ nnoremap <Leader>tk :topleft split \| terminal<CR>
 nnoremap <Leader>tt :tabnew \| terminal<CR>
 tnoremap jl <C-\><C-n>
 
+" iTerm-like shortcuts
+tnoremap <C-]> <C-\><C-n><C-w>l
+tnoremap <C-[> <C-\><C-n><C-w>h
+
 "}}}
 
 "
