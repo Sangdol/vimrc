@@ -82,14 +82,12 @@ endfor
 
 function! CloseVisibleWindows()
   for i in range(1, winnr('$'))
-    echom 'Closing ' .. i
     " Keep closing the first windows
     " This shouldn't go backward since Nerdtree or Voom windows
     " could be closed automatically which cause it to try to close
     " other buffers.
     1wincmd w
     bd
-    echom 'Closing finished ' .. i
   endfor
 endfunction
 
