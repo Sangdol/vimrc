@@ -110,8 +110,6 @@ Plug 'moll/vim-bbye' " optional dependency
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 
 autocmd FileType python nnoremap <buffer> <leader>re :Semshi rename<CR>
-autocmd FileType python nnoremap <buffer> <Tab> :Semshi goto name next<CR>
-autocmd FileType python nnoremap <buffer> <S-Tab> :Semshi goto name prev<CR>
 
 " All in one like IntelliJ F2
 function! SemshiNext()
