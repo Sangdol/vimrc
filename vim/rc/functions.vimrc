@@ -100,11 +100,11 @@ function! GoogleSearch()
 endfunction
 vnoremap <Leader>g "gy<Esc>:call GoogleSearch()<CR><CR>
 
-" Save to /tmp
+" Save to the notes dir
 function! SaveToTempWithTimestamp()
   let timestamp = strftime("%Y-%m-%d_%H:%M:%S")
   let filename = 'vim_' .. timestamp .. '.md'
 
-  exe 'w ' .. '/tmp/' .. filename
+  exe 'w ' .. '~/workbench/vim-notes/' .. filename
 endfunction
 noremap <Leader>wt :call SaveToTempWithTimestamp()<CR>
