@@ -15,6 +15,11 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 "}}}
 
 "
+" Yaml Revealer
+"
+Plug 'Einenlum/yaml-revealer'
+
+"
 " undotree
 "
 Plug 'mbbill/undotree'
