@@ -2,14 +2,6 @@
 " Mappings
 "
 
-" Copy file path to clipboard
-" https://stackoverflow.com/a/954336/524588
-" https://vi.stackexchange.com/a/1885/3225
-" full path
-noremap <silent> <F3> :let @+=expand("%:t")<CR>
-" filename
-noremap <silent> <F4> :let @+=expand("%:p")<CR>
-
 "
 " Moving {{{1
 "
@@ -227,5 +219,11 @@ nnoremap <leader><leader>1 m`o===<esc>``
 nnoremap <leader><leader>2 m`o---<esc>``
 nnoremap <leader><leader>3 m`^i### <esc>``4l
 nnoremap <leader><leader>4 m`^i#### <esc>``5l
+
+" Copy file path to clipboard
+" full path
+nnoremap <Leader>ep :let @+=expand("%:t")<CR>
+" filename
+nnoremap <Leader>ef :let @+=expand("%:p")<CR>
 
 "}}}
