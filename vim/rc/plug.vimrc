@@ -518,4 +518,5 @@ let g:NERDCreateDefaultMappings = 0
 "
 " Colors
 "
-"Plug 'srcery-colors/srcery-vim'
+Plug 'srcery-colors/srcery-vim'
+Plug 'junegunn/seoul256.vim'
