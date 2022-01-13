@@ -184,10 +184,15 @@ nnoremap <leader><leader>2 :s/\v\s*\*\s//<CR>:noh<CR>
 " Add h3
 nnoremap <leader><leader>3 m`^i### <esc>``4l
 
-" Mark with a v or a x
-nnoremap <leader><leader>4 :s/\v(\s*\*\s)/\1v /<CR>:noh<CR>
-nnoremap <leader><leader>5 :s/\v(\s*\*\s)/\1x /<CR>:noh<CR>
+" line: * todo
+" mark: v
+" out:  * v todo
+function! s:markdown_bullet_tick(mark)
+  call setline('.', substitute(getline('.'), '\v(\s*\*\s)', '\1' .. a:mark, ''))
+endfunction
 
+nnoremap <leader><leader>4 :call <SID>markdown_bullet_tick('v')<CR>
+nnoremap <leader><leader>5 :call <SID>markdown_bullet_tick('x')<CR>
 
 "}}}
 
