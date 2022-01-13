@@ -184,6 +184,9 @@ nnoremap <leader><leader>2 :s/\v\s*\*\s//<CR>:noh<CR>
 " Add h3
 nnoremap <leader><leader>3 m`^i### <esc>``4l
 
+" Mark with a v
+nnoremap <leader><leader>4 :s/\v(\s*\*\s)/\1v /<CR>:noh<CR>
+
 
 "}}}
 
