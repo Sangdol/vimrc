@@ -151,7 +151,8 @@ nnoremap <silent> zl a<Space><Left><Esc>
 "
 " Terminal {{{1
 "
-" https://github.com/neovim/neovim/issues/3192
+
+" `:vertical terminal` issue https://github.com/neovim/neovim/issues/3192
 nnoremap <Leader>ti :terminal<CR>
 nnoremap <Leader>th :leftabove vertical split \| terminal<CR>
 nnoremap <Leader>tl :rightbelow vertical split \| terminal<CR>
@@ -163,6 +164,26 @@ tnoremap jl <C-\><C-n>
 " iTerm-like shortcuts
 tnoremap <C-k> <C-\><C-n><C-w>l
 tnoremap <C-j> <C-\><C-n><C-w>h
+
+" Tab
+tnoremap <UP> <C-\><C-n>:tabnext<CR>
+tnoremap <DOWN> <C-\><C-n>:tabprevious<CR>
+
+"}}}
+
+"
+" Markdown {{{1
+"
+
+" Add a bullet
+nnoremap <leader><leader>1 m`I* <esc>``ll
+
+" Remove a bullet
+nnoremap <leader><leader>2 :s/\v\s*\*\s//<CR>:noh<CR>
+
+" Add h3
+nnoremap <leader><leader>3 m`^i### <esc>``4l
+
 
 "}}}
 
@@ -213,12 +234,6 @@ nnoremap <Leader><Leader>s :set spell!<CR>
 
 " qq to record, Q to replay
 nnoremap Q @q
-
-" Markdown headings
-nnoremap <leader><leader>1 m`o===<esc>``
-nnoremap <leader><leader>2 m`o---<esc>``
-nnoremap <leader><leader>3 m`^i### <esc>``4l
-nnoremap <leader><leader>4 m`^i#### <esc>``5l
 
 " Copy file path to clipboard
 " full path
