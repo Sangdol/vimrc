@@ -15,6 +15,14 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 "}}}
 
 "
+" Taboo
+"
+Plug 'gcmt/taboo.vim'
+
+" No way to get info of a terminal
+autocmd TermOpen * TabooRename term
+
+"
 " Yaml Revealer
 "
 Plug 'Einenlum/yaml-revealer'
