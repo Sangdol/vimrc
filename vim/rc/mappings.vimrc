@@ -188,7 +188,7 @@ nnoremap <leader><leader>3 m`^i### <esc>``4l
 " mark: v
 " out:  * v todo
 function! s:markdown_bullet_tick(mark)
-  call setline('.', substitute(getline('.'), '\v(\s*\*\s)', '\1' .. a:mark, ''))
+  call setline('.', substitute(getline('.'), '\v(\s*\*\s)', '\1' .. a:mark .. ' ', ''))
 endfunction
 
 nnoremap <leader><leader>4 :call <SID>markdown_bullet_tick('v')<CR>
