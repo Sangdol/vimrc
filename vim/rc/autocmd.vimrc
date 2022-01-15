@@ -43,3 +43,6 @@ autocmd VimResized * wincmd =
 
 " For Voom, NERDTree, etc.
 autocmd VimEnter * wincmd l
+
+" Spell check
+autocmd FileType gitcommit setlocal spell
