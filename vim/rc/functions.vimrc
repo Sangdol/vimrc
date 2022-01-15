@@ -105,6 +105,6 @@ function! SaveToTempWithTimestamp()
   let timestamp = strftime("%Y-%m-%d_%H:%M:%S")
   let filename = 'vim_' .. timestamp .. '.md'
 
-  exe 'w ' .. '~/workbench/vim-notes/' .. filename
+  exe 'w ' .. '~/workbench/tmp/' .. filename
 endfunction
 noremap <Leader>wt :call SaveToTempWithTimestamp()<CR>
