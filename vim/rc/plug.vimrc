@@ -20,6 +20,7 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'gcmt/taboo.vim'
 
 " No way to get info of a terminal
+" TODO - exclude fzf / or floating window
 autocmd TermOpen * TabooRename term
 
 "
@@ -346,15 +347,15 @@ let g:markdown_fenced_languages = ['javascript', 'js=javascript', 'json=javascri
 "
 " Syntastic {{{1
 "
+"
 " To avoid "syntastic: enror: checker racket/racket: checks disabled for security reasons; set g:syntastic_enable_racket_racket_checker to 1 to override"
 " - https://github.com/vim-syntastic/syntastic/blob/master/doc/syntastic-checkers.txt#L5372
-"
 Plug 'scrooloose/syntastic'
 let g:syntastic_enable_racket_racket_checker=1
 
-" disable for python as it's too slow
+" Disable as it's too slow
 " https://vi.stackexchange.com/questions/2954/how-do-i-disable-syntastic-for-python-files
-let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
+let g:syntastic_mode_map = { 'passive_filetypes': ['python', 'scala'] }
 
 "}}}
 
