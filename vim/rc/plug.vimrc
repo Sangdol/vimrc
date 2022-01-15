@@ -21,7 +21,7 @@ Plug 'gcmt/taboo.vim'
 
 " No way to get info of a terminal
 " TODO - exclude fzf / or floating window
-autocmd TermOpen * TabooRename term
+autocmd TermOpen * if bufname() !~ 'fzf' | TabooRename term | endif
 
 "
 " Yaml Revealer
