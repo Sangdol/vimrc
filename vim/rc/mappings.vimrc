@@ -104,7 +104,7 @@ nnoremap <Leader>wdt :tabnew \| :b#<CR>
 " Write and quit
 nnoremap <leader>we :wq<CR>
 nnoremap <leader>ww :wa<CR>
-nnoremap <leader>wq :wqa<CR>
+nnoremap <leader>wq :wa \| qa<CR>
 
 " Mostly for git commit message windows
 inoremap ;we <ESC>:wq<CR>
