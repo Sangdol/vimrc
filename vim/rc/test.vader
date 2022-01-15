@@ -1,6 +1,9 @@
 "
-" TODO Need to source files to test manually when there's change.
+" Yes, we test vimscript.
 "
+
+Before (setup):
+  source $HOME/.vim/rc/utility.vimrc
 
 " StartsWith
 Execute (StartsWith):
