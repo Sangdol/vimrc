@@ -1,2 +1,5 @@
+# Plug
 vim/plugged
-vim/undotree # https://github.com/mbbill/undotree
+
+# https://github.com/mbbill/undotree
+vim/undodir
