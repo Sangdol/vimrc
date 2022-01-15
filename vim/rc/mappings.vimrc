@@ -29,6 +29,18 @@ nnoremap <silent> <C-l> >>
 " Tab {{{1
 "
 
+" Numbering
+for i in range(1, 8)
+  exec 'nnoremap <leader><leader>' .. i .. ' ' .. i .. 'gt'
+endfor
+
+nnoremap <leader><leader>9 :tablast<CR>
+
+" Go to last active tab (from https://superuser.com/a/675119/81915)
+au TabLeave * let g:lasttab = tabpagenr()
+vnoremap <leader><leader>0 :exe "tabn ".g:lasttab<cr>
+nnoremap <leader><leader>0 :exe "tabn ".g:lasttab<cr>
+
 " Next / prev tab
 nnoremap <silent> <UP> :tabnext<CR>
 nnoremap <silent> <DOWN> :tabprevious<CR>
@@ -197,8 +209,8 @@ function! s:markdown_bullet_tick(mark)
   call SubstituteLine('\v(\s*\*\s)', '\1' .. a:mark .. ' ', '')
 endfunction
 
-nnoremap <leader><leader>4 :call <SID>markdown_bullet_tick('v')<CR>
-nnoremap <leader><leader>5 :call <SID>markdown_bullet_tick('x')<CR>
+nnoremap <leader><leader>v :call <SID>markdown_bullet_tick('v')<CR>
+nnoremap <leader><leader>x :call <SID>markdown_bullet_tick('x')<CR>
 
 "}}}
 
