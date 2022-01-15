@@ -36,7 +36,6 @@ set number
 " Search settings
 set ignorecase
 set incsearch
-set hlsearch
 set smartcase
 
 " Backspace on EOL, start, indent
