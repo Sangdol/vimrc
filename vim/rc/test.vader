@@ -1,0 +1,18 @@
+"
+" TODO Need to source files to test manually when there's change.
+"
+
+" StartsWith
+Execute (StartsWith):
+  Assert !StartsWith('abc', 'bc')
+  Assert StartsWith('abc', 'ab')
+
+" ReplaceLine
+Given (hello):
+  hello
+
+Execute (SubstituteLine):
+  call SubstituteLine('e', 'a', '')
+
+Expect (hallo):
+  hallo

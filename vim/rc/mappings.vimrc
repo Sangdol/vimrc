@@ -177,20 +177,24 @@ autocmd TermOpen * if bufname() !~ 'fzf'
 " Markdown {{{1
 "
 
-" Add a bullet
-nnoremap <leader><leader>1 m`I* <esc>``ll
+function! s:toggle_bullet()
+  if StartsWith(trim(getline('.')), '*')
+    call SubstituteLine('\v\s*\*\s', '', '')
+  else
+    call SubstituteLine('^', '* ', '')
+  endif
+endfunction
 
-" Remove a bullet
-nnoremap <leader><leader>2 :s/\v\s*\*\s//<CR>:noh<CR>
+nnoremap <leader><leader>* :call <SID>toggle_bullet()<CR>
 
 " Add h3
-nnoremap <leader><leader>3 m`^i### <esc>``4l
+nnoremap <leader><leader># m`^i### <esc>``4l
 
 " line: * todo
 " mark: v
 " out:  * v todo
 function! s:markdown_bullet_tick(mark)
-  call setline('.', substitute(getline('.'), '\v(\s*\*\s)', '\1' .. a:mark .. ' ', ''))
+  call SubstituteLine('\v(\s*\*\s)', '\1' .. a:mark .. ' ', '')
 endfunction
 
 nnoremap <leader><leader>4 :call <SID>markdown_bullet_tick('v')<CR>
