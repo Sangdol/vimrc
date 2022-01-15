@@ -165,9 +165,11 @@ tnoremap jl <C-\><C-n>
 tnoremap <C-k> <C-\><C-n><C-w>l
 tnoremap <C-j> <C-\><C-n><C-w>h
 
-" Tab
-tnoremap <UP> <C-\><C-n>:tabnext<CR>
-tnoremap <DOWN> <C-\><C-n>:tabprevious<CR>
+" Tab switch (excluding fzf floating windows)
+autocmd TermOpen * if bufname() !~ 'fzf'
+      \| tnoremap <buffer> <UP> <C-\><C-n>:tabnext<CR>
+      \| tnoremap <buffer> <DOWN> <C-\><C-n>:tabprevious<CR>
+      \| endif
 
 "}}}
 
