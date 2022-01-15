@@ -397,7 +397,7 @@ nnoremap <leader>gs :Git<CR>
 nnoremap <leader>gp :Git push<CR>
 nnoremap <leader>gd :SignifyDiff<CR>
 nnoremap <leader>gid :tab Git diff --cached<CR>
-nnoremap <leader>gq :Git commit --amend --reuse-message HEAD
+nnoremap <leader>gq :Git<CR>:Git commit --amend --reuse-message HEAD
 nnoremap <leader>gz :Git stash save --include-untracked<CR>
 nnoremap <leader>gx :Git stash pop<CR>
 nnoremap <leader>gu :Git pull --rebase<CR>
