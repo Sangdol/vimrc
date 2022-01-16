@@ -110,9 +110,13 @@ function! s:save_to_temp_with_timestamp() abort
   let filename = 'vim_' .. timestamp .. '.md'
   let target_path = expand('~/workbench/vim-notes/')
 
-  call CreateDirIfNotExist(target_path) 
+  call CreateDirIfNotExist(target_path)
 
-  exe 'w ' .. target_path .. filename
+  if empty(bufname())
+    exe 'w ' .. target_path .. filename
+  else
+    echo 'This is already has a filename.'
+  endif
 endfunction
 
 noremap <Leader>wt :call <SID>save_to_temp_with_timestamp()<CR>
