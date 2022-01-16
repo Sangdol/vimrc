@@ -81,7 +81,7 @@ nnoremap <S-tab> <c-w>W
 " Switch and close windows
 for i in range(1, 6)
   execute 'nnoremap <Leader>' . i . ' :' . i . 'wincmd w<CR>'
-  execute 'nnoremap <Leader>c' . i . ' :' . i . 'wincmd w<CR>:q<CR>'
+  execute 'nnoremap <Leader>c' . i . ' :' . i . 'wincmd c<CR>'
 endfor
 
 function! CloseVisibleWindows()
@@ -264,7 +264,7 @@ nnoremap Q @q
 
 " Copy file path to clipboard
 " full path
-nnoremap <Leader>ep :let @+=expand("%:t")<CR>
+nnoremap <Leader>ep :let @+=expand("%:p")<CR>
 " filename
 nnoremap <Leader>ef :let @+=expand("%:p")<CR>
 
