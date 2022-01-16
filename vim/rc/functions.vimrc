@@ -68,7 +68,7 @@ function! s:openUrl(url)
 endfunction
 
 " Open URL in browser
-function! Browser()
+function! s:browser()
   let linenumber = get(a:, 'firstline', '.')
   let line = getline(linenumber)
   let line = trim(line)
@@ -86,8 +86,12 @@ function! Browser()
 endfunction
 
 " (Remove the last <CR> to debug)
-nnoremap <Leader>b :call Browser()<CR><CR>
-command! -range Browser <line1>call Browser()
+nnoremap <Leader>b :call <SID>browser()<CR><CR>
+
+" Call Browser from a different line
+" (why did I add this? it moved cursor anyway...)
+" e.g., `:24Browser`
+command! -range Browser <line1>call <SID>browser()
 
 " Google it
 " https://vi.stackexchange.com/a/9002/3225
