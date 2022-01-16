@@ -90,8 +90,7 @@ function! CloseVisibleWindows()
     " This shouldn't go backward since Nerdtree or Voom windows
     " could be closed automatically which cause it to try to close
     " other buffers.
-    1wincmd w
-    bd
+    1wincmd q
   endfor
 endfunction
 
