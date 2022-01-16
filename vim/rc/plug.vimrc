@@ -345,7 +345,15 @@ nnoremap <leader>fo :call EscapeAbnormalBufAnd('FZF ~')<CR>
 " https://news.ycombinator.com/item?id=26634419
 nnoremap <silent> <leader>ff yiw:Rg <C-r>"<CR>
 vnoremap <silent> <leader>ff y:Rg <C-r>"<CR>
-noremap <silent> <C-Space> :call EscapeAbnormalBufAnd('Rg')<CR>
+
+function! RgCurrentDir()
+  let currentPath = expand('%:p:h')
+  execute 'lcd ' .. currentPath
+  execute 'Rg'
+endfunction
+
+nnoremap <silent> <leader>fd :call EscapeAbnormalBufAnd('call RgCurrentDir()')<CR>
+nnoremap <silent> <C-Space> :call EscapeAbnormalBufAnd('Rg')<CR>
 
 " https://github.com/junegunn/fzf.vim/issues/251#issuecomment-769787221
 command! -bang -bar -nargs=? -complete=dir Cd
