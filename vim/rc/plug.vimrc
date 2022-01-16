@@ -347,8 +347,8 @@ nnoremap <silent> <leader>ff yiw:Rg <C-r>"<CR>
 vnoremap <silent> <leader>ff y:Rg <C-r>"<CR>
 
 function! RgCurrentDir()
-  let currentPath = expand('%:p:h')
-  execute 'lcd ' .. currentPath
+  let current_path = expand('%:p:h')
+  execute 'lcd ' .. current_path
   execute 'Rg'
 endfunction
 

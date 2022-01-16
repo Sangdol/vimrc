@@ -72,8 +72,8 @@ function! s:browser()
   let linenumber = get(a:, 'firstline', '.')
   let line = getline(linenumber)
   let line = trim(line)
-  let isPlug = StartsWith(line, 'Plug')
-  if isPlug
+  let is_plug = StartsWith(line, 'Plug')
+  if is_plug
     let path = substitute(line, '\vPlug [''"](.{-})[''"].*', '\1', '')
     let url = 'https://github.com/' .. path
     call s:openUrl(url)
@@ -95,20 +95,20 @@ command! -range Browser <line1>call <SID>browser()
 
 " Google it
 " https://vi.stackexchange.com/a/9002/3225
-function! GoogleSearch()
+function! s:google_search()
     let searchterm = getreg("g")
     let escapedTerm = substitute(searchterm, ' ', '+', "g")
     let escapedTerm = substitute(escapedTerm, '\n', '+', "g")
     let escapedTerm = substitute(escapedTerm, '*', '', "g")
     exec '!open "http://google.com/search?q=' . escapedTerm . '" &'
 endfunction
-vnoremap <Leader>g "gy<Esc>:call GoogleSearch()<CR><CR>
+vnoremap <Leader>g "gy<Esc>:call <SID>google_search()<CR><CR>
 
 " Save to the notes dir
-function! SaveToTempWithTimestamp()
+function! s:save_to_temp_with_timestamp()
   let timestamp = strftime("%Y-%m-%d_%H:%M:%S")
   let filename = 'vim_' .. timestamp .. '.md'
 
   exe 'w ' .. '~/workbench/tmp/' .. filename
 endfunction
-noremap <Leader>wt :call SaveToTempWithTimestamp()<CR>
+noremap <Leader>wt :call <SID>save_to_temp_with_timestamp()<CR>
