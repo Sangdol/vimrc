@@ -17,6 +17,11 @@ call plug#begin('~/.vim/plugged')
 
 source $HOME/.vim/rc/plug.vimrc
 
+if has("mac")
+  " things not needed in servers
+  source $HOME/.vim/rc/plugmac.vimrc
+endif
+
 call plug#end()
 
 " This has to run after `plug#end()` for `coloescheme`.

@@ -109,32 +109,6 @@ Plug 'moll/vim-bbye' " optional dependency
 "
 
 "
-" Python {{{1
-"
-
-" Semantic Highlighting for Python in Neovim
-" Do `pip3 install pynvim --upgrade`
-" E117: Unknown function: SemshiBufWipeout #60 => :UpdateRemotePlugins
-" https://github.com/numirias/semshi/issues/60
-Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
-
-autocmd FileType python nnoremap <buffer> <leader>re :Semshi rename<CR>
-
-" All in one like IntelliJ F2
-function! SemshiNext()
-  execute('Semshi goto parameterUnused first')
-  execute('Semshi goto unresolved first')
-  execute('Semshi goto error')
-endfunction
-
-autocmd FileType python nnoremap <buffer> <leader>ee :call SemshiNext()<CR>
-
-" Poet-v: Poetry and Pipenv integration
-Plug 'petobens/poet-v'
-
-"}}}
-
-"
 " Kanggaroo {{{1
 " jumpstack manager
 " zp: push
@@ -159,54 +133,6 @@ Plug 'tommcdo/vim-kangaroo'
 "  [crt] Some Long Identifier
 "
 Plug 'tpope/vim-abolish'
-
-"}}}
-
-"
-" COC (Conquer of Completion) {{{1
-"
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=300
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-set signcolumn=number
-
-" Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-nmap <silent> [e <Plug>(coc-diagnostic-prev-error)
-nmap <silent> ]e <Plug>(coc-diagnostic-next-error)
-
-" GoTo code navigation.
-nmap <silent> sd <Plug>(coc-definition)
-nmap <silent> sy <Plug>(coc-type-definition)
-nmap <silent> si <Plug>(coc-implementation)
-nmap <silent> sr <Plug>(coc-references)
-
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
-endfunction
-
-" Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
-" Symbol renaming.
-nmap <leader>re <Plug>(coc-rename)
 
 "}}}
 
@@ -250,18 +176,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 "}}}
 
 "
-" markdown-preview {{{1
-" https://github.com/iamcco/markdown-preview.nvim
-"
-
-" Need to manually install for some reason - :call mkdp#util#install()
-" https://github.com/iamcco/markdown-preview.nvim/issues/41
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 'markdown' }
-let g:mkdp_auto_close = 0
-
-"}}}
-
-"
 " vim-anyfold {{{1
 " https://github.com/pseewald/vim-anyfold
 "
@@ -279,27 +193,6 @@ Plug 'mileszs/ack.vim'  " :h ack
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
-
-"}}}
-
-"
-" Clojure: Conjure, parinfer {{{1
-"
-" Conjure
-"   Interactive evaluation for Neovim (Clojure, Fennel, Janet, Racket, Hy, MIT Scheme, Guile)
-"
-if has("mac")
-  Plug 'Olical/conjure'
-  Plug 'Sangdol/vim-parinfer' " Forked to change mappings
-endif
-
-Plug 'junegunn/rainbow_parentheses.vim'
-
-" turn on by default
-augroup rainbow_lisp
-  autocmd!
-  autocmd FileType lisp,clojure,scheme,racket RainbowParentheses
-augroup END
 
 "}}}
 
