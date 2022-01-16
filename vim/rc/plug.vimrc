@@ -20,8 +20,7 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'gcmt/taboo.vim'
 
 " No way to get info of a terminal
-" TODO - exclude fzf / or floating window
-autocmd TermOpen * if bufname() !~ 'fzf' | TabooRename term | endif
+autocmd TermOpen * if bufname() !~ 'fzf' | exec 'TabooRename term' | endif
 
 "
 " Yaml Revealer
@@ -36,7 +35,7 @@ nnoremap <Leader>eu :UndotreeToggle<CR>
 if has("persistent_undo")
  let target_path = expand('~/.vim/undodir')
 
-  call CreateDirIfNotExist(target_path) 
+  call CreateDirIfNotExist(target_path)
 
   let &undodir=target_path
   set undofile
