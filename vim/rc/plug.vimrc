@@ -320,7 +320,7 @@ Plug 'junegunn/fzf.vim'
 " Move out of NERDTree, VOOM, etc. buffers.
 " This doesn't work if the second buffer is not a normal buffer.
 " Fix it if it bothers.
-function! EscapeAbnormalBufAnd(cmd)
+function! s:escape_abnormal_buf_and(cmd)
   if winnr('$') > 1 && !empty(&buftype)
     2wincmd w
   endif
@@ -328,18 +328,18 @@ function! EscapeAbnormalBufAnd(cmd)
   execute(a:cmd)
 endfunction
 
-nnoremap <leader>'  :call EscapeAbnormalBufAnd('Files')<CR>
-nnoremap <leader>fl :call EscapeAbnormalBufAnd('Lines')<CR>
-nnoremap <leader>fc :call EscapeAbnormalBufAnd('Commands')<CR>
-nnoremap <leader>fr :call EscapeAbnormalBufAnd('Colors')<CR>
-nnoremap <leader>fi :call EscapeAbnormalBufAnd('History')<CR>
-nnoremap <leader>f: :call EscapeAbnormalBufAnd('History:')<CR>
-nnoremap <leader>f/ :call EscapeAbnormalBufAnd('History/)<CR>
-nnoremap <leader>fh :call EscapeAbnormalBufAnd('Helptags')<CR>
-nnoremap <leader>fm :call EscapeAbnormalBufAnd('Maps')<CR>
-nnoremap <leader>fb :call EscapeAbnormalBufAnd('Buffers')<CR>
-nnoremap <leader>fp :call EscapeAbnormalBufAnd('FZF ~/projects')<CR>
-nnoremap <leader>fo :call EscapeAbnormalBufAnd('FZF ~')<CR>
+nnoremap <leader>'  :call <SID>escape_abnormal_buf_and('Files')<CR>
+nnoremap <leader>fl :call <SID>escape_abnormal_buf_and('Lines')<CR>
+nnoremap <leader>fc :call <SID>escape_abnormal_buf_and('Commands')<CR>
+nnoremap <leader>fr :call <SID>escape_abnormal_buf_and('Colors')<CR>
+nnoremap <leader>fi :call <SID>escape_abnormal_buf_and('History')<CR>
+nnoremap <leader>f: :call <SID>escape_abnormal_buf_and('History:')<CR>
+nnoremap <leader>f/ :call <SID>escape_abnormal_buf_and('History/)<CR>
+nnoremap <leader>fh :call <SID>escape_abnormal_buf_and('Helptags')<CR>
+nnoremap <leader>fm :call <SID>escape_abnormal_buf_and('Maps')<CR>
+nnoremap <leader>fb :call <SID>escape_abnormal_buf_and('Buffers')<CR>
+nnoremap <leader>fp :call <SID>escape_abnormal_buf_and('FZF ~/projects')<CR>
+nnoremap <leader>fo :call <SID>escape_abnormal_buf_and('FZF ~')<CR>
 
 " fzf Rg to search words under the cursor
 " https://news.ycombinator.com/item?id=26634419
@@ -352,8 +352,8 @@ function! RgCurrentDir()
   execute 'Rg'
 endfunction
 
-nnoremap <silent> <leader>fd :call EscapeAbnormalBufAnd('call RgCurrentDir()')<CR>
-nnoremap <silent> <C-Space> :call EscapeAbnormalBufAnd('Rg')<CR>
+nnoremap <silent> <leader>fd :call <SID>escape_abnormal_buf_and('call RgCurrentDir()')<CR>
+nnoremap <silent> <C-Space> :call <SID>escape_abnormal_buf_and('Rg')<CR>
 
 " https://github.com/junegunn/fzf.vim/issues/251#issuecomment-769787221
 command! -bang -bar -nargs=? -complete=dir Cd
