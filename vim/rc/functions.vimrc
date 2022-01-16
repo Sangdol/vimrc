@@ -53,7 +53,7 @@ com! Rm call DeleteFile()
 "delete the file and quit the buffer (quits vim if this was the last file)
 com! RM call DeleteFile() <Bar> q!
 
-function! s:openUrl(url)
+function! s:open_url(url)
   echom 'Opening "' .. a:url .. '"'
   if !empty(a:url)
     if has("mac")
@@ -76,12 +76,12 @@ function! s:browser()
   if is_plug
     let path = substitute(line, '\vPlug [''"](.{-})[''"].*', '\1', '')
     let url = 'https://github.com/' .. path
-    call s:openUrl(url)
+    call s:open_url(url)
   else
     let line = matchstr(line, "http[^ `)]*")
     " Should escape to prevent replaced with registers
     let url = escape(line, "#?&;|%")
-    call s:openUrl(url)
+    call s:open_url(url)
   endif
 endfunction
 
