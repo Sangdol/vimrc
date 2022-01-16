@@ -105,10 +105,14 @@ endfunction
 vnoremap <Leader>g "gy<Esc>:call <SID>google_search()<CR><CR>
 
 " Save to the notes dir
-function! s:save_to_temp_with_timestamp()
+function! s:save_to_temp_with_timestamp() abort
   let timestamp = strftime("%Y-%m-%d_%H:%M:%S")
   let filename = 'vim_' .. timestamp .. '.md'
+  let target_path = expand('~/workbench/vim-notes/')
 
-  exe 'w ' .. '~/workbench/tmp/' .. filename
+  call CreateDirIfNotExist(target_path) 
+
+  exe 'w ' .. target_path .. filename
 endfunction
+
 noremap <Leader>wt :call <SID>save_to_temp_with_timestamp()<CR>
