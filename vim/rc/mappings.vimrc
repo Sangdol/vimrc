@@ -44,6 +44,8 @@ nnoremap <leader><leader>0 :exe "tabn ".g:lasttab<cr>
 " Next / prev tab
 nnoremap <silent> <UP> :tabnext<CR>
 nnoremap <silent> <DOWN> :tabprevious<CR>
+inoremap <silent> <UP> <ESC>:tabnext<CR>
+inoremap <silent> <DOWN> <ESC>:tabprevious<CR>
 
 " New Tab
 nnoremap <silent> <Leader>l :tabnew<CR>
