@@ -10,6 +10,12 @@ highlight SignifySignAdd    ctermfg=darkblue  guifg=#00ff00 cterm=NONE gui=NONE
 highlight SignifySignDelete ctermfg=darkred    guifg=#ff0000 cterm=NONE gui=NONE
 highlight SignifySignChange ctermfg=darkyellow guifg=#ffff00 cterm=NONE gui=NONE
 
+" To have the same opacity as a terminal
+" https://stackoverflow.com/questions/37712730/set-vim-background-transparent
+hi Normal guibg=NONE ctermbg=NONE
+" selection color
+hi Visual term=reverse cterm=reverse guibg=Grey
+
 function CurrentDir()
   return fnamemodify(getcwd(), ':t')
 endfunction
