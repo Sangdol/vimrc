@@ -158,6 +158,9 @@ nnoremap <Leader>a :%y<CR>
 nnoremap <silent> zj :call append(line('.'), '')<CR>
 nnoremap <silent> zk :call append(line('.')-1, '')<CR>
 
+inoremap <silent> ;zj <esc>:call append(line('.'), '')<CR>a
+inoremap <silent> ;zk <esc>:call append(line('.')-1, '')<CR>a
+
 nnoremap <silent> zh i<Space><Right><Esc>
 nnoremap <silent> zl a<Space><Left><Esc>
 
