@@ -172,6 +172,8 @@ nnoremap <Leader>tl :rightbelow vertical split \| terminal<CR>
 nnoremap <Leader>tj :below split \| terminal<CR>
 nnoremap <Leader>tk :topleft split \| terminal<CR>
 nnoremap <Leader>tt :tabnew \| terminal<CR>
+
+" jk can't be used since jk should be used for scrolling diff, etc.
 tnoremap ;; <C-\><C-n>
 
 " iTerm-like shortcuts
