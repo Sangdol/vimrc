@@ -67,8 +67,8 @@ map n nzz
 
 " Easy escape
 inoremap jk <Esc>
-inoremap j; <Esc>O
-inoremap j' <Esc>o
+inoremap jl <Esc>O
+inoremap j; <Esc>o
 
 "}}}
 
