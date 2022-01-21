@@ -329,7 +329,7 @@ nnoremap <leader>fc :call <SID>escape_abnormal_buf_and('Commands')<CR>
 nnoremap <leader>fr :call <SID>escape_abnormal_buf_and('Colors')<CR>
 nnoremap <leader>fi :call <SID>escape_abnormal_buf_and('History')<CR>
 nnoremap <leader>f: :call <SID>escape_abnormal_buf_and('History:')<CR>
-nnoremap <leader>f/ :call <SID>escape_abnormal_buf_and('History/)<CR>
+nnoremap <leader>f/ :call <SID>escape_abnormal_buf_and('History/')<CR>
 nnoremap <leader>fh :call <SID>escape_abnormal_buf_and('Helptags')<CR>
 nnoremap <leader>fm :call <SID>escape_abnormal_buf_and('Maps')<CR>
 nnoremap <leader>fb :call <SID>escape_abnormal_buf_and('Buffers')<CR>
