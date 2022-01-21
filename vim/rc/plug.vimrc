@@ -104,14 +104,6 @@ Plug 'moll/vim-bbye' " optional dependency
 "
 
 "
-" Kanggaroo {{{1
-" jumpstack manager
-" zp: push
-" zP: pop
-"
-Plug 'tommcdo/vim-kangaroo'
-
-"
 " Abolish {{{1
 "
 " :Abolish
