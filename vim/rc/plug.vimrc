@@ -10,7 +10,6 @@ Plug 'MTDL9/vim-log-highlighting'
 Plug 'junegunn/vim-peekaboo'
 Plug 'tpope/vim-surround'
 Plug 'dag/vim-fish'
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
 "}}}
 
