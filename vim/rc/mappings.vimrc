@@ -199,7 +199,7 @@ function! s:toggle_bullet()
   if StartsWith(trim(getline('.')), '*')
     call SubstituteLine('\v\s*\*\s', '', '')
   else
-    call SubstituteLine('^', '* ', '')
+    call SubstituteLine('\v^(\s*)', '\1* ', '')
   endif
 endfunction
 
