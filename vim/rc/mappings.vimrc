@@ -66,7 +66,7 @@ map N Nzz
 map n nzz
 
 " Easy escape
-inoremap lk <Esc>
+inoremap jk <Esc>
 inoremap j; <Esc>O
 inoremap j' <Esc>o
 
@@ -172,7 +172,7 @@ nnoremap <Leader>tl :rightbelow vertical split \| terminal<CR>
 nnoremap <Leader>tj :below split \| terminal<CR>
 nnoremap <Leader>tk :topleft split \| terminal<CR>
 nnoremap <Leader>tt :tabnew \| terminal<CR>
-tnoremap lk <C-\><C-n>
+tnoremap ;; <C-\><C-n>
 
 " iTerm-like shortcuts
 tnoremap <C-k> <C-\><C-n><C-w>l
