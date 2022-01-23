@@ -31,17 +31,18 @@ set signcolumn=number
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nnoremap <silent> [g <Plug>(coc-diagnostic-prev)
+nnoremap <silent> ]g <Plug>(coc-diagnostic-next)
 
-nmap <silent> [e <Plug>(coc-diagnostic-prev-error)
-nmap <silent> ]e <Plug>(coc-diagnostic-next-error)
+nnoremap <silent> [e <Plug>(coc-diagnostic-prev-error)
+nnoremap <silent> ]e <Plug>(coc-diagnostic-next-error)
 
 " GoTo code navigation.
-nmap <silent> <leader>sd <Plug>(coc-definition)
-nmap <silent> <leader>sy <Plug>(coc-type-definition)
-nmap <silent> <leader>si <Plug>(coc-implementation)
-nmap <silent> <leader>sr <Plug>(coc-references)
+nnoremap <silent> <leader>sd <Plug>(coc-definition)
+nnoremap <silent> <leader>sy <Plug>(coc-type-definition)
+nnoremap <silent> <leader>si <Plug>(coc-implementation)
+nnoremap <silent> <leader>sr <Plug>(coc-references)
+nnoremap <silent> <leader>so :CocList outline<CR>
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -60,7 +61,7 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
-nmap <leader>re <Plug>(coc-rename)
+nnoremap <leader>re <Plug>(coc-rename)
 
 "}}}
 
