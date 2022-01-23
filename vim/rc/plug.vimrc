@@ -421,7 +421,10 @@ let g:NERDCreateDefaultMappings = 0
 "}}}
 
 "
-" Colors
+" Colors {{{1
 "
 Plug 'srcery-colors/srcery-vim'
 Plug 'junegunn/seoul256.vim'
+Plug 'joshdick/onedark.vim'
+
+" }}}
