@@ -246,7 +246,7 @@ nnoremap <silent> <leader>do :diffoff<CR>
 " Edit vimrc
 nnoremap <silent> <Leader>vv :tabnew<CR>:e ~/.vimrc<CR>
 nnoremap <silent> <Leader>vp :tabnew<CR>:e ~/.vim/rc/plug.vimrc<CR>
-nnoremap <silent> <Leader>va :tabnew<CR>:e ~/.vim/rc/plugmac.vimrc<CR>
+nnoremap <silent> <Leader>vc :tabnew<CR>:e ~/.vim/rc/plugmac.vimrc<CR>
 nnoremap <silent> <Leader>vm :tabnew<CR>:e ~/.vim/rc/mappings.vimrc<CR>
 nnoremap <silent> <Leader>vf :tabnew<CR>:e ~/.vim/rc/functions.vimrc<CR>
 nnoremap <silent> <Leader>vs :tabnew<CR>:e ~/.vim/rc/set.vimrc<CR>
