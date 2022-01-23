@@ -67,6 +67,13 @@ nnoremap <leader>re <Plug>(coc-rename)
 "}}}
 
 "
+" Scala {{{1
+"
+Plug 'derekwyatt/vim-scala'
+
+let g:scala_scaladoc_indent = 1
+
+"
 " Python {{{1
 "
 
