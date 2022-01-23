@@ -43,6 +43,7 @@ nnoremap <silent> <leader>sy <Plug>(coc-type-definition)
 nnoremap <silent> <leader>si <Plug>(coc-implementation)
 nnoremap <silent> <leader>sr <Plug>(coc-references)
 nnoremap <silent> <leader>so :CocList outline<CR>
+nnoremap <silent> <leader>sa :CocList diagnostics<CR>
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
