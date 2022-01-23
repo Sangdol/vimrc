@@ -2,13 +2,14 @@
 " Style
 "
 set background=dark
+set termguicolors
 
 colorscheme Tomorrow-Night-Bright
 
 " vim-signify
-highlight SignifySignAdd    ctermfg=darkblue  guifg=#00ff00 cterm=NONE gui=NONE
-highlight SignifySignDelete ctermfg=darkred    guifg=#ff0000 cterm=NONE gui=NONE
-highlight SignifySignChange ctermfg=darkyellow guifg=#ffff00 cterm=NONE gui=NONE
+highlight SignifySignAdd    ctermfg=darkblue   guifg=#0000aa cterm=NONE gui=NONE
+highlight SignifySignDelete ctermfg=darkred    guifg=#aa0000 cterm=NONE gui=NONE
+highlight SignifySignChange ctermfg=darkyellow guifg=#aaaa00 cterm=NONE gui=NONE
 
 " To have the same opacity as a terminal
 " https://stackoverflow.com/questions/37712730/set-vim-background-transparent
