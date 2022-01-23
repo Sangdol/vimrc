@@ -31,23 +31,23 @@ set signcolumn=number
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nnoremap <silent> [g <Plug>(coc-diagnostic-prev)
-nnoremap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-nnoremap <silent> [e <Plug>(coc-diagnostic-prev-error)
-nnoremap <silent> ]e <Plug>(coc-diagnostic-next-error)
+nmap <silent> [e <Plug>(coc-diagnostic-prev-error)
+nmap <silent> ]e <Plug>(coc-diagnostic-next-error)
 
 " GoTo code navigation.
-nnoremap <silent> <leader>sd <Plug>(coc-definition)
-nnoremap <silent> <leader>sy <Plug>(coc-type-definition)
-nnoremap <silent> <leader>si <Plug>(coc-implementation)
-nnoremap <silent> <leader>sr <Plug>(coc-references)
-nnoremap <silent> <leader>so :CocList outline<CR>
-nnoremap <silent> <leader>sa :CocList diagnostics<CR>
-nnoremap <silent> <leader>st :<C-u>CocCommand metals.revealInTreeView metalsPackages<CR>
+nmap <silent> <leader>sd <Plug>(coc-definition)
+nmap <silent> <leader>sy <Plug>(coc-type-definition)
+nmap <silent> <leader>si <Plug>(coc-implementation)
+nmap <silent> <leader>sr <Plug>(coc-references)
+nmap <silent> <leader>so :CocList outline<CR>
+nmap <silent> <leader>sa :CocList diagnostics<CR>
+nmap <silent> <leader>st :<C-u>CocCommand metals.revealInTreeView metalsPackages<CR>
 
 " Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+nmap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -63,7 +63,7 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
-nnoremap <leader>re <Plug>(coc-rename)
+nmap <leader>re <Plug>(coc-rename)
 
 "}}}
 
