@@ -38,10 +38,10 @@ nmap <silent> [e <Plug>(coc-diagnostic-prev-error)
 nmap <silent> ]e <Plug>(coc-diagnostic-next-error)
 
 " GoTo code navigation.
-nmap <silent> sd <Plug>(coc-definition)
-nmap <silent> sy <Plug>(coc-type-definition)
-nmap <silent> si <Plug>(coc-implementation)
-nmap <silent> sr <Plug>(coc-references)
+nmap <silent> <leader>sd <Plug>(coc-definition)
+nmap <silent> <leader>sy <Plug>(coc-type-definition)
+nmap <silent> <leader>si <Plug>(coc-implementation)
+nmap <silent> <leader>sr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
