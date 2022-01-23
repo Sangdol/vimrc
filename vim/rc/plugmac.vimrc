@@ -44,6 +44,7 @@ nnoremap <silent> <leader>si <Plug>(coc-implementation)
 nnoremap <silent> <leader>sr <Plug>(coc-references)
 nnoremap <silent> <leader>so :CocList outline<CR>
 nnoremap <silent> <leader>sa :CocList diagnostics<CR>
+nnoremap <silent> <leader>st :<C-u>CocCommand metals.revealInTreeView metalsPackages<CR>
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -69,9 +70,14 @@ nnoremap <leader>re <Plug>(coc-rename)
 "
 " Scala {{{1
 "
+
+" vim-scala
 Plug 'derekwyatt/vim-scala'
 
 let g:scala_scaladoc_indent = 1
+
+" Metals
+Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
 
 "
 " Python {{{1
