@@ -139,6 +139,14 @@ inoremap ;zt <ESC>zti
 inoremap ;zz <ESC>zzi
 inoremap ;z- <ESC>z-i
 
+" Mistake proofing
+command! -nargs=* W w <args>
+command! -bang Q q<bang>
+command! Wa wa
+command! Wq wq
+command! Qa qa
+command! Wqa wqa
+
 "}}}
 
 "
@@ -230,14 +238,6 @@ nnoremap <silent> <Leader>n :noh<CR>
 command -narg=1 -complete=help Hv vert help <args>
 command -narg=1 -complete=help Ht tab help <args>
 
-" Mistake proofing
-command! -nargs=* W w <args>
-command! -bang Q q<bang>
-command! Wa wa
-command! Wq wq
-command! Qa qa
-command! Wqa wqa
-
 " Diff shortcuts
 nnoremap <silent> <Leader>dl :diffthis<CR> <C-w>l :diffthis<CR> <C-w>h
 nnoremap <silent> <Leader>dh :diffthis<CR> <C-w>h :diffthis<CR> <C-w>l
@@ -263,9 +263,6 @@ nnoremap <silent> <leader>i :set nolist!<CR>
 " Save with root permission inside Vim
 cmap w!! w !sudo tee > /dev/null %
 
-" Spell check
-nnoremap <Leader><Leader>s :set spell!<CR>
-
 " qq to record, Q to replay
 nnoremap Q @q
 
@@ -274,5 +271,8 @@ nnoremap Q @q
 nnoremap <Leader>ep :let @+=expand("%:p")<CR>
 " filename
 nnoremap <Leader>ef :let @+=expand("%:p")<CR>
+
+" Spell check
+nnoremap <Leader>es :set spell!<CR>
 
 "}}}
