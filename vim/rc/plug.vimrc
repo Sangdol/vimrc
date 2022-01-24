@@ -23,12 +23,9 @@ Plug 'dag/vim-fish'
 "}}}
 
 "
-" Taboo
+" Tabline
 "
-Plug 'gcmt/taboo.vim'
-
-" No way to get info of a terminal
-autocmd TermOpen * if bufname() !~ 'fzf' | exec 'TabooRename term' | endif
+Plug 'mkitt/tabline.vim'
 
 "
 " Yaml Revealer
