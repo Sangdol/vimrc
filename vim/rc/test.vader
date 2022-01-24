@@ -8,7 +8,20 @@ Before (setup):
 " StartsWith
 Execute (StartsWith):
   Assert !StartsWith('abc', 'bc')
+  Assert !StartsWith('abc', 'b')
+  Assert !StartsWith('abc', 'z')
+  "Assert !StartsWith('abc', '')
   Assert StartsWith('abc', 'ab')
+  Assert StartsWith('abc', 'a')
+
+" Contains
+Execute (Contains):
+  Assert !Contains('abc', 'z')
+  Assert !Contains('abc', '')
+  Assert Contains('abc', 'bc')
+  Assert Contains('abc', 'b')
+  Assert Contains('abc', 'ab')
+  Assert Contains('abc', 'a')
 
 " ReplaceLine
 Given (hello):

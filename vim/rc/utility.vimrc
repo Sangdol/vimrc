@@ -2,7 +2,11 @@
 " Utility functions
 "
 function! StartsWith(str, prefix)
-  return stridx(a:str, a:prefix) == a:prefix
+  return a:prefix != '' && stridx(a:str, a:prefix) == 0
+endfunction
+
+function! Contains(str, sub)
+  return a:sub != '' && stridx(a:str, a:sub) >= 0
 endfunction
 
 function! SubstituteLine(pat, sub, flags)
