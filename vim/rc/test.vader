@@ -10,7 +10,7 @@ Execute (StartsWith):
   Assert !StartsWith('abc', 'bc')
   Assert !StartsWith('abc', 'b')
   Assert !StartsWith('abc', 'z')
-  "Assert !StartsWith('abc', '')
+  Assert !StartsWith('abc', '')
   Assert StartsWith('abc', 'ab')
   Assert StartsWith('abc', 'a')
 

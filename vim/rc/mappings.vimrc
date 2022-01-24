@@ -287,14 +287,7 @@ nnoremap <Leader>es :set spell!<CR>
 " Copy nth line to the current line
 " `linenumber` can be a line number or a range e.g., `1,3`
 function! s:copy_line_of(linenumber)
-  if Contains(a:linenumber, ',')
-    let [start, end] = split(a:linenumber, ',')
-    let line = getline(start, end)
-  else
-    let line = getline(a:linenumber)
-  endif
-
-  call append('.', line)
+  exec a:linenumber .. 't.'
 endfunction
 command! -nargs=1 CopyLineOf call <SID>copy_line_of(<q-args>)
 nnoremap <leader><leader>c :CopyLineOf<space>
