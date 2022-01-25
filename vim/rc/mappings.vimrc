@@ -290,6 +290,6 @@ function! s:copy_line_of(linenumber)
   exec a:linenumber .. 't.'
 endfunction
 command! -nargs=1 CopyLineOf call <SID>copy_line_of(<q-args>)
-nnoremap <leader><leader>c :CopyLineOf<space>
+nnoremap <leader><leader>p :CopyLineOf<space>
 
 "}}}
