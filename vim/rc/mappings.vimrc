@@ -30,6 +30,9 @@ autocmd FileType markdown
       \| vnoremap <silent> <C-j> :m '>+1<CR>
       \| vnoremap <silent> <C-k> :m '<-2<CR>
 
+" Cursor in the middle at the bottom
+nnoremap G Gzz
+
 "}}}
 
 "
