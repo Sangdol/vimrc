@@ -23,17 +23,22 @@ Plug 'dag/vim-fish'
 "}}}
 
 "
-" Tabline
+" Tabline {{{1
+" (to add numbers to each tabline
 "
 Plug 'mkitt/tabline.vim'
 
+"}}}
+
 "
-" Yaml Revealer
+" Yaml Revealer {{{1
 "
 Plug 'Einenlum/yaml-revealer'
 
+"}}}
+
 "
-" undotree
+" undotree {{{1
 "
 Plug 'mbbill/undotree'
 nnoremap <Leader>eu :UndotreeToggle<CR>
@@ -45,6 +50,8 @@ if has("persistent_undo")
   let &undodir=target_path
   set undofile
 endif
+
+"}}}
 
 "
 " ReplaceWithRegister {{{1
