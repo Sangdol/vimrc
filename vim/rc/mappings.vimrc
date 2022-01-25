@@ -23,6 +23,13 @@ vnoremap <silent> <C-k> :m '<-2<CR>gv=gv
 nnoremap <silent> <C-h> <<
 nnoremap <silent> <C-l> >>
 
+" No indentation
+autocmd FileType markdown
+      \| nnoremap <silent> <C-j> :m .+1<CR>
+      \| nnoremap <silent> <C-k> :m .-2<CR>
+      \| vnoremap <silent> <C-j> :m '>+1<CR>
+      \| vnoremap <silent> <C-k> :m '<-2<CR>
+
 "}}}
 
 "
