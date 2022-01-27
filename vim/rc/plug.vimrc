@@ -75,7 +75,7 @@ Plug 'osyo-manga/vim-anzu'
 map n <Plug>(is-nohl)<Plug>(anzu-n-with-echo)
 map N <Plug>(is-nohl)<Plug>(anzu-N-with-echo)
 
-" incsearch.vim 
+" incsearch.vim
 " This one is outdated and has a copy and paste problem
 " but it provides a fuzzy search feature.
 "
@@ -375,6 +375,7 @@ command! -bang -bar -nargs=? -complete=dir Cd
 Plug 'vim-voom/VOoM' " :Voomhelp
 
 let g:voom_tree_width = 45
+let g:voom_tab_key = "<plug>"
 
 autocmd FileType markdown nnoremap <silent> <Leader>m :Voom pandoc<CR>
 autocmd FileType python nnoremap <silent> <Leader>m :Voom python<CR>
