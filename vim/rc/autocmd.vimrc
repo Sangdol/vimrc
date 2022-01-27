@@ -22,8 +22,7 @@ augroup custom
   autocmd FileType json syntax match Comment +\/\/.\+$+
 
   " Terminal
-  autocmd TermOpen * startinsert
-  autocmd TermOpen * setlocal nonumber norelativenumber
+  autocmd TermOpen * startinsert | setlocal nonumber
 
   " For moving windows across screens
   autocmd VimResized * wincmd =

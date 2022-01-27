@@ -204,7 +204,7 @@ nnoremap <Leader>tk :topleft split \| terminal<CR>
 nnoremap <Leader>tt :tabnew \| terminal<CR>
 
 " jk can't be used since jk should be used for scrolling diff, etc.
-tnoremap ;; <C-\><C-n>
+tnoremap ;; <C-\><C-n>:setlocal number<CR>
 
 " iTerm-like shortcuts
 tnoremap <C-k> <C-\><C-n><C-w>l
@@ -214,6 +214,7 @@ tnoremap <C-j> <C-\><C-n><C-w>h
 autocmd TermOpen * if bufname() !~ 'fzf'
       \| tnoremap <buffer> <UP> <C-\><C-n>:tabnext<CR>
       \| tnoremap <buffer> <DOWN> <C-\><C-n>:tabprevious<CR>
+      \| nnoremap <buffer> a :setlocal nonumber<CR>a
       \| endif
 
 "}}}
