@@ -25,10 +25,10 @@ nnoremap <silent> <C-l> >>
 
 " No indentation
 autocmd FileType markdown
-      \| nnoremap <silent> <C-j> :m .+1<CR>
-      \| nnoremap <silent> <C-k> :m .-2<CR>
-      \| vnoremap <silent> <C-j> :m '>+1<CR>
-      \| vnoremap <silent> <C-k> :m '<-2<CR>
+      \ nnoremap <silent> <buffer> <C-j> :m .+1<CR>
+      \| nnoremap <silent> <buffer> <C-k> :m .-2<CR>
+      \| vnoremap <silent> <buffer> <C-j> :m '>+1<CR>
+      \| vnoremap <silent> <buffer> <C-k> :m '<-2<CR>
 
 " Cursor in the middle at the bottom
 nnoremap G Gzz
