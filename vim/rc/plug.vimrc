@@ -308,10 +308,14 @@ nnoremap <leader>gu :Git pull --rebase<CR>
 " <Leader><Leader>f + <character> - jump to the character
 "
 Plug 'Lokaltog/vim-easymotion'  " :h easymotion.txt
+let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_use_smartsign_us = 1 " US layout
-nmap <Leader>j <Leader><Leader>j
-nmap <Leader>k <Leader><Leader>k
+nmap <Leader>j <Plug>(easymotion-j)
+nmap <Leader>k <Plug>(easymotion-k)
+nmap <Leader><Leader>w <Plug>(easymotion-w)
+nmap <Leader><Leader>b <Plug>(easymotion-b)
+
 
 "}}}
 
