@@ -79,8 +79,9 @@ function! s:browser()
     call s:open_url(url)
   else
     let line = matchstr(line, "http[^ `)]*")
-    " Should escape to prevent replaced with registers
-    let url = escape(line, "#?&;|%")
+    " Should escape to prevent replaced with registers. Refer to :h c_#, c_%
+    " Why escaping ; and |?
+    let url = escape(line, "#;|%")
     call s:open_url(url)
   endif
 endfunction
