@@ -22,6 +22,12 @@ if has("mac")
   source $HOME/.vim/rc/plugmac.vimrc
 endif
 
+" Automatically install missing plugins on startup
+let g:plugs_missing = filter(values(g:plugs), '!isdirectory(v:val.dir)')
+if len(g:plugs_missing) > 0
+  PlugInstall --sync | q
+endif
+
 call plug#end()
 
 " This has to run after `plug#end()` for `coloescheme`.
