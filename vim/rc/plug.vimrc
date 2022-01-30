@@ -352,6 +352,7 @@ nnoremap <leader>gk :Gw \| :tab Git commit -v<CR>
 nnoremap <leader>gs :Git<CR>
 nnoremap <leader>gp :Git push<CR>
 nnoremap <leader>gd :SignifyDiff<CR>
+nnoremap <leader>gf :tab Git diff<CR>
 nnoremap <leader>gid :tab Git diff --cached<CR>
 nnoremap <leader>gq :Git<CR>:Git commit --amend --reuse-message HEAD
 nnoremap <leader>gz :Git stash save --include-untracked<CR>
