@@ -23,12 +23,25 @@ Plug 'dag/vim-fish'
 "}}}
 
 "
+" scrollview {{{1
+"
+Plug 'dstein64/nvim-scrollview'
+
+function! s:scrollview_callback()
+  highlight ScrollView ctermbg=159 guibg=LightCyan
+endfunction
+
+let g:plug_callbacks += [function('s:scrollview_callback')]
+
+"}}}
+
+"
 " which-key {{{1
 "
 Plug 'folke/which-key.nvim'
 
 " Lua modules have to be loaded after `plug#end()`
-" since the `end()` function updates `&runtimepath`. 
+" since the `end()` function updates `&runtimepath`.
 function! s:which_key_callback()
 lua << EOF
   require("which-key").setup {

@@ -32,6 +32,11 @@ endif
 
 call plug#end()
 
+" This has to run after `plug#end()` for `coloescheme`.
+" https://github.com/junegunn/vim-plug/issues/124
+source $HOME/.vim/rc/style.vimrc
+
+" Things that have to be executed after `plug#end()` and colorscheme.
 " https://github.com/junegunn/vim-plug/issues/702#issuecomment-787503301
 for Cb in g:plug_callbacks
   try
@@ -40,8 +45,3 @@ for Cb in g:plug_callbacks
     echom 'Encountered errors when executing ' . string(Cb) 
   endtry
 endfor
-
-" This has to run after `plug#end()` for `coloescheme`.
-" https://github.com/junegunn/vim-plug/issues/124
-source $HOME/.vim/rc/style.vimrc
-
