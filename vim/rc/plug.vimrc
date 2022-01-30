@@ -346,8 +346,6 @@ nnoremap <leader>f/ :call <SID>escape_abnormal_buf_and('History/')<CR>
 nnoremap <leader>fh :call <SID>escape_abnormal_buf_and('Helptags')<CR>
 nnoremap <leader>fm :call <SID>escape_abnormal_buf_and('Maps')<CR>
 nnoremap <leader>fb :call <SID>escape_abnormal_buf_and('Buffers')<CR>
-nnoremap <leader>fp :call <SID>escape_abnormal_buf_and('FZF ~/projects')<CR>
-nnoremap <leader>f~ :call <SID>escape_abnormal_buf_and('FZF ~')<CR>
 
 " fzf Rg to search words under the cursor
 " https://news.ycombinator.com/item?id=26634419
@@ -368,6 +366,11 @@ command! -bang -bar -nargs=? -complete=dir Cd
     \ call fzf#run(fzf#wrap(
     \ {'source': 'find '.( empty("<args>") ? ( <bang>0 ? "~" : "." ) : "<args>" ) .' -type d',
     \ 'sink': 'cd'}))
+
+" Quick navigations
+nnoremap <leader>fp :call <SID>escape_abnormal_buf_and('FZF ~/projects')<CR>
+nnoremap <leader>f~ :call <SID>escape_abnormal_buf_and('FZF ~')<CR>
+nnoremap <leader>fd :call <SID>escape_abnormal_buf_and('Cd!')<CR>
 
 "}}}
 
