@@ -146,8 +146,8 @@ inoremap ;we <ESC>:wq<CR>
 nnoremap <silent> <Leader>q :q<CR>
 
 " Horizontal resize with Repeat
-nmap <leader>w< <Plug>DecreaseWindowWidth
-nmap <leader>w> <Plug>IncreaseWindowWidth
+nmap <C-w>w< <Plug>DecreaseWindowWidth
+nmap <C-w>w> <Plug>IncreaseWindowWidth
 nnoremap <Plug>DecreaseWindowWidth 3<C-w><
   \ :call repeat#set("\<Plug>DecreaseWindowWidth")<CR>
 nnoremap <Plug>IncreaseWindowWidth 3<C-w>>
