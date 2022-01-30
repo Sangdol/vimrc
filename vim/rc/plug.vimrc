@@ -306,6 +306,14 @@ let g:syntastic_mode_map = { 'passive_filetypes': ['python', 'scala'] }
 " vim-signify
 Plug 'mhinz/vim-signify'
 
+function! s:signify_callback()
+  highlight SignifySignAdd    ctermfg=darkblue   guifg=#0000aa cterm=NONE gui=NONE
+  highlight SignifySignDelete ctermfg=darkred    guifg=#aa0000 cterm=NONE gui=NONE
+  highlight SignifySignChange ctermfg=darkyellow guifg=#aaaa00 cterm=NONE gui=NONE
+endfunction
+
+let g:plug_callbacks += [function('s:signify_callback')]
+
 " GV
 Plug 'junegunn/gv.vim'
 
