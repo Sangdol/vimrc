@@ -97,7 +97,7 @@ for i in range(1, 6)
 endfor
 
 function! CloseVisibleWindows()
-  for i in range(1, winnr('$'))
+  for i in range(1, FocusableWinCount())
     " Keep closing the first windows
     " This shouldn't go backward since Nerdtree or Voom windows
     " could be closed automatically which cause it to try to close
@@ -126,7 +126,7 @@ nnoremap <Leader>wdt :call <SID>close_abnormal_buf_and(':tabnew \| :b#')<cr>
 
 " Close abnormal window first to make more space
 function! s:close_abnormal_buf_and(cmd)
-  if winnr('$') > 1 && !empty(getwinvar(1, '&buftype'))
+  if FocusableWinCount() > 1 && !empty(getwinvar(1, '&buftype'))
     1wincmd c
   endif
 
@@ -141,9 +141,9 @@ nnoremap <leader>wq :wa \| qa<CR>
 " Mostly for git commit message windows
 inoremap ;we <ESC>:wq<CR>
 
-" Quit but don't close the last window
-" https://vi.stackexchange.com/questions/22695/how-can-i-ensure-vim-doesnt-quit-entirely-when-the-last-window-is-closed-unles
-nnoremap <silent> <Leader>q :close<CR>
+" Quick (`close` doesn't work well with floating windows)
+" https://github.com/dstein64/nvim-scrollview/issues/10
+nnoremap <silent> <Leader>q :q<CR>
 
 " Horizontal resize with Repeat
 nmap <leader>w< <Plug>DecreaseWindowWidth

@@ -25,7 +25,15 @@ Plug 'dag/vim-fish'
 "
 " scrollview {{{1
 "
+
+" A scrollbar is counted as a window so the autoclose autocmd using winnr('$') doesn't work
+" (check out FocusableWinCount() in utility.vimrc).
+"
+" Cannot closing last window issue: `<C-w>o` closes all floating windows
+" https://github.com/dstein64/nvim-scrollview/issues/10
 Plug 'dstein64/nvim-scrollview'
+
+let g:scrollview_current_only = 1
 
 function! s:scrollview_callback()
   highlight ScrollView ctermbg=159 guibg=LightCyan
@@ -217,8 +225,8 @@ nnoremap <leader>0 :NERDTreeFind<CR>
 " auto open
 autocmd VimEnter *.yaml,*.yml NERDTree | wincmd p
 
-" close vim if the only window left open is a NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" auto close vim if the only window left open is a NERDTree
+"autocmd bufenter * if (FocusableWinCount() == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "}}}
 
@@ -380,7 +388,7 @@ Plug 'junegunn/fzf.vim'
 " This doesn't work if the second buffer is not a normal buffer.
 " Fix it if it bothers.
 function! s:escape_abnormal_buf_and(cmd)
-  if winnr('$') > 1 && !empty(&buftype)
+  if FocusableWinCount() > 1 && !empty(&buftype)
     2wincmd w
   endif
 
@@ -448,10 +456,10 @@ function VoomPandoc()
   endif
 endfunction
 
-autocmd BufWinEnter,VimEnter *.md if (winnr("$") == 1) | call VoomPandoc() | endif
+autocmd BufWinEnter,VimEnter *.md if (FocusableWinCount() == 1) | call VoomPandoc() | endif
 
-" Close
-autocmd BufEnter * if (winnr("$") == 1 && expand("%:e") =~ "VOOM") | q | endif
+" Auto close
+autocmd BufEnter * if (FocusableWinCount() == 1 && expand("%:e") =~ "VOOM") | q | endif
 
 " Update
 " bug - window disappears when changing tabs
@@ -473,7 +481,7 @@ function VoomUpdate()
   endif
 endfunction
 
-autocmd BufWinEnter *.md if (winnr("$") == 2) | call VoomUpdate() | endif
+autocmd BufWinEnter *.md if (FocusableWinCount() == 2) | call VoomUpdate() | endif
 "}}}
 
 "

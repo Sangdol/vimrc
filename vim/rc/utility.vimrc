@@ -18,3 +18,14 @@ function! CreateDirIfNotExist(target_path)
     call mkdir(a:target_path, "p", 0700)
   endif
 endfunction
+
+function! FocusableWinCount()
+  let count = 0
+  for w in range(1, winnr('$'))
+    if nvim_win_get_config(win_getid(w)).focusable
+      let count += 1
+    endif
+  endfo
+
+  return count
+endfunction
