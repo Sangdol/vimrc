@@ -31,7 +31,7 @@ function! s:scrollview_callback()
   highlight ScrollView ctermbg=159 guibg=LightCyan
 endfunction
 
-let g:plug_callbacks += [function('s:scrollview_callback')]
+call AddToPlugCallbacks(function('s:scrollview_callback'))
 
 "}}}
 
@@ -52,7 +52,7 @@ lua << EOF
 EOF
 endfunction
 
-let g:plug_callbacks += [function('s:which_key_callback')]
+call AddToPlugCallbacks(function('s:which_key_callback'))
 
 "}}}
 
@@ -312,7 +312,7 @@ function! s:signify_callback()
   highlight SignifySignChange ctermfg=darkyellow guifg=#aaaa00 cterm=NONE gui=NONE
 endfunction
 
-let g:plug_callbacks += [function('s:signify_callback')]
+call AddToPlugCallbacks(function('s:signify_callback'))
 
 " GV
 Plug 'junegunn/gv.vim'

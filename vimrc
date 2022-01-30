@@ -17,6 +17,20 @@ call plug#begin('~/.vim/plugged')
 
 let g:plug_callbacks = []
 
+function! AddToPlugCallbacks(func)
+  let g:plug_callbacks += [a:func]
+endfunction
+
+function! TriggerPlugCallbacks()
+  for Cb in g:plug_callbacks
+    try
+      call Cb()
+    catch
+      echom 'Encountered errors when executing ' . string(Cb) 
+    endtry
+  endfor
+endfunction
+
 source $HOME/.vim/rc/plug.vimrc
 
 if has("mac")
@@ -38,10 +52,4 @@ source $HOME/.vim/rc/style.vimrc
 
 " Things that have to be executed after `plug#end()` and colorscheme.
 " https://github.com/junegunn/vim-plug/issues/702#issuecomment-787503301
-for Cb in g:plug_callbacks
-  try
-    call Cb()
-  catch
-    echom 'Encountered errors when executing ' . string(Cb) 
-  endtry
-endfor
+call TriggerPlugCallbacks()
