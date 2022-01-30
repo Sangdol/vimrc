@@ -23,6 +23,15 @@ Plug 'dag/vim-fish'
 "}}}
 
 "
+" vim-startuptime {{{1
+"
+" It seems conditionally loaded plugins are not counted
+" e.g., Plug 'petobens/poet-v', { 'for': 'python' }
+Plug 'dstein64/vim-startuptime'
+
+"}}}
+
+"
 " Tabline {{{1
 " (to add numbers to each tabline
 "

@@ -101,7 +101,7 @@ endfunction
 autocmd FileType python nnoremap <buffer> <leader>ee :call SemshiNext()<CR>
 
 " Poet-v: Poetry and Pipenv integration
-Plug 'petobens/poet-v'
+Plug 'petobens/poet-v', { 'for': 'python' }
 
 "}}}
 
