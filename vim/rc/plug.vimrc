@@ -27,7 +27,9 @@ Plug 'dag/vim-fish'
 "
 Plug 'folke/which-key.nvim'
 
-function! LoadWhichKey()
+" Lua modules have to be loaded after `plug#end()`
+" since the `end()` function updates `&runtimepath`. 
+function! s:which_key_callback()
 lua << EOF
   require("which-key").setup {
     -- your configuration comes here
@@ -36,6 +38,8 @@ lua << EOF
   }
 EOF
 endfunction
+
+let g:plug_callbacks += [function('s:which_key_callback')]
 
 "}}}
 

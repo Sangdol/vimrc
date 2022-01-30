@@ -15,6 +15,8 @@ source $HOME/.vim/rc/mappings.vimrc
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
+let g:plug_callbacks = []
+
 source $HOME/.vim/rc/plug.vimrc
 
 if has("mac")
@@ -30,9 +32,14 @@ endif
 
 call plug#end()
 
-" Lua modules have to be loaded after `plug#end()`
-" since the `end()` function updates `&runtimepath`. 
-call LoadWhichKey()
+" https://github.com/junegunn/vim-plug/issues/702#issuecomment-787503301
+for Cb in g:plug_callbacks
+  try
+    call Cb()
+  catch
+    echom 'Encountered errors when executing ' . string(Cb) 
+  endtry
+endfor
 
 " This has to run after `plug#end()` for `coloescheme`.
 " https://github.com/junegunn/vim-plug/issues/124
