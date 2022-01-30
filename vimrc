@@ -30,6 +30,10 @@ endif
 
 call plug#end()
 
+" Lua modules have to be loaded after `plug#end()`
+" since the `end()` function updates `&runtimepath`. 
+call LoadWhichKey()
+
 " This has to run after `plug#end()` for `coloescheme`.
 " https://github.com/junegunn/vim-plug/issues/124
 source $HOME/.vim/rc/style.vimrc

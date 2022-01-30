@@ -23,6 +23,23 @@ Plug 'dag/vim-fish'
 "}}}
 
 "
+" which-key {{{1
+"
+Plug 'folke/which-key.nvim'
+
+function! LoadWhichKey()
+lua << EOF
+  require("which-key").setup {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  }
+EOF
+endfunction
+
+"}}}
+
+"
 " vim-startuptime {{{1
 "
 " It seems conditionally loaded plugins are not counted
