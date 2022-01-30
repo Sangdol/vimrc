@@ -384,7 +384,7 @@ nmap <Leader><Leader>b <Plug>(easymotion-b)
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-" Move out of NERDTree, VOOM, etc. buffers.
+" Move out of NERDTree, Voomtree, etc. buffers.
 " This doesn't work if the second buffer is not a normal buffer.
 " Fix it if it bothers.
 function! s:escape_abnormal_buf_and(cmd)
@@ -443,9 +443,19 @@ Plug 'vim-voom/VOoM' " :Voomhelp
 let g:voom_tree_width = 45
 let g:voom_tab_key = "<plug>"
 
-autocmd FileType markdown nnoremap <silent> <Leader>m :Voom pandoc<CR>
-autocmd FileType python nnoremap <silent> <Leader>m :Voom python<CR>
-autocmd FileType vim nnoremap <silent> <Leader>m :Voom fmr<CR>
+" only for the first window
+function! s:toggle_voom(type)
+  let win1name = bufname(winbufnr(1))
+  if (win1name =~ "VOOM") > 0
+    Voomquit
+  else
+    execute(":Voom ". a:type)
+  endif
+endfunction
+
+autocmd FileType markdown nnoremap <silent> <Leader>m :call <sid>toggle_voom('pandoc')<cr>
+autocmd FileType python nnoremap <silent> <Leader>m :call <sid>toggle_voom('python')<cr>
+autocmd FileType vim nnoremap <silent> <Leader>m :call <sid>toggle_voom('fmr')<cr>
 
 " Open
 function VoomPandoc()
