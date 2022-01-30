@@ -298,7 +298,25 @@ nnoremap <Leader>es :set spell!<CR>
 " Copy nth line to the current line
 " `linenumber` can be a line number or a range e.g., `1,3`
 function! s:copy_line_of(linenumber)
-  exec a:linenumber .. 't.'
+  if a:linenumber !~ '\d'
+    " Using the middle line chars as numbers
+    " since numbers are too far from fingers.
+    "
+    " pseudo code:
+    "   a = 'asdfghjkl;,'
+    "   n = '1234567890,'
+    "   d = dict (a zip n)
+    let d = {'a': '1', 's': '2', 'd': '3', 'f': '4',
+      \ 'g': '5', 'h': '6', 'j': '7', 'k': '8',
+      \ 'l': '9', ';': '0', ',': ','}
+
+    let chars = split(a:linenumber, '\zs')
+    let linenumber = join(map(chars, {idx, val -> d[val]}), '')
+
+    exec linenumber .. 't.'
+  else
+    exec a:linenumber .. 't.'
+  endif
 endfunction
 command! -nargs=1 CopyLineOf call <SID>copy_line_of(<q-args>)
 nnoremap <leader><leader>p :CopyLineOf<space>
