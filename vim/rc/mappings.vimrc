@@ -93,7 +93,7 @@ nnoremap <S-tab> <c-w>W
 " Switch and close windows
 for i in range(1, 6)
   execute 'nnoremap <Leader>' . i . ' :' . i . 'wincmd w<CR>'
-  execute 'nnoremap <Leader>c' . i . ' :' . i . 'wincmd c<CR>'
+  execute 'nnoremap 'i . '<BS> :' . i . 'wincmd c<CR>'
 endfor
 
 function! CloseVisibleWindows()
