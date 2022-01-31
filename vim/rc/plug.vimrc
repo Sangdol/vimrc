@@ -342,6 +342,19 @@ Plug 'rhysd/git-messenger.vim'
 nnoremap <leader>gm :GitMessenger<CR>
 
 " Fugitive
+"
+"  Commit
+"   cc                      Create a commit.
+"   ca                      Amend the last commit and edit the message.
+"   ce                      Amend the last commit without editing the message.
+"   cw                      Reword the last commit.
+"   cvc                     Create a commit with -v.
+"   cva                     Amend the last commit with -v
+"
+"  Stash
+"   czz                     Push stash.  Pass a [count] of 1 to add `--include-untracked` or 2 to add `--all`.
+"   czP                     Pop topmost stash, or stash@{count}.
+"   czp                     Pop topmost stash, or stash@{count}, preserving the index.
 Plug 'tpope/vim-fugitive'
 
 nnoremap <leader>gc :tab Git commit -v<CR>
@@ -354,9 +367,6 @@ nnoremap <leader>gp :Git push<CR>
 nnoremap <leader>gd :SignifyDiff<CR>
 nnoremap <leader>gf :tab Git diff<CR>
 nnoremap <leader>gid :tab Git diff --cached<CR>
-nnoremap <leader>gq :Git<CR>:Git commit --amend --reuse-message HEAD
-nnoremap <leader>gz :Git stash save --include-untracked<CR>
-nnoremap <leader>gx :Git stash pop<CR>
 nnoremap <leader>gu :Git pull --rebase<CR>
 
 " GitHub extension for fugitive
