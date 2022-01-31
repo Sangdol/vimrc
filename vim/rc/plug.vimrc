@@ -359,6 +359,11 @@ nnoremap <leader>gz :Git stash save --include-untracked<CR>
 nnoremap <leader>gx :Git stash pop<CR>
 nnoremap <leader>gu :Git pull --rebase<CR>
 
+" GitHub extension for fugitive
+Plug 'tpope/vim-rhubarb'
+
+nnoremap <leader>gb :GBrowser<CR>
+
 "}}}
 
 "

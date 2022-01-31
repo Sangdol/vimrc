@@ -3,3 +3,6 @@ vim/plugged
 
 # https://github.com/mbbill/undotree
 vim/undodir
+
+# See vimrc
+device_local.vimrc

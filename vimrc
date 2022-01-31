@@ -7,6 +7,11 @@ source $HOME/.vim/rc/autocmd.vimrc
 source $HOME/.vim/rc/functions.vimrc
 source $HOME/.vim/rc/mappings.vimrc
 
+let s:device_local_vimrc = '$HOME/.vim/rc/device_local.vimrc'
+if filereadable(expand(s:device_local_vimrc))
+  execute 'source ' .. s:device_local_vimrc
+endif
+
 "
 " Vim Plug {{{1
 "
@@ -26,7 +31,7 @@ function! TriggerPlugCallbacks()
     try
       call Cb()
     catch
-      echom 'Encountered errors when executing ' . string(Cb) 
+      echom 'Encountered errors when executing ' . string(Cb)
     endtry
   endfor
 endfunction
