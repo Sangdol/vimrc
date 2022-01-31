@@ -451,10 +451,11 @@ nnoremap <leader>fd :call <SID>escape_abnormal_buf_and('Cd!')<CR>
 
 "
 " VOom {{{1
-" https://www.vim.org/scripts/script.php?script_id=2657
 "
-" TODO - update Voom window when the main window changes
-Plug 'vim-voom/VOoM' " :Voomhelp
+" :Voomhelp
+"
+"Plug 'vim-voom/VOoM'
+Plug 'sangdol/VOoM', {'branch': 'sang-voom'}
 
 let g:voom_tree_width = 45
 let g:voom_tab_key = "<plug>"
