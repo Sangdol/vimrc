@@ -1,16 +1,39 @@
-" https://stackoverflow.com/questions/446269/can-i-use-space-as-mapleader-in-vim
+"
+" Seteting
+"
 let mapleader=" "
 
-nnoremap Y y$
-nnoremap <silent> zj o<Esc>
-nnoremap <silent> zk O<Esc>
-nnoremap <silent> zh i<Space><Right><Esc>
-nnoremap <silent> zl a<Space><Left><Esc>
+set incsearch
+set clipboard=unnamed
+
+"
+" Moving {{{1
+"
+nnoremap <silent> <C-j> :m .+1<CR>==
+nnoremap <silent> <C-k> :m .-2<CR>==
+vnoremap <silent> <C-j> :m '>+1<CR>gv=gv
+vnoremap <silent> <C-k> :m '<-2<CR>gv=gv
+
 inoremap jk <Esc>
 inoremap jl <Esc>O
 inoremap j; <Esc>o
-set incsearch
-set clipboard=unnamed
+
+"
+" Edit {{{1
+"
+nnoremap Y y$
+nnoremap <silent> zj o<Esc>
+nnoremap <silent> zk O<Esc>
+
+inoremap <silent> ;zj <esc>:call append(line('.'), '')<CR>a
+inoremap <silent> ;zk <esc>:call append(line('.')-1, '')<CR>a
+
+nnoremap <silent> zh i<Space><Right><Esc>
+nnoremap <silent> zl a<Space><Left><Esc>
+
+"
+" Plugins
+"
 
 " https://github.com/AlexPl292/IdeaVim-EasyMotion
 set easymotion

@@ -191,6 +191,8 @@ inoremap <silent> ;zk <esc>:call append(line('.')-1, '')<CR>a
 nnoremap <silent> zh i<Space><Right><Esc>
 nnoremap <silent> zl a<Space><Left><Esc>
 
+"}}}
+
 "
 " Terminal {{{1
 "
