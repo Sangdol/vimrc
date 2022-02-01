@@ -24,7 +24,7 @@ augroup custom
   " Terminal
   autocmd TermOpen * startinsert | setlocal nonumber
 
-  " For moving windows across screens
+  " For moving application windows across screens
   autocmd VimResized * wincmd =
 
   " For Voom, NERDTree, etc.
