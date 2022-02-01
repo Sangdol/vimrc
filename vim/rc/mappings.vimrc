@@ -239,12 +239,16 @@ nnoremap <leader><leader># m`^i### <esc>``4l
 " line: * todo
 " mark: v
 " out:  * v todo
-function! s:markdown_bullet_tick(mark)
-  call SubstituteLine('\v(\s*\*\s)', '\1' .. a:mark .. ' ', '')
+function! s:toggle_markdown_bullet_tick(mark)
+  if StartsWith(trim(getline('.')), '* '.. a:mark)
+    call SubstituteLine('\v(\s*\*)\s' .. a:mark, '\1', '')
+  else
+    call SubstituteLine('\v(\s*\*\s)', '\1' .. a:mark .. ' ', '')
+  endif
 endfunction
 
-nnoremap <leader><leader>v :call <SID>markdown_bullet_tick('v')<CR>
-nnoremap <leader><leader>x :call <SID>markdown_bullet_tick('x')<CR>
+nnoremap <leader><leader>v :call <SID>toggle_markdown_bullet_tick('v')<CR>
+nnoremap <leader><leader>x :call <SID>toggle_markdown_bullet_tick('x')<CR>
 
 "}}}
 
