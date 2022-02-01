@@ -205,7 +205,7 @@ nnoremap <Leader>tj :below split \| terminal<CR>
 nnoremap <Leader>tk :topleft split \| terminal<CR>
 nnoremap <Leader>tt :tabnew \| terminal<CR>
 
-" Tab switch (excluding fzf floating windows)
+" Excluding fzf floating windows
 autocmd TermOpen * if bufname() !~ 'fzf'
       \| tnoremap <buffer> <UP> <C-\><C-n>:tabnext<CR>
       \| tnoremap <buffer> <DOWN> <C-\><C-n>:tabprevious<CR>
