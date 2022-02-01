@@ -208,15 +208,13 @@ nnoremap <Leader>tt :tabnew \| terminal<CR>
 " jk can't be used since jk should be used for scrolling diff, etc.
 tnoremap ;; <C-\><C-n>:setlocal number<CR>
 
-" iTerm-like shortcuts
-tnoremap <C-k> <C-\><C-n><C-w>l
-tnoremap <C-j> <C-\><C-n><C-w>h
-
 " Tab switch (excluding fzf floating windows)
 autocmd TermOpen * if bufname() !~ 'fzf'
       \| tnoremap <buffer> <UP> <C-\><C-n>:tabnext<CR>
       \| tnoremap <buffer> <DOWN> <C-\><C-n>:tabprevious<CR>
       \| nnoremap <buffer> a :setlocal nonumber<CR>a
+      \| tnoremap <C-k> <C-\><C-n><C-w>l
+      \| tnoremap <C-j> <C-\><C-n><C-w>h
       \| endif
 
 "}}}
