@@ -303,16 +303,8 @@ function! s:copy_line_of(linenumber)
   if a:linenumber !~ '\d'
     " Using the middle line chars as numbers
     " since numbers are too far from fingers.
-    "
-    " pseudo code:
-    "   a = 'asdfghjkl;,'
-    "   n = '1234567890,'
-    "   d = dict (a zip n)
-    let d = {'a': '1', 's': '2', 'd': '3', 'f': '4',
-      \ 'g': '5', 'h': '6', 'j': '7', 'k': '8',
-      \ 'l': '9', ';': '0', ',': ','}
-
-    let chars = split(a:linenumber, '\zs')
+    let d = ZipMap('asdfghjkl;,', '1234567890,')
+    let chars = StringToArray(a:linenumber)
     let linenumber = join(map(chars, {idx, val -> d[val]}), '')
 
     exec linenumber .. 't.'

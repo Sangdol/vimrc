@@ -32,3 +32,18 @@ Execute (SubstituteLine):
 
 Expect (hallo):
   hallo
+
+" zip / zipmap
+Execute (Zip / ZipMap):
+  let res = Zip(['a', 'b'], [1, 2])
+  AssertEqual res, [['a', 1], ['b', 2]]
+
+  let res = ZipMap(['a', 'b'], [1, 2])
+  AssertEqual res, {'a': 1, 'b': 2}
+
+  let res = ZipMap('ab', [1, 2])
+  AssertEqual res, {'a': 1, 'b': 2}
+
+" StringToArray
+Execute (StringToArray):
+  AssertEqual StringToArray('abc'), ['a', 'b', 'c']
