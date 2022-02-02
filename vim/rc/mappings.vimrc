@@ -61,10 +61,8 @@ inoremap j; <Esc>o
 
 " Numbering
 for i in range(1, 8)
-  exec 'nnoremap <leader><leader>' .. i .. ' ' .. i .. 'gt'
+  exec 'nnoremap ' .. i .. ', ' .. i .. 'gt'
 endfor
-
-nnoremap <leader><leader>9 :tablast<CR>
 
 " Go to last active tab (from https://superuser.com/a/675119/81915)
 au TabLeave * let g:lasttab = tabpagenr()
@@ -92,7 +90,7 @@ nnoremap <S-tab> <c-w>W
 
 " Switch and close windows
 for i in range(1, 6)
-  execute 'nnoremap <Leader>' . i . ' :' . i . 'wincmd w<CR>'
+  execute 'nnoremap ' . i . '<Leader> :' . i . 'wincmd w<CR>'
   execute 'nnoremap 'i . '<BS> :' . i . 'wincmd c<CR>'
 endfor
 
