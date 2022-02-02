@@ -33,6 +33,26 @@ autocmd FileType markdown
 " Cursor in the middle at the bottom
 nnoremap G Gzz
 
+" Up and down are more logical with g..
+nnoremap <silent> k gk
+nnoremap <silent> j gj
+vnoremap <silent> k gk
+vnoremap <silent> j gj
+
+nnoremap <silent> gk k
+nnoremap <silent> gj j
+vnoremap <silent> gk k
+vnoremap <silent> gj j
+
+" Scroll to put the searched word in the middle
+map N Nzz
+map n nzz
+
+" Easy escape
+inoremap jk <Esc>
+inoremap jl <Esc>O
+inoremap j; <Esc>o
+
 "}}}
 
 "
@@ -59,26 +79,6 @@ inoremap <silent> <DOWN> <ESC>:tabprevious<CR>
 
 " New Tab
 nnoremap <silent> <Leader>l :tabnew<CR>
-
-" Up and down are more logical with g..
-nnoremap <silent> k gk
-nnoremap <silent> j gj
-vnoremap <silent> k gk
-vnoremap <silent> j gj
-
-nnoremap <silent> gk k
-nnoremap <silent> gj j
-vnoremap <silent> gk k
-vnoremap <silent> gj j
-
-" Scroll to put the searched word in the middle
-map N Nzz
-map n nzz
-
-" Easy escape
-inoremap jk <Esc>
-inoremap jl <Esc>O
-inoremap j; <Esc>o
 
 "}}}
 
@@ -190,8 +190,6 @@ inoremap <silent> ;zk <esc>:call append(line('.')-1, '')<CR>a
 
 nnoremap <silent> zh i<Space><Right><Esc>
 nnoremap <silent> zl a<Space><Left><Esc>
-
-"}}}
 
 "
 " Terminal {{{1
