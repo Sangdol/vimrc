@@ -261,6 +261,7 @@ nnoremap <silent> <Leader>n :noh<CR>
 " Help
 command -narg=1 -complete=help Hv vert help <args>
 command -narg=1 -complete=help Ht tab help <args>
+command -narg=1 -complete=help H tab help <args>
 
 " Diff shortcuts
 nnoremap <silent> <Leader>dl :diffthis<CR> <C-w>l :diffthis<CR> <C-w>h
