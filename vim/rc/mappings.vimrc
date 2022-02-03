@@ -53,6 +53,12 @@ inoremap jk <Esc>
 inoremap jl <Esc>O
 inoremap j; <Esc>o
 
+" For quickfix list and location list
+nnoremap ]q :cnext<cr>zz
+nnoremap [q :cprev<cr>zz
+nnoremap ]l :lnext<cr>zz
+nnoremap [l :lprev<cr>zz
+
 "}}}
 
 "
