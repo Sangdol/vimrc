@@ -23,6 +23,14 @@ Plug 'dag/vim-fish'
 "}}}
 
 "
+" vim-qf {{{1
+"
+" Keep, Reject, Retore
+Plug 'romainl/vim-qf'
+
+nmap <leader>xx <Plug>(qf_qf_toggle)
+
+"
 " scrollview {{{1
 "
 
