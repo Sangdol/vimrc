@@ -90,10 +90,6 @@ nnoremap <silent> <Leader>l :tabnew<CR>
 " Buffer and windows {{{1
 "
 
-" Easy window navigation
-nnoremap <tab>   <c-w>w
-nnoremap <S-tab> <c-w>W
-
 " Switch and close windows
 for i in range(1, 6)
   execute 'nnoremap ' . i . '<Leader> :' . i . 'wincmd w<CR>'
