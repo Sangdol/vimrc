@@ -382,6 +382,7 @@ nnoremap <leader>gma :Git checkout master \| :Git pull --rebase<CR>
 Plug 'tpope/vim-rhubarb'
 
 nnoremap <leader>gb :GBrowse<CR>
+nnoremap <leader>ge :GBrowse .<CR>
 
 "}}}
 
