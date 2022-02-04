@@ -373,7 +373,7 @@ nnoremap <leader>gu :Git pull --rebase<CR>
 " GitHub extension for fugitive
 Plug 'tpope/vim-rhubarb'
 
-nnoremap <leader>gb :GBrowser<CR>
+nnoremap <leader>gb :GBrowse<CR>
 
 "}}}
 
