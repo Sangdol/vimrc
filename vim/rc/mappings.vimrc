@@ -44,9 +44,9 @@ nnoremap <silent> gj j
 vnoremap <silent> gk k
 vnoremap <silent> gj j
 
-" Scroll to put the searched word in the middle
-map N Nzz
-map n nzz
+" Scroll to put the searched word on the top
+map N Nzt
+map n nzt
 
 " Easy escape
 inoremap jk <Esc>
