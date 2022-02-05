@@ -427,7 +427,7 @@ function! s:escape_abnormal_buf_and(cmd)
     2wincmd w
   endif
 
-  execute(a:cmd)
+  execute a:cmd
 endfunction
 
 nnoremap <leader>'  :call <SID>escape_abnormal_buf_and('Files')<CR>
