@@ -22,13 +22,6 @@ Plug 'dag/vim-fish'
 "}}}
 
 "
-" vim-polyglot {{{1
-"
-Plug 'sheerun/vim-polyglot'
-
-"}}}
-
-"
 " vim-qf {{{1
 "
 " Keep, Reject, Retore
