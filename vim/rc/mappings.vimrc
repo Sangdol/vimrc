@@ -8,11 +8,12 @@
 " Default mappings
 "  % - move to matching bracket
 
-" Emacs-like moving
+" Emacs-like moving / editing
 inoremap <C-e> <Esc>A
 inoremap <C-a> <Esc>I
-inoremap <C-B> <C-o>h
-inoremap <C-F> <C-o>l
+inoremap <C-b> <C-o>h
+inoremap <C-f> <C-o>l
+inoremap <C-d> <C-o>x
 
 " Line up/down/left/right
 " https://vim.fandom.com/wiki/Moving_lines_up_or_down
