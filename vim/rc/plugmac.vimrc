@@ -44,6 +44,8 @@ nmap <silent> <leader>si <Plug>(coc-implementation)
 nmap <silent> <leader>sr <Plug>(coc-references)
 nmap <silent> <leader>so :CocList outline<CR>
 nmap <silent> <leader>sa :CocList diagnostics<CR>
+
+" r to open an item
 nmap <silent> <leader>st :<C-u>CocCommand metals.revealInTreeView metalsPackages<CR>
 
 " Use K to show documentation in preview window.
