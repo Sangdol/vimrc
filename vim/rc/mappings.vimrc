@@ -266,15 +266,6 @@ nnoremap <silent> <Leader>dl :diffthis<CR> <C-w>l :diffthis<CR> <C-w>h
 nnoremap <silent> <Leader>dh :diffthis<CR> <C-w>h :diffthis<CR> <C-w>l
 nnoremap <silent> <leader>do :diffoff<CR>
 
-" Edit vimrc
-nnoremap <silent> <Leader>vv :tabnew<CR>:e ~/.vimrc<CR>
-nnoremap <silent> <Leader>vp :tabnew<CR>:e ~/.vim/rc/plugins.vimrc<CR>
-nnoremap <silent> <Leader>vd :tabnew<CR>:e ~/.vim/rc/devplugins.vimrc<CR>
-nnoremap <silent> <Leader>vm :tabnew<CR>:e ~/.vim/rc/mappings.vimrc<CR>
-nnoremap <silent> <Leader>vf :tabnew<CR>:e ~/.vim/rc/functions.vimrc<CR>
-nnoremap <silent> <Leader>vs :tabnew<CR>:e ~/.vim/rc/set.vimrc<CR>
-nnoremap <Leader>vr :source ~/.vimrc<CR>
-
 " To navigate the nvim runtime directory
 nnoremap <silent> <Leader>vx :tabnew<CR>:e $VIMRUNTIME/filetype.vim<CR>
 
