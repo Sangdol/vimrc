@@ -19,13 +19,14 @@ syn region gitHead start=/\%(^commit\%( \x\{40\}\)\{1,\}\%(\s*(.*)\)\=$\)\@=/ en
 syn match gitHead /^\d\{6\} \%(\w\{4} \)\=\x\{40\}\%( [0-3]\)\=\t.*/
 syn match gitHead /^\x\{40\} \x\{40}\t.*/
 
-" See ./gitcommit.vim
-"
 "syn region gitDiff start=/^\%(diff --git \)\@=/ end=/^\%(diff --\|$\)\@=/ contains=@gitDiff fold
 "syn region gitDiff start=/^\%(@@ -\)\@=/ end=/^\%(diff --\%(git\|cc\|combined\) \|$\)\@=/ contains=@gitDiff
-"
-syn region gitDiff start=/^\%(diff --git \)\@=/ end=/^\%(hallo hallo\)\@=/ contains=@gitDiff fold
-syn region gitDiff start=/^\%(@@ -\)\@=/ end=/^\%(diff --\%(hallo hallo\) \|$\)\@=/ contains=@gitDiff
+
+" Use this 'end' pattern instead of the above to make gitDiffAdd/Remove work
+" after an empty line.
+" https://github.com/tpope/vim-git/issues/81
+syn region gitDiff start=/^\%(diff --git \)\@=/ end=/^\%(diff --\)\@=/ contains=@gitDiff fold
+syn region gitDiff start=/^\%(@@ -\)\@=/ end=/^\%(diff --\%(git\|cc\|combined\) \)\@=/ contains=@gitDiff
 
 syn region gitDiffMerge start=/^\%(diff --\%(cc\|combined\) \)\@=/ end=/^\%(diff --\|$\)\@=/ contains=@gitDiff
 syn region gitDiffMerge start=/^\%(@@@@* -\)\@=/ end=/^\%(diff --\|$\)\@=/ contains=@gitDiff

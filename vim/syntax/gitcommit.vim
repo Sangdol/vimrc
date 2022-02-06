@@ -17,20 +17,14 @@ endif
 
 syn include @gitcommitDiff syntax/diff.vim
 
-" For some reason, the default `end` rule doesn't work and shows diff without
-" highlights when there's an empty line between lines.
-"
-" Questions
-" 1. Why this doesn't work out of box?
-" 1. What does `%(diff --\|$\|#\)` mean?
 "syn region gitcommitDiff start=/\%(^diff --\%(git\|cc\|combined\) \)\@=/ end=/^\%(diff --\|$\|#\)\@=/ fold contains=@gitcommitDiff
-
-" For some reason there's a slightly different `end` rule with a same Last Change day but this doesn't work either
-" https://github.com/tpope/vim-git/blob/master/syntax/gitcommit.vim
 "syn region gitcommitDiff start=/\%(^diff --\%(git\|cc\|combined\) \)\@=/ end=/^\%(diff --\|$\|@@\@!\|[^[:alnum:]\ +-]\S\@!\)\@=/ fold contains=@gitcommitDiff
 
-" This fixes the issue.
-syn region gitcommitDiff start=/\%(^diff --\%(git\|cc\|combined\) \)\@=/ end=/^\%(hallo hallo\)\@=/ fold contains=@gitcommitDiff
+" Use this 'end' pattern instead of the above to make gitDiffAdd/Remove work
+" after an empty line.
+" https://github.com/tpope/vim-git/issues/81
+syn region gitcommitDiff start=/\%(^diff --\%(git\|cc\|combined\) \)\@=/ end=/^\%(diff --\|#\)\@=/ fold contains=@gitcommitDiff
+syn region gitcommitDiff start=/\%(^diff --\%(git\|cc\|combined\) \)\@=/ end=/^\%(diff --\|@@\@!\|[^[:alnum:]\ +-]\S\@!\)\@=/ fold contains=@gitcommitDiff
 
 syn match   gitcommitSummary	"^.*\%<51v." contained containedin=gitcommitFirstLine nextgroup=gitcommitOverflow contains=@Spell
 syn match   gitcommitOverflow	".*" contained contains=@Spell
