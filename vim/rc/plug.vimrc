@@ -365,18 +365,10 @@ nnoremap <leader>gm :GitMessenger<CR>
 
 " Fugitive
 "
-"  Commit
-"   cc                      Create a commit.
-"   ca                      Amend the last commit and edit the message.
-"   ce                      Amend the last commit without editing the message.
-"   cw                      Reword the last commit.
-"   cvc                     Create a commit with -v.
-"   cva                     Amend the last commit with -v
-"
-"  Stash
-"   czz                     Push stash.  Pass a [count] of 1 to add `--include-untracked` or 2 to add `--all`.
-"   czP                     Pop topmost stash, or stash@{count}.
-"   czp                     Pop topmost stash, or stash@{count}, preserving the index.
+"  Diff:   d?
+"  Commit: c?
+"  Stash:  cz?
+"  Rebase: r?
 Plug 'tpope/vim-fugitive'
 
 nnoremap <leader>gc :tab Git commit -v<CR>
