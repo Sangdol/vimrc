@@ -24,12 +24,17 @@ Plug 'dag/vim-fish'
 "
 " ultisnips {{{1
 "
+" :UltiSnipsEdit
+" :call UltiSnips#RefreshSnippets()
 Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 let g:UltiSnipsExpandTrigger="<C-l>"
 let g:UltiSnipsJumpForwardTrigger="<C-l>"
 let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 let g:UltiSnipsEditSplit="vertical"
+
+let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips']
 
 "}}}
 
@@ -438,6 +443,7 @@ nnoremap <leader>fh :call <SID>escape_abnormal_buf_and('Helptags')<CR>
 nnoremap <leader>fm :call <SID>escape_abnormal_buf_and('Maps')<CR>
 nnoremap <leader>fb :call <SID>escape_abnormal_buf_and('Buffers')<CR>
 nnoremap <leader>ft :call <SID>escape_abnormal_buf_and('Filetypes')<CR>
+nnoremap <leader>fs :call <SID>escape_abnormal_buf_and('Snippets')<CR>
 
 " fzf Rg to search words under the cursor
 " https://news.ycombinator.com/item?id=26634419
