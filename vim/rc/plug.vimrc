@@ -36,3 +36,11 @@ if len(g:plugs_missing) > 0
 endif
 
 call plug#end()
+
+" This has to come after `plug#end()` to be able to use colorscheme installed
+" by Plug.
+colorscheme Tomorrow-Night-Bright
+
+" Things that have to be executed after `plug#end()` and colorscheme.
+" https://github.com/junegunn/vim-plug/issues/702#issuecomment-787503301
+call TriggerPlugCallbacks()
