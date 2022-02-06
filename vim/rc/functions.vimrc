@@ -121,3 +121,21 @@ function! s:save_to_temp_with_timestamp() abort
 endfunction
 
 noremap <Leader>wt :call <SID>save_to_temp_with_timestamp()<CR>
+
+" Copy nth line to the current line
+" `linenumber` can be a line number or a range e.g., `1,3`
+function! s:copy_line_of(linenumber)
+  if a:linenumber !~ '\d'
+    " Using the middle line chars as numbers
+    " since numbers are too far from fingers.
+    let d = ZipMap('asdfghjkl;,', '1234567890,')
+    let chars = StringToArray(a:linenumber)
+    let linenumber = join(map(chars, {idx, val -> d[val]}), '')
+
+    exec linenumber .. 't.'
+  else
+    exec a:linenumber .. 't.'
+  endif
+endfunction
+command! -nargs=1 CopyLineOf call <SID>copy_line_of(<q-args>)
+nnoremap <leader><leader>p :CopyLineOf<space>
