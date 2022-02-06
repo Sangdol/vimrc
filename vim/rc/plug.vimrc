@@ -22,6 +22,18 @@ Plug 'dag/vim-fish'
 "}}}
 
 "
+" ultisnips {{{1
+"
+Plug 'SirVer/ultisnips'
+
+let g:UltiSnipsExpandTrigger="<C-l>"
+let g:UltiSnipsJumpForwardTrigger="<C-l>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
+let g:UltiSnipsEditSplit="vertical"
+
+"}}}
+
+"
 " vim-qf {{{1
 "
 " Keep, Reject, Retore
@@ -457,8 +469,7 @@ command! -bang -bar -nargs=? -complete=dir Cd
 
 " Quick navigations
 nnoremap <leader>fp :call <SID>escape_abnormal_buf_and('FZF ~/projects')<CR>
-nnoremap <leader>f~ :call <SID>escape_abnormal_buf_and('FZF ~')<CR>
-nnoremap <leader>fd :call <SID>escape_abnormal_buf_and('Cd!')<CR>
+nnoremap <leader>f~ :call <SID>escape_abnormal_buf_and('Cd!')<CR>
 
 "}}}
 
