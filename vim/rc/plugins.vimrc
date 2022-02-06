@@ -468,6 +468,7 @@ command! -bang -bar -nargs=? -complete=dir Cd
 " Quick navigations
 nnoremap <leader>fp :call <SID>escape_abnormal_buf_and('FZF ~/projects')<CR>
 nnoremap <leader>f~ :call <SID>escape_abnormal_buf_and('Cd!')<CR>
+nnoremap <leader>fg :call <SID>escape_abnormal_buf_and('FZF ~/.vim/plugged')<CR>
 
 "}}}
 
