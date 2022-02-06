@@ -36,11 +36,11 @@ function! TriggerPlugCallbacks()
   endfor
 endfunction
 
-source $HOME/.vim/rc/plug.vimrc
+source $HOME/.vim/rc/plugins.vimrc
 
 if has("mac")
   " things not needed in servers
-  source $HOME/.vim/rc/plugmac.vimrc
+  source $HOME/.vim/rc/devplugins.vimrc
 endif
 
 " Automatically install missing plugins on startup
