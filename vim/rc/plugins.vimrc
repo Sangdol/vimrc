@@ -21,6 +21,20 @@ Plug 'dag/vim-fish'
 "}}}
 
 "
+" vim-auto-save {{{1
+"
+Plug '907th/vim-auto-save'
+
+let g:auto_save_events = ["InsertLeave", "TextChanged"]
+let g:auto_save = 1
+augroup ft_markdown
+  au!
+  au FileType scala let b:auto_save = 0
+augroup END
+
+"}}}
+
+"
 " ultisnips {{{1
 "
 " :UltiSnipsEdit
