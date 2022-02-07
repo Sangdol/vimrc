@@ -387,6 +387,7 @@ nnoremap <leader>gf :tab Git diff<CR>
 nnoremap <leader>gid :tab Git diff --cached<CR>
 nnoremap <leader>gu :Git pull --rebase<CR>
 nnoremap <leader>gma :Git checkout master \| :Git pull --rebase<CR>
+nnoremap <leader>g- :Git switch -<CR>
 
 " GitHub extension for fugitive
 Plug 'tpope/vim-rhubarb'
