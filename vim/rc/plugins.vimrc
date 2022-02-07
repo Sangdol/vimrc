@@ -149,8 +149,8 @@ xmap <Leader>rr <Plug>ReplaceWithRegisterVisual
 Plug 'haya14busa/is.vim'
 Plug 'osyo-manga/vim-anzu'
 
-map n <Plug>(is-nohl)<Plug>(anzu-n-with-echo)
-map N <Plug>(is-nohl)<Plug>(anzu-N-with-echo)
+map n <Plug>(is-nohl)<Plug>(anzu-n-with-echo)zt
+map N <Plug>(is-nohl)<Plug>(anzu-N-with-echo)zt
 
 " incsearch.vim
 " This one is outdated and has a copy and paste problem
