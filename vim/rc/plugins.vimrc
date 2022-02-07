@@ -15,7 +15,6 @@
 "   :PlugDiff => X - Revert the update
 
 Plug 'danro/rename.vim'
-Plug 'MTDL9/vim-log-highlighting'
 Plug 'tpope/vim-surround'
 Plug 'dag/vim-fish'
 
@@ -554,3 +553,12 @@ Plug 'junegunn/seoul256.vim'
 Plug 'joshdick/onedark.vim'
 
 " }}}
+
+"
+" Syntax highlight {{{1
+"
+
+Plug 'MTDL9/vim-log-highlighting'
+Plug 'GEverding/vim-hocon'
+
+"}}}
