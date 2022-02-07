@@ -409,6 +409,9 @@ Plug 'tpope/vim-rhubarb'
 nnoremap <leader>gb :GBrowse<CR>
 nnoremap <leader>ge :GBrowse .<CR>
 
+" Extra
+nnoremap <leader>gh :!gh pr checkout<space>
+
 "}}}
 
 "
