@@ -23,7 +23,10 @@ Plug 'dag/vim-fish'
 "
 " vim-auto-save {{{1
 "
-Plug '907th/vim-auto-save'
+" Using a forked version to avoid a cursor jump.
+"
+"Plug '907th/vim-auto-save'
+Plug 'Sangdol/vim-auto-save'
 
 let g:auto_save_events = ["InsertLeave", "TextChanged"]
 let g:auto_save = 1
