@@ -117,7 +117,8 @@ Plug 'dstein64/vim-startuptime'
 
 "
 " Tabline {{{1
-" (to add numbers to each tabline
+"
+" to add numbers to each tabline
 "
 Plug 'mkitt/tabline.vim'
 
