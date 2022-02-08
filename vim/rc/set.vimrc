@@ -1,4 +1,6 @@
+"
 " Settings
+"
 
 " set <Leader>
 let mapleader="\<Space>"
@@ -87,16 +89,10 @@ set foldmethod=marker
 set jumpoptions+=stack
 
 "
-" Style 
+" Style
 "
 set background=dark
 set termguicolors
-
-" To have the same opacity as a terminal
-" https://stackoverflow.com/questions/37712730/set-vim-background-transparent
-hi Normal guibg=NONE ctermbg=NONE
-" selection color
-hi Visual term=reverse cterm=reverse guibg=Grey
 
 function CurrentDir()
   return fnamemodify(getcwd(), ':t')
