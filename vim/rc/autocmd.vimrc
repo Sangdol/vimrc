@@ -40,9 +40,12 @@ augroup autosave
   autocmd!
   autocmd TextChanged,InsertLeave *
         \  if get(g:, 'autosave_enabled', 1) &&
+        \     get(b:, 'autosave_enabled', 1) &&
         \     empty(&buftype) && !empty(bufname(''))
         \|   update
         \| endif
+
+  autocmd FileType scala let b:autosave_enabled = 0
 augroup END
 
 function! ToggleAutosave()
