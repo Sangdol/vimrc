@@ -34,3 +34,19 @@ augroup custom
   autocmd FileType gitcommit setlocal spell
 
 augroup END
+
+" Autosave
+augroup autosave
+  autocmd!
+  autocmd TextChanged,InsertLeave *
+        \  if get(g:, 'autosave_enabled', 1) &&
+        \     empty(&buftype) && !empty(bufname(''))
+        \|   update
+        \| endif
+augroup END
+
+function! ToggleAutosave()
+  let g:autosave_enabled = !get(g:, 'autosave_enabled', 1)
+endfunction
+
+nnoremap <leader>wa :call ToggleAutosave()<CR>
