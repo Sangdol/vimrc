@@ -375,11 +375,11 @@ nnoremap <leader>ga :Git add .<CR>
 nnoremap <leader>gg :Git add . \| :tab Git commit -v<CR>
 nnoremap <leader>gk :Gw \| :tab Git commit -v<CR>
 nnoremap <leader>gs :Git<CR>
-nnoremap <leader>gp :Git push<CR>
+nnoremap <leader>gp :Git push \| :call <SID>clear_pushed_count()<CR>
 nnoremap <leader>gd :SignifyDiff<CR>
 nnoremap <leader>gf :tab Git diff<CR>
 nnoremap <leader>gid :tab Git diff --cached<CR>
-nnoremap <leader>gu :Git pull --rebase<CR>
+nnoremap <leader>gu :Git pull --rebase \| :call <SID>clear_pulled_count()<CR>
 nnoremap <leader>gma :Git checkout master \| :Git pull --rebase<CR>
 nnoremap <leader>g- :Git switch -<CR>
 

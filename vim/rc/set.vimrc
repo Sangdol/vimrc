@@ -102,17 +102,64 @@ endfunction
 " Status line
 "
 
+" ⇡
+function! UnpushedCount() abort
+  if !has_key(b:, 'unpushed_count')
+    let b:unpushed_count = trim(system("git rev-list --left-only --count 'HEAD...@{upstream}'"))
+  endif
+
+  if b:unpushed_count > 0
+    return '⇡' .. b:unpushed_count
+  endif
+
+  return ''
+endfunction
+
+" ⇣
+function! UnpulledCount() abort
+  if !has_key(b:, 'unpulled_count')
+    let b:unpulled_count = trim(system("git rev-list --right-only --count 'HEAD...@{upstream}'"))
+  endif
+
+  if b:unpulled_count > 0
+    return '⇣' .. b:unpulled_count
+  endif
+
+  return ''
+endfunction
+
+function! s:clear_pushed_count()
+  if has_key(b:, 'unpushed_count')
+    unlet b:unpushed_count
+  endif
+endfunction
+
+function! s:clear_pulled_count()
+  if has_key(b:, 'unpulled_count')
+    unlet b:unpulled_count
+  endif
+endfunction
+
+autocmd BufEnter * call s:clear_pushed_count() | call s:clear_pulled_count()
+
 function! s:statusline_expr()
   let mod = "%{&modified ? '[+] ' : !&modifiable ? '[x] ' : ''}"
   let ro  = "%{&readonly ? '[RO] ' : ''}"
   let ft  = "%{len(&filetype) ? '['.&filetype.'] ' : ''}"
   let fug = "%{exists('g:loaded_fugitive') ? FugitiveStatusline() : ''}"
+
+  " TODO
+  " - This doesn't update on a branch change.
+  " - This slows down startup time (around 300ms).
+  " - This shows an empty bracket [] when there's nothing to show.
+  let git = "[%{UnpushedCount()}%{UnpulledCount()}]"
+
   let sep = ' %= '
   let pos = ' %-12(%l : %c%V%) '
   let pct = ' %P'
   let dir = ' [%{CurrentDir()}]'
 
-  return '[%n] %F %<'.mod.ro.ft.fug.sep.pos.'%*'.pct.dir
+  return '[%n] %F %<'.mod.ro.ft.fug.git.sep.pos.'%*'.pct.dir
 endfunction
 let &statusline = s:statusline_expr()
 
