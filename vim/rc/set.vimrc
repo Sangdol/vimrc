@@ -98,16 +98,15 @@ function CurrentDir()
   return fnamemodify(getcwd(), ':t')
 endfunction
 
-"Status line
-"set laststatus=2 " keep statusline always visible
-"set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%] %{exists('g:loaded_fugitive') ? fugitive#statusline() : ''}
-"set statusline+=%=
+"
+" Status line
+"
 
 function! s:statusline_expr()
   let mod = "%{&modified ? '[+] ' : !&modifiable ? '[x] ' : ''}"
   let ro  = "%{&readonly ? '[RO] ' : ''}"
   let ft  = "%{len(&filetype) ? '['.&filetype.'] ' : ''}"
-  let fug = "%{exists('g:loaded_fugitive') ? fugitive#statusline() : ''}"
+  let fug = "%{exists('g:loaded_fugitive') ? FugitiveStatusline() : ''}"
   let sep = ' %= '
   let pos = ' %-12(%l : %c%V%) '
   let pct = ' %P'
