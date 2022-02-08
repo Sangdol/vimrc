@@ -124,13 +124,6 @@ Plug 'mkitt/tabline.vim'
 "}}}
 
 "
-" Yaml Revealer {{{1
-"
-Plug 'Einenlum/yaml-revealer'
-
-"}}}
-
-"
 " undotree {{{1
 "
 Plug 'mbbill/undotree'
