@@ -138,4 +138,4 @@ function! s:copy_line_of(linenumber)
   endif
 endfunction
 command! -nargs=1 CopyLineOf call <SID>copy_line_of(<q-args>)
-nnoremap <leader><leader>p :CopyLineOf<space>
+nnoremap <leader>ep :CopyLineOf<space>

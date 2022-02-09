@@ -277,10 +277,13 @@ cmap w!! w !sudo tee > /dev/null %
 nnoremap Q @q
 
 " Copy file path to clipboard
+" https://vim.fandom.com/wiki/Get_the_name_of_the_current_file
 " full path
-nnoremap <Leader>ep :let @+=expand("%:p")<CR>
+nnoremap <Leader>e1 :let @+=expand("%:p")<CR>
+" directory
+nnoremap <Leader>e1 :let @+=expand("%:p:t")<CR>
 " filename
-nnoremap <Leader>ef :let @+=expand("%:p")<CR>
+nnoremap <Leader>e2 :let @+=expand("%:t")<CR>
 
 " Spell check
 nnoremap <Leader>es :set spell!<CR>
