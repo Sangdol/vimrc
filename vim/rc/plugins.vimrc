@@ -371,7 +371,6 @@ nnoremap <leader>gm :GitMessenger<CR>
 "  Rebase: r?
 Plug 'tpope/vim-fugitive'
 
-nnoremap <leader>gc :tab Git commit -v<CR>
 nnoremap <leader>gw :Gw<CR>
 nnoremap <leader>ga :Git add .<CR>
 nnoremap <leader>gg :Git add . \| :tab Git commit -v<CR>
@@ -393,6 +392,10 @@ nnoremap <leader>ge :GBrowse .<CR>
 
 " Extra
 nnoremap <leader>gh :!gh pr checkout<space>
+
+" fzf-checkout
+Plug 'stsewd/fzf-checkout.vim'
+nnoremap <leader>gco :GBranches<CR>
 
 "}}}
 
