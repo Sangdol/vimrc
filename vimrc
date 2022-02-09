@@ -2,6 +2,7 @@
 " Sang's Vim Configuration
 "
 source $HOME/.vim/rc/set.vimrc
+source $HOME/.vim/rc/statusline.vimrc
 source $HOME/.vim/rc/utility.vimrc
 source $HOME/.vim/rc/autocmd.vimrc
 source $HOME/.vim/rc/functions.vimrc
