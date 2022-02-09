@@ -128,19 +128,19 @@ function! UnpulledCount() abort
   return ''
 endfunction
 
-function! s:clear_pushed_count()
+function! ClearPushedCount()
   if has_key(b:, 'unpushed_count')
     unlet b:unpushed_count
   endif
 endfunction
 
-function! s:clear_pulled_count()
+function! ClearPulledCount()
   if has_key(b:, 'unpulled_count')
     unlet b:unpulled_count
   endif
 endfunction
 
-autocmd BufEnter * call s:clear_pushed_count() | call s:clear_pulled_count()
+autocmd BufEnter * call ClearPushedCount() | call ClearPulledCount()
 
 function! s:statusline_expr()
   let mod = "%{&modified ? '[+] ' : !&modifiable ? '[x] ' : ''}"
