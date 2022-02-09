@@ -137,13 +137,15 @@ xmap <Leader>rr <Plug>ReplaceWithRegisterVisual
 "
 " incsearch {{{1
 "
+" to auto-remove hlsearch
+"
 
-" is.vim (IncSearch)
-Plug 'haya14busa/is.vim'
+" Forked https://github.com/junegunn/vim-slash
+Plug 'Sangdol/vim-slash'
 Plug 'osyo-manga/vim-anzu'
 
-map n <Plug>(is-nohl)<Plug>(anzu-n-with-echo)zt
-map N <Plug>(is-nohl)<Plug>(anzu-N-with-echo)zt
+map n <Plug>(anzu-n-with-echo)zt
+map N <Plug>(anzu-N-with-echo)zt
 
 " incsearch.vim
 " This one is outdated and has a copy and paste problem
