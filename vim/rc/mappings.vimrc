@@ -281,9 +281,9 @@ nnoremap Q @q
 " full path
 nnoremap <Leader>e1 :let @+=expand("%:p")<CR>
 " directory
-nnoremap <Leader>e1 :let @+=expand("%:p:t")<CR>
+nnoremap <Leader>e2 :let @+=expand("%:p:t")<CR>
 " filename
-nnoremap <Leader>e2 :let @+=expand("%:t")<CR>
+nnoremap <Leader>e3 :let @+=expand("%:t")<CR>
 
 " Spell check
 nnoremap <Leader>es :set spell!<CR>
