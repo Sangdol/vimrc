@@ -387,14 +387,15 @@ nnoremap <leader>ga :Git add .<CR>
 nnoremap <leader>gg :Git add . \| :tab Git commit -v<CR>
 nnoremap <leader>gk :Gw \| :tab Git commit -v<CR>
 nnoremap <leader>gs :Git<CR>
-nnoremap <leader>gp :Git push \| :call ClearPushedCount()<CR>
 nnoremap <leader>gd :tab Gdiffsplit<CR>
 nnoremap <leader>gf :tab Git diff<CR>
 nnoremap <leader>gid :tab Git diff --cached<CR>
-nnoremap <leader>gu :Git pull --rebase \| :call ClearPulledCount()<CR>
 nnoremap <leader>gma :Git checkout master \| :Git pull --rebase<CR>
 nnoremap <leader>g- :Git switch -<CR>
 nnoremap <leader>gcb :Git checkout -b<space>
+nnoremap <leader>gpp :Git push \| :call ClearPushedCount()<CR>
+nnoremap <leader>gpo :Git push -u origin HEAD<CR>
+nnoremap <leader>gpu :Git pull --rebase \| :call ClearPulledCount()<CR>
 
 " GitHub extension for fugitive
 Plug 'tpope/vim-rhubarb'
