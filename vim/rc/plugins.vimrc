@@ -14,8 +14,10 @@
 "   :PlugStatus => L - Load plugin
 "   :PlugDiff => X - Revert the update
 
+"
+" vim-surround {{{1
+"
 Plug 'tpope/vim-surround'
-Plug 'dag/vim-fish'
 
 "}}}
 
@@ -573,5 +575,6 @@ Plug 'joshdick/onedark.vim'
 
 Plug 'MTDL9/vim-log-highlighting'
 Plug 'GEverding/vim-hocon'
+Plug 'dag/vim-fish'
 
 "}}}
