@@ -14,9 +14,18 @@
 "   :PlugStatus => L - Load plugin
 "   :PlugDiff => X - Revert the update
 
-Plug 'danro/rename.vim'
 Plug 'tpope/vim-surround'
 Plug 'dag/vim-fish'
+
+"}}}
+
+"
+" rename {{{1
+"
+Plug 'danro/rename.vim'
+
+" Rename in the command line window
+nnoremap <leader>er :let @+=expand("%:t")<CR> \| :Rename <C-r>+<C-f>
 
 "}}}
 
