@@ -234,7 +234,7 @@ nnoremap <leader><leader># m`^i### <esc>``4l
 " mark: v
 " out:  * v todo
 function! s:toggle_markdown_bullet_tick(mark)
-  if StartsWith(trim(getline('.')), '* '.. a:mark)
+  if StartsWith(trim(getline('.')), '* '.. a:mark .. ' ')
     call SubstituteLine('\v(\s*\*)\s' .. a:mark, '\1', '')
   else
     call SubstituteLine('\v(\s*\*\s)', '\1' .. a:mark .. ' ', '')
