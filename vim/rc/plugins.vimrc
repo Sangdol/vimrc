@@ -34,8 +34,6 @@ nnoremap <leader>er :let @+=expand("%:t")<CR> \| :Rename <C-r>+<C-f>
 "
 " ultisnips {{{1
 "
-" :UltiSnipsEdit
-" :call UltiSnips#RefreshSnippets()
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
@@ -43,8 +41,10 @@ let g:UltiSnipsExpandTrigger="<C-l>"
 let g:UltiSnipsJumpForwardTrigger="<C-l>"
 let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetStorageDirectoryForUltiSnipsEdit = '~/.vim/UltiSnips'
 
-let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips', 'UltiSnips']
+nnoremap <leader>ee :UltiSnipsEdit<cr>
+nnoremap <leader>ef :call UltiSnips#RefreshSnippets()<cr>
 
 "}}}
 
