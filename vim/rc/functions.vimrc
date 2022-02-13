@@ -123,31 +123,36 @@ noremap <Leader>wt :call <SID>save_to_temp_with_timestamp()<CR>
 
 " Translate the keyboard middle line characters to numbers
 " since numbers are too far from fingers.
-" `linenumber` can be a line number or a range e.g., `1,3`
-function! s:translate_linenumber(linenumber)
-  if a:linenumber !~ '\d'
+"
+" alphanumeric_line_number examples
+" - 10
+" - 10,20
+" - aa    " => 11
+" - aa,af " => 11,14
+function! s:translate_linenumber(alphanumeric_line_number)
+  if a:alphanumeric_line_number !~ '\d'
     let d = ZipMap('asdfghjkl;,', '1234567890,')
-    let chars = StringToArray(a:linenumber)
-    let linenumber = join(map(chars, {idx, val -> d[val]}), '')
+    let chars = StringToArray(a:alphanumeric_line_number)
+    let line_number = join(map(chars, {idx, val -> d[val]}), '')
 
-    return linenumber
+    return line_number
   else
-    return a:linenumber
+    return a:alphanumeric_line_number
   endif
 endfunction
 
 " Copy nth line to the current line
-function! s:copy_line_of(linenumber)
-  let linenumber = s:translate_linenumber(a:linenumber)
-  exec linenumber .. 't.'
+function! s:copy_line_of(alphanumeric_line_number)
+  let line_number = s:translate_linenumber(a:alphanumeric_line_number)
+  exec line_number .. 't.'
 endfunction
 
 command! -nargs=1 C call <SID>copy_line_of(<q-args>)
 
 " Delete line without jumping cursor
-function! s:delete_line_of(linenumber)
-  let linenumber = s:translate_linenumber(a:linenumber)
-  exec linenumber .. 'd'
+function! s:delete_line_of(alphanumeric_line_number)
+  let line_number = s:translate_linenumber(a:alphanumeric_line_number)
+  exec line_number .. 'd'
   exec "normal \<C-o>"
 endfunction
 
