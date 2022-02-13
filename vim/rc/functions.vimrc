@@ -1,6 +1,5 @@
 "
-" Functions
-" TODO scope for variables (is it needed for the variables in functions?)
+" Functions and commands
 "
 
 " From https://vim.fandom.com/wiki/Append_output_of_an_external_command
@@ -122,20 +121,34 @@ endfunction
 
 noremap <Leader>wt :call <SID>save_to_temp_with_timestamp()<CR>
 
-" Copy nth line to the current line
+" Translate the keyboard middle line characters to numbers
+" since numbers are too far from fingers.
 " `linenumber` can be a line number or a range e.g., `1,3`
-function! s:copy_line_of(linenumber)
+function! s:translate_linenumber(linenumber)
   if a:linenumber !~ '\d'
-    " Using the middle line chars as numbers
-    " since numbers are too far from fingers.
     let d = ZipMap('asdfghjkl;,', '1234567890,')
     let chars = StringToArray(a:linenumber)
     let linenumber = join(map(chars, {idx, val -> d[val]}), '')
 
-    exec linenumber .. 't.'
+    return linenumber
   else
-    exec a:linenumber .. 't.'
+    return a:linenumber
   endif
 endfunction
-command! -nargs=1 CopyLineOf call <SID>copy_line_of(<q-args>)
-nnoremap <leader>ep :CopyLineOf<space>
+
+" Copy nth line to the current line
+function! s:copy_line_of(linenumber)
+  let linenumber = s:translate_linenumber(a:linenumber)
+  exec linenumber .. 't.'
+endfunction
+
+command! -nargs=1 C call <SID>copy_line_of(<q-args>)
+
+" Delete line without jumping cursor
+function! s:delete_line_of(linenumber)
+  let linenumber = s:translate_linenumber(a:linenumber)
+  exec linenumber .. 'd'
+  exec "normal \<C-o>"
+endfunction
+
+command! -nargs=1 D call <SID>delete_line_of(<q-args>)
