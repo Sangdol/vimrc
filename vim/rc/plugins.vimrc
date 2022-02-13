@@ -15,6 +15,15 @@
 "   :PlugDiff => X - Revert the update
 
 "
+" close-buffers {{{1
+"
+Plug 'Asheq/close-buffers.vim'
+
+nnoremap <leader>ed :Bdelete hidden<cr>
+
+"}}}
+
+"
 " vim-surround {{{1
 "
 Plug 'tpope/vim-surround'
@@ -198,7 +207,6 @@ vnoremap <silent><c-w>m :MaximizerToggle<CR>gv
 " Symlink {{{1
 "
 Plug 'aymericbeaumet/vim-symlink'
-Plug 'moll/vim-bbye' " optional dependency
 
 "}}}
 "
