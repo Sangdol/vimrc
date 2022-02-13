@@ -123,7 +123,8 @@ Plug 'dstein64/vim-startuptime'
 "
 " to add numbers to each tabline
 "
-Plug 'mkitt/tabline.vim'
+" Forked from https://github.com/Sangdol/tabline.vim
+Plug 'Sangdol/tabline.vim'
 
 "}}}
 
