@@ -205,10 +205,9 @@ nnoremap <Leader>tt :tabnew \| terminal<CR>
 autocmd TermOpen * if bufname() !~ 'fzf'
       \| tnoremap <buffer> <UP> <C-\><C-n>:tabnext<CR>
       \| tnoremap <buffer> <DOWN> <C-\><C-n>:tabprevious<CR>
-      \| nnoremap <buffer> a :setlocal nonumber<CR>a
+      \| tnoremap ;; <C-\><C-n><CR>
       \| tnoremap <C-k> <C-\><C-n><C-w>l
       \| tnoremap <C-j> <C-\><C-n><C-w>h
-      \| tnoremap ;; <C-\><C-n>:setlocal number<CR>
       \| endif
 
 "}}}

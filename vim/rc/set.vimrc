@@ -93,3 +93,10 @@ set jumpoptions+=stack
 "
 set background=dark
 set termguicolors
+
+" Notes
+" * `set cursorline` is needed to make the behavior consistent with terminal windows.
+" * TermEnter / TermLeave don't work with `set cursorline` for some reason.
+set cursorline
+autocmd InsertEnter * set nocursorline
+autocmd InsertLeave * set cursorline

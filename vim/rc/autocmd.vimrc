@@ -23,6 +23,8 @@ augroup custom
 
   " Terminal
   autocmd TermOpen * startinsert | setlocal nonumber
+  autocmd TermLeave * setlocal number 
+  autocmd TermEnter * setlocal nonumber 
 
   " For moving application windows across screens
   autocmd VimResized * wincmd =
