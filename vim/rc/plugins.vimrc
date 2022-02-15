@@ -417,7 +417,7 @@ nnoremap <leader>gh :!gh pr checkout<space>
 
 " fzf-checkout
 Plug 'stsewd/fzf-checkout.vim'
-nnoremap <leader>gco :GBranches<CR>
+nnoremap <leader>gco :GBranches checkout --locals<CR>
 
 "}}}
 
