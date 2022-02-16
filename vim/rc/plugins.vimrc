@@ -423,9 +423,6 @@ nnoremap <leader>gco :GBranches checkout --locals<CR>
 
 "
 " easymotion {{{1
-" <Leader><Leader>w - word motion
-" <Leader><Leader>j/k - down/up
-" <Leader><Leader>f + <character> - jump to the character
 "
 Plug 'Lokaltog/vim-easymotion'  " :h easymotion.txt
 let g:EasyMotion_do_mapping = 0
