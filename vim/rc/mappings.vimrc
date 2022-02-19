@@ -132,6 +132,7 @@ function! s:close_abnormal_buf_and(cmd)
 endfunction
 
 " Write and quit
+nnoremap <leader>u :update<CR>
 nnoremap <leader>we :wq<CR>
 nnoremap <leader>ww :wa<CR>
 nnoremap <leader>wq :wa \| qa<CR>
