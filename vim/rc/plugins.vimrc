@@ -451,63 +451,6 @@ nmap <Leader><Leader>b <Plug>(easymotion-b)
 "}}}
 
 "
-" fzf {{{1
-"
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-
-" Move out of NERDTree, Voomtree, etc. buffers.
-" This doesn't work if the second buffer is not a normal buffer.
-" Fix it if it bothers.
-function! s:escape_abnormal_buf_and(cmd)
-  if FocusableWinCount() > 1 && !empty(&buftype)
-    2wincmd w
-  endif
-
-  execute a:cmd
-endfunction
-
-nnoremap <leader>'  :call <SID>escape_abnormal_buf_and('Files')<CR>
-nnoremap <leader>fl :call <SID>escape_abnormal_buf_and('Lines')<CR>
-nnoremap <leader>fc :call <SID>escape_abnormal_buf_and('Commands')<CR>
-nnoremap <leader>fr :call <SID>escape_abnormal_buf_and('Colors')<CR>
-nnoremap <leader>fi :call <SID>escape_abnormal_buf_and('History')<CR>
-nnoremap <leader>f: :call <SID>escape_abnormal_buf_and('History:')<CR>
-nnoremap <leader>f/ :call <SID>escape_abnormal_buf_and('History/')<CR>
-nnoremap <leader>fh :call <SID>escape_abnormal_buf_and('Helptags')<CR>
-nnoremap <leader>fm :call <SID>escape_abnormal_buf_and('Maps')<CR>
-nnoremap <leader>fb :call <SID>escape_abnormal_buf_and('Buffers')<CR>
-nnoremap <leader>ft :call <SID>escape_abnormal_buf_and('Filetypes')<CR>
-nnoremap <leader>fs :call <SID>escape_abnormal_buf_and('Snippets')<CR>
-
-" fzf Rg to search words under the cursor
-" https://news.ycombinator.com/item?id=26634419
-nnoremap <silent> <leader>ff yiw:Rg <C-r>"<CR>
-vnoremap <silent> <leader>ff y:Rg <C-r>"<CR>
-
-function! RgCurrentDir()
-  let current_path = expand('%:p:h')
-  execute 'lcd ' .. current_path
-  execute 'Rg'
-endfunction
-
-nnoremap <silent> <leader>fd :call <SID>escape_abnormal_buf_and('call RgCurrentDir()')<CR>
-nnoremap <silent> <C-Space> :call <SID>escape_abnormal_buf_and('Rg')<CR>
-
-" https://github.com/junegunn/fzf.vim/issues/251#issuecomment-769787221
-command! -bang -bar -nargs=? -complete=dir Cd
-    \ call fzf#run(fzf#wrap(
-    \ {'source': 'find '.( empty("<args>") ? ( <bang>0 ? "~" : "." ) : "<args>" ) .' -type d',
-    \ 'sink': 'cd'}))
-
-" Quick navigations
-nnoremap <leader>fp :call <SID>escape_abnormal_buf_and('FZF ~/projects')<CR>
-nnoremap <leader>f~ :call <SID>escape_abnormal_buf_and('Cd!')<CR>
-nnoremap <leader>fg :call <SID>escape_abnormal_buf_and('FZF ~/.vim/plugged')<CR>
-
-"}}}
-
-"
 " VOom {{{1
 "
 " :Voomhelp
@@ -567,6 +510,64 @@ function VoomUpdate()
 endfunction
 
 autocmd BufWinEnter *.md if (FocusableWinCount() == 2) | call VoomUpdate() | endif
+
+"}}}
+
+"
+" fzf {{{1
+"
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+" Move out of NERDTree, Voomtree, etc. buffers.
+" This doesn't work if the second buffer is not a normal buffer.
+" Fix it if it bothers.
+function! s:escape_abnormal_buf_and(cmd)
+  if FocusableWinCount() > 1 && !empty(&buftype)
+    2wincmd w
+  endif
+
+  execute a:cmd
+endfunction
+
+nnoremap <leader>'  :call <SID>escape_abnormal_buf_and('Files')<CR>
+nnoremap <leader>fl :call <SID>escape_abnormal_buf_and('Lines')<CR>
+nnoremap <leader>fc :call <SID>escape_abnormal_buf_and('Commands')<CR>
+nnoremap <leader>fr :call <SID>escape_abnormal_buf_and('Colors')<CR>
+nnoremap <leader>fi :call <SID>escape_abnormal_buf_and('History')<CR>
+nnoremap <leader>f: :call <SID>escape_abnormal_buf_and('History:')<CR>
+nnoremap <leader>f/ :call <SID>escape_abnormal_buf_and('History/')<CR>
+nnoremap <leader>fh :call <SID>escape_abnormal_buf_and('Helptags')<CR>
+nnoremap <leader>fm :call <SID>escape_abnormal_buf_and('Maps')<CR>
+nnoremap <leader>fb :call <SID>escape_abnormal_buf_and('Buffers')<CR>
+nnoremap <leader>ft :call <SID>escape_abnormal_buf_and('Filetypes')<CR>
+nnoremap <leader>fs :call <SID>escape_abnormal_buf_and('Snippets')<CR>
+
+" fzf Rg to search words under the cursor
+" https://news.ycombinator.com/item?id=26634419
+nnoremap <silent> <leader>ff yiw:Rg <C-r>"<CR>
+vnoremap <silent> <leader>ff y:Rg <C-r>"<CR>
+
+function! RgCurrentDir()
+  let current_path = expand('%:p:h')
+  execute 'lcd ' .. current_path
+  execute 'Rg'
+endfunction
+
+nnoremap <silent> <leader>fd :call <SID>escape_abnormal_buf_and('call RgCurrentDir()')<CR>
+nnoremap <silent> <C-Space> :call <SID>escape_abnormal_buf_and('Rg')<CR>
+
+" https://github.com/junegunn/fzf.vim/issues/251#issuecomment-769787221
+command! -bang -bar -nargs=? -complete=dir Cd
+    \ call fzf#run(fzf#wrap(
+    \ {'source': 'find '.( empty("<args>") ? ( <bang>0 ? "~" : "." ) : "<args>" ) .' -type d',
+    \ 'sink': 'cd'}))
+
+" Quick navigations
+nnoremap <leader>fp :call <SID>escape_abnormal_buf_and('FZF ~/projects')<CR>
+nnoremap <leader>f~ :call <SID>escape_abnormal_buf_and('Cd!')<CR>
+nnoremap <leader>fg :call <SID>escape_abnormal_buf_and('FZF ~/.vim/plugged')<CR>
+
 "}}}
 
 "
