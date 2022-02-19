@@ -223,6 +223,13 @@ vnoremap <silent><c-w>m :MaximizerToggle<CR>gv
 "
 Plug 'aymericbeaumet/vim-symlink'
 
+" Using it to avoid 'autocommand nesting too deep' issue
+" https://github.com/aymericbeaumet/vim-symlink/issues/6
+"
+" Forked it from https://github.com/moll/vim-bbye
+" to remove :Bdelete in favor of close-buffers.vim
+Plug 'Sangdol/vim-bbye'
+
 "}}}
 "
 
