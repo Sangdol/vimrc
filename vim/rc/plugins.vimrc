@@ -513,7 +513,9 @@ function VoomUpdate()
   endif
 endfunction
 
-autocmd BufWinEnter * if (FocusableWinCount() == 2) | call VoomUpdate() | endif
+" Known bug: if it applies to `*` it'll open two voom windows for some reason
+"           while it doesn't generate messages on `echom` inside VoomUpdate().
+autocmd BufWinEnter *.md,*.vimrc,*.vim,*.py if (FocusableWinCount() == 2) | call VoomUpdate() | endif
 
 "}}}
 
