@@ -574,6 +574,21 @@ nnoremap <leader>fp :call <SID>escape_abnormal_buf_and('FZF ~/projects')<CR>
 nnoremap <leader>f~ :call <SID>escape_abnormal_buf_and('Cd!')<CR>
 nnoremap <leader>fg :call <SID>escape_abnormal_buf_and('FZF ~/.vim/plugged')<CR>
 
+" From https://github.com/junegunn/fzf/blob/master/README-VIM.md
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  copen
+  cc
+endfunction
+
+let g:fzf_action = {
+  \ 'ctrl-q': function('s:build_quickfix_list'),
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.9, 'relative': v:true } }
+
 "}}}
 
 "
