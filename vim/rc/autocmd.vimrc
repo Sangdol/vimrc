@@ -8,9 +8,6 @@ augroup custom
   " Remove any trailing whitespace that is in the file
   autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 
-  " for html close tag shortcut
-  autocmd FileType html set omnifunc=xmlcomplete#CompleteTags
-
   " Moves the cursor to the last position
   autocmd BufReadPost *
     \ if line("'\"") > 1 && line("'\"") <= line("$") |
@@ -28,7 +25,7 @@ augroup custom
   autocmd VimEnter * wincmd l
 
   " Terminal
-  autocmd TermOpen * startinsert 
+  autocmd TermOpen * startinsert
 
 augroup END
 
