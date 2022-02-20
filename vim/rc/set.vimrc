@@ -88,6 +88,10 @@ set foldmethod=marker
 " neovim only. browser-like jump stack.
 set jumpoptions+=stack
 
+" For a quicker coc and vim-signify signs update.
+" (default is 4000ms = 4s)
+set updatetime=300
+
 "
 " Style
 "
