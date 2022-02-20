@@ -98,18 +98,21 @@ set updatetime=300
 set background=dark
 set termguicolors
 
+" Notes
+" * `set cursorline` is needed to make the behavior consistent with terminal windows.
+set cursorline
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" coc diagnostics or vim-signify signs appear/become resolved.
+set signcolumn=yes
+
 augroup settings
   autocmd!
 
-  " Notes
-  " * `set cursorline` is needed to make the behavior consistent with terminal windows.
-  set cursorline
   autocmd InsertEnter * set nocursorline
   autocmd InsertLeave * set cursorline
 
-  " Always show the signcolumn, otherwise it would shift the text each time
-  " coc diagnostics or vim-signify signs appear/become resolved.
-  set signcolumn=yes
+  autocmd FileType tagbar,nerdtree,voomtree setlocal signcolumn=no
 
   " Terminal
   autocmd TermOpen * setlocal nonumber | set signcolumn=number
