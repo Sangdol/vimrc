@@ -56,9 +56,6 @@ nnoremap [q :cprev<cr>zz
 nnoremap ]l :lnext<cr>zz
 nnoremap [l :lprev<cr>zz
 
-" Jump to last insert
-nnoremap ', '^gt
-
 "}}}
 
 "
