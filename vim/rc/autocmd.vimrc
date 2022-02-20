@@ -21,19 +21,14 @@ augroup custom
   " https://github.com/neoclide/coc.nvim/wiki/Using-the-configuration-file
   autocmd FileType json syntax match Comment +\/\/.\+$+
 
-  " Terminal
-  autocmd TermOpen * startinsert | setlocal nonumber
-  autocmd TermLeave * setlocal number 
-  autocmd TermEnter * setlocal nonumber 
-
   " For moving application windows across screens
   autocmd VimResized * wincmd =
 
   " For Voom, NERDTree, etc.
   autocmd VimEnter * wincmd l
 
-  " Spell check
-  autocmd FileType gitcommit setlocal spell
+  " Terminal
+  autocmd TermOpen * startinsert 
 
 augroup END
 
