@@ -53,6 +53,8 @@ function! s:statusline_expr()
   let ft  = "%{len(&filetype) ? '['.&filetype.'] ' : ''}"
   let fug = "%{exists('g:loaded_fugitive') ? FugitiveStatusline() : ''}"
 
+  let coc = " %{coc#status()}"
+
   " This slows down startup time (around 300ms).
   let git = "[%{UnpushedCount()}%{UnpulledCount()}]"
 
@@ -60,7 +62,7 @@ function! s:statusline_expr()
   let pos = ' %c'
   let dir = ' [%{CurrentDir()}] '
 
-  return ' %f %<'.mod.ro.ft.fug.git.sep.pos.'%*'.dir
+  return ' %f %<'.mod.ro.ft.fug.git.coc.sep.pos.'%*'.dir
 endfunction
 let &statusline = s:statusline_expr()
 
