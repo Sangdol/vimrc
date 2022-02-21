@@ -6,6 +6,11 @@
 let mapleader="\<Space>"
 let maplocalleader="\<Space>"
 
+" Change cursor shape in different modes(In OSX)
+" http://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
 " Use vim settings, rather then vi settings
 " This must be first, because it changes other options as a side effect.
 set nocompatible

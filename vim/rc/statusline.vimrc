@@ -75,9 +75,3 @@ function! s:statusline_expr()
   return ' %f '.branch.' '.mod.ro.ft.pushpull.signify.coc.sep.pos.'%*'.dir
 endfunction
 let &statusline = s:statusline_expr()
-
-" Change cursor shape in different modes(In OSX)
-" http://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-
