@@ -54,12 +54,12 @@ function! ClearPulledCount()
   endif
 endfunction
 
-autocmd BufEnter * call ClearPushedCount() | call ClearPulledCount()
+ autocmd BufEnter * call ClearPushedCount() | call ClearPulledCount()
 
 function! s:statusline_expr()
-  let mod = "%{&modified ? '[+] ' : !&modifiable ? '[x] ' : ''}"
+  let mod = "%{&modified ? '[+]' : !&modifiable ? '[x]' : ''}"
   let branch = "%{gitbranch#name()}"
-  let ro  = "%{&readonly ? '[RO] ' : ''}"
+  let ro  = "%{&readonly ? '[RO]' : ''}"
   let ft  = "%{len(&filetype) ? '['.&filetype.']' : ''}"
 
   " This slows down startup time (around 300ms).
