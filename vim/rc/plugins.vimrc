@@ -398,6 +398,15 @@ nnoremap <leader>gv :GV<CR>
 nnoremap <leader>g! :GV!<CR>
 
 " Git messenger
+"
+" q	Close the popup window
+" o	older. Back to older commit at the line
+" O	Opposite to o. Forward to newer commit at the line
+" d	Toggle unified diff hunks only in current file of the commit
+" D	Toggle all unified diff hunks of the commit
+" r	Toggle word diff hunks only in current file of the commit
+" R	Toggle all word diff hunks of current commit
+?	Show mappings help
 Plug 'rhysd/git-messenger.vim'
 nnoremap <leader>gm :GitMessenger<CR>
 
