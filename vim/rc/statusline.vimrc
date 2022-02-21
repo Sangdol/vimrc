@@ -70,8 +70,11 @@ function! s:statusline_expr()
 
   let sep = ' %= '
   let pos = ' %c'
-  let dir = ' [%{CurrentDir()}] '
 
-  return ' %f '.branch.' '.mod.ro.ft.pushpull.signify.coc.sep.pos.'%*'.dir
+  return ' %{CurrentDir()}/%f ' .. mod .. ro .. ft ..
+        \ sep ..
+        \ branch .. ' ' .. pushpull .. signify .. coc ..
+        \ pos .. ' '
 endfunction
+
 let &statusline = s:statusline_expr()
