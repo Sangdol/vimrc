@@ -584,7 +584,7 @@ let g:fzf_action = {
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 
-let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.9, 'relative': v:true } }
+let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.9, 'relative': v:false } }
 
 "}}}
 
