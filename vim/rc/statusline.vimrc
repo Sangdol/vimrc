@@ -33,6 +33,15 @@ function! UnpulledCount() abort
   return ''
 endfunction
 
+function! UnpushedUnpulledCounts()
+  let res = UnpushedCount() .. UnpulledCount()
+  if res == ''
+    return ''
+  else
+    return '[' .. res .. ']'
+  endif
+endfunction
+
 function! ClearPushedCount()
   if has_key(b:, 'unpushed_count')
     unlet b:unpushed_count
@@ -49,21 +58,21 @@ autocmd BufEnter * call ClearPushedCount() | call ClearPulledCount()
 
 function! s:statusline_expr()
   let mod = "%{&modified ? '[+] ' : !&modifiable ? '[x] ' : ''}"
+  let branch = "%{gitbranch#name()}"
   let ro  = "%{&readonly ? '[RO] ' : ''}"
-  let ft  = "%{len(&filetype) ? '['.&filetype.'] ' : ''}"
-  let fug = "%{exists('g:loaded_fugitive') ? FugitiveStatusline() : ''}"
-  let sy = "%{sy#repo#get_stats_decorated()}"
-
-  let coc = " %{coc#status()}"
+  let ft  = "%{len(&filetype) ? '['.&filetype.']' : ''}"
 
   " This slows down startup time (around 300ms).
-  let git = "[%{UnpushedCount()}%{UnpulledCount()}]"
+  let pushpull = "%{UnpushedUnpulledCounts()}"
+  let signify = "%{sy#repo#get_stats_decorated()}"
+
+  let coc = " %{coc#status()}"
 
   let sep = ' %= '
   let pos = ' %c'
   let dir = ' [%{CurrentDir()}] '
 
-  return ' %f %<'.mod.ro.ft.fug.git.sy.coc.sep.pos.'%*'.dir
+  return ' %f '.branch.' '.mod.ro.ft.pushpull.signify.coc.sep.pos.'%*'.dir
 endfunction
 let &statusline = s:statusline_expr()
 
