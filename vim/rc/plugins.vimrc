@@ -87,9 +87,6 @@ nmap <leader>xx <Plug>(qf_qf_toggle)
 
 " A scrollbar is counted as a window so the autoclose autocmd using winnr('$') doesn't work
 " (check out FocusableWinCount() in utility.vimrc).
-"
-" Cannot closing last window issue: `<C-w>o` closes all floating windows
-" https://github.com/dstein64/nvim-scrollview/issues/10
 Plug 'dstein64/nvim-scrollview'
 
 let g:scrollview_current_only = 1
