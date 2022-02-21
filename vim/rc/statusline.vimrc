@@ -57,11 +57,10 @@ function! s:statusline_expr()
   let git = "[%{UnpushedCount()}%{UnpulledCount()}]"
 
   let sep = ' %= '
-  let pos = ' %-12(%l : %c%V%) '
-  let pct = ' %P'
-  let dir = ' [%{CurrentDir()}]'
+  let pos = ' %c'
+  let dir = ' [%{CurrentDir()}] '
 
-  return '[%n] %F %<'.mod.ro.ft.fug.git.sep.pos.'%*'.pct.dir
+  return ' %f %<'.mod.ro.ft.fug.git.sep.pos.'%*'.dir
 endfunction
 let &statusline = s:statusline_expr()
 
