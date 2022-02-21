@@ -52,6 +52,7 @@ function! s:statusline_expr()
   let ro  = "%{&readonly ? '[RO] ' : ''}"
   let ft  = "%{len(&filetype) ? '['.&filetype.'] ' : ''}"
   let fug = "%{exists('g:loaded_fugitive') ? FugitiveStatusline() : ''}"
+  let sy = "%{sy#repo#get_stats_decorated()}"
 
   let coc = " %{coc#status()}"
 
@@ -62,7 +63,7 @@ function! s:statusline_expr()
   let pos = ' %c'
   let dir = ' [%{CurrentDir()}] '
 
-  return ' %f %<'.mod.ro.ft.fug.git.coc.sep.pos.'%*'.dir
+  return ' %f %<'.mod.ro.ft.fug.git.sy.coc.sep.pos.'%*'.dir
 endfunction
 let &statusline = s:statusline_expr()
 
