@@ -406,7 +406,7 @@ nnoremap <leader>g! :GV!<CR>
 " D	Toggle all unified diff hunks of the commit
 " r	Toggle word diff hunks only in current file of the commit
 " R	Toggle all word diff hunks of current commit
-?	Show mappings help
+" ?	Show mappings help
 Plug 'rhysd/git-messenger.vim'
 nnoremap <leader>gm :GitMessenger<CR>
 
