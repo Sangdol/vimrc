@@ -54,7 +54,7 @@ function! ClearPulledCount()
   endif
 endfunction
 
- autocmd BufEnter * call ClearPushedCount() | call ClearPulledCount()
+autocmd BufEnter * call ClearPushedCount() | call ClearPulledCount()
 
 function! s:statusline_expr()
   let branch = "%{gitbranch#name()}"
