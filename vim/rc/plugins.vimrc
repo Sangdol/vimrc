@@ -529,7 +529,7 @@ nmap <Leader><Leader>b <Plug>(easymotion-b)
 "
 " :Voomhelp
 "
-"Plug 'vim-voom/VOoM'
+" Forked from 'vim-voom/VOoM' to customize mappings.
 Plug 'sangdol/VOoM', {'branch': 'sang-voom'}
 
 let g:voom_tree_width = 45
