@@ -165,6 +165,9 @@ command! Wq wq
 command! Qa qa
 command! Wqa wqa
 
+" Previous window
+nnoremap <C-q> <C-w>p
+
 "}}}
 
 "
@@ -207,8 +210,7 @@ autocmd TermOpen * if bufname() !~ 'fzf'
       \| tnoremap <buffer> <UP> <C-\><C-n>:tabnext<CR>
       \| tnoremap <buffer> <DOWN> <C-\><C-n>:tabprevious<CR>
       \| tnoremap ;; <C-\><C-n><CR>
-      \| tnoremap <C-k> <C-\><C-n><C-w>l
-      \| tnoremap <C-j> <C-\><C-n><C-w>h
+      \| tnoremap <C-q> <C-\><C-n><C-w>p
       \| endif
 
 "}}}
