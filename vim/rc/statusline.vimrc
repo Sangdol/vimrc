@@ -57,10 +57,9 @@ endfunction
  autocmd BufEnter * call ClearPushedCount() | call ClearPulledCount()
 
 function! s:statusline_expr()
-  let mod = "%{&modified ? '[+]' : !&modifiable ? '[x]' : ''}"
   let branch = "%{gitbranch#name()}"
-  let ro  = "%{&readonly ? '[RO]' : ''}"
-  let ft  = "%{len(&filetype) ? '['.&filetype.']' : ''}"
+  let ro  = "%{&readonly ? 'RO ' : ''}"
+  let ft  = "%{len(&filetype) ? &filetype . ' ' : ''}"
 
   " This slows down startup time (around 300ms).
   let pushpull = "%{UnpushedUnpulledCounts()}"
@@ -71,9 +70,9 @@ function! s:statusline_expr()
   let sep = ' %= '
   let pos = ' %c'
 
-  return ' %{CurrentDir()}/%f ' .. mod .. ro .. ft ..
+  return ' %{CurrentDir()}/%f ' .. ft .. ro .. coc ..
         \ sep ..
-        \ branch .. ' ' .. pushpull .. signify .. coc ..
+        \ branch .. ' ' .. pushpull .. signify ..
         \ pos .. ' '
 endfunction
 
