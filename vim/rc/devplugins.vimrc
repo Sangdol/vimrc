@@ -37,6 +37,9 @@ nmap <silent> <leader>sr <Plug>(coc-references)
 nmap <silent> <leader>so :CocList outline<CR>
 nmap <silent> <leader>sa :CocList diagnostics<CR>
 
+" Code actions e.g., import
+nmap <leader>sc  <Plug>(coc-codeaction-line)
+
 " https://github.com/neoclide/coc.nvim/issues/318
 nnoremap <leader>ss :call CocActionAsync('jumpDefinition', 'tab drop')<CR>
 
