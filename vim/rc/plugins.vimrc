@@ -487,7 +487,7 @@ nnoremap <leader>gco :GBranches checkout --locals<CR>
 " gitbranch to show branch name instead of [Git(master)] of fugitive
 Plug 'itchyny/vim-gitbranch'
 
-" Octo 
+" Octo
 Plug 'pwntester/octo.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -663,15 +663,6 @@ vmap <silent> <C-_> <plug>NERDCommenterToggle
 let g:NERDCreateDefaultMappings = 0
 
 "}}}
-
-"
-" Colors {{{1
-"
-Plug 'srcery-colors/srcery-vim'
-Plug 'junegunn/seoul256.vim'
-Plug 'joshdick/onedark.vim'
-
-" }}}
 
 "
 " Syntax highlight {{{1
