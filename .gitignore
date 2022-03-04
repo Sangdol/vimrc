@@ -7,3 +7,13 @@ vim/undodir
 # See vimrc
 device_local.vimrc
 
+# netrw history file
+# http://stackoverflow.com/questions/9850360/what-is-netrwhist
+.netrwhist
+
+# Compiled spell files
+vim/spell/*spl
+
+# Etc.
+vim/backup/*~
+vim/swap/*.sw*
