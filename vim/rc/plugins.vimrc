@@ -173,12 +173,9 @@ Plug 'dstein64/vim-startuptime'
 "}}}
 
 "
-" Tabline {{{1
+" Mintabline {{{1
 "
-" to add numbers to each tabline
-"
-" Forked from https://github.com/Sangdol/tabline.vim
-Plug 'Sangdol/tabline.vim'
+Plug 'Sangdol/mintabline.vim'
 
 "}}}
 
