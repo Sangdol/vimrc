@@ -131,11 +131,14 @@ Plug 'dstein64/nvim-scrollview'
 
 let g:scrollview_current_only = 1
 
-function! s:scrollview_callback()
+function! s:scrollview_highlights()
   highlight ScrollView ctermbg=159 guibg=LightCyan
 endfunction
 
-call AddToPlugCallbacks(function('s:scrollview_callback'))
+augroup ScrollViewColors
+  autocmd!
+  autocmd ColorScheme * call s:scrollview_highlights()
+augroup END
 
 "}}}
 
@@ -412,13 +415,16 @@ let g:syntastic_mode_map = { 'passive_filetypes': ['python', 'scala'] }
 " vim-signify
 Plug 'mhinz/vim-signify'
 
-function! s:signify_callback()
+function! s:signify_highlights()
   highlight SignifySignAdd    ctermfg=darkblue   guifg=#0000aa cterm=NONE gui=NONE
   highlight SignifySignDelete ctermfg=darkred    guifg=#aa0000 cterm=NONE gui=NONE
   highlight SignifySignChange ctermfg=darkyellow guifg=#aaaa00 cterm=NONE gui=NONE
 endfunction
 
-call AddToPlugCallbacks(function('s:signify_callback'))
+augroup SignifyColors
+  autocmd!
+  autocmd ColorScheme * call s:signify_highlights()
+augroup END
 
 " GV
 Plug 'junegunn/gv.vim'

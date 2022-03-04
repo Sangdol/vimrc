@@ -78,7 +78,7 @@ if len(g:plugs_missing) > 0
   PlugInstall --sync | q
 endif
 
-" Things that have to be executed after `plug#end()` and colorscheme.
+" Things that have to be executed after `plug#end()`.
 " https://github.com/junegunn/vim-plug/issues/702#issuecomment-787503301
 call TriggerPlugCallbacks()
 
