@@ -54,6 +54,10 @@ function! ClearPulledCount()
   endif
 endfunction
 
+" This doesn't update the values often enough, for example, after a commit.
+" Updating this causes a lag, about 300ms, so it's not easy to find a good
+" idea to update it often.
+" Need to find a good way to update it without making lags.
 autocmd BufEnter * call ClearPushedCount() | call ClearPulledCount()
 
 function! s:statusline_expr()
