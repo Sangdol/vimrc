@@ -21,6 +21,8 @@
 " :TSUpdate
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
+" This will generate error if it's executed before treesitter is installed.
+" Restarting vim would fix the issue.
 function! s:treesitter_callback()
 lua << EOF
   require'nvim-treesitter.configs'.setup {
