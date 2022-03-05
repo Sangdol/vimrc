@@ -165,8 +165,9 @@ command! Wq wq
 command! Qa qa
 command! Wqa wqa
 
-" Previous window
+" Go to previous window
 nnoremap <C-q> <C-w>p
+inoremap <C-q> <ESC><C-w>p
 
 "}}}
 
