@@ -342,6 +342,9 @@ endfunction
 
 call AddToPlugCallbacks(function('s:nvim_tree_callback'))
 
+" Auto-refresh
+autocmd BufEnter * if &filetype == 'NvimTree' | execute 'NvimTreeRefresh' | endif
+
 "}}}
 
 "
