@@ -1,4 +1,50 @@
 "
+" Plugins used for coding
+"
+
+"
+" nvim-treesitter {{{1
+"
+" :TSInstall <language_to_install>
+" :TSUpdate
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+" This will generate error if it's executed before treesitter is installed.
+" Restarting vim would fix the issue.
+function! s:treesitter_callback()
+lua << EOF
+  require'nvim-treesitter.configs'.setup {
+    -- One of "all", "maintained" (parsers with maintainers), or a list of languages
+    ensure_installed = "maintained",
+
+    -- Install languages synchronously (only applied to `ensure_installed`)
+    sync_install = false,
+
+    -- List of parsers to ignore installing
+    ignore_install = { "" },
+
+    highlight = {
+      -- `false` will disable the whole extension
+      enable = true,
+
+      -- list of language that will be disabled
+      disable = {},
+
+      -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+      -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+      -- Using this option may slow down your editor, and you may see some duplicate highlights.
+      -- Instead of true it can also be a list of languages
+      additional_vim_regex_highlighting = false,
+    },
+  }
+EOF
+endfunction
+
+call AddToPlugCallbacks(function('s:treesitter_callback'))
+
+"}}}
+
+"
 " Clojure: Conjure, parinfer {{{1
 "
 " Conjure
