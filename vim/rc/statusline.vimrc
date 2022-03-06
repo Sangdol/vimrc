@@ -69,7 +69,7 @@ function! s:statusline_expr()
   let pushpull = "%{UnpushedUnpulledCounts()}"
   let signify = "%{sy#repo#get_stats_decorated()}"
 
-  let coc = " %{coc#status()}"
+  let coc = " %{&runtimepath =~ 'coc.nvim' ? coc#status() : ''}"
 
   let sep = ' %= '
   let pos = ' %c'
