@@ -54,6 +54,7 @@ Plug 'Olical/conjure'
 Plug 'Sangdol/vim-parinfer' " Forked to change mappings
 Plug 'junegunn/rainbow_parentheses.vim'
 
+let g:conjure#mapping#prefix = "<leader>z"
 let g:conjure#filetypes = ["clojure", "racket", "scheme"]
 
 " turn on by default
