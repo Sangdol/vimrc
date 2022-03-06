@@ -118,6 +118,10 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Symbol renaming.
 nmap <leader>re <Plug>(coc-rename)
 
+" coc-fzf
+Plug 'antoinemadec/coc-fzf'
+nnoremap <silent> <leader>sf :CocFzfList<CR>
+
 "}}}
 
 "
