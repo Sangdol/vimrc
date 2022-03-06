@@ -46,7 +46,7 @@ Development Environment
 * Linux (only for server management)
 * iTerm2 (no MacVim)
 * IntelliJ
-* Git
+* Git / GitHub
 
 ### Languages
 
