@@ -80,7 +80,7 @@ Project Structure
    │  ├── test.vader        " Test code that tests functions of utility.vimrc
    │  ├── plug.vimrc        " Plug root that sources plugins.vim and devplugins.vimrc conditionally
    │  ├── plugins.vimrc     " Plugins and related mappings and configuration
-   │  └── devplugins.vimrc  " Plugins and related mappings and configuration for writing code
+   │  └── devplugins.vimrc  " Plugins and related mappings and configuration for coding (only loaded on macOS)
    ├── colors               " Directory with colorscheme files
    ├── backup               " Directory with a README file. Backup files are git ignored.
    ├── swap                 " Directory with a README file. Swap files are git ignored.
