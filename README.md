@@ -143,7 +143,7 @@ The `:map` or the [Fzf :Maps command](https://github.com/junegunn/fzf.vim#comman
 * m: Toggle Voom
 * n: `noh`
 * o: Octo (in `device_local.vimrc`)
-* p
+* p: Plug
 * q: close window
 * r
   * re: rename

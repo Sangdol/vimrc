@@ -1,9 +1,26 @@
 "
 " Vim Plug
 "
-" Specify a directory for plugins
-" - For Neovim: ~/.local/share/nvim/plugged
-" - Avoid using standard Vim directory names like 'plugin'
+" Plug Commands:
+"   PlugUpdate [name ...]
+"   PlugInstall [name ...]
+"   PlugClean[!]
+"   PlugUpgrade
+"   PlugStatus
+"
+" Keybindings:
+"   D - PlugDiff
+"   S - PlugStatus
+"   R - Retry failed update or installation tasks
+"   U - Update plugins in the selected range
+"   q - Close the window
+"   :PlugStatus => L - Load plugin
+"   :PlugDiff => X - Revert the update
+
+nnoremap <leader>ps :PlugStatus<cr>
+nnoremap <leader>pu :PlugUpdate<cr>
+nnoremap <leader>pi :PlugInstall<cr>
+nnoremap <leader>pc :PlugClean<cr>
 
 "
 " Setup {{{1
