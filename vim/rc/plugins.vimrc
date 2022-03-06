@@ -136,6 +136,7 @@ Plug 'dstein64/vim-startuptime'
 " Mintabline {{{1
 "
 Plug 'Sangdol/mintabline.vim'
+Plug 'ryanoasis/vim-devicons'
 
 "}}}
 
