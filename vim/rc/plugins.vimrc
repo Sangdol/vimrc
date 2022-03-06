@@ -138,6 +138,8 @@ Plug 'dstein64/vim-startuptime'
 Plug 'Sangdol/mintabline.vim'
 Plug 'ryanoasis/vim-devicons'
 
+let g:DevIconsEnableFolderPatternMatching = 0
+
 "}}}
 
 "
