@@ -497,20 +497,6 @@ nnoremap <leader>gco :GBranches checkout --locals<CR>
 " gitbranch to show branch name instead of [Git(master)] of fugitive
 Plug 'itchyny/vim-gitbranch'
 
-" Octo
-Plug 'pwntester/octo.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
-
-function! s:octo_callback()
-lua << EOF
-  require"octo".setup()
-EOF
-endfunction
-
-call AddToPlugCallbacks(function('s:octo_callback'))
-
 "}}}
 
 "

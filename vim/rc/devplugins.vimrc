@@ -173,3 +173,22 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 let g:mkdp_auto_close = 0
 
 "}}}
+
+"
+" Octo {{{1
+"
+
+Plug 'pwntester/octo.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+
+function! s:octo_callback()
+lua << EOF
+  require"octo".setup()
+EOF
+endfunction
+
+call AddToPlugCallbacks(function('s:octo_callback'))
+
+"}}}
