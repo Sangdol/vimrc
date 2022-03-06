@@ -104,7 +104,7 @@ function! CloseVisibleWindows()
   endfor
 endfunction
 
-nnoremap <silent> <Leader>cc :call CloseVisibleWindows()<CR>
+nnoremap <silent> <Leader>wc :call CloseVisibleWindows()<CR>
 
 " Easy buffer switch
 nnoremap <silent> <Leader>;; :b#<CR>
