@@ -77,8 +77,6 @@ nnoremap <leader>ef :call UltiSnips#RefreshSnippets()<cr>
 " Keep, Reject, Retore
 Plug 'romainl/vim-qf'
 
-nmap <leader>xx <Plug>(qf_qf_toggle)
-
 "}}}
 
 "
