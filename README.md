@@ -92,14 +92,35 @@ Project Structure
       └── gitcommit.vim
 ```
 
-Plugin Code Locality
+Plugin Code Locality with Plug
 ---
+
+### Lua 
 
 Each section in `plugins.vimrc` and `devplugins.vimrc` has one or more [Plug](https://github.com/junegunn/vim-plug) commands and related mappings and configuration. Helper callback functions are used for code that has to be run after `plug#end()`, e.g., the Lua `require()` function has to run after `plug#end()` since Lua modules can be loaded after `runtimepath` are set which is done by the `end()` function.
 
 [VOoM](https://github.com/vim-scripts/VOoM) is used to show outlines.
 
 ![plugin code locality](/screenshots/plugin-code-locality.png)
+
+### Highlights
+
+`highlight` commands have to be executed after a colorscheme command and they should be executed again when the colorscheme is changed. To achieve this, `highlight` commands are in an autocommands following [this advice](https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f). 
+
+For example,
+
+```vim
+Plug 'dstein64/nvim-scrollview'
+
+function! s:scrollview_highlights()
+  highlight ScrollView ctermbg=159 guibg=LightCyan
+endfunction
+
+augroup ScrollViewColors
+  autocmd!
+  autocmd ColorScheme * call s:scrollview_highlights()
+augroup END
+```
 
 Mapping tree
 ---
