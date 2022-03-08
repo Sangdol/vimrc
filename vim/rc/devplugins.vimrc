@@ -89,9 +89,6 @@ nmap <silent> <leader>sa :CocList diagnostics<CR>
 " Code actions e.g., import
 nmap <leader>sc  <Plug>(coc-codeaction-line)
 
-" https://github.com/neoclide/coc.nvim/issues/318
-nnoremap <leader>ss :call CocActionAsync('jumpDefinition', 'tab drop')<CR>
-
 " Scroll
 nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
 nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
