@@ -83,8 +83,7 @@ nmap <silent> <leader>sd <Plug>(coc-definition)
 nmap <silent> <leader>sy <Plug>(coc-type-definition)
 nmap <silent> <leader>si <Plug>(coc-implementation)
 nmap <silent> <leader>sr <Plug>(coc-references)
-nmap <silent> <leader>so :CocList outline<CR>
-nmap <silent> <leader>sa :CocList diagnostics<CR>
+nnoremap <silent> <leader>sz :call CocActionAsync('jumpDefinition', 'tab drop')<CR>
 
 " Code actions e.g., import
 nmap <leader>sc  <Plug>(coc-codeaction-line)
@@ -118,6 +117,9 @@ nmap <leader>re <Plug>(coc-rename)
 " coc-fzf
 Plug 'antoinemadec/coc-fzf'
 nnoremap <silent> <leader>sf :CocFzfList<CR>
+nnoremap <silent> <leader>so :CocFzfList outline<CR>
+nnoremap <silent> <leader>sa :CocFzfList diagnostics<CR>
+nnoremap <silent> <leader>ss :CocFzfList symbols<CR>
 
 "}}}
 
