@@ -525,19 +525,22 @@ Plug 'sangdol/VOoM', {'branch': 'sang-voom'}
 let g:voom_tree_width = 45
 let g:voom_tab_key = "<plug>"
 
+function! s:voom() abort
+  let voomcmd = get({'python': 'python', 'markdown': 'pandoc'}, &filetype, 'fmr')
+  execute('Voom ' .. voomcmd)
+endfunction
+
 " only for the first window
-function! s:toggle_voom(type)
+function! s:toggle_voom() abort
   let win1name = bufname(winbufnr(1))
   if (win1name =~ "VOOM") > 0
     Voomquit
   else
-    execute(":Voom ". a:type)
+    call s:voom()
   endif
 endfunction
 
-autocmd FileType markdown nnoremap <silent> <Leader>m :call <sid>toggle_voom('pandoc')<cr>
-autocmd FileType python nnoremap <silent> <Leader>m :call <sid>toggle_voom('python')<cr>
-autocmd FileType vim nnoremap <silent> <Leader>m :call <sid>toggle_voom('fmr')<cr>
+nnoremap <silent> <Leader>m :call <sid>toggle_voom()<cr>
 
 " Open
 function VoomPandoc()
@@ -554,7 +557,7 @@ autocmd BufWinEnter,VimEnter *.md if (FocusableWinCount() == 1) | call VoomPando
 autocmd BufEnter * if (FocusableWinCount() == 1 && expand("%:e") =~ "VOOM") | q | endif
 
 " Update
-function VoomUpdate()
+function! VoomUpdate() abort
   let l:win1name = bufname(winbufnr(1))
   let l:filename = bufname(winbufnr(2))
   if (win1name =~ "VOOM") > 0 && (win1name =~ filename) == 0
@@ -564,8 +567,7 @@ function VoomUpdate()
     1wincmd w
     Voomquit
 
-    let voomcmd = get({'python': 'python', 'markdown': 'pandoc'}, &ft, 'fmr')
-    execute('Voom ' .. voomcmd)
+    call s:voom()
     2wincmd w
   endif
 endfunction
