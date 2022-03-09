@@ -325,7 +325,16 @@ augroup END
 
 function! s:nvim_tree_callback()
 lua << EOF
-  require'nvim-tree'.setup()
+  require'nvim-tree'.setup {
+    view = {
+      mappings = {
+        list = {
+          { key = "!", action = "run_file_command" },
+          { key = ".", action = "" }
+        }
+      }
+    }
+  }
 EOF
 endfunction
 
