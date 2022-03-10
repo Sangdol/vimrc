@@ -93,6 +93,9 @@ augroup END
 "
 Plug 'folke/which-key.nvim'
 
+" Popup delay
+set timeoutlen=200
+
 " Lua modules have to be loaded after `plug#end()`
 " since the `end()` function updates `&runtimepath`.
 function! s:which_key_callback()
