@@ -51,6 +51,7 @@ nnoremap <silent> <Leader>vd :tabnew<CR>:e ~/.vim/rc/devplugins.vimrc<CR>
 nnoremap <silent> <Leader>vm :tabnew<CR>:e ~/.vim/rc/mappings.vimrc<CR>
 nnoremap <silent> <Leader>vf :tabnew<CR>:e ~/.vim/rc/functions.vimrc<CR>
 nnoremap <silent> <Leader>vs :tabnew<CR>:e ~/.vim/rc/setoptions.vimrc<CR>
+nnoremap <silent> <Leader>vl :tabnew<CR>:e ~/.vim/rc/device_local.vimrc<CR>
 nnoremap <Leader>vr :source ~/.vimrc<CR>
 
 " Help
