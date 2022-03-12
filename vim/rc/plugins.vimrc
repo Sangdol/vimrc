@@ -124,7 +124,7 @@ Plug 'dstein64/vim-startuptime'
 "
 " Mintabline {{{1
 "
-Plug 'Sangdol/mintabline.vim'
+Plug 'Sangdol/mintabline.vim', { 'branch': 'nvim-web-devicons' }
 Plug 'ryanoasis/vim-devicons'
 
 let g:DevIconsEnableFolderPatternMatching = 0
