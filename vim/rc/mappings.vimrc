@@ -89,9 +89,9 @@ nnoremap <silent> <Leader>l :tabnew<CR>
 
 " Switch and close windows
 for i in range(1, 6)
-  execute 'nnoremap <leader>' . i . ' :' . i . 'wincmd w<CR>'
-  execute 'nnoremap ' . i . '<Leader> :' . i . 'wincmd w<CR>'
-  execute 'nnoremap 'i . '<BS> :' . i . 'wincmd c<CR>'
+  execute 'nnoremap <silent> <leader>' . i . ' :' . i . 'wincmd w<CR>'
+  execute 'nnoremap <silent> ' . i . '<Leader> :' . i . 'wincmd w<CR>'
+  execute 'nnoremap <silent> 'i . '<BS> :' . i . 'wincmd c<CR>'
 endfor
 
 function! CloseVisibleWindows()
