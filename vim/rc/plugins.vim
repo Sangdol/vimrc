@@ -551,7 +551,7 @@ endfunction
 nnoremap <silent> <Leader>m :call <sid>toggle_voom()<cr>
 
 " Open
-function VoomPandoc()
+function! VoomPandoc() abort
   let l:filepath = expand('%:p')
 
   if filepath !~ 'workbench\/notes'
