@@ -95,9 +95,9 @@ Project Structure
 Plugin Code Locality with Plug
 ---
 
-### Lua 
+### Lua `require`
 
-Each section in `plugins.vimrc` and `devplugins.vimrc` has one or more [Plug](https://github.com/junegunn/vim-plug) commands and related mappings and configuration. Helper callback functions are used for code that has to be run after `plug#end()`, e.g., the Lua `require()` function has to run after `plug#end()` since Lua modules can be loaded after `runtimepath` are set which is done by the `end()` function.
+Each section in `plugins.vimrc` and `devplugins.vimrc` has one or more [Plug](https://github.com/junegunn/vim-plug) commands and related mappings and configuration. A helper callback function is used for code that has to be run after `plug#end()`, e.g., the Lua `require()` function has to run after `plug#end()` since Lua modules can be loaded after `runtimepath` are set which is done by the `end()` function.
 
 [VOoM](https://github.com/vim-scripts/VOoM) is used to show outlines.
 
@@ -105,7 +105,7 @@ Each section in `plugins.vimrc` and `devplugins.vimrc` has one or more [Plug](ht
 
 ### Highlights
 
-`highlight` commands have to be executed after a colorscheme command and they should be executed again when the colorscheme is changed. To achieve this, `highlight` commands are in an autocommands following [this advice](https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f). 
+`highlight` commands have to be executed after a colorscheme command and they should be executed again when the colorscheme is changed. To achieve this, `highlight` commands are in an autocommands following [this advice](https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f).
 
 For example,
 

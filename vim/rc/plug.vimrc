@@ -26,21 +26,18 @@ nnoremap <leader>pc :PlugClean<cr>
 " Setup {{{1
 "
 
-" Callbacks for code locality
-let g:plug_callbacks = []
+" Callbacks for code locality.
+" Lua `require` calls are added to this global variable.
+lua << EOF
+  plugin_callbacks = {}
+EOF
 
-function! AddToPlugCallbacks(func)
-  let g:plug_callbacks += [a:func]
-endfunction
-
-function! TriggerPlugCallbacks()
-  for Cb in g:plug_callbacks
-    try
-      call Cb()
-    catch
-      echom 'Encountered errors when executing ' . string(Cb)
-    endtry
-  endfor
+function! s:triggerPlugCallbacks() abort
+lua << EOF
+  for _, func in ipairs(plugin_callbacks) do
+    func()
+  end
+EOF
 endfunction
 
 " Edit vimrc
@@ -98,7 +95,7 @@ if len(g:plugs_missing) > 0
 endif
 
 " Things that have to be executed after `plug#end()`.
-" https://github.com/junegunn/vim-plug/issues/702#issuecomment-787503301
-call TriggerPlugCallbacks()
+" The idea is from https://github.com/junegunn/vim-plug/issues/702#issuecomment-787503301
+call s:triggerPlugCallbacks() 
 
 "}}}

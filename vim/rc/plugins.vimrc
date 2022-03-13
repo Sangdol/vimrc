@@ -98,17 +98,15 @@ set timeoutlen=200
 
 " Lua modules have to be loaded after `plug#end()`
 " since the `end()` function updates `&runtimepath`.
-function! s:which_key_callback()
 lua << EOF
-  require("which-key").setup {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
-  }
+  table.insert(plugin_callbacks, function()
+    require("which-key").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  end)
 EOF
-endfunction
-
-call AddToPlugCallbacks(function('s:which_key_callback'))
 
 "}}}
 
@@ -326,22 +324,20 @@ augroup NvimTreeColors
   highlight NvimTreeFolderIcon guibg=blue
 augroup END
 
-function! s:nvim_tree_callback()
 lua << EOF
-  require'nvim-tree'.setup {
-    view = {
-      mappings = {
-        list = {
-          { key = "!", action = "run_file_command" },
-          { key = ".", action = "" }
+  table.insert(plugin_callbacks, function()
+    require'nvim-tree'.setup {
+      view = {
+        mappings = {
+          list = {
+            { key = "!", action = "run_file_command" },
+            { key = ".", action = "" }
+          }
         }
       }
     }
-  }
+  end)
 EOF
-endfunction
-
-call AddToPlugCallbacks(function('s:nvim_tree_callback'))
 
 " Auto-refresh
 autocmd BufEnter * if &filetype == 'NvimTree' | execute 'NvimTreeRefresh' | endif
