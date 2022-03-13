@@ -127,7 +127,7 @@ Mapping tree
 
 This is the structure of normal mode mappings. This is used to structurally manage mappings and easily find empty slots for new mappings. This is not an exhaustive list.
 
-The `:map` or the [Fzf :Maps command](https://github.com/junegunn/fzf.vim#commands) can be used to search the current mappings as well.
+The the [Fzf :Maps command](https://github.com/junegunn/fzf.vim#commands) and the [which-key plugin](https://github.com/folke/which-key.nvim) can be used to search the details of the current mappings.
 
 ### Ctrl
 
