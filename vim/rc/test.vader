@@ -3,7 +3,7 @@
 "
 
 Before (setup):
-  source $HOME/.vim/rc/utility.vimrc
+  source $HOME/.vim/rc/utility.vim
 
 " StartsWith
 Execute (StartsWith):

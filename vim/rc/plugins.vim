@@ -72,7 +72,7 @@ Plug 'romainl/vim-qf'
 "
 
 " A scrollbar is counted as a window so the autoclose autocmd using winnr('$') doesn't work
-" (check out FocusableWinCount() in utility.vimrc).
+" (check out FocusableWinCount() in utility.vim).
 Plug 'dstein64/nvim-scrollview'
 
 let g:scrollview_current_only = 1

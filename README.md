@@ -70,17 +70,17 @@ Project Structure
 ├── ideavimrc               " IntelliJ IdeaVim RC file
 └── vim
    ├── rc                   " Modularized vimrc files
-   │  ├── setoptions.vimrc  " Setting vim options
-   │  ├── statusline.vimrc  " Setting statuline
-   │  ├── autocmd.vimrc     " General autocommands
-   │  ├── mappings.vimrc    " General mappings
-   │  ├── colorscheme.vimrc " Colorscheme and highlights
-   │  ├── functions.vimrc   " Functions and commands that can be used while using vim
-   │  ├── utility.vimrc     " Utility functions that can be used writing vimscript
-   │  ├── test.vader        " Test code that tests functions of utility.vimrc
-   │  ├── plug.vimrc        " Plug root that sources plugins.vim and devplugins.vimrc conditionally
-   │  ├── plugins.vimrc     " Plugins and related mappings and configuration
-   │  └── devplugins.vimrc  " Plugins and related mappings and configuration for coding (only loaded on macOS)
+   │  ├── setoptions.vim    " Setting vim options
+   │  ├── statusline.vim    " Setting statuline
+   │  ├── autocmd.vim       " General autocommands
+   │  ├── mappings.vim      " General mappings
+   │  ├── colorscheme.vim   " Colorscheme and highlights
+   │  ├── functions.vim     " Functions and commands that can be used while using vim
+   │  ├── utility.vim       " Utility functions that can be used writing vimscript
+   │  ├── test.vader        " Test code that tests functions of utility.vim
+   │  ├── plug.vim          " Plug root that sources plugins.vim and devplugins.vim conditionally
+   │  ├── plugins.vim       " Plugins and related mappings and configuration
+   │  └── devplugins.vim    " Plugins and related mappings and configuration for coding (only loaded on macOS)
    ├── colors               " Directory with colorscheme files
    ├── backup               " Directory with a README file. Backup files are git ignored.
    ├── swap                 " Directory with a README file. Swap files are git ignored.
@@ -97,7 +97,7 @@ Plugin Code Locality with Plug
 
 ### Lua `require`
 
-Each section in `plugins.vimrc` and `devplugins.vimrc` has one or more [Plug](https://github.com/junegunn/vim-plug) commands and related mappings and configuration. A helper callback function is used for code that has to be run after `plug#end()`, e.g., the Lua `require()` function has to run after `plug#end()` since Lua modules can be loaded after `runtimepath` are set which is done by the `end()` function.
+Each section in `plugins.vim` and `devplugins.vim` has one or more [Plug](https://github.com/junegunn/vim-plug) commands and related mappings and configuration. A helper callback function is used for code that has to be run after `plug#end()`, e.g., the Lua `require()` function has to run after `plug#end()` since Lua modules can be loaded after `runtimepath` are set which is done by the `end()` function.
 
 [VOoM](https://github.com/vim-scripts/VOoM) is used to show outlines.
 
@@ -163,7 +163,7 @@ The the [Fzf :Maps command](https://github.com/junegunn/fzf.vim#commands) and th
 * l: `tabnew`
 * m: Toggle Voom
 * n: `noh`
-* o: Octo (in `device_local.vimrc`)
+* o: Octo (in `device_local.vim`)
 * p: Plug
 * q: close window
 * r

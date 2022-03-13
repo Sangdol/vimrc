@@ -42,13 +42,13 @@ endfunction
 
 " Edit vimrc
 nnoremap <silent> <Leader>vv :tabnew<CR>:e ~/.vimrc<CR>
-nnoremap <silent> <Leader>vg :tabnew<CR>:e ~/.vim/rc/plug.vimrc<CR>
-nnoremap <silent> <Leader>vp :tabnew<CR>:e ~/.vim/rc/plugins.vimrc<CR>
-nnoremap <silent> <Leader>vd :tabnew<CR>:e ~/.vim/rc/devplugins.vimrc<CR>
-nnoremap <silent> <Leader>vm :tabnew<CR>:e ~/.vim/rc/mappings.vimrc<CR>
-nnoremap <silent> <Leader>vf :tabnew<CR>:e ~/.vim/rc/functions.vimrc<CR>
-nnoremap <silent> <Leader>vs :tabnew<CR>:e ~/.vim/rc/setoptions.vimrc<CR>
-nnoremap <silent> <Leader>vl :tabnew<CR>:e ~/.vim/rc/device_local.vimrc<CR>
+nnoremap <silent> <Leader>vg :tabnew<CR>:e ~/.vim/rc/plug.vim<CR>
+nnoremap <silent> <Leader>vp :tabnew<CR>:e ~/.vim/rc/plugins.vim<CR>
+nnoremap <silent> <Leader>vd :tabnew<CR>:e ~/.vim/rc/devplugins.vim<CR>
+nnoremap <silent> <Leader>vm :tabnew<CR>:e ~/.vim/rc/mappings.vim<CR>
+nnoremap <silent> <Leader>vf :tabnew<CR>:e ~/.vim/rc/functions.vim<CR>
+nnoremap <silent> <Leader>vs :tabnew<CR>:e ~/.vim/rc/setoptions.vim<CR>
+nnoremap <silent> <Leader>vl :tabnew<CR>:e ~/.vim/rc/device_local.vim<CR>
 nnoremap <Leader>vr :source ~/.vimrc<CR>
 
 " Help
@@ -73,11 +73,11 @@ augroup END
 "
 call plug#begin('~/.vim/plugged')
 
-source $HOME/.vim/rc/plugins.vimrc
+source $HOME/.vim/rc/plugins.vim
 
 if has("mac")
   " things not needed in servers
-  source $HOME/.vim/rc/devplugins.vimrc
+  source $HOME/.vim/rc/devplugins.vim
 endif
 
 call plug#end()
@@ -96,6 +96,6 @@ endif
 
 " Things that have to be executed after `plug#end()`.
 " The idea is from https://github.com/junegunn/vim-plug/issues/702#issuecomment-787503301
-call s:triggerPlugCallbacks() 
+call s:triggerPlugCallbacks()
 
 "}}}

@@ -1,17 +1,17 @@
 "
 " Sang's Vim Configuration
 "
-source $HOME/.vim/rc/setoptions.vimrc
-source $HOME/.vim/rc/statusline.vimrc
-source $HOME/.vim/rc/utility.vimrc
-source $HOME/.vim/rc/autocmd.vimrc
-source $HOME/.vim/rc/functions.vimrc
-source $HOME/.vim/rc/mappings.vimrc
-source $HOME/.vim/rc/plug.vimrc
-source $HOME/.vim/rc/colorscheme.vimrc " This has to come after plug.vimrc.
+source $HOME/.vim/rc/setoptions.vim
+source $HOME/.vim/rc/statusline.vim
+source $HOME/.vim/rc/utility.vim
+source $HOME/.vim/rc/autocmd.vim
+source $HOME/.vim/rc/functions.vim
+source $HOME/.vim/rc/mappings.vim
+source $HOME/.vim/rc/plug.vim
+source $HOME/.vim/rc/colorscheme.vim " This has to come after plug.vim.
 
 " For work environment configuration like a GitHub Enterprise URL, etc.
-let s:device_local_vimrc = '$HOME/.vim/rc/device_local.vimrc'
+let s:device_local_vimrc = '$HOME/.vim/rc/device_local.vim'
 if filereadable(expand(s:device_local_vimrc))
   execute 'source ' .. s:device_local_vimrc
 endif
