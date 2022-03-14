@@ -3,7 +3,7 @@
 " Status line
 "
 
-function CurrentDir()
+function! CurrentDir()
   return fnamemodify(getcwd(), ':t')
 endfunction
 
