@@ -40,6 +40,16 @@ lua << EOF
   end)
 EOF
 
+" Dim
+Plug 'neovim/nvim-lspconfig'
+Plug 'narutoxy/dim.lua'
+
+lua << EOF
+  table.insert(plugin_callbacks, function()
+    require('dim').setup({})
+  end)
+EOF
+
 "}}}
 
 "
@@ -187,3 +197,4 @@ lua << EOF
 EOF
 
 "}}}
+
