@@ -331,6 +331,11 @@ lua << EOF
             { key = ".", action = "" }
           }
         }
+      },
+      actions = {
+        open_file = {
+          resize_window = true
+        }
       }
     }
   end)
