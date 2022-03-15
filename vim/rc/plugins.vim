@@ -313,7 +313,6 @@ let g:nvim_tree_icons = {
     \ }
 
 nnoremap <C-n> :NvimTreeToggle<CR>
-nnoremap <leader>7 :NvimTreeRefresh<CR>
 nnoremap <leader>0 :NvimTreeFindFile<CR>
 
 augroup NvimTreeColors
