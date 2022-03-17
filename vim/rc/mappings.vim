@@ -230,8 +230,9 @@ endfunction
 
 nnoremap <leader><leader>* :call <SID>toggle_bullet()<CR>
 
-" Add h3
+" Add markdown elements
 nnoremap <leader><leader># m`^i### <esc>``4l
+nnoremap <leader><leader>> m`^i> <esc>``2l
 
 " line: * todo
 " mark: v
