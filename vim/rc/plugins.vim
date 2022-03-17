@@ -3,6 +3,13 @@
 "
 
 "
+" numbertoggle (relative line number) {{{1
+"
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+
+"}}}
+
+"
 " dial {{{1
 "
 Plug 'monaqa/dial.nvim'
