@@ -347,9 +347,6 @@ lua << EOF
   end)
 EOF
 
-" Auto-refresh -> this makes "preview" too slow
-"autocmd BufEnter * if &filetype == 'NvimTree' | execute 'NvimTreeRefresh' | endif
-
 "}}}
 
 "
