@@ -131,7 +131,7 @@ noremap <Leader>wt :call <SID>save_to_temp_with_timestamp()<CR>
 " - aa,af " => 11,14
 function! s:translate_linenumber(alphanumeric_line_number)
   if a:alphanumeric_line_number !~ '\d'
-    let d = ZipMap('asdfghjkl;,', '1234567890,')
+    let d = ZipMap('-+asdfghjkl;,', '-+1234567890,')
     let chars = StringToArray(a:alphanumeric_line_number)
     let line_number = join(map(chars, {idx, val -> d[val]}), '')
 
