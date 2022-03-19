@@ -255,7 +255,6 @@ Plug 'tpope/vim-repeat'
 
 "
 " Vader {{{1
-" https://github.com/junegunn/vader.vim
 "
 Plug 'junegunn/vader.vim', {'on': 'Vader', 'for': 'vader'}
 
@@ -351,7 +350,6 @@ EOF
 
 "
 " vim-anyfold {{{1
-" https://github.com/pseewald/vim-anyfold
 "
 Plug 'pseewald/vim-anyfold'
 autocmd Filetype yaml,javascript,scala,typescript,java,json AnyFoldActivate
@@ -360,7 +358,6 @@ autocmd Filetype yaml,javascript,scala,typescript,java,json AnyFoldActivate
 
 "
 " Ack {{{1
-" https://github.com/mileszs/ack.vim#can-i-use-ag-the-silver-searcher-with-this
 "
 Plug 'mileszs/ack.vim'  " :h ack
 
@@ -373,19 +370,17 @@ endif
 "
 " vim-illuminate {{{1
 "
-Plug 'RRethy/vim-illuminate' " https://github.com/RRethy/vim-illuminate
+Plug 'RRethy/vim-illuminate'
 let g:Illuminate_ftblacklist = ['nerdtree', 'markdown']
 
 "}}}
 
 "
 " vim-rooter {{{1
-" https://github.com/airblade/vim-rooter
 "
 Plug 'airblade/vim-rooter' " Changes Vim working directory to project root.
 
 " Go to the current dir
-" https://vim.fandom.com/wiki/Set_working_directory_to_the_current_file
 nnoremap <leader>9 :cd %:p:h<CR> :pwd<CR>
 
 " Go to the root
