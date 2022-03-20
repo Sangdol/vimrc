@@ -3,6 +3,18 @@
 "
 
 "
+" Better digraphs {{{1
+"
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'protex/better-digraphs.nvim'
+
+inoremap <C-k><C-k> <Cmd>lua require'betterdigraphs'.digraphs("i")<CR>
+nnoremap r<C-k><C-k> <Cmd>lua require'betterdigraphs'.digraphs("r")<CR>
+vnoremap r<C-k><C-k> <ESC><Cmd>lua require'betterdigraphs'.digraphs("gvr")<CR>
+
+"}}}
+
+"
 " numbertoggle (relative line number) {{{1
 "
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
