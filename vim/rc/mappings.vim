@@ -292,4 +292,8 @@ nnoremap <Leader>e3 :let @+=expand("%:t")<CR>
 " Spell check
 nnoremap <Leader>es :set spell!<CR>
 
+" Remove trailing spaces
+" There's an autocmd but this is needed when autosave is on.
+nnoremap <Leader>et :%s/\s\+$//ge<CR>
+
 "}}}
