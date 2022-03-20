@@ -96,6 +96,11 @@ set jumpoptions+=stack
 " (default is 4000ms = 4s)
 set updatetime=300
 
+" Dictionary
+if has('mac')
+  set dictionary+=/usr/share/dict/words
+endif
+
 "
 " Style
 "
@@ -126,4 +131,6 @@ augroup settings
   " Spell check
   autocmd FileType gitcommit setlocal spell
 
+  " Dictionary
+  autocmd FileType markdown set complete+=k
 augroup END

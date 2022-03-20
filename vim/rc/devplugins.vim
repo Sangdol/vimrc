@@ -129,6 +129,19 @@ nnoremap <silent> <leader>so :CocFzfList outline<CR>
 nnoremap <silent> <leader>sa :CocFzfList diagnostics<CR>
 nnoremap <silent> <leader>ss :CocFzfList symbols<CR>
 
+let g:coc_global_extensions = [
+    \'coc-conjure',
+    \'coc-dictionary',
+    \'coc-emoji',
+    \'coc-json',
+    \'coc-lua',
+    \'coc-metals',
+    \'coc-syntax',
+    \'coc-ultisnips',
+    \'coc-vimlsp',
+    \'coc-word'
+    \]
+
 "}}}
 
 "
