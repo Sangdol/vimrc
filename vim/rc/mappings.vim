@@ -274,9 +274,6 @@ set lcs=tab:›\ ,trail:·,eol:¬,nbsp:_
 set fcs=fold:-
 nnoremap <silent> <leader>i :set nolist!<CR>
 
-" Save with root permission inside Vim
-cmap w!! w !sudo tee > /dev/null %
-
 " qq to record, Q to replay
 nnoremap Q @q
 
