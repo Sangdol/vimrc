@@ -103,6 +103,15 @@ Plug 'folke/which-key.nvim'
 " Popup delay
 set timeoutlen=200
 
+function! s:whichkey_highlights() abort
+  highlight WhichKeyFloat guibg=gray10
+endfunction
+
+augroup WhichKeyColors
+  autocmd!
+  autocmd ColorScheme * call s:whichkey_highlights()
+augroup END
+
 " Lua modules have to be loaded after `plug#end()`
 " since the `end()` function updates `&runtimepath`.
 lua << EOF
