@@ -5,7 +5,7 @@ vim/plugged
 vim/undodir
 
 # See vimrc
-device_local.vimrc
+device_local.vim
 
 # netrw history file
 # http://stackoverflow.com/questions/9850360/what-is-netrwhist
