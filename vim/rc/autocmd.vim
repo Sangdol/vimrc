@@ -39,7 +39,7 @@ augroup autosave
         \|   update
         \| endif
 
-  autocmd FileType scala,clojure let b:autosave_enabled = 0
+  autocmd FileType scala,clojure,python let b:autosave_enabled = 0
 augroup END
 
 function! ToggleAutosave()
