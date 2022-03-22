@@ -693,6 +693,41 @@ let g:fzf_action = {
 
 let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.9, 'relative': v:false } }
 
+"
+" Markdown toc
+"
+
+" Forked https://github.com/preservim/vim-markdown
+" and left only functions and commands for :Toc.
+Plug 'Sangdol/vim-markdown'
+
+" selected: ["<line number>: header"]
+function! s:fzf_toc_handler(selected) abort
+  let line_number = split(a:selected[0], ':')[0]
+  execute ':' .. line_number
+endfunction
+
+function! s:fzf_toc(...) abort
+  try
+    :Toc
+  catch /^Vim\%((\a\+)\)\=:E492/
+    " No :Toc command
+    return
+  endtry
+  let loclist = getloclist(0)
+  wincmd p
+  :lclose
+  let lines = map(loclist,
+    \ 'printf("%s:\t%s", v:val["lnum"], v:val["text"])')
+
+  call fzf#run({
+  \ 'source':  lines,
+  \ 'sink*': function('s:fzf_toc_handler')
+  \})
+endfunction
+
+nnoremap <leader>fo :call <SID>escape_abnormal_buf_and('call <sid>fzf_toc()')<CR>
+
 "}}}
 
 "
