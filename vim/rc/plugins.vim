@@ -704,26 +704,55 @@ Plug 'Sangdol/vim-markdown'
 " selected: ["<line number>: header"]
 function! s:fzf_toc_handler(selected) abort
   let line_number = split(a:selected[0], ':')[0]
-  execute ':' .. line_number
+
+  " This doesn't work when moving upward.
+  " Why?
+  "execute line_number
+
+  execute 'normal' line_number .. 'G'
 endfunction
 
-function! s:fzf_toc(...) abort
+function! s:fzf_md_toc() abort
   try
     :Toc
   catch /^Vim\%((\a\+)\)\=:E492/
     " No :Toc command
     return
   endtry
-  let loclist = getloclist(0)
   wincmd p
+
+  let loclist = getloclist(0)
   :lclose
-  let lines = map(loclist,
-    \ 'printf("%s:\t%s", v:val["lnum"], v:val["text"])')
+
+  let lines = map(loclist, 'printf("%s:\t%s", v:val["lnum"], v:val["text"])')
 
   call fzf#run({
   \ 'source':  lines,
   \ 'sink*': function('s:fzf_toc_handler')
   \})
+endfunction
+
+function! s:fzf_vim_toc() abort
+  :vimgrep /{{{1/j %
+  wincmd p
+
+  let list = getqflist()
+  :cclose
+
+  let lines = map(list, 'printf("%s:\t%s", v:val["lnum"], v:val["text"])')
+
+  call fzf#run({
+  \ 'source':  lines,
+  \ 'sink*': function('s:fzf_toc_handler')
+  \})
+endfunction
+
+function! s:fzf_toc(...) abort
+  if &filetype == 'markdown'
+    call s:fzf_md_toc()
+  elseif &filetype == 'vim'
+    call s:fzf_vim_toc()
+  endif
 endfunction
 
 nnoremap <leader>fo :call <SID>escape_abnormal_buf_and('call <sid>fzf_toc()')<CR>
