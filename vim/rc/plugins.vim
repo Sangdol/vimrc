@@ -637,6 +637,12 @@ nnoremap <leader>fb :call <SID>escape_abnormal_buf_and('Buffers')<CR>
 nnoremap <leader>ft :call <SID>escape_abnormal_buf_and('Filetypes')<CR>
 nnoremap <leader>fs :call <SID>escape_abnormal_buf_and('Snippets')<CR>
 
+" git
+nnoremap <leader>fgs :call <SID>escape_abnormal_buf_and('GFiles?')<CR>
+nnoremap <leader>fgc :call <SID>escape_abnormal_buf_and('Commits')<CR>
+nnoremap <leader>fgb :call <SID>escape_abnormal_buf_and('BCommits')<CR>
+
+
 " fzf Rg to search words under the cursor
 " https://news.ycombinator.com/item?id=26634419
 nnoremap <silent> <leader>ff yiw:Rg <C-r>"<CR>
@@ -658,9 +664,9 @@ command! -bang -bar -nargs=? -complete=dir Cd
     \ 'sink': 'cd'}))
 
 " Quick navigations
-nnoremap <leader>fp :call <SID>escape_abnormal_buf_and('FZF ~/projects')<CR>
 nnoremap <leader>f~ :call <SID>escape_abnormal_buf_and('Cd!')<CR>
-nnoremap <leader>fg :call <SID>escape_abnormal_buf_and('FZF ~/.vim/plugged')<CR>
+nnoremap <leader>fpr :call <SID>escape_abnormal_buf_and('FZF ~/projects')<CR>
+nnoremap <leader>fpl :call <SID>escape_abnormal_buf_and('FZF ~/.vim/plugged')<CR>
 
 " From https://github.com/junegunn/fzf/blob/master/README-VIM.md
 function! s:build_quickfix_list(lines)
