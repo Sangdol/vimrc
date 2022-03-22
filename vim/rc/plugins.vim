@@ -3,6 +3,16 @@
 "
 
 "
+" tagbar {{{1
+"
+Plug 'majutsushi/tagbar'
+Plug 'lvht/tagbar-markdown'
+
+nnoremap <silent> <leader>mt :TagbarToggle<cr>
+
+"}}}
+
+"
 " Better digraphs {{{1
 "
 Plug 'nvim-telescope/telescope.nvim'
@@ -569,7 +579,7 @@ function! s:toggle_voom() abort
   endif
 endfunction
 
-nnoremap <silent> <Leader>m :call <sid>toggle_voom()<cr>
+nnoremap <silent> <Leader>mm :call <sid>toggle_voom()<cr>
 
 " Open
 function! VoomPandoc() abort

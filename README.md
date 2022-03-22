@@ -161,7 +161,7 @@ The the [Fzf :Maps command](https://github.com/junegunn/fzf.vim#commands) and th
 * j: Easymotion
 * k: Easymotion
 * l: `tabnew`
-* m: Toggle Voom
+* m: Toggle Voom / Tagbar
 * n: `noh`
 * o: Octo (in `device_local.vim`)
 * p: Plug
