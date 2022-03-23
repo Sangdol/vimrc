@@ -694,7 +694,7 @@ let g:fzf_action = {
 let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.9, 'relative': v:false } }
 
 "
-" Markdown toc
+" fzf TOC
 "
 
 " Forked https://github.com/preservim/vim-markdown
@@ -732,7 +732,7 @@ function! s:fzf_md_toc() abort
   \})
 endfunction
 
-function! s:fzf_vim_toc() abort
+function! s:fzf_marker_toc() abort
   :vimgrep /\s{{{1/j %
   wincmd p
 
@@ -751,7 +751,9 @@ function! s:fzf_toc(...) abort
   if &filetype == 'markdown'
     call s:fzf_md_toc()
   elseif &filetype == 'vim'
-    call s:fzf_vim_toc()
+    call s:fzf_marker_toc()
+  else
+    echom 'No TOC for the current filetype.'
   endif
 endfunction
 
