@@ -733,7 +733,7 @@ function! s:fzf_md_toc() abort
 endfunction
 
 function! s:fzf_vim_toc() abort
-  :vimgrep /{{{1/j %
+  :vimgrep /\s{{{1/j %
   wincmd p
 
   let list = getqflist()
