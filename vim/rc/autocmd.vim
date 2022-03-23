@@ -25,7 +25,7 @@ augroup custom
   autocmd VimEnter * wincmd l
 
   " Terminal
-  autocmd TermOpen * startinsert
+  autocmd TermOpen * startinsert | setlocal norelativenumber
 
 augroup END
 
