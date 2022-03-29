@@ -229,11 +229,11 @@ function! s:toggle_bullet()
   endif
 endfunction
 
-nnoremap <leader><leader>* :call <SID>toggle_bullet()<CR>
+nnoremap <leader>m* :call <SID>toggle_bullet()<CR>
 
 " Add markdown elements
-nnoremap <leader><leader># m`^i### <esc>``4l
-nnoremap <leader><leader>> m`^i> <esc>``2l
+nnoremap <leader>m# m`^i### <esc>``4l
+nnoremap <leader>m> m`^i> <esc>``2l
 
 " line: * todo
 " mark: v
@@ -246,8 +246,8 @@ function! s:toggle_markdown_bullet_tick(mark)
   endif
 endfunction
 
-nnoremap <leader><leader>v :call <SID>toggle_markdown_bullet_tick('v')<CR>
-nnoremap <leader><leader>x :call <SID>toggle_markdown_bullet_tick('x')<CR>
+nnoremap <leader>mv :call <SID>toggle_markdown_bullet_tick('v')<CR>
+nnoremap <leader>mx :call <SID>toggle_markdown_bullet_tick('x')<CR>
 
 "}}}
 
