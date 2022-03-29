@@ -131,7 +131,6 @@ nnoremap <silent> <leader>ss :CocFzfList symbols<CR>
 
 let g:coc_global_extensions = [
     \'coc-conjure',
-    \'coc-emoji',
     \'coc-json',
     \'coc-lua',
     \'coc-metals',
