@@ -146,7 +146,7 @@ The the [Fzf :Maps command](https://github.com/junegunn/fzf.vim#commands) and th
 * (numbers): select windows
 * a: yank all
 * b: open URL in a browser (it works for a `Plug` line as well)
-* c
+* c: Copilot
 * d
   * d: delete all
   * o, h, l: diff
@@ -162,7 +162,7 @@ The the [Fzf :Maps command](https://github.com/junegunn/fzf.vim#commands) and th
 * k: Easymotion
 * l: `tabnew`
 * m
-  * Toggle Voom / Tagbar 
+  * Toggle Voom / Tagbar
   * Markdown
 * n: `noh`
 * o: Octo (in `device_local.vim`)

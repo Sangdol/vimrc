@@ -3,6 +3,17 @@
 "
 
 "
+" copilot {{{1
+"
+Plug 'github/copilot.vim'
+
+nnoremap <leader>ce :Copilot enable<cr>
+nnoremap <leader>cd :Copilot disable<cr>
+nnoremap <leader>cs :Copilot status<cr>
+
+"}}}
+
+"
 " nvim-treesitter {{{1
 "
 " :TSInstall <language_to_install>

@@ -3,13 +3,6 @@
 "
 
 "
-" copilot {{{1
-"
-Plug 'github/copilot.vim'
-
-"}}}
-
-"
 " tagbar {{{1
 "
 Plug 'majutsushi/tagbar'
