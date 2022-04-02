@@ -56,7 +56,6 @@ function! s:open_url(url)
   echom 'Opening "' .. a:url .. '"'
   if !empty(a:url)
     if has("mac")
-      " Need chrome script in $PATH
       exec "!open '"..a:url.."'"
     elseif has("unix")
       exec "!google-chrome '"..a:url.."'"
@@ -68,8 +67,7 @@ endfunction
 
 " Open URL in browser
 function! s:browser()
-  let linenumber = get(a:, 'firstline', '.')
-  let line = getline(linenumber)
+  let line = getline('.')
   let line = trim(line)
   let is_plug = StartsWith(line, 'Plug')
   if is_plug
@@ -87,11 +85,6 @@ endfunction
 
 " (Remove the last <CR> to debug)
 nnoremap <Leader>b :call <SID>browser()<CR><CR>
-
-" Call Browser from a different line
-" (why did I add this? it moved cursor anyway...)
-" e.g., `:24Browser`
-command! -range Browser <line1>call <SID>browser()
 
 " Google it
 " https://vi.stackexchange.com/a/9002/3225
