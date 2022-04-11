@@ -673,6 +673,18 @@ nnoremap <leader>fgb :call <SID>escape_abnormal_buf_and('BCommits')<CR>
 nnoremap <silent> <leader>ff yiw:Rg <C-r>"<CR>
 vnoremap <silent> <leader>ff y:Rg <C-r>"<CR>
 
+" Advanced ripgrep integration https://github.com/junegunn/fzf.vim#example-advanced-ripgrep-integration
+" and shortening long paths https://github.com/junegunn/fzf.vim/issues/1171
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command, '--delimiter', '/', '--with-nth', '-2..']}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+
+command! -nargs=* -bang Rg call RipgrepFzf(<q-args>, <bang>0)
+
 function! RgCurrentDir()
   let current_path = expand('%:p:h')
   execute 'lcd ' .. current_path
