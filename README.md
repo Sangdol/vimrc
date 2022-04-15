@@ -1,8 +1,6 @@
 vimrc for neovim
 ===
 
-![vim terminal screenshot](/images/vimrc.png)
-
 Opinionated vimrc files with three goals:
 
 * Be pragmatic than "right".
