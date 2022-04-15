@@ -1,13 +1,17 @@
 vimrc for neovim
 ===
 
-![vim terminal screenshot](/screenshots/vimrc.png)
+![vim terminal screenshot](/images/vimrc.png)
 
 Opinionated vimrc files with three goals:
 
-* Be pragmatic than "right"
-* Keep it maintainable
-* Make it easy to troubleshoot
+* Be pragmatic than "right".
+* Keep it maintainable.
+* Make it easy to troubleshoot.
+
+Please check out my blog post [Learnings after 500 commits to my vimrc](https://iamsang.com/en/2022/04/13/vimrc/) if you want to know more about my vimrc.
+
+![vimrc cartoon](/images/cartoon-vimrc.png)
 
 Prerequisite
 ---
@@ -101,7 +105,7 @@ Each section in `plugins.vim` and `devplugins.vim` has one or more [Plug](https:
 
 [VOoM](https://github.com/vim-scripts/VOoM) is used to show outlines.
 
-![plugin code locality](/screenshots/plugin-code-locality.png)
+![plugin code locality](/images/plugin-code-locality.png)
 
 ### Highlights
 
@@ -125,9 +129,9 @@ augroup END
 Mapping tree
 ---
 
-This is the structure of normal mode mappings. This is used to structurally manage mappings and easily find empty slots for new mappings. This is not an exhaustive list.
+The lists below are the structure of normal mode mappings. I use them to structurally manage mappings and easily find empty slots for new mappings. They are not exhaustive.
 
-The the [Fzf :Maps command](https://github.com/junegunn/fzf.vim#commands) and the [which-key plugin](https://github.com/folke/which-key.nvim) can be used to search the details of the current mappings.
+[The Fzf :Maps command](https://github.com/junegunn/fzf.vim#commands) and [the which-key plugin](https://github.com/folke/which-key.nvim) can be used to search the details of the current mappings.
 
 ### Ctrl
 

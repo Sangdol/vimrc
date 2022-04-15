@@ -3,6 +3,13 @@
 "
 
 "
+" vim-markdown-toc {{{1
+" 
+Plug 'mzlogin/vim-markdown-toc'
+
+"}}}
+
+"
 " markdown-preview {{{1
 " https://github.com/iamcco/markdown-preview.nvim
 "
