@@ -4,7 +4,7 @@
 
 "
 " vim-markdown-toc {{{1
-" 
+"
 Plug 'mzlogin/vim-markdown-toc'
 
 "}}}
@@ -545,11 +545,14 @@ nnoremap <leader>gpu :Git pull --rebase \| :call ClearPulledCount()<CR>
 " GitHub extension for fugitive
 Plug 'tpope/vim-rhubarb'
 
-nnoremap <leader>gb :GBrowse<CR>
-nnoremap <leader>ge :GBrowse .<CR>
+" Open in Browser
+" c: current
+" r: root
+nnoremap <leader>gbc :GBrowse<CR>
+nnoremap <leader>gbr :GBrowse .<CR>
 
-" Extra
-nnoremap <leader>gh :!gh pr checkout<space>
+" gcp: [g]it [c]heckout [p]r
+nnoremap <leader>gcp :!gh pr checkout<space>
 
 " fzf-checkout
 Plug 'stsewd/fzf-checkout.vim'
