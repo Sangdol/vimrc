@@ -13,7 +13,7 @@ nnoremap <leader>cs :Copilot status<cr>
 
 "}}}
 
-"
+"https://hiring.api.synthesia.io
 " nvim-treesitter {{{1
 "
 " :TSInstall <language_to_install>
@@ -148,7 +148,8 @@ let g:coc_global_extensions = [
     \'coc-syntax',
     \'coc-ultisnips',
     \'coc-vimlsp',
-    \'coc-word'
+    \'coc-word',
+    \'coc-pyright'
     \]
 
 "}}}
