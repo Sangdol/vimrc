@@ -257,6 +257,9 @@ nnoremap <leader>mx :call <SID>toggle_markdown_bullet_tick('x')<CR>
 
 nnoremap <silent> <Leader>n :noh<CR>
 
+" For easier use of registers
+nnoremap , "
+
 " Help
 command! -narg=1 -complete=help Hv vert help <args>
 command! -narg=1 -complete=help Ht tab help <args>
