@@ -259,6 +259,7 @@ nnoremap <silent> <Leader>n :noh<CR>
 
 " For easier use of registers
 nnoremap , "
+vnoremap , "
 
 " Help
 command! -narg=1 -complete=help Hv vert help <args>
