@@ -323,7 +323,6 @@ Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 
 " vimrc
-let g:nvim_tree_indent_markers = 1 "0 by default, this option shows indent markers when folders are open
 let g:nvim_tree_git_hl = 1 "0 by default, will enable file highlight for git attributes (can be used without the icons).
 let g:nvim_tree_highlight_opened_files = 1 "0 by default, will enable folder and file icon highlight for opened files/directories.
 let g:nvim_tree_root_folder_modifier = ':~' "This is the default. See :help filename-modifiers for more options
@@ -382,6 +381,11 @@ augroup END
 lua << EOF
   table.insert(plugin_callbacks, function()
     require'nvim-tree'.setup {
+      renderer = {
+        indent_markers = {
+          enable = true
+        }
+      },
       view = {
         mappings = {
           list = {
