@@ -549,7 +549,7 @@ Plug 'tpope/vim-rhubarb'
 " c: current
 " r: root
 nnoremap <leader>gbc :GBrowse<CR>
-nnoremap <leader>gbr :GBrowse .<CR>
+nnoremap <leader>gb. :GBrowse .<CR>
 
 " gcp: [g]it [c]heckout [p]r
 nnoremap <leader>gch :!gh pr checkout<space>
