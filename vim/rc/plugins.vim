@@ -552,7 +552,7 @@ nnoremap <leader>gbc :GBrowse<CR>
 nnoremap <leader>gbr :GBrowse .<CR>
 
 " gcp: [g]it [c]heckout [p]r
-nnoremap <leader>gcp :!gh pr checkout<space>
+nnoremap <leader>gch :!gh pr checkout<space>
 
 " fzf-checkout
 Plug 'stsewd/fzf-checkout.vim'
