@@ -550,9 +550,9 @@ nnoremap <leader>gpu :Git pull --rebase \| :call ClearPulledCount()<CR>
 Plug 'tpope/vim-rhubarb'
 
 " Open in Browser
-" c: current
-" r: root
-nnoremap <leader>gbc :GBrowse<CR>
+" o: open (current)
+" .: root
+nnoremap <leader>gbo :GBrowse<CR>
 nnoremap <leader>gb. :GBrowse .<CR>
 
 " gcp: [g]it [c]heckout [p]r
