@@ -810,6 +810,10 @@ Plug 'scrooloose/nerdcommenter'
 nmap <silent> <C-_> <plug>NERDCommenterToggle
 vmap <silent> <C-_> <plug>NERDCommenterToggle
 
+" C-/ is needed for nvim 0.7.0+
+nmap <silent> <C-/> <plug>NERDCommenterToggle
+vmap <silent> <C-/> <plug>NERDCommenterToggle
+
 let g:NERDCreateDefaultMappings = 0
 
 "}}}
