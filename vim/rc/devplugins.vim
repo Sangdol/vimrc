@@ -17,6 +17,7 @@ nnoremap <leader>cs :Copilot status<cr>
 " nvim-treesitter {{{1
 "
 " :TSInstall <language_to_install>
+" :TSUninstall <language_to_uninstall>
 " :TSUpdate
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
@@ -31,8 +32,8 @@ lua << EOF
       -- Install languages synchronously (only applied to `ensure_installed`)
       sync_install = false,
 
-      -- List of parsers to ignore installing
-      ignore_install = { "" },
+      -- markdown is slow and highlights are not great
+      ignore_install = { "markdown" },
 
       highlight = {
         -- `false` will disable the whole extension
