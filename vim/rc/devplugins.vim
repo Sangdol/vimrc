@@ -191,6 +191,14 @@ autocmd FileType python nnoremap <buffer> <leader>ee :call SemshiNext()<CR>
 " Poet-v: Poetry and Pipenv integration
 Plug 'petobens/poet-v', { 'for': 'python' }
 
+" Black
+Plug 'psf/black', { 'branch': 'stable' }
+
+augroup black_on_save
+  autocmd!
+  autocmd BufWritePre *.py Black
+augroup end
+
 "}}}
 
 "
