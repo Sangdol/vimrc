@@ -40,6 +40,7 @@ augroup autosave
         \| endif
 
   autocmd FileType scala,clojure,python let b:autosave_enabled = 0
+  autocmd BufLeave *.scala,*.clj,*.py update 
 augroup END
 
 function! ToggleAutosave()
