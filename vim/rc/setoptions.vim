@@ -114,6 +114,7 @@ set cursorline
 " Always show the signcolumn, otherwise it would shift the text each time
 " coc diagnostics or vim-signify signs appear/become resolved.
 set signcolumn=yes
+set signcolumn=auto:2
 
 augroup settings
   autocmd!
