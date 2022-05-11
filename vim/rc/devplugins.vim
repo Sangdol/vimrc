@@ -3,6 +3,15 @@
 "
 
 "
+" Vimspector {{{1
+"
+Plug 'puremourning/vimspector'
+
+let g:vimspector_enable_mappings='HUMAN'
+
+"}}}
+
+"
 " copilot {{{1
 "
 Plug 'github/copilot.vim'
