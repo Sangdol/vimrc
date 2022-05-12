@@ -186,7 +186,7 @@ Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
 " https://github.com/numirias/semshi/issues/60
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 
-autocmd FileType python nnoremap <buffer> <leader>re :Semshi rename<CR>
+autocmd FileType python nnoremap <buffer> <leader>re yiw:Semshi rename<CR><C-r>+<C-f>
 
 " All in one like IntelliJ F2
 function! SemshiNext()
