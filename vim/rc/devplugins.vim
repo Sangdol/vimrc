@@ -208,6 +208,13 @@ augroup black_on_save
   autocmd BufWritePre *.py Black
 augroup end
 
+Plug 'alfredodeza/pytest.vim'
+
+nnoremap <silent> <leader>xt :Pytest file<CR>
+nnoremap <silent> <leader>xs :Pytest session<CR>
+
+Plug 'python-rope/ropevim', {'do': './install-rope.sh'}
+
 "}}}
 
 "
