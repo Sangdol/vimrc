@@ -145,10 +145,12 @@ nmap <leader>re <Plug>(coc-rename)
 
 " coc-fzf
 Plug 'antoinemadec/coc-fzf'
-nnoremap <silent> <leader>sf :CocFzfList<CR>
-nnoremap <silent> <leader>so :CocFzfList outline<CR>
-nnoremap <silent> <leader>sa :CocFzfList diagnostics<CR>
-nnoremap <silent> <leader>ss :CocFzfList symbols<CR>
+
+autocmd FileType python,lua,scala,javascript,clojure
+      \| nnoremap <buffer><silent> <leader>sf :CocFzfList<CR>
+      \| nnoremap <buffer><silent> <leader>so :CocFzfList outline<CR>
+      \| nnoremap <buffer><silent> <leader>sa :CocFzfList diagnostics<CR>
+      \| nnoremap <buffer><silent> <leader>ss :CocFzfList symbols<CR>
 
 let g:coc_global_extensions = [
     \'coc-conjure',

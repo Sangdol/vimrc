@@ -800,7 +800,7 @@ function! s:fzf_toc(...) abort
   endif
 endfunction
 
-nnoremap <leader>fo :call <SID>escape_abnormal_buf_and('call <sid>fzf_toc()')<CR>
+nnoremap <leader>so :call <SID>escape_abnormal_buf_and('call <sid>fzf_toc()')<CR>
 
 "}}}
 
