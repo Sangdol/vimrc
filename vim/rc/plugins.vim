@@ -5,6 +5,8 @@
 "
 " vim-markdown-toc {{{1
 "
+" Markdown table of contents generator
+"
 Plug 'mzlogin/vim-markdown-toc'
 
 "}}}
@@ -801,6 +803,10 @@ function! s:fzf_toc(...) abort
 endfunction
 
 nnoremap <leader>so :call <SID>escape_abnormal_buf_and('call <sid>fzf_toc()')<CR>
+
+" Can't I open Toc with a fix size?
+nnoremap <leader>sn :Toc<CR>:resize 1<cr>j<cr>:lclose<cr>
+nnoremap <leader>sp :Toc<CR>:resize 1<cr>k<cr>:lclose<cr>
 
 "}}}
 
