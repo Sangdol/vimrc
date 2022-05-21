@@ -139,6 +139,13 @@ augroup ScrollViewColors
   autocmd ColorScheme * call s:scrollview_highlights()
 augroup END
 
+" :mksession doesn't work due to floating windows
+" https://github.com/dstein64/nvim-scrollview/issues/71
+command -bang -nargs=? MkSession
+      \ silent! ScrollViewDisable
+      \ | mksession<bang> <args>
+      \ | silent! ScrollViewEnable
+
 "}}}
 
 "
@@ -623,7 +630,7 @@ function! VoomPandoc() abort
   endif
 endfunction
 
-autocmd BufWinEnter,VimEnter *.md if (FocusableWinCount() == 1) | call VoomPandoc() | endif
+autocmd BufWinEnter *.md if (FocusableWinCount() == 1 && v:this_session == '') | call VoomPandoc() | endif
 
 " Auto close
 autocmd BufEnter * if (FocusableWinCount() == 1 && expand("%:e") =~ "VOOM") | q | endif
