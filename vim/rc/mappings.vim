@@ -135,7 +135,9 @@ endfunction
 nnoremap <leader>u :update<CR>
 nnoremap <leader>we :wq<CR>
 nnoremap <leader>ww :wa<CR>
-nnoremap <leader>wqq :wa \| qa<CR>
+
+" ScrollViewDisable is needed due to the scrollview and nvim bug
+nnoremap <leader>wqq :ScrollViewDisable \| mksession! .vimsession \| wa \| qa<cr>
 
 " Mostly for git commit message windows
 inoremap ;we <ESC>:wq<CR>
