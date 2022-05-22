@@ -161,7 +161,8 @@ let g:coc_global_extensions = [
     \'coc-ultisnips',
     \'coc-vimlsp',
     \'coc-word',
-    \'coc-pyright'
+    \'coc-pyright',
+    \'coc-emoji'
     \]
 
 "}}}
