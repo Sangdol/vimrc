@@ -7,8 +7,8 @@ syn match markdownError "\w\@<=\w\@="
 
 " Disable syntax for LaTex math
 " related issue https://github.com/tpope/vim-markdown/issues/60
-syn region markdownCode matchgroup=markdownCodeDelimiter start="\$" end="\$" keepend contains=markdownLineStart
-syn region markdownCode matchgroup=markdownCodeDelimiter start="\$\$" end="\$\$" keepend contains=markdownLineStart
+"syn region markdownCode matchgroup=markdownCodeDelimiter start="\$" end="\$" keepend contains=markdownLineStart
+"syn region markdownCode matchgroup=markdownCodeDelimiter start="\$\$" end="\$\$" keepend contains=markdownLineStart
 
 "
 " To highlight URLs - from plasticboy/vim-markdown
