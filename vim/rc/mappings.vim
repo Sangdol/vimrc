@@ -136,8 +136,37 @@ nnoremap <leader>u :update<CR>
 nnoremap <leader>we :wq<CR>
 nnoremap <leader>ww :wa<CR>
 
+function! s:prettify_term_bufname() abort
+  let b:term_bufname = bufname()
+
+  " Need a randome number to avoid bufname conflicts
+  let rand = rand() % 1000
+  execute 'file '..rand..' '..b:term_title
+endfunction
+
+function! s:revert_term_bufname() abort
+  let buffers = nvim_list_bufs()
+
+  for buf in buffers
+    if nvim_buf_is_loaded(buf) && nvim_buf_get_option(buf, 'buftype') == 'terminal'
+      try
+        let name = nvim_buf_get_var(buf, 'term_bufname')
+        execute buf..'bufdo! file '..name
+      catch
+        echom 'buf'..buf.. ' has no term_bufname.'
+      endtry
+    endif
+  endfor
+endfunction
+
+autocmd TermLeave * call s:prettify_term_bufname()
+
 " ScrollViewDisable is needed due to the scrollview and nvim bug
-nnoremap <leader>wqq :ScrollViewDisable \| mksession! .vimsession \| wa \| qa<cr>
+nnoremap <leader>wqq :call <SID>revert_term_bufname() 
+      \ \| ScrollViewDisable 
+      \ \| mksession! .vimsession
+      \ \| wa 
+      \ \| qa<cr>
 
 " Mostly for git commit message windows
 inoremap ;we <ESC>:wq<CR>
