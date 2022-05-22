@@ -25,7 +25,7 @@ augroup custom
   autocmd VimEnter * wincmd l
 
   " Terminal
-  autocmd TermOpen * startinsert | setlocal norelativenumber
+  autocmd TermOpen * startinsert 
 
 augroup END
 
@@ -40,7 +40,7 @@ augroup autosave
         \| endif
 
   autocmd FileType scala,clojure,python let b:autosave_enabled = 0
-  autocmd BufLeave *.scala,*.clj,*.py update 
+  autocmd BufLeave *.scala,*.clj,*.py update
 augroup END
 
 function! ToggleAutosave()

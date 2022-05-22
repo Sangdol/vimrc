@@ -124,9 +124,14 @@ augroup settings
   autocmd FileType tagbar,nerdtree,voomtree setlocal signcolumn=no
 
   " Terminal
-  autocmd TermOpen * setlocal nonumber | set signcolumn=number
-  autocmd TermLeave * setlocal number
-  autocmd TermEnter * setlocal nonumber
+  autocmd TermOpen * setlocal nonumber | setlocal norelativenumber | set signcolumn=number
+
+  " The code below enables a line number toggle
+  " but it clips texts due to an nvim issue:
+  " https://github.com/neovim/neovim/issues/4997
+  "autocmd TermOpen * setlocal nonumber | set signcolumn=number
+  "autocmd TermLeave * setlocal number
+  "autocmd TermEnter * setlocal nonumber
 
   " Spell check
   autocmd FileType gitcommit setlocal spell
