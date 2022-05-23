@@ -137,7 +137,9 @@ nnoremap <leader>we :wq<CR>
 nnoremap <leader>ww :wa<CR>
 
 function! s:prettify_term_bufname() abort
-  let b:term_bufname = bufname()
+  if !exists('b:term_bufname')
+    let b:term_bufname = bufname()
+  endif
 
   " Need a randome number to avoid bufname conflicts
   let rand = rand() % 1000
