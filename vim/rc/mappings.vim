@@ -141,9 +141,11 @@ function! s:prettify_term_bufname() abort
     let b:term_bufname = bufname()
   endif
 
-  " Need a randome number to avoid bufname conflicts
-  let rand = rand() % 1000
-  execute 'file '..rand..' '..b:term_title
+  if exists('b:term_title')
+    " Need a randome number to avoid bufname conflicts
+    let rand = rand() % 1000
+    execute 'file '..rand..' '..b:term_title
+  endif
 endfunction
 
 function! s:revert_term_bufname() abort
@@ -164,10 +166,10 @@ endfunction
 autocmd TermLeave * call s:prettify_term_bufname()
 
 " ScrollViewDisable is needed due to the scrollview and nvim bug
-nnoremap <leader>wqq :call <SID>revert_term_bufname() 
-      \ \| ScrollViewDisable 
+nnoremap <leader>wqq :call <SID>revert_term_bufname()
+      \ \| ScrollViewDisable
       \ \| mksession! .vimsession
-      \ \| wa 
+      \ \| wa
       \ \| qa<cr>
 
 " Mostly for git commit message windows
