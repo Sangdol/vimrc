@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
-pip install rope
-pip install ropevim
+python3 --version
+python3 -m pip install rope
+python3 -m pip install ropevim
