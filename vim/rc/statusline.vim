@@ -61,7 +61,7 @@ endfunction
 autocmd BufEnter * call ClearPushedCount() | call ClearPulledCount()
 
 function! s:statusline_expr()
-  let branch = "%{gitbranch#name()}"
+  let branch = "%{exists('*gitbranch#name') ? gitbranch#name() : ''}"
   let ro  = "%{&readonly ? 'RO ' : ''}"
   let ft  = "%{len(&filetype) ? &filetype . ' ' : ''}"
 
