@@ -69,12 +69,13 @@ function! s:statusline_expr()
   let pushpull = "%{UnpushedUnpulledCounts()}"
   let signify = "%{sy#repo#get_stats_decorated()}"
 
+  let spl = "%{&spell ? 'S ' : ' '}"
   let coc = " %{&runtimepath =~ 'coc.nvim' ? coc#status() : ''}"
 
   let sep = ' %= '
   let pos = ' %c'
 
-  return ' %{CurrentDir()}/%f ' .. ft .. ro .. coc ..
+  return ' %{CurrentDir()}/%f ' .. ft .. ro .. spl .. coc ..
         \ sep ..
         \ branch .. ' ' .. pushpull .. signify ..
         \ pos .. ' '
