@@ -544,8 +544,8 @@ Plug 'tpope/vim-fugitive'
 
 nnoremap <leader>gw :Gw<CR>
 nnoremap <leader>ga :Git add .<CR>
-nnoremap <leader>gg :Git add . \| :tab Git commit -v<CR>
-nnoremap <leader>gk :Gw \| :tab Git commit -v<CR>
+nnoremap <leader>gg :wa \| :Git add . \| :tab Git commit -v<CR>
+nnoremap <leader>gk :w \| :Gw \| :tab Git commit -v<CR>
 nnoremap <leader>gs :Git<CR>
 nnoremap <leader>gd :tab Gdiffsplit<CR>
 nnoremap <leader>gf :tab Git diff<CR>
