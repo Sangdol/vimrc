@@ -211,6 +211,13 @@ augroup black_on_save
   autocmd BufWritePre *.py Black
 augroup end
 
+Plug 'nvie/vim-flake8'
+
+augroup flake8_on_save
+  autocmd!
+  autocmd BufWritePost *.py call flake8#Flake8()
+augroup end
+
 Plug 'alfredodeza/pytest.vim'
 
 nnoremap <silent> <leader>xt :Pytest file<CR>
