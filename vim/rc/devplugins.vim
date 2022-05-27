@@ -162,7 +162,8 @@ let g:coc_global_extensions = [
     \'coc-vimlsp',
     \'coc-word',
     \'coc-pyright',
-    \'coc-emoji'
+    \'coc-emoji',
+    \'coc-tsserver',
     \]
 
 "}}}
