@@ -3,6 +3,34 @@
 "
 
 "
+" vim-yoink {{{1
+"
+" Yank History manager
+"
+" :Yanks
+" :ClearYanks
+"
+Plug 'svermeulen/vim-yoink'
+
+nmap <c-n> <plug>(YoinkPostPasteSwapBack)
+nmap <c-p> <plug>(YoinkPostPasteSwapForward)
+
+nmap p <plug>(YoinkPaste_p)
+nmap P <plug>(YoinkPaste_P)
+
+nmap gp <plug>(YoinkPaste_gp)
+nmap gP <plug>(YoinkPaste_gP)
+
+nmap [y <plug>(YoinkRotateBack)
+nmap ]y <plug>(YoinkRotateForward)
+
+nmap <c-=> <plug>(YoinkPostPasteToggleFormat)
+
+let g:yoinkChangeTickThreshold  = 1
+
+"}}}
+
+"
 " vim-markdown-toc {{{1
 "
 " Markdown table of contents generator
@@ -379,7 +407,7 @@ let g:nvim_tree_icons = {
     \   }
     \ }
 
-nnoremap <C-n> :NvimTreeToggle<CR>
+nnoremap <leader>9 :NvimTreeToggle<CR>
 nnoremap <leader>0 :NvimTreeFindFile<CR>
 
 augroup NvimTreeColors
@@ -447,7 +475,7 @@ let g:Illuminate_ftblacklist = ['nerdtree', 'markdown']
 Plug 'airblade/vim-rooter' " Changes Vim working directory to project root.
 
 " Go to the current dir
-nnoremap <leader>9 :cd %:p:h<CR> :pwd<CR>
+nnoremap <leader>7 :cd %:p:h<CR> :pwd<CR>
 
 " Go to the root
 nnoremap <leader>8 :Rooter<CR>
