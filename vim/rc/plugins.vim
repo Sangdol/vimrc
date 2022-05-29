@@ -26,6 +26,8 @@ nmap ]y <plug>(YoinkRotateForward)
 
 nmap <c-=> <plug>(YoinkPostPasteToggleFormat)
 
+" To make it work with auto-save
+" https://github.com/svermeulen/vim-yoink/issues/12
 let g:yoinkChangeTickThreshold  = 1
 
 "}}}
