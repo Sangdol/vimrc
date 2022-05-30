@@ -227,21 +227,3 @@ nnoremap <silent> <leader>xs :Pytest session<CR>
 Plug 'python-rope/ropevim', {'do': './install-rope.sh'}
 
 "}}}
-
-"
-" Octo {{{1
-"
-
-Plug 'pwntester/octo.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
-
-lua << EOF
-  table.insert(plugin_callbacks, function()
-    require"octo".setup()
-  end)
-EOF
-
-"}}}
-

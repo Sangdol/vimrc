@@ -167,7 +167,7 @@ The lists below are the structure of normal mode mappings. I use them to structu
   * Toggle Voom / Tagbar
   * Markdown
 * n: `noh`
-* o: Octo (in `device_local.vim`)
+* o
 * p: Plug
 * q: close window
 * r
