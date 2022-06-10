@@ -241,13 +241,16 @@ nnoremap <Leader>tj :below split \| terminal<CR>
 nnoremap <Leader>tk :topleft split \| terminal<CR>
 nnoremap <Leader>tt :tabnew \| terminal<CR>
 
+" Avoid adding gibberish: [32;2u
+tnoremap <S-Space> <Space>
+
 " Excluding fzf floating windows
 autocmd TermOpen * if bufname() !~ 'fzf'
       \| tnoremap <buffer> <UP> <C-\><C-n>:tabnext<CR>
       \| tnoremap <buffer> <DOWN> <C-\><C-n>:tabprevious<CR>
       \| tnoremap <buffer> ;; <C-\><C-n><CR>
       \| nnoremap <buffer> a :setlocal norelativenumber<CR>a
-      \| tnoremap <C-q> <C-\><C-n><C-w>p
+      \| tnoremap <buffer> <C-q> <C-\><C-n><C-w>p
       \| endif
 
 "}}}
