@@ -114,7 +114,7 @@ nmap <silent> <leader>si <Plug>(coc-implementation)
 nmap <silent> <leader>sr <Plug>(coc-references)
 nnoremap <silent> <leader>sz :call CocActionAsync('jumpDefinition', 'tab drop')<CR>
 
-" Code actions e.g., import
+" Code actions (quickfix) e.g., import
 nmap <leader>sc  <Plug>(coc-codeaction-line)
 
 " Scroll
