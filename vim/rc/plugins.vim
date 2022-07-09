@@ -631,11 +631,7 @@ nnoremap <silent> <Leader>mm :call <sid>toggle_voom()<cr>
 
 " Open
 function! VoomPandoc() abort
-  let l:filepath = expand('%:p')
-
-  if filepath !~ 'workbench\/notes'
-    Voom pandoc
-  endif
+  Voom pandoc
 endfunction
 
 autocmd BufWinEnter *.md if (FocusableWinCount() == 1 && v:this_session == '') | call VoomPandoc() | endif
