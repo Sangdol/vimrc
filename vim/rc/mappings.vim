@@ -47,7 +47,7 @@ vnoremap <silent> gj j
 
 " Easy escape
 inoremap jk <Esc>
-inoremap jl <Esc>O
+imap jl <C-o>zj
 inoremap j; <Esc>o
 
 " For quickfix list and location list
