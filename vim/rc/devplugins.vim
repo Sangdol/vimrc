@@ -108,14 +108,15 @@ nmap <silent> [e <Plug>(coc-diagnostic-prev-error)
 nmap <silent> ]e <Plug>(coc-diagnostic-next-error)
 
 " GoTo code navigation.
-nmap <silent> <leader>cd <Plug>(coc-definition)
-nmap <silent> <leader>ct <Plug>(coc-type-definition)
-nmap <silent> <leader>ci <Plug>(coc-implementation)
-nmap <silent> <leader>cr <Plug>(coc-references)
+" Why 's'? It's easy to type. [s]peed coc.
+nmap <silent> <leader>sd <Plug>(coc-definition)
+nmap <silent> <leader>st <Plug>(coc-type-definition)
+nmap <silent> <leader>si <Plug>(coc-implementation)
+nmap <silent> <leader>sr <Plug>(coc-references)
 nnoremap <silent> <leader>cz :call CocActionAsync('jumpDefinition', 'tab drop')<CR>
 
 " Code actions (quickfix) e.g., import
-nmap <leader>cc  <Plug>(coc-codeaction-line)
+nmap <leader>sa  <Plug>(coc-codeaction-line)
 
 " Scroll
 nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
@@ -144,10 +145,10 @@ nmap <leader>re <Plug>(coc-rename)
 Plug 'antoinemadec/coc-fzf'
 
 autocmd FileType python,lua,javascript,clojure
-      \| nnoremap <buffer><silent> <leader>cf :CocFzfList<CR>
-      \| nnoremap <buffer><silent> <leader>co :CocFzfList outline<CR>
-      \| nnoremap <buffer><silent> <leader>ca :CocFzfList diagnostics<CR>
-      \| nnoremap <buffer><silent> <leader>cs :CocFzfList symbols<CR>
+      \| nnoremap <buffer><silent> <leader>sf :CocFzfList<CR>
+      \| nnoremap <buffer><silent> <leader>so :CocFzfList outline<CR>
+      \| nnoremap <buffer><silent> <leader>sg :CocFzfList diagnostics<CR>
+      \| nnoremap <buffer><silent> <leader>ss :CocFzfList symbols<CR>
 
 let g:coc_global_extensions = [
     \'coc-conjure',
