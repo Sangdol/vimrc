@@ -147,7 +147,7 @@ The lists below are the structure of normal mode mappings. I use them to structu
 * (numbers): select windows
 * a: yank all
 * b: open URL in a browser (it works for a `Plug` line as well)
-* c: Copilot
+* c: coc
 * d
   * d: delete all
   * o, h, l: diff
@@ -172,7 +172,7 @@ The lists below are the structure of normal mode mappings. I use them to structu
 * r
   * re: rename
   * rl, ro, rr: ReplaceWithRegister related mappings
-* s: coc related mappings
+* s
 * t: nvim terminal related mappings
 * u: `update`
 * v
