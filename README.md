@@ -54,7 +54,6 @@ Development Environment
 
 Languages that I mainly write with vim:
 
-* Scala
 * Python
 * Clojure
 * Lua

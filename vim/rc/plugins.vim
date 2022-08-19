@@ -426,7 +426,7 @@ EOF
 " vim-anyfold {{{1
 "
 Plug 'pseewald/vim-anyfold'
-autocmd Filetype yaml,javascript,scala,typescript,java,json AnyFoldActivate
+autocmd Filetype yaml,javascript,typescript,java,json AnyFoldActivate
 
 "}}}
 
@@ -475,7 +475,7 @@ set nofoldenable " to not fold when opening a file https://stackoverflow.com/que
 set conceallevel=2 " to conceal _, * used for italic or bold
 
 " delete most of them as it slows down file loading - ['coffee', 'css', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sql', 'xml', 'java', 'python', 'sh', 'html', 'clojure', 'yaml', 'applescript', 'go', 'vim', 'awk', 'groovy']
-let g:markdown_fenced_languages = ['javascript', 'js=javascript', 'json=javascript', 'bash', 'sh', 'python', 'clojure', 'scala', 'log', 'vim']
+let g:markdown_fenced_languages = ['javascript', 'js=javascript', 'json=javascript', 'bash', 'sh', 'python', 'clojure', 'log', 'vim']
 
 "}}}
 
@@ -490,7 +490,7 @@ let g:syntastic_enable_racket_racket_checker=1
 
 " Disable as it's too slow
 " https://vi.stackexchange.com/questions/2954/how-do-i-disable-syntastic-for-python-files
-let g:syntastic_mode_map = { 'passive_filetypes': ['python', 'scala'] }
+let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 
 "}}}
 

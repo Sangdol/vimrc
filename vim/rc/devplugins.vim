@@ -121,9 +121,6 @@ nmap <leader>sc  <Plug>(coc-codeaction-line)
 nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
 nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 
-" r to open an item
-nmap <silent> <leader>st :<C-u>CocCommand metals.revealInTreeView metalsPackages<CR>
-
 " Use K to show documentation in preview window.
 nmap <silent> K :call <SID>show_documentation()<CR>
 
@@ -146,7 +143,7 @@ nmap <leader>re <Plug>(coc-rename)
 " coc-fzf
 Plug 'antoinemadec/coc-fzf'
 
-autocmd FileType python,lua,scala,javascript,clojure
+autocmd FileType python,lua,javascript,clojure
       \| nnoremap <buffer><silent> <leader>sf :CocFzfList<CR>
       \| nnoremap <buffer><silent> <leader>so :CocFzfList outline<CR>
       \| nnoremap <buffer><silent> <leader>sa :CocFzfList diagnostics<CR>
@@ -156,7 +153,6 @@ let g:coc_global_extensions = [
     \'coc-conjure',
     \'coc-json',
     \'coc-lua',
-    \'coc-metals',
     \'coc-syntax',
     \'coc-ultisnips',
     \'coc-vimlsp',
@@ -167,18 +163,6 @@ let g:coc_global_extensions = [
     \]
 
 "}}}
-
-"
-" Scala {{{1
-"
-
-" vim-scala
-Plug 'derekwyatt/vim-scala'
-
-let g:scala_scaladoc_indent = 1
-
-" Metals
-Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
 
 "
 " Python {{{1
