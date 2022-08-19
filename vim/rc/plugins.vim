@@ -361,8 +361,8 @@ inoremap ;va <ESC>:w \| Vader %<CR>
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 
-nnoremap <leader>9 :NvimTreeToggle<CR>
-nnoremap <leader>0 :NvimTreeFindFile<CR>
+nnoremap <leader>0 :NvimTreeToggle<CR>
+nnoremap <leader>9 :NvimTreeFindFile<CR>
 
 augroup NvimTreeColors
   " a list of groups can be found at `:help nvim_tree_highlight`
