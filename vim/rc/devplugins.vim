@@ -22,7 +22,7 @@ nnoremap <leader>cs :Copilot status<cr>
 
 "}}}
 
-"https://hiring.api.synthesia.io
+"
 " nvim-treesitter {{{1
 "
 " :TSInstall <language_to_install>
