@@ -14,7 +14,7 @@ let g:vimspector_enable_mappings='HUMAN'
 "
 " copilot {{{1
 "
-Plug 'github/copilot.vim'
+"Plug 'github/copilot.vim'
 
 nnoremap <leader>ece :Copilot enable<cr>
 nnoremap <leader>ecd :Copilot disable<cr>
