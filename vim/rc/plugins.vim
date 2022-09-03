@@ -121,7 +121,7 @@ Plug 'tpope/vim-surround'
 Plug 'danro/rename.vim'
 
 " Rename in the command line window
-nnoremap <leader>er :let @+=expand("%:t")<CR> \| :Rename <C-r>+<C-f>
+nnoremap <leader>er :let @+=expand("%:t")<CR>:Rename <C-r>+<C-f>
 
 "}}}
 
