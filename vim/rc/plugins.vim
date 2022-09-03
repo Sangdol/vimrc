@@ -405,7 +405,7 @@ lua << EOF
         }
       },
       view = {
-        " :h nvim-tree-mappings
+        -- :h nvim-tree-mappings
         mappings = {
           list = {
             { key = "!", action = "run_file_command" },
