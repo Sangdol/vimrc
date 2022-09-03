@@ -405,10 +405,12 @@ lua << EOF
         }
       },
       view = {
+        " :h nvim-tree-mappings
         mappings = {
           list = {
             { key = "!", action = "run_file_command" },
-            { key = ".", action = "" }
+            { key = ".", action = "" },
+            { key = "<C-e>", action = "" } -- to disable "edit_in_place"
           }
         }
       },
