@@ -113,7 +113,7 @@ nmap <silent> <leader>sd <Plug>(coc-definition)
 nmap <silent> <leader>st <Plug>(coc-type-definition)
 nmap <silent> <leader>si <Plug>(coc-implementation)
 nmap <silent> <leader>sr <Plug>(coc-references)
-nnoremap <silent> <leader>cz :call CocActionAsync('jumpDefinition', 'tab drop')<CR>
+nnoremap <silent> <leader>sz :call CocActionAsync('jumpDefinition', 'tab drop')<CR>
 
 " Code actions (quickfix) e.g., import
 nmap <leader>sa  <Plug>(coc-codeaction-line)
