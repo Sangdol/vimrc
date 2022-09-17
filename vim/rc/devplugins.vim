@@ -169,23 +169,6 @@ let g:coc_global_extensions = [
 " Python {{{1
 "
 
-" Semantic Highlighting for Python in Neovim
-" Do `pip3 install pynvim --upgrade`
-" E117: Unknown function: SemshiBufWipeout #60 => :UpdateRemotePlugins
-" https://github.com/numirias/semshi/issues/60
-Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
-
-autocmd FileType python nnoremap <buffer> <leader>re yiw:Semshi rename<CR><C-r>+<C-f>
-
-" All in one like IntelliJ F2
-function! SemshiNext()
-  execute('Semshi goto parameterUnused first')
-  execute('Semshi goto unresolved first')
-  execute('Semshi goto error')
-endfunction
-
-autocmd FileType python nnoremap <buffer> <leader>ee :call SemshiNext()<CR>
-
 " Poet-v: Poetry and Pipenv integration
 Plug 'petobens/poet-v', { 'for': 'python' }
 
