@@ -110,7 +110,14 @@ nnoremap <leader>ed :Bdelete hidden<cr>
 
 "
 " vim-surround {{{1
+" :h surround
 "
+" Visual mode:
+" - S`: abc -> `abc`
+
+" Normal mode:
+" - cs`': `abc` -> 'abc'
+" - ds`: `abc` -> abc
 Plug 'tpope/vim-surround'
 
 "}}}
