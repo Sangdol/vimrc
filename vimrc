@@ -17,7 +17,7 @@ if filereadable(expand(s:device_local_vimrc))
 endif
 
 " Project local
-let s:project_local_vimrc = 'project_local.vim'
+let s:project_local_vimrc = '.project_local.vim'
 if filereadable(expand(s:project_local_vimrc))
   execute 'source ' .. s:project_local_vimrc
 endif
