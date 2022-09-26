@@ -486,7 +486,7 @@ set nofoldenable " to not fold when opening a file https://stackoverflow.com/que
 set conceallevel=2 " to conceal _, * used for italic or bold
 
 " delete most of them as it slows down file loading - ['coffee', 'css', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sql', 'xml', 'java', 'python', 'sh', 'html', 'clojure', 'yaml', 'applescript', 'go', 'vim', 'awk', 'groovy']
-let g:markdown_fenced_languages = ['javascript', 'js=javascript', 'json=javascript', 'bash', 'sh', 'python', 'clojure', 'log', 'vim']
+let g:markdown_fenced_languages = ['javascript', 'js=javascript', 'json=javascript', 'bash', 'sh', 'python', 'clojure', 'log', 'vim', 'sql']
 
 "}}}
 
