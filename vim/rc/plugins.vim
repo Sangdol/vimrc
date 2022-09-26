@@ -472,7 +472,7 @@ nnoremap <leader>7 :cd %:p:h<CR> :pwd<CR>
 nnoremap <leader>8 :Rooter<CR>
 
 " Added custom root (.rooter)
-let g:rooter_patterns = ['.git', 'Makefile', 'package.json', '.rooter']
+let g:rooter_patterns = ['.git', '.rooter']
 let g:rooter_cd_cmd = 'lcd'
 
 "}}}
