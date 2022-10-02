@@ -3,6 +3,17 @@
 "
 
 "
+" vim-oscyank {{{1
+"
+" Copy to clipboard from remote SSH sessions
+"
+Plug 'ojroques/vim-oscyank', {'branch': 'main'}
+
+vnoremap <leader>ec :OSCYank<CR>
+
+"}}}
+
+"
 " vim-yoink {{{1
 "
 " Yank History manager
