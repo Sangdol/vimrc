@@ -194,11 +194,3 @@ nnoremap <silent> <leader>xs :Pytest session<CR>
 
 Plug 'python-rope/ropevim', {'do': './install-rope.sh'}
 
-"}}}
-
-"
-" AppleScript {{{1
-"
-Plug 'vim-scripts/applescript.vim'
-
-"}}}
