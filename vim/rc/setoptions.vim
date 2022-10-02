@@ -120,6 +120,8 @@ augroup settings
 
   autocmd InsertEnter * set nocursorline
   autocmd InsertLeave * set cursorline
+  autocmd BufLeave    * set nocursorline
+  autocmd BufEnter    * set cursorline
 
   autocmd FileType tagbar,nerdtree,voomtree setlocal signcolumn=no
 
