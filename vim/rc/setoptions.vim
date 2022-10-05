@@ -115,6 +115,7 @@ set cursorline
 " coc diagnostics or vim-signify signs appear/become resolved.
 set signcolumn=yes
 
+" This is here instead of autocmd.vim since this is about options.
 augroup settings
   autocmd!
 

@@ -94,6 +94,26 @@ vnoremap r<C-k><C-k> <ESC><Cmd>lua require'betterdigraphs'.digraphs("gvr")<CR>
 "
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
+function! ToggleNumberToggle()
+  let g:number_toggle_enabled = !get(g:, 'number_toggle_enabled', 1)
+
+  if !get(g:, 'number_toggle_enabled', 1)
+    set norelativenumber
+  endif
+
+  " This has to be inside the function to add autocmd 
+  " after the numbertoggle plugin.
+  augroup customnumbertoggle
+    autocmd!
+    autocmd BufEnter *
+          \  if !get(g:, 'number_toggle_enabled', 1) 
+          \|   set norelativenumber
+          \| endif
+  augroup END
+endfunction
+
+nnoremap <leader>en :call ToggleNumberToggle()<CR>
+
 "}}}
 
 "
