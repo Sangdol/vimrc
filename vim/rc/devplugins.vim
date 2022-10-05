@@ -155,7 +155,7 @@ let g:coc_global_extensions = [
     \'coc-json',
     \'coc-lua',
     \'coc-syntax',
-    \'coc-ultisnips',
+    \'coc-snippets',
     \'coc-vimlsp',
     \'coc-word',
     \'coc-pyright',

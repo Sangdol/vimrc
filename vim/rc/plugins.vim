@@ -156,6 +156,10 @@ let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetStorageDirectoryForUltiSnipsEdit = '~/.vim/UltiSnips'
 
+" For some reason, it's not documented.
+" https://vi.stackexchange.com/a/24744/3225
+let g:ultisnips_python_style = 'google'
+
 nnoremap <leader>ee :UltiSnipsEdit<cr>
 nnoremap <leader>ef :call UltiSnips#RefreshSnippets()<cr>
 
