@@ -324,12 +324,28 @@ nnoremap Q @q
 
 " Copy file path to clipboard
 " https://vim.fandom.com/wiki/Get_the_name_of_the_current_file
-" full path
-nnoremap <Leader>e1 :let @+=expand("%:p")<CR>
-" directory
-nnoremap <Leader>e2 :let @+=expand("%:p:t")<CR>
+
+" relative path https://stackoverflow.com/questions/4525261/getting-relative-paths-in-vim
+nnoremap <Leader>e1 :call <SID>copy_relative_path_to_clipboard()<CR>
 " filename
-nnoremap <Leader>e3 :let @+=expand("%:t")<CR>
+nnoremap <Leader>e2 :call <SID>copy_path_to_clipboard("%:t")<CR>
+" directory
+nnoremap <Leader>e3 :call <SID>copy_path_to_clipboard("%:p:h")<CR>
+" full path
+nnoremap <Leader>e4 :call <SID>copy_path_to_clipboard("%:p")<CR>
+
+function! s:copy_relative_path_to_clipboard() abort
+  let path = fnamemodify(expand("%"), ":~:.")
+  echom path
+  let @+ = path
+  echom path .. ' is copied to clipboard.'
+endfunction
+
+function! s:copy_path_to_clipboard(modifiers) abort
+  let path = expand(a:modifiers)
+  let @+ = path
+  echom path .. ' is copied to clipboard.'
+endfunction
 
 " Spell check
 nnoremap <Leader>es :set spell!<CR>
