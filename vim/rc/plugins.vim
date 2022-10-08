@@ -101,12 +101,12 @@ function! ToggleNumberToggle()
     set norelativenumber
   endif
 
-  " This has to be inside the function to add autocmd 
+  " This has to be inside the function to add autocmd
   " after the numbertoggle plugin.
   augroup customnumbertoggle
     autocmd!
     autocmd BufEnter *
-          \  if !get(g:, 'number_toggle_enabled', 1) 
+          \  if !get(g:, 'number_toggle_enabled', 1)
           \|   set norelativenumber
           \| endif
   augroup END
@@ -620,8 +620,10 @@ Plug 'tpope/vim-rhubarb'
 
 " Open in Browser
 " o: open (current)
+" c: current line
 " .: root
 nnoremap <leader>gbo :GBrowse<CR>
+nnoremap <leader>gbc :.GBrowse<CR>
 nnoremap <leader>gb. :GBrowse .<CR>
 
 " gcp: [g]it [c]heckout [p]r
