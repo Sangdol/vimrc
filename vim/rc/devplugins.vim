@@ -110,10 +110,13 @@ nmap <silent> ]e <Plug>(coc-diagnostic-next-error)
 " GoTo code navigation.
 " Why 's'? It's easy to type. [s]peed coc.
 nmap <silent> <leader>sd <Plug>(coc-definition)
-nmap <silent> <leader>st <Plug>(coc-type-definition)
+nmap <silent> <leader>sz <Plug>(coc-type-definition)
 nmap <silent> <leader>si <Plug>(coc-implementation)
 nmap <silent> <leader>sr <Plug>(coc-references)
-nnoremap <silent> <leader>sz :call CocActionAsync('jumpDefinition', 'tab drop')<CR>
+
+" fzf help: tab drop (from telescope)
+nnoremap <silent> <leader>st :call CocActionAsync('jumpDefinition', 'tab drop')<CR> 
+nnoremap <silent> <leader>sv :call CocActionAsync('jumpDefinition', 'vnew')<CR>
 
 " Code actions (quickfix) e.g., import
 nmap <leader>sa  <Plug>(coc-codeaction-line)
