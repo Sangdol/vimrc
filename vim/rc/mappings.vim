@@ -155,7 +155,9 @@ function! s:revert_term_bufname() abort
     if nvim_buf_is_loaded(buf) && nvim_buf_get_option(buf, 'buftype') == 'terminal'
       try
         let name = nvim_buf_get_var(buf, 'term_bufname')
+        let current_buf = bufnr('%')
         execute buf..'bufdo! file '..name
+        execute 'b' current_buf
       catch
         echom 'buf'..buf.. ' has no term_bufname.'
       endtry
