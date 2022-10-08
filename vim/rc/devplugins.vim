@@ -115,7 +115,7 @@ nmap <silent> <leader>si <Plug>(coc-implementation)
 nmap <silent> <leader>sr <Plug>(coc-references)
 
 " fzf help: tab drop (from telescope)
-nnoremap <silent> <leader>st :call CocActionAsync('jumpDefinition', 'tab drop')<CR> 
+nnoremap <silent> <leader>st :call CocActionAsync('jumpDefinition', 'tab drop')<CR>
 nnoremap <silent> <leader>sv :call CocActionAsync('jumpDefinition', 'vnew')<CR>
 
 " Code actions (quickfix) e.g., import
@@ -147,7 +147,7 @@ nmap <leader>re <Plug>(coc-rename)
 " coc-fzf
 Plug 'antoinemadec/coc-fzf'
 
-autocmd FileType python,lua,javascript,clojure
+autocmd FileType python,lua,javascript,clojure,typescript
       \| nnoremap <buffer><silent> <leader>so :CocFzfList outline<CR>
       \| nnoremap <buffer><silent> <leader>sg :CocFzfList diagnostics<CR>
       \| nnoremap <buffer><silent> <leader>ss :CocList -I symbols<CR>
