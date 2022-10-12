@@ -603,6 +603,7 @@ nnoremap <leader>gk :w \| :Gw \| :tab Git commit -v<CR>
 nnoremap <leader>gs :Git<CR>
 nnoremap <leader>gd :tab Gdiffsplit<CR>
 nnoremap <leader>gf :tab Git diff<CR>
+nnoremap <leader>gt :tab Git log -g stash<CR>
 nnoremap <leader>gid :tab Git diff --cached<CR>
 nnoremap <leader>gma :Git checkout master \| :Git pull --rebase<CR>
 nnoremap <leader>g- :Git switch -<CR>
