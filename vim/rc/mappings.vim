@@ -324,7 +324,6 @@ nnoremap Q @q
 
 " Copy file path to clipboard
 " https://vim.fandom.com/wiki/Get_the_name_of_the_current_file
-
 " relative path https://stackoverflow.com/questions/4525261/getting-relative-paths-in-vim
 nnoremap <Leader>e1 :call <SID>copy_relative_path_to_clipboard()<CR>
 " filename
