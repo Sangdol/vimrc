@@ -335,7 +335,6 @@ nnoremap <Leader>e4 :call <SID>copy_path_to_clipboard("%:p")<CR>
 
 function! s:copy_relative_path_to_clipboard() abort
   let path = fnamemodify(expand("%"), ":~:.")
-  echom path
   let @+ = path
   echom path .. ' is copied to clipboard.'
 endfunction
