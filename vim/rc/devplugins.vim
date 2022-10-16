@@ -197,3 +197,9 @@ nnoremap <silent> <leader>xs :Pytest session<CR>
 
 Plug 'python-rope/ropevim', {'do': './install-rope.sh'}
 
+" This requires `pip install doq`
+Plug 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python' }
+
+let g:pydocstring_formatter = 'google'
+
+nmap <silent> <leader>xd <Plug>(pydocstring)

@@ -172,14 +172,16 @@ The lists below are the structure of normal mode mappings. I use them to structu
 * r
   * re: rename
   * rl, ro, rr: ReplaceWithRegister related mappings
-* s: coc 
+* s: coc
 * t: nvim terminal related mappings
 * u: `update`
 * v
   * vimrc related mapping
   * vader related mapping
 * w: maping for windows
-* x
+* x: python
+  * pytest
+  * docstring
 * y
 * z: Conjure
 
