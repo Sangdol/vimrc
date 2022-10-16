@@ -622,9 +622,11 @@ Plug 'tpope/vim-rhubarb'
 " Open in Browser
 " o: open (current)
 " c: current line
+" m: main branch
 " .: root
 nnoremap <leader>gbo :GBrowse<CR>
 nnoremap <leader>gbc :.GBrowse<CR>
+nnoremap <leader>gbm :GBrowse origin/main:%<CR>
 nnoremap <leader>gb. :GBrowse .<CR>
 
 " gcp: [g]it [c]heckout [p]r
