@@ -81,6 +81,9 @@ inoremap <silent> <DOWN> <ESC>:tabprevious<CR>
 " New Tab
 nnoremap <silent> <Leader>l :tabnew<CR>
 
+" This tab is a different tab... but anyway.
+imap <tab> <C-Y>
+
 "}}}
 
 "
