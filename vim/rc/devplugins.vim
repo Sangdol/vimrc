@@ -197,7 +197,10 @@ augroup end
 
 Plug 'alfredodeza/pytest.vim'
 
-nnoremap <silent> <leader>xt :Pytest file<CR>
+nnoremap <silent> <leader>xt :Pytest file verbose<CR>
+nnoremap <silent> <leader>xf :Pytest function verbose<CR>
+nnoremap <silent> <leader>xm :Pytest method verbose<CR>
+nnoremap <silent> <leader>xc :Pytest class verbose<CR>
 nnoremap <silent> <leader>xs :Pytest session<CR>
 
 Plug 'python-rope/ropevim', {'do': './install-rope.sh'}
