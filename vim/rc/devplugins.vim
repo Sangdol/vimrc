@@ -173,7 +173,12 @@ let g:coc_global_extensions = [
 "
 
 " Poet-v: Poetry and Pipenv integration
+"
+" :PoetvActivate
+" :PoetvDeactivate
 Plug 'petobens/poet-v', { 'for': 'python' }
+
+let g:poetv_auto_activate = 1
 
 " Black
 Plug 'psf/black', { 'branch': 'stable' }
