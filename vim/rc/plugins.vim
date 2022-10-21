@@ -80,6 +80,8 @@ nnoremap <silent> <leader>mt :TagbarToggle<cr>
 "
 " Better digraphs {{{1
 "
+"
+Plug 'nvim-lua/plenary.nvim' " required by telescope
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'protex/better-digraphs.nvim'
 
