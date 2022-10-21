@@ -85,9 +85,9 @@ Plug 'nvim-lua/plenary.nvim' " required by telescope
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'protex/better-digraphs.nvim'
 
-inoremap <C-k><C-k> <Cmd>lua require'betterdigraphs'.digraphs("i")<CR>
-nnoremap r<C-k><C-k> <Cmd>lua require'betterdigraphs'.digraphs("r")<CR>
-vnoremap r<C-k><C-k> <ESC><Cmd>lua require'betterdigraphs'.digraphs("gvr")<CR>
+inoremap <C-k><C-k> <Cmd>lua require'better-digraphs'.digraphs("i")<CR>
+nnoremap r<C-k><C-k> <Cmd>lua require'better-digraphs'.digraphs("r")<CR>
+vnoremap r<C-k><C-k> <ESC><Cmd>lua require'better-digraphs'.digraphs("gvr")<CR>
 
 "}}}
 
