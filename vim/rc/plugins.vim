@@ -609,8 +609,8 @@ nnoremap <leader>gma :Git checkout master \| :Git pull --rebase<CR>
 nnoremap <leader>g- :Git switch -<CR>
 nnoremap <leader>gcb :Git checkout -b<space>
 nnoremap <leader>gpp :Git push \| :call ClearPushedCount()<CR>
-nnoremap <leader>gpo :Git push -u origin HEAD<CR>
-nnoremap <leader>gpu :Git pull --rebase \| :call ClearPulledCount()<CR>
+nnoremap <leader>gpuo :Git push -u origin HEAD<CR>
+nnoremap <leader>gpur :Git pull --rebase \| :call ClearPulledCount()<CR>
 
 " Mistake proof
 autocmd FileType gitcommit nnoremap <buffer> <leader>gg :echo "Noooo!"<CR>
