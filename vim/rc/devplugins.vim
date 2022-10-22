@@ -102,6 +102,7 @@ nmap <silent> ]e <Plug>(coc-diagnostic-next-error)
 " Why 's'? It's easy to type. [s]peed coc.
 nmap <silent> <leader>sd <Plug>(coc-definition)
 nmap <silent> <leader>sz <Plug>(coc-type-definition)
+nmap <silent> <leader>si <Plug>(coc-implementation)
 nmap <silent> <leader>sr <Plug>(coc-references)
 
 " fzf help: tab drop (from telescope)
