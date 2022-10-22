@@ -116,6 +116,9 @@ nmap <leader>sa  <Plug>(coc-codeaction-line)
 nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
 nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 
+" Etc.
+nnoremap <silent> <leader>sl :CocOutline<CR>
+
 " Use K to show documentation in preview window.
 nmap <silent> K :call <SID>show_documentation()<CR>
 
