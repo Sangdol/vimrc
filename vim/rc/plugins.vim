@@ -677,7 +677,7 @@ endfunction
 " only for the first window
 function! s:toggle_voom() abort
   let win1name = bufname(winbufnr(1))
-  if (win1name =~ "VOOM") > 0
+  if (win1name =~# "VOOM") > 0
     Voomquit
   else
     call s:voom()
