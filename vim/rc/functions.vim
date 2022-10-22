@@ -7,9 +7,9 @@
 " https://unix.stackexchange.com/questions/8101/how-to-insert-the-result-of-a-command-into-the-text-in-vim/8296#8296
 "
 " Usage:
-"   :TabMessage ls
-"   :TabMessage echo g:
-function! TabMessage(cmd)
+"   :Tab ls
+"   :Tab echo g:
+function! Tab(cmd)
   redir => message
   silent execute a:cmd
   redir END
@@ -23,7 +23,7 @@ function! TabMessage(cmd)
   endif
 endfunction
 
-command! -nargs=+ -complete=command TabMessage call TabMessage(<q-args>)
+command! -nargs=+ -complete=command Tab call Tab(<q-args>)
 
 " https://vim.fandom.com/wiki/Delete_files_with_a_Vim_command#Comments
 function! DeleteFile(...)
