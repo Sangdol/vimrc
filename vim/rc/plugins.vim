@@ -499,12 +499,6 @@ let g:Illuminate_ftblacklist = ['nerdtree', 'markdown']
 "
 Plug 'airblade/vim-rooter' " Changes Vim working directory to project root.
 
-" Go to the current dir
-nnoremap <leader>7 :cd %:p:h<CR> :pwd<CR>
-
-" Go to the root
-nnoremap <leader>8 :Rooter<CR>
-
 " Added custom root (.rooter)
 let g:rooter_patterns = ['.git', '.rooter']
 let g:rooter_cd_cmd = 'lcd'
