@@ -14,6 +14,23 @@ vnoremap <leader>ec :OSCYank<CR>
 "}}}
 
 "
+" vim-subversive {{{1
+"
+Plug 'svermeulen/vim-subversive'
+
+" This shadows `s` and `cl` can replace it.
+nmap s <plug>(SubversiveSubstitute)
+nmap ss <plug>(SubversiveSubstituteLine)
+nmap S <plug>(SubversiveSubstituteToEndOfLine)
+
+" To make it work with vim-yoink
+xmap s <plug>(SubversiveSubstitute)
+xmap p <plug>(SubversiveSubstitute)
+xmap P <plug>(SubversiveSubstitute)
+
+"}}}1
+
+"
 " vim-yoink {{{1
 "
 " Yank History manager
