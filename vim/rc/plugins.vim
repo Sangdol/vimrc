@@ -344,15 +344,6 @@ noremap <silent><expr> zg/ incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
 "}}}
 
 "
-" Maximizer {{{1
-"
-Plug 'szw/vim-maximizer'
-nnoremap <silent><c-w>m :MaximizerToggle<CR>
-vnoremap <silent><c-w>m :MaximizerToggle<CR>gv
-
-"}}}
-
-"
 " Symlink {{{1
 "
 Plug 'aymericbeaumet/vim-symlink'
