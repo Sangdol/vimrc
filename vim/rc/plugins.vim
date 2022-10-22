@@ -304,17 +304,6 @@ endif
 "}}}
 
 "
-" ReplaceWithRegister {{{1
-"
-Plug 'vim-scripts/ReplaceWithRegister'
-
-nmap <Leader>ro <Plug>ReplaceWithRegisterOperator
-nmap <Leader>rl <Plug>ReplaceWithRegisterLine
-xmap <Leader>rr <Plug>ReplaceWithRegisterVisual
-
-"}}}
-
-"
 " incsearch {{{1
 "
 " to auto-remove hlsearch

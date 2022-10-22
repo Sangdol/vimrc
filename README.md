@@ -171,7 +171,6 @@ The lists below are the structure of normal mode mappings. I use them to structu
 * q: close window
 * r
   * re: rename
-  * rl, ro, rr: ReplaceWithRegister related mappings
 * s: coc
 * t: nvim terminal related mappings
 * u: `update`
