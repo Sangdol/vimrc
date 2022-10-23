@@ -147,7 +147,7 @@ The lists below are the structure of normal mode mappings. I use them to structu
 * (numbers): select windows
 * a: yank all
 * b: open URL in a browser (it works for a `Plug` line as well)
-* c
+* c: subversive
 * d
   * d: delete all
   * o, h, l: diff
