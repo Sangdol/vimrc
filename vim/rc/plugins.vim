@@ -728,9 +728,7 @@ function! s:escape_abnormal_buf_and(cmd)
 endfunction
 
 nnoremap <leader>'  :call <SID>escape_abnormal_buf_and('Files')<CR>
-nnoremap <leader>fl :call <SID>escape_abnormal_buf_and('Lines')<CR>
 nnoremap <leader>fc :call <SID>escape_abnormal_buf_and('Commands')<CR>
-nnoremap <leader>fr :call <SID>escape_abnormal_buf_and('Colors')<CR>
 nnoremap <leader>fi :call <SID>escape_abnormal_buf_and('History')<CR>
 nnoremap <leader>f: :call <SID>escape_abnormal_buf_and('History:')<CR>
 nnoremap <leader>f/ :call <SID>escape_abnormal_buf_and('History/')<CR>
@@ -738,16 +736,15 @@ nnoremap <leader>fh :call <SID>escape_abnormal_buf_and('Helptags')<CR>
 nnoremap <leader>fm :call <SID>escape_abnormal_buf_and('Maps')<CR>
 nnoremap <leader>fb :call <SID>escape_abnormal_buf_and('Buffers')<CR>
 nnoremap <leader>ft :call <SID>escape_abnormal_buf_and('Filetypes')<CR>
-nnoremap <leader>fs :call <SID>escape_abnormal_buf_and('Snippets')<CR>
+nnoremap <leader>fw :call <SID>escape_abnormal_buf_and('Windows')<CR>
 
 " Open a test file (can't find a good mnemonic shortcut)
 " TODO - this works only for pytest style path.
 nnoremap <leader>fa :call fzf#vim#files('', {'options': ['--query=test_'..expand('%:t')]})<CR>
 
 " git
-nnoremap <leader>fgs :call <SID>escape_abnormal_buf_and('GFiles?')<CR>
-nnoremap <leader>fgc :call <SID>escape_abnormal_buf_and('Commits')<CR>
-nnoremap <leader>fgb :call <SID>escape_abnormal_buf_and('BCommits')<CR>
+nnoremap <leader>fs :call <SID>escape_abnormal_buf_and('GFiles?')<CR>
+nnoremap <leader>fl :call <SID>escape_abnormal_buf_and('BCommits')<CR>
 
 
 " fzf Rg to search words under the cursor
