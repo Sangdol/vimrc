@@ -402,7 +402,8 @@ Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 
 nnoremap <leader>0 :NvimTreeToggle<CR>
-nnoremap <leader>9 :NvimTreeFindFile<CR>
+" Add bang to make it work with multiple projects https://github.com/nvim-tree/nvim-tree.lua/issues/1590
+nnoremap <leader>9 :NvimTreeFindFile!<CR>
 nnoremap <leader>8 :NvimTreeResize 30<CR>
 
 augroup NvimTreeColors
