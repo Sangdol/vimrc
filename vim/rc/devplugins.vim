@@ -174,6 +174,16 @@ Plug 'petobens/poet-v', { 'for': 'python' }
 
 let g:poetv_auto_activate = 1
 
+" Virtual Env
+"
+" TODO: customize it for me
+"
+" :h virtualenv
+" :VirtualEnvDeactivate
+" :VirtualEnvList
+" :VirtualEnvActivate <name>
+Plug 'jmcantrell/vim-virtualenv'
+
 " Black
 Plug 'psf/black', { 'branch': 'stable' }
 
