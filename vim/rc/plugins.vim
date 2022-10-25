@@ -745,8 +745,9 @@ nnoremap <leader>fw :call <SID>escape_abnormal_buf_and('Windows')<CR>
 nnoremap <leader>fa :call fzf#vim#files('', {'options': ['--query=test_'..expand('%:t')]})<CR>
 
 " git
-nnoremap <leader>fs :call <SID>escape_abnormal_buf_and('GFiles?')<CR>
-nnoremap <leader>fl :call <SID>escape_abnormal_buf_and('BCommits')<CR>
+nnoremap <leader>gx :call <SID>escape_abnormal_buf_and('GFiles?')<CR>
+nnoremap <leader>gl :call <SID>escape_abnormal_buf_and('Commits')<CR>
+nnoremap <leader>gz :call <SID>escape_abnormal_buf_and('BCommits')<CR>
 
 
 " fzf Rg to search words under the cursor
