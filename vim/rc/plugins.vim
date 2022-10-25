@@ -591,7 +591,7 @@ Plug 'tpope/vim-fugitive'
 nnoremap <leader>gg :wa \| :Git add . \| :tab Git commit -v<CR>
 nnoremap <leader>gk :w \| :Gw \| :tab Git commit -v<CR>
 nnoremap <leader>gs :Git<CR>
-nnoremap <leader>gf :tab Git diff<CR>
+nnoremap <leader>gd :tab Git diff<CR>
 nnoremap <leader>gt :tab Git log -g stash<CR>
 nnoremap <leader>gid :tab Git diff --cached<CR>
 nnoremap <leader>g- :Git switch -<CR>
@@ -600,7 +600,7 @@ nnoremap <leader>gpuo :Git push -u origin HEAD<CR>
 nnoremap <leader>gpur :Git pull --rebase \| :call ClearPulledCount()<CR>
 
 " Vertical diff (only current file)
-nnoremap <leader>gd :tab Gdiffsplit<CR>
+nnoremap <leader>gf :tab Gdiffsplit<CR>
 
 " Mistake proof
 autocmd FileType gitcommit nnoremap <buffer> <leader>gg :echo "Noooo!"<CR>
