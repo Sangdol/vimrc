@@ -716,6 +716,9 @@ Plug 'junegunn/fzf.vim'
 
 let g:fzf_preview_window = ['down:50%', 'ctrl-/']
 
+" [[B]Commits] Customize the options used by 'git log':
+let g:fzf_commits_log_options = '--graph --color=always --format="%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"'
+
 " Move out of NERDTree, Voomtree, etc. buffers.
 " This doesn't work if the second buffer is not a normal buffer.
 " Fix it if it bothers.
