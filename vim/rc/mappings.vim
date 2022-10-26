@@ -69,7 +69,6 @@ endfor
 
 " Go to last active tab (from https://superuser.com/a/675119/81915)
 au TabLeave * let g:lasttab = tabpagenr()
-vnoremap <leader><leader>0 :exe "tabn ".g:lasttab<cr>
 nnoremap <leader><leader>0 :exe "tabn ".g:lasttab<cr>
 
 " Next / prev tab
