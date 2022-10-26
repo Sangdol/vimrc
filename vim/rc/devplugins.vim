@@ -158,6 +158,7 @@ let g:coc_global_extensions = [
     \'coc-pyright',
     \'coc-emoji',
     \'coc-tsserver',
+    \'coc-highlight',
     \]
 
 "}}}
