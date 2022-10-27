@@ -173,8 +173,6 @@ let g:coc_global_extensions = [
 " :PoetvDeactivate
 Plug 'petobens/poet-v', { 'for': 'python' }
 
-let g:poetv_auto_activate = 1
-
 " Virtual Env
 "
 " TODO: customize it for me
