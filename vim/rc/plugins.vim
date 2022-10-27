@@ -592,12 +592,20 @@ nnoremap <leader>gg :wa \| :Git add . \| :tab Git commit -v<CR>
 nnoremap <leader>gk :w \| :Gw \| :tab Git commit -v<CR>
 nnoremap <leader>gs :Git<CR>
 nnoremap <leader>gd :tab Git diff<CR>
-nnoremap <leader>gt :tab Git log -g stash<CR>
 nnoremap <leader>gid :tab Git diff --cached<CR>
 nnoremap <leader>g- :Git switch -<CR>
 nnoremap <leader>gpp :Git push \| :call ClearPushedCount()<CR>
 nnoremap <leader>gpuo :Git push -u origin HEAD<CR>
 nnoremap <leader>gpur :Git pull --rebase \| :call ClearPulledCount()<CR>
+
+" Stash 
+"
+" stash all
+nnoremap <leader>gas :tab Git stash save --include-untracked<CR>
+" show
+nnoremap <leader>gat :tab Git log -g stash<CR>
+" pop - need to be `nmap` since <C-R><C-G> is from fugitive 
+nmap <leader>gap :Git stash apply <C-R><C-G><CR>
 
 " Vertical diff (only current file)
 nnoremap <leader>gf :tab Gdiffsplit<CR>
