@@ -47,4 +47,4 @@ function! ToggleAutosave()
   let g:autosave_enabled = !get(g:, 'autosave_enabled', 1)
 endfunction
 
-nnoremap <leader>wa :call ToggleAutosave()<CR>
+nnoremap <leader>ea :call ToggleAutosave()<CR>

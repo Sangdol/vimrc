@@ -133,7 +133,7 @@ endfunction
 " Write and quit
 nnoremap <leader>u :update<CR>
 nnoremap <leader>we :wq<CR>
-nnoremap <leader>ww :wa<CR>
+nnoremap <leader>wa :wa<CR>
 
 function! s:prettify_term_bufname() abort
   if !exists('b:term_bufname')
@@ -223,6 +223,7 @@ nnoremap <Leader>a :%y<CR>
 " http://superuser.com/a/607193/81915
 nnoremap <silent> zj :call append(line('.'), '')<CR>
 nnoremap <silent> zk :call append(line('.')-1, '')<CR>
+
 
 inoremap <silent> ;zj <esc>:call append(line('.'), '')<CR>a
 inoremap <silent> ;zk <esc>:call append(line('.')-1, '')<CR>a
