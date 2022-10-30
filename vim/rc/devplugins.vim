@@ -20,6 +20,7 @@ nnoremap <leader>ecs :Copilot status<cr>
 " :TSUninstall <language_to_uninstall>
 " :TSUpdate
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
 
 " This will generate error if it's executed before treesitter is installed.
 " Restarting vim would fix the issue.
@@ -143,6 +144,7 @@ Plug 'antoinemadec/coc-fzf'
 
 autocmd FileType typescript,python,lua,javascript,clojure
       \ nnoremap <buffer><silent> <leader>so :CocFzfList outline<CR>
+      \| nnoremap <buffer><silent> <leader>sc :CocFzfList commands<CR>
       \| nnoremap <buffer><silent> <leader>sg :CocFzfList diagnostics<CR>
       \| nnoremap <buffer><silent> <leader>ss :CocList -I symbols<CR>
       \| nnoremap <buffer><silent> <leader>sf :CocFzfList symbols --kind Class<CR>
