@@ -598,13 +598,13 @@ nnoremap <leader>gpp :Git push \| :call ClearPushedCount()<CR>
 nnoremap <leader>gpuo :Git push -u origin HEAD<CR>
 nnoremap <leader>gpur :Git pull --rebase \| :call ClearPulledCount()<CR>
 
-" Stash 
+" Stash
 "
 " stash all
 nnoremap <leader>gas :tab Git stash save --include-untracked<CR>
 " show
 nnoremap <leader>gat :tab Git log -g stash<CR>
-" pop - need to be `nmap` since <C-R><C-G> is from fugitive 
+" pop - need to be `nmap` since <C-R><C-G> is from fugitive
 nmap <leader>gap :Git stash apply <C-R><C-G><CR>
 
 " Vertical diff (only current file)
@@ -863,10 +863,6 @@ function! s:fzf_toc(...) abort
 endfunction
 
 nnoremap <leader>so :call <SID>escape_abnormal_buf_and('call <sid>fzf_toc()')<CR>
-
-" Can't I open Toc with a fix size?
-nnoremap <leader>sn :Toc<CR>:resize 1<cr>j<cr>:lclose<cr>
-nnoremap <leader>sp :Toc<CR>:resize 1<cr>k<cr>:lclose<cr>
 
 "}}}
 
