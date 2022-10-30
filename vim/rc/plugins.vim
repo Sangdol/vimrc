@@ -505,7 +505,7 @@ let g:rooter_cd_cmd = 'lcd'
 "}}}
 
 "
-" vim-markdown {{{1
+" vim-markdown (built-in) {{{1
 " https://github.com/tpope/vim-markdown
 "
 "let g:markdown_folding = 1 " This make things slow https://github.com/gabrielelana/vim-markdown/issues/58
@@ -798,14 +798,22 @@ let g:fzf_action = {
 
 let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.9, 'relative': v:false } }
 
+"}}}
+
 "
-" fzf TOC
+" vim-markdown {{{1
 "
 
 " Forked https://github.com/preservim/vim-markdown
-" and left only functions and commands for :Toc.
+" and left only functions and commands 
 Plug 'Sangdol/vim-markdown'
 
+" yank / cut current section
+nmap <leader>my mz][ky'z
+nmap <leader>md mz][kd'z
+
+" fzf TOC
+"
 " selected: ["<line number>: header"]
 function! s:fzf_toc_handler(selected) abort
   let line_number = split(a:selected[0], ':')[0]
