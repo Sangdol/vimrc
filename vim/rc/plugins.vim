@@ -680,7 +680,10 @@ function! s:toggle_voom() abort
   endif
 endfunction
 
+" Toggle
 nnoremap <silent> <Leader>mm :call <sid>toggle_voom()<cr>
+" Refresh
+nnoremap <silent> <Leader>mr :call <sid>toggle_voom()<cr>:call <sid>toggle_voom()<cr>:wincmd l<cr>
 
 " Open
 function! VoomPandoc() abort
