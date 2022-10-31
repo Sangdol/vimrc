@@ -3,6 +3,13 @@
 "
 
 "
+" eyeliner.vim {{{1
+"
+Plug 'jinh0/eyeliner.nvim'
+
+" }}}
+
+"
 " vim-oscyank {{{1
 "
 " Copy to clipboard from remote SSH sessions
@@ -808,7 +815,7 @@ let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.9, 'relative': v:fal
 "
 
 " Forked https://github.com/preservim/vim-markdown
-" and left only functions and commands 
+" and left only functions and commands
 Plug 'Sangdol/vim-markdown'
 
 " yank / cut current section
