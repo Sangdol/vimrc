@@ -142,9 +142,10 @@ nmap <leader>re <Plug>(coc-rename)
 " coc-fzf
 Plug 'antoinemadec/coc-fzf'
 
+nnoremap <buffer><silent> <leader>sc :CocFzfList commands<CR>
+
 autocmd FileType typescript,python,lua,javascript,clojure
       \ nnoremap <buffer><silent> <leader>so :CocFzfList outline<CR>
-      \| nnoremap <buffer><silent> <leader>sc :CocFzfList commands<CR>
       \| nnoremap <buffer><silent> <leader>sg :CocFzfList diagnostics<CR>
       \| nnoremap <buffer><silent> <leader>ss :CocList -I symbols<CR>
       \| nnoremap <buffer><silent> <leader>sf :CocFzfList symbols --kind Class<CR>
