@@ -163,6 +163,7 @@ let g:coc_global_extensions = [
     \'coc-emoji',
     \'coc-tsserver',
     \'coc-highlight',
+    \'coc-calc',
     \]
 
 "}}}
