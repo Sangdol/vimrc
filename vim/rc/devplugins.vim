@@ -149,6 +149,7 @@ autocmd FileType typescript,python,lua,javascript,clojure
       \| nnoremap <buffer><silent> <leader>sg :CocFzfList diagnostics<CR>
       \| nnoremap <buffer><silent> <leader>ss :CocList -I symbols<CR>
       \| nnoremap <buffer><silent> <leader>sf :CocFzfList symbols --kind Class<CR>
+      \| nnoremap <buffer><silent> <leader>su :CocCommand document.showIncomingCalls<CR>
 
 let g:coc_global_extensions = [
     \'coc-conjure',
