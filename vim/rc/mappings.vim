@@ -201,9 +201,16 @@ command! Wq wq
 command! Qa qa
 command! Wqa wqa
 
-" Go to previous window
-nnoremap <C-q> <C-w>p
-inoremap <C-q> <ESC><C-w>p
+" Go to next window
+nnoremap <C-q> <C-w>w
+inoremap <C-q> <ESC><C-w>w
+
+" Open a file in vertical split
+nnoremap <c-w>F <c-w>vgf
+" Open a tag in vertical split
+nnoremap <c-w>] <c-w>v<c-]>
+" Open a tag in new tab
+nnoremap <c-w>[ <C-w><C-]><C-w>T
 
 "}}}
 
