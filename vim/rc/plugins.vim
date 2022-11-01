@@ -663,9 +663,8 @@ let g:EasyMotion_smartcase = 1
 let g:EasyMotion_use_smartsign_us = 1 " US layout
 nmap <Leader>j <Plug>(easymotion-j)
 nmap <Leader>k <Plug>(easymotion-k)
-nmap <Leader><Leader>w <Plug>(easymotion-w)
-nmap <Leader><Leader>b <Plug>(easymotion-b)
-
+nmap gw <Plug>(easymotion-w)
+nmap gb <Plug>(easymotion-b)
 
 "}}}
 
