@@ -159,9 +159,10 @@ let g:coc_global_extensions = [
 "
 " vim-test {{{1
 "
+Plug 'tpope/vim-dispatch'
 Plug 'vim-test/vim-test'
 
-let test#strategy = "neovim"
+let test#strategy = "dispatch"
 let test#python#runner = 'pytest'
 
 nnoremap <silent> <leader>xt :TestNearest<CR>
