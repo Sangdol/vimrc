@@ -157,6 +157,21 @@ let g:coc_global_extensions = [
 "}}}
 
 "
+" vim-test {{{1
+"
+Plug 'vim-test/vim-test'
+
+let test#strategy = "neovim"
+let test#python#runner = 'pytest'
+
+nnoremap <silent> <leader>xt :TestNearest<CR>
+nnoremap <silent> <leader>xf :TestFile<CR>
+nnoremap <silent> <leader>xc :TestSuite<CR>
+nnoremap <silent> <leader>xl :TestLast<CR>
+
+" }}}
+
+"
 " Python {{{1
 "
 
@@ -190,14 +205,6 @@ augroup flake8_on_save
   autocmd!
   autocmd BufWritePost *.py call flake8#Flake8()
 augroup end
-
-Plug 'alfredodeza/pytest.vim'
-
-nnoremap <silent> <leader>xt :Pytest file verbose<CR>
-nnoremap <silent> <leader>xf :Pytest function verbose<CR>
-nnoremap <silent> <leader>xm :Pytest method verbose<CR>
-nnoremap <silent> <leader>xc :Pytest class<CR>
-nnoremap <silent> <leader>xs :Pytest session<CR>
 
 Plug 'python-rope/ropevim', {'do': './install-rope.sh'}
 
