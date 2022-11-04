@@ -3,6 +3,11 @@
 "
 
 "
+" rainbow_csv {{{1
+"
+Plug 'mechatroner/rainbow_csv'
+
+"
 " eyeliner.vim {{{1
 "
 Plug 'jinh0/eyeliner.nvim'
