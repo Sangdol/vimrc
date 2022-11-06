@@ -20,6 +20,7 @@ nnoremap <leader>ecs :Copilot status<cr>
 " :TSUninstall <language_to_uninstall>
 " :TSUpdate
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-treesitter/playground'
 
 " This will generate error if it's executed before treesitter is installed.
@@ -48,6 +49,27 @@ lua << EOF
         -- Using this option may slow down your editor, and you may see some duplicate highlights.
         -- Instead of true it can also be a list of languages
         additional_vim_regex_highlighting = false,
+      },
+
+      -- For textobjects
+      textobjects = {
+        select = {
+          enable = true,
+
+          -- Automatically jump forward to textobj, similar to targets.vim
+          lookahead = true,
+
+          keymaps = {
+            ["af"] = "@function.outer",
+            ["if"] = "@function.inner",
+            ["ac"] = "@class.outer",
+            ["ic"] = "@class.inner",
+            ["ad"] = "@comment.outer",
+            ["id"] = "@comment.inner", 
+          },
+
+          include_surrounding_whitespace = true,
+        },
       },
     }
   end)
