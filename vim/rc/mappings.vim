@@ -70,6 +70,7 @@ endfor
 " Go to last active tab (from https://superuser.com/a/675119/81915)
 au TabLeave * let g:lasttab = tabpagenr()
 nnoremap <leader><leader>0 :exe "tabn ".g:lasttab<cr>
+tnoremap <leader><leader>0 <C-\><C-n>:exe "tabn ".g:lasttab<cr>
 
 " Next / prev tab
 nnoremap <silent> <UP> :tabnext<CR>
@@ -257,7 +258,7 @@ tnoremap <S-Space> <Space>
 autocmd TermOpen * if bufname() !~ 'fzf'
       \| tnoremap <buffer> <UP> <C-\><C-n>:tabnext<CR>
       \| tnoremap <buffer> <DOWN> <C-\><C-n>:tabprevious<CR>
-      \| tnoremap <buffer> ;; <C-\><C-n><CR>
+      \| tnoremap <buffer> ;; <C-\><C-n>
       \| nnoremap <buffer> a :setlocal norelativenumber<CR>a
       \| tnoremap <buffer> <C-q> <C-\><C-n><C-w>p
       \| endif
