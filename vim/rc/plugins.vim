@@ -3,6 +3,17 @@
 "
 
 "
+" leap {{{1
+"
+Plug 'ggandor/leap.nvim'
+
+nnoremap gw <Plug>(leap-forward-to)
+nnoremap gb <Plug>(leap-backward-to)
+nnoremap gs <Plug>(leap-cross-window)
+
+"}}}
+
+"
 " rainbow_csv {{{1
 "
 Plug 'mechatroner/rainbow_csv'
@@ -668,8 +679,6 @@ let g:EasyMotion_smartcase = 1
 let g:EasyMotion_use_smartsign_us = 1 " US layout
 nmap <Leader>j <Plug>(easymotion-j)
 nmap <Leader>k <Plug>(easymotion-k)
-nmap gw <Plug>(easymotion-w)
-nmap gb <Plug>(easymotion-b)
 
 "}}}
 
