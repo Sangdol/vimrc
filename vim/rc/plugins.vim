@@ -7,8 +7,8 @@
 "
 Plug 'ggandor/leap.nvim'
 
-nnoremap gw <Plug>(leap-forward-to)
-nnoremap gb <Plug>(leap-backward-to)
+nnoremap gl <Plug>(leap-forward-to)
+nnoremap gh <Plug>(leap-backward-to)
 nnoremap gs <Plug>(leap-cross-window)
 
 "}}}
