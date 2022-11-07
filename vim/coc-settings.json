@@ -1,0 +1,33 @@
+// Schema https://github.com/neoclide/coc.nvim/blob/master/data/schema.json
+{
+  "diagnostic.hintSign": ".",
+  "coc.preferences.formatOnSaveFiletypes": ["clojure"],
+  "coc.source.emoji.triggerCharacters": ["|"],
+
+  // coc-calc
+  "calc.replaceOriginalExpression": false,
+
+  // Enable codeLens feature, require neovim with set virtual text feature.
+  "codeLens.enable": true,
+
+  // Pyright
+  // https://github.com/fannheyward/coc-pyright
+  // https://github.com/fannheyward/coc-pyright#configurations
+  "pyright.inlayHints.variableTypes": false,
+  "python.linting.mypyEnabled": true,
+  "python.linting.flake8Enabled": true,
+  "pyright.organizeimports.provider": "isort",
+
+  "languageserver": {
+    "clojure-lsp": {
+      "command": "bash",
+      "args": ["-c", "clojure-lsp"],
+      "filetypes": ["clojure"],
+      "rootPatterns": ["project.clj"],
+      "additionalSchemes": ["jar", "zipfile"],
+      "trace.server": "verbose",
+      "initializationOptions": {
+      }
+    }
+  }
+}
