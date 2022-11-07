@@ -255,7 +255,7 @@ nnoremap <Leader>tt :tabnew \| terminal<CR>
 tnoremap <S-Space> <Space>
 
 " Excluding fzf floating windows
-autocmd TermOpen * if bufname() !~ 'fzf'
+autocmd TermOpen * if bufname() !~ '\.fzf'
       \| tnoremap <buffer> <UP> <C-\><C-n>:tabnext<CR>
       \| tnoremap <buffer> <DOWN> <C-\><C-n>:tabprevious<CR>
       \| tnoremap <buffer> ;; <C-\><C-n>
