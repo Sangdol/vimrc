@@ -65,7 +65,7 @@ lua << EOF
             ["ac"] = "@class.outer",
             ["ic"] = "@class.inner",
             ["ad"] = "@comment.outer",
-            ["id"] = "@comment.inner", 
+            ["id"] = "@comment.inner",
           },
 
           include_surrounding_whitespace = true,
@@ -154,7 +154,7 @@ Plug 'antoinemadec/coc-fzf'
 
 nnoremap <buffer><silent> <leader>sc :CocFzfList commands<CR>
 
-autocmd FileType typescript,python,lua,javascript,clojure
+autocmd FileType typescript,python,lua,javascript,clojure,vim
       \ nnoremap <buffer><silent> <leader>so :CocFzfList outline<CR>
       \| nnoremap <buffer><silent> <leader>sg :CocFzfList diagnostics<CR>
       \| nnoremap <buffer><silent> <leader>ss :CocList -I symbols<CR>
