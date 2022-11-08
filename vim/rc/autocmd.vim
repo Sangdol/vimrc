@@ -27,6 +27,10 @@ augroup custom
   " Terminal
   autocmd TermOpen * startinsert
 
+  " For some reason, vim starts in insert mode
+  " when opening with a session file.
+  autocmd SessionLoadPost * stopinsert
+
 augroup END
 
 " Autosave
