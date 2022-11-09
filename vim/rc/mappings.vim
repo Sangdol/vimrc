@@ -62,12 +62,7 @@ nnoremap ]l :lnext<cr>zz
 nnoremap [l :lprev<cr>zz
 
 autocmd FileType qf 20wincmd_
-autocmd FileType qf
-      \ nnoremap <silent> <buffer> <leader>r0 :resize 20<CR>
-      \| nnoremap <silent> <buffer> <leader>r1 :exec 'resize ' float2nr(&lines * 0.9)<CR>
-      \| nnoremap <silent> <buffer> <leader>r2 :exec 'resize ' (&lines / 2)<CR>
-      \| nnoremap <silent> <buffer> <leader>r3 :exec 'resize ' (&lines / 3)<CR>
-      \| nnoremap <silent> <buffer> <leader>r4 :exec 'resize ' (&lines / 4)<CR>
+autocmd FileType qf nnoremap <silent> <buffer> <leader>w0 :resize 20<CR>
 
 function! ToggleQuickFix()
     if empty(filter(getwininfo(), 'v:val.quickfix'))
@@ -109,6 +104,13 @@ nnoremap <silent> <Leader>l :tabnew<CR>
 "
 " Buffer and windows {{{1
 "
+
+" Window horizontal resize
+nnoremap <silent> <leader>w0 :resize<CR>
+nnoremap <silent> <leader>w1 :exec 'resize ' float2nr(&lines * 0.9)<CR>
+nnoremap <silent> <leader>w2 :exec 'resize ' (&lines / 2)<CR>
+nnoremap <silent> <leader>w3 :exec 'resize ' (&lines / 3)<CR>
+nnoremap <silent> <leader>w4 :exec 'resize ' (&lines / 4)<CR>
 
 " Switch and close windows
 for i in range(1, 6)
