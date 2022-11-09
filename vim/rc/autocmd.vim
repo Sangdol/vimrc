@@ -44,7 +44,7 @@ augroup autosave
         \| endif
 
   autocmd FileType clojure,python let b:autosave_enabled = 0
-  autocmd BufLeave *.clj,*.py update
+  autocmd BufLeave,FocusLost *.clj,*.py update
 augroup END
 
 function! ToggleAutosave()
