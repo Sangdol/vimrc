@@ -190,8 +190,6 @@ nnoremap <silent> <leader>xt :TestNearest<CR>
 nnoremap <silent> <leader>xf :TestFile<CR>
 nnoremap <silent> <leader>xc :TestSuite<CR>
 nnoremap <silent> <leader>xl :TestLast<CR>
-" Open output in the quickfix window (Dispatch)
-nnoremap <silent> <leader>xo :Copen<CR>
 
 " }}}
 

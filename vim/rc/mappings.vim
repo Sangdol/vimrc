@@ -61,11 +61,23 @@ nnoremap [q :cprev<cr>zz
 nnoremap ]l :lnext<cr>zz
 nnoremap [l :lprev<cr>zz
 
+autocmd FileType qf 20wincmd_
 autocmd FileType qf
-      \ nnoremap <silent> <buffer> <leader>r1 :resize 20<CR>
+      \ nnoremap <silent> <buffer> <leader>r0 :resize 20<CR>
+      \| nnoremap <silent> <buffer> <leader>r1 :exec 'resize ' float2nr(&lines * 0.9)<CR>
       \| nnoremap <silent> <buffer> <leader>r2 :exec 'resize ' (&lines / 2)<CR>
       \| nnoremap <silent> <buffer> <leader>r3 :exec 'resize ' (&lines / 3)<CR>
       \| nnoremap <silent> <buffer> <leader>r4 :exec 'resize ' (&lines / 4)<CR>
+
+function! ToggleQuickFix()
+    if empty(filter(getwininfo(), 'v:val.quickfix'))
+        copen
+    else
+        cclose
+    endif
+endfunction
+
+nnoremap <silent> <leader>wf :call ToggleQuickFix()<cr>
 
 "}}}
 
