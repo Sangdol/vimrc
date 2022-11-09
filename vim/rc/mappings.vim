@@ -50,11 +50,22 @@ inoremap jk <Esc>
 inoremap jl <Esc>O
 inoremap j' <Esc>o
 
-" For quickfix list and location list
+"}}}
+
+"
+" Quickfix, location list {{{!
+"
+
 nnoremap ]q :cnext<cr>zz
 nnoremap [q :cprev<cr>zz
 nnoremap ]l :lnext<cr>zz
 nnoremap [l :lprev<cr>zz
+
+autocmd FileType qf
+      \ nnoremap <silent> <buffer> <leader>r1 :resize 20<CR>
+      \| nnoremap <silent> <buffer> <leader>r2 :exec 'resize ' (&lines / 2)<CR>
+      \| nnoremap <silent> <buffer> <leader>r3 :exec 'resize ' (&lines / 3)<CR>
+      \| nnoremap <silent> <buffer> <leader>r4 :exec 'resize ' (&lines / 4)<CR>
 
 "}}}
 
