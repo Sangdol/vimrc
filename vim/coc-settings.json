@@ -4,6 +4,11 @@
   "coc.preferences.formatOnSaveFiletypes": ["clojure"],
   "coc.source.emoji.triggerCharacters": ["|"],
 
+  // coc-tree
+  "callHierarchy.splitCommand": "botright 90vsplit",
+  "tree.key.close": "q",
+  "tree.key.toggle": "o",
+
   // coc-calc
   "calc.replaceOriginalExpression": false,
 
