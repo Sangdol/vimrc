@@ -19,8 +19,8 @@
   // https://github.com/fannheyward/coc-pyright
   // https://github.com/fannheyward/coc-pyright#configurations
   "pyright.inlayHints.variableTypes": false,
-  "python.linting.mypyEnabled": true,
-  "python.linting.flake8Enabled": true,
+  "python.linting.mypyEnabled": false,
+  "python.linting.flake8Enabled": false,
   "pyright.organizeimports.provider": "isort",
 
   "languageserver": {

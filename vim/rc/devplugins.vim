@@ -221,13 +221,6 @@ augroup black_on_save
   autocmd BufWritePre *.py Black
 augroup end
 
-Plug 'nvie/vim-flake8'
-
-augroup flake8_on_save
-  autocmd!
-  autocmd BufWritePost *.py call flake8#Flake8()
-augroup end
-
 Plug 'python-rope/ropevim', {'do': './install-rope.sh'}
 
 " This requires `pip install doq`
