@@ -42,12 +42,9 @@ endfunction
 
 " Edit vimrc
 nnoremap <silent> <Leader>vv :tabnew<CR>:e ~/.vimrc<CR>
-nnoremap <silent> <Leader>vg :tabnew<CR>:e ~/.vim/rc/plug.vim<CR>
 nnoremap <silent> <Leader>vp :tabnew<CR>:e ~/.vim/rc/plugins.vim<CR>
 nnoremap <silent> <Leader>vd :tabnew<CR>:e ~/.vim/rc/devplugins.vim<CR>
 nnoremap <silent> <Leader>vm :tabnew<CR>:e ~/.vim/rc/mappings.vim<CR>
-nnoremap <silent> <Leader>vf :tabnew<CR>:e ~/.vim/rc/functions.vim<CR>
-nnoremap <silent> <Leader>vs :tabnew<CR>:e ~/.vim/rc/setoptions.vim<CR>
 nnoremap <silent> <Leader>vl :tabnew<CR>:e ~/.vim/rc/device_local.vim<CR>
 nnoremap <Leader>vr :source ~/.vimrc<CR>
 

@@ -385,4 +385,7 @@ nnoremap <Leader>es :set spell!<CR>
 " There's an autocmd but this is needed when autosave is on.
 nnoremap <Leader>et :%s/\s\+$//ge<CR>
 
+" vim source
+nnoremap <leader>vs :source %<CR>
+
 "}}}
