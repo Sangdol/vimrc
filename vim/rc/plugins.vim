@@ -813,6 +813,7 @@ command! -bang -bar -nargs=? -complete=dir Cd
 nnoremap <leader>f~ :call <SID>escape_abnormal_buf_and('Cd!')<CR>
 nnoremap <leader>fpr :call <SID>escape_abnormal_buf_and('FZF ~/projects')<CR>
 nnoremap <leader>fpl :call <SID>escape_abnormal_buf_and('FZF ~/.vim/plugged')<CR>
+nnoremap <leader>fpg :call <SID>escape_abnormal_buf_and('FZF ~/github-projects')<CR>
 
 " From https://github.com/junegunn/fzf/blob/master/README-VIM.md
 function! s:build_quickfix_list(lines)
