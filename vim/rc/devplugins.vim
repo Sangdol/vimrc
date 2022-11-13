@@ -29,7 +29,7 @@ lua << EOF
   table.insert(plugin_callbacks, function()
     require'nvim-treesitter.configs'.setup {
       -- One of "all", "maintained" (parsers with maintainers), or a list of languages
-      ensure_installed = {'lua', 'python', 'javascript', 'ruby', 'bash', 'css', 'html', 'json', 'sql'},
+      ensure_installed = {'lua', 'python', 'javascript', 'ruby', 'bash', 'css', 'html', 'json', 'sql', 'vim'},
 
       -- Install languages synchronously (only applied to `ensure_installed`)
       sync_install = false,
@@ -48,7 +48,8 @@ lua << EOF
         -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
         -- Using this option may slow down your editor, and you may see some duplicate highlights.
         -- Instead of true it can also be a list of languages
-        additional_vim_regex_highlighting = false,
+        -- Sang: Python and Lua look the same. Enabling onlyl for vim for now.
+        additional_vim_regex_highlighting = {'vim'},
       },
 
       -- For textobjects
