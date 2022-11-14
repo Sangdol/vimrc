@@ -48,6 +48,7 @@ vnoremap <silent> gj j
 " Easy escape
 inoremap jk <Esc>
 inoremap jl <Esc>O
+inoremap j; <Esc>o
 inoremap j' <Esc>o
 
 "}}}
