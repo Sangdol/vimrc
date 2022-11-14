@@ -176,6 +176,11 @@ let g:coc_global_extensions = [
     \'coc-calc',
     \]
 
+augroup black_on_save
+  autocmd!
+  autocmd BufWritePre *.py call CocActionAsync('format')
+augroup end
+
 "}}}
 
 "
@@ -214,14 +219,7 @@ Plug 'petobens/poet-v', { 'for': 'python' }
 " :VirtualEnvActivate <name>
 Plug 'jmcantrell/vim-virtualenv'
 
-" Black
-Plug 'psf/black', { 'branch': 'stable' }
-
-augroup black_on_save
-  autocmd!
-  autocmd BufWritePre *.py Black
-augroup end
-
+" rope
 Plug 'python-rope/ropevim', {'do': './install-rope.sh'}
 
 " This requires `pip install doq`

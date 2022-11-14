@@ -22,6 +22,8 @@
   "python.linting.mypyEnabled": true,
   "python.linting.flake8Enabled": true,
   "pyright.organizeimports.provider": "isort",
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "/opt/homebrew/bin/black",
 
   "languageserver": {
     "clojure-lsp": {
