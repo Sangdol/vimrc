@@ -76,6 +76,16 @@ lua << EOF
   end)
 EOF
 
+Plug 'SmiteshP/nvim-gps'
+
+lua << EOF
+  table.insert(plugin_callbacks, function()
+    require("nvim-gps").setup()
+  end)
+EOF
+
+"}}}
+
 "
 " Clojure: Conjure, parinfer {{{1
 "

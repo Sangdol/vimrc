@@ -60,6 +60,11 @@ endfunction
 " Need to find a good way to update it without making lags.
 autocmd BufEnter * call ClearPushedCount() | call ClearPulledCount()
 
+func! NvimGps() abort
+	return luaeval("require'nvim-gps'.is_available()") ?
+		\ luaeval("require'nvim-gps'.get_location()") : ''
+endf
+
 function! s:statusline_expr()
   let branch = "%{exists('*gitbranch#name') ? gitbranch#name() : ''}"
   let ro  = "%{&readonly ? 'RO ' : ''}"
@@ -74,8 +79,9 @@ function! s:statusline_expr()
 
   let sep = ' %= '
   let pos = ' %c'
+  let gps = " [ %{NvimGps()} ]"
 
-  return ' [%{CurrentDir()}] %f ' .. ft .. ro .. spl .. coc ..
+  return ' [%{CurrentDir()}] %f ' .. ft .. ro .. spl .. coc .. gps ..
         \ sep ..
         \ branch .. ' ' .. pushpull .. signify ..
         \ pos .. ' '
