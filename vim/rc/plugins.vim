@@ -768,7 +768,7 @@ function! s:escape_abnormal_buf_and(cmd)
 endfunction
 
 nnoremap <leader>'  :call <SID>escape_abnormal_buf_and('Files')<CR>
-nnoremap <leader>fj  :call <SID>escape_abnormal_buf_and('Lines')<CR>
+nnoremap <leader>fj :call <SID>escape_abnormal_buf_and('Lines')<CR>
 nnoremap <leader>fc :call <SID>escape_abnormal_buf_and('Commands')<CR>
 nnoremap <leader>fi :call <SID>escape_abnormal_buf_and('History')<CR>
 nnoremap <leader>f: :call <SID>escape_abnormal_buf_and('History:')<CR>
@@ -782,8 +782,25 @@ nnoremap <leader>fw :call <SID>escape_abnormal_buf_and('Windows')<CR>
 " git
 nnoremap <leader>gx :call <SID>escape_abnormal_buf_and('GFiles?')<CR>
 nnoremap <leader>gl :call <SID>escape_abnormal_buf_and('Commits')<CR>
-nnoremap <leader>gz :call <SID>escape_abnormal_buf_and('BCommits')<CR>
 
+" 'GFiles?', but to open diff
+function! s:fzf_status_fugitive_diff(args) abort
+  " args example:
+  " ['', ' M vim/rc/plugins.vim'] (Enter)
+  " ['ctrl-v', ' M vim/rc/devplugins.vim']
+  let l:prefix = get({
+        \   'ctrl-v': 'vertical Git diff',
+        \   'ctrl-x': 'Git diff',
+        \   'ctrl-t': 'tab Git diff'
+        \ }, a:args[0], 'Git diff')
+
+  exec prefix .. ' ' .. a:args[1][2:]
+endfunction
+
+" Why doesn't it work when I put the args directly in the method?
+"   E475: Invalid argument: s:fzf_status_fugitive_diff
+let g:fzf_status_diff_args = {'sink*': function('s:fzf_status_fugitive_diff')}
+nnoremap <leader>gz :call fzf#vim#gitfiles('?', g:fzf_status_diff_args)<CR>
 
 " fzf Rg to search words under the cursor
 " https://news.ycombinator.com/item?id=26634419
