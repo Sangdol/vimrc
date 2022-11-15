@@ -289,6 +289,10 @@ autocmd TermOpen * if bufname() !~ '\.fzf'
       \| tnoremap <buffer> <C-q> <C-\><C-n><C-w>p
       \| endif
 
+" Enable copying from register in the fzf terminal
+" https://stackoverflow.com/a/41684444/524588
+autocmd! FileType fzf tnoremap <buffer> <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
+
 "}}}
 
 "
