@@ -779,10 +779,6 @@ nnoremap <leader>fb :call <SID>escape_abnormal_buf_and('Buffers')<CR>
 nnoremap <leader>ft :call <SID>escape_abnormal_buf_and('Filetypes')<CR>
 nnoremap <leader>fw :call <SID>escape_abnormal_buf_and('Windows')<CR>
 
-" Open a test file (can't find a good mnemonic shortcut)
-" TODO - this works only for pytest style path.
-nnoremap <leader>fa :call fzf#vim#files('', {'options': ['--query=test_'..expand('%:t')]})<CR>
-
 " git
 nnoremap <leader>gx :call <SID>escape_abnormal_buf_and('GFiles?')<CR>
 nnoremap <leader>gl :call <SID>escape_abnormal_buf_and('Commits')<CR>
