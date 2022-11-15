@@ -176,10 +176,17 @@ let g:coc_global_extensions = [
     \'coc-calc',
     \]
 
+" Python Formatter (Black)
+let g:black_enabled = 1
+
 augroup black_on_save
   autocmd!
-  autocmd BufWritePre *.py call CocActionAsync('format')
+  autocmd BufWritePre *.py if g:black_enabled|call CocActionAsync('format')|endif
 augroup end
+
+nnoremap <leader>xb
+      \ :let g:black_enabled = !g:black_enabled<CR>
+      \ :echo 'Black is ' . (g:black_enabled ? 'enabled' : 'disabled')<CR>
 
 "}}}
 
