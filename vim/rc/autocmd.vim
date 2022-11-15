@@ -31,6 +31,9 @@ augroup custom
   " when opening with a session file.
   autocmd SessionLoadPost * stopinsert
 
+  " lua-hightlight / flash on yank
+  autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+
 augroup END
 
 " Autosave
