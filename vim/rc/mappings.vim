@@ -379,12 +379,8 @@ function! s:copy_path_to_clipboard(modifiers) abort
   echom path .. ' is copied to clipboard.'
 endfunction
 
-" Spell check
 nnoremap <Leader>es :set spell!<CR>
-
-" Remove trailing spaces
-" There's an autocmd but this is needed when autosave is on.
-nnoremap <Leader>et :%s/\s\+$//ge<CR>
+nnoremap <Leader>et :Tab mes<CR>
 
 " vim source
 nnoremap <leader>vs :source %<CR>
