@@ -317,10 +317,21 @@ nnoremap <leader>m> m`^i> <esc>``2l
 " mark: v
 " out:  * v todo
 function! s:toggle_markdown_bullet_tick(mark)
-  if StartsWith(trim(getline('.')), '* '.. a:mark .. ' ')
-    call SubstituteLine('\v(\s*\*)\s' .. a:mark, '\1', '')
+  let l:line = getline('.')
+
+  if l:line ==# ''
+    return
+  endif
+
+  let l:bullet = trim(l:line)[0] == '*' ? '\*' : '-'
+
+  " This got too messy with the regexes.
+  if trim(getline('.')) =~ '\v^' .. l:bullet .. ' ' .. a:mark .. ' '
+    " remove
+    call SubstituteLine('\v(\s*' .. l:bullet .. ')\s' .. a:mark, '\1', '')
   else
-    call SubstituteLine('\v(\s*\*\s)', '\1' .. a:mark .. ' ', '')
+    " add
+    call SubstituteLine('\v(\s*' .. l:bullet .. '\s)', '\1' .. a:mark .. ' ', '')
   endif
 endfunction
 
