@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 cd ~ && \
-ln -s ~/projects/vimrc .vimrc
-ln -s ~/projects/vimrc/vim .vim
-ln -s ~/projects/ideavimrc .ideavimrc
+ln -sfv ~/projects/vimrc .vimrc
+ln -sfv ~/projects/vimrc/vim .vim
+ln -sfv ~/projects/ideavimrc .ideavimrc
 
