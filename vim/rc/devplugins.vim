@@ -171,6 +171,8 @@ autocmd FileType typescript,python,lua,javascript,clojure,vim
       \| nnoremap <buffer><silent> <leader>su :CocCommand document.showIncomingCalls<CR>
       \| nnoremap <buffer><silent> gO :CocOutline<CR>
 
+" coc-fish is only for completion
+" https://github.com/oncomouse/coc-fish
 let g:coc_global_extensions = [
     \'coc-conjure',
     \'coc-json',
@@ -184,6 +186,7 @@ let g:coc_global_extensions = [
     \'coc-tsserver',
     \'coc-highlight',
     \'coc-calc',
+    \'coc-fish'
     \]
 
 " Python Formatter (Black)
