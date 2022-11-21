@@ -120,6 +120,11 @@ for i in range(1, 6)
   execute 'nnoremap <silent> 'i . '<BS> :' . i . 'wincmd c<CR>'
 endfor
 
+function! s:close_last_window()
+  execute winnr('$') .. 'wincmd c'
+endfunction
+nnoremap 0<BS> :call <SID>close_last_window()<CR>
+
 function! CloseVisibleWindows()
   for i in range(1, FocusableWinCount())
     " Keep closing the first windows
