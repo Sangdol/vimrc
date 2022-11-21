@@ -62,7 +62,7 @@ autocmd BufEnter * call ClearPushedCount() | call ClearPulledCount()
 
 func! NvimGps() abort
 	return luaeval("require'nvim-gps'.is_available()") ?
-		\ luaeval("require'nvim-gps'.get_location()") : ''
+		\ '[' .. luaeval("require'nvim-gps'.get_location()") .. ']' : ''
 endf
 
 function! s:statusline_expr()
@@ -79,9 +79,9 @@ function! s:statusline_expr()
 
   let sep = ' %= '
   let pos = ' %c'
-  let gps = " [ %{NvimGps()} ]"
+  let gps = '%{NvimGps()}'
 
-  return ' [%{CurrentDir()}] %f ' .. ft .. ro .. spl .. coc .. gps ..
+  return ' [%{CurrentDir()}] %f ' .. ft .. ro .. spl .. coc .. '  ' .. gps ..
         \ sep ..
         \ branch .. ' ' .. pushpull .. signify ..
         \ pos .. ' '
