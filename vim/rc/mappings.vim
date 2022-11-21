@@ -194,9 +194,10 @@ endfunction
 autocmd TermLeave * call s:prettify_term_bufname()
 
 " ScrollViewDisable is needed due to the scrollview and nvim bug
+" Always store the session in the directory where the vim is started.
 nnoremap <leader>wqq :call <SID>revert_term_bufname()
       \ \| ScrollViewDisable
-      \ \| mksession! .vimsession
+      \ \| exec 'mksession! ' .. $PWD .. '/' .. '.vimsession'
       \ \| wa
       \ \| qa<cr>
 
