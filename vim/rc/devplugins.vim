@@ -61,10 +61,12 @@ lua << EOF
           lookahead = true,
 
           keymaps = {
-            ["af"] = "@function.outer",
-            ["if"] = "@function.inner",
+            ["ab"] = "@block.outer",
+            ["ib"] = "@block.inner",
             ["ac"] = "@class.outer",
             ["ic"] = "@class.inner",
+            ["af"] = "@function.outer",
+            ["if"] = "@function.inner",
             ["ad"] = "@comment.outer",
             ["id"] = "@comment.inner",
           },
