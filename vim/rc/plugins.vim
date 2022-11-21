@@ -3,6 +3,38 @@
 "
 
 "
+" vim-signature {{{1
+"
+Plug 'kshenoy/vim-signature'
+
+" m<BS> doesn't work
+let g:SignatureMap = {
+  \ 'Leader'             :  "m",
+  \ 'PlaceNextMark'      :  "m,",
+  \ 'ToggleMarkAtLine'   :  "m.",
+  \ 'PurgeMarksAtLine'   :  "m-",
+  \ 'DeleteMark'         :  "dm",
+  \ 'PurgeMarks'         :  "m<Space>",
+  \ 'PurgeMarkers'       :  "m<BS>",
+  \ 'GotoNextLineAlpha'  :  "']",
+  \ 'GotoPrevLineAlpha'  :  "'[",
+  \ 'GotoNextSpotAlpha'  :  "`]",
+  \ 'GotoPrevSpotAlpha'  :  "`[",
+  \ 'GotoNextLineByPos'  :  "]'",
+  \ 'GotoPrevLineByPos'  :  "['",
+  \ 'GotoNextSpotByPos'  :  "]`",
+  \ 'GotoPrevSpotByPos'  :  "[`",
+  \ 'GotoNextMarker'     :  "]-",
+  \ 'GotoPrevMarker'     :  "[-",
+  \ 'GotoNextMarkerAny'  :  "]=",
+  \ 'GotoPrevMarkerAny'  :  "[=",
+  \ 'ListBufferMarks'    :  "m/",
+  \ 'ListBufferMarkers'  :  "m?"
+  \ }
+
+"}}}
+
+"
 " leap {{{1
 "
 Plug 'ggandor/leap.nvim'

@@ -207,6 +207,9 @@ nnoremap <leader>xb
 " vim-test {{{1
 "
 Plug 'tpope/vim-dispatch'
+
+let g:dispatch_no_maps = 1
+
 Plug 'vim-test/vim-test'
 
 let test#strategy = "dispatch"
