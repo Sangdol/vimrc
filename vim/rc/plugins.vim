@@ -50,19 +50,6 @@ nnoremap gs <Plug>(leap-cross-window)
 "
 Plug 'mechatroner/rainbow_csv'
 
-"
-" eyeliner.vim {{{1
-"
-Plug 'jinh0/eyeliner.nvim'
-
-lua << EOF
-  table.insert(plugin_callbacks, function()
-    require'eyeliner'.setup {
-      highlight_on_key = true
-    }
-end)
-EOF
-
 " }}}
 
 "
