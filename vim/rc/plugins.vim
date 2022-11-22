@@ -3,6 +3,13 @@
 "
 
 "
+" En Masse {{{1
+"
+Plug 'Olical/vim-enmasse'
+
+"}}}
+
+"
 " vim-signature {{{1
 "
 Plug 'kshenoy/vim-signature'
