@@ -150,3 +150,12 @@ function! s:delete_line_of(alphanumeric_line_number)
 endfunction
 
 command! -nargs=1 D call <SID>delete_line_of(<q-args>)
+
+" Run macros over selected lines
+" https://github.com/stoeffel/.dotfiles/blob/master/vim/visual-at.vim
+xnoremap @ :<C-u>call <SID>execute_macro_over_visual_range()<CR>
+
+function! s:execute_macro_over_visual_range()
+  echo "@".getcmdline()
+  execute ":'<,'>normal @".nr2char(getchar())
+endfunction
