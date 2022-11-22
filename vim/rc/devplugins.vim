@@ -246,9 +246,6 @@ Plug 'petobens/poet-v', { 'for': 'python' }
 " :VirtualEnvActivate <name>
 Plug 'jmcantrell/vim-virtualenv'
 
-" rope
-Plug 'python-rope/ropevim', {'do': './install-rope.sh'}
-
 " This requires `pip install doq`
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python' }
 
