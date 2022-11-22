@@ -96,6 +96,9 @@ set jumpoptions+=stack
 " (default is 4000ms = 4s)
 set updatetime=300
 
+" No command line height
+set cmdheight=0
+
 "
 " Style
 "
