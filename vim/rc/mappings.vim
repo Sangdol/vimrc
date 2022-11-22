@@ -164,8 +164,12 @@ endfunction
 
 " Write and quit
 nnoremap <leader>u :update<CR>
-nnoremap <leader>we :wq<CR>
+" = ZZ
+nnoremap <leader>we :x<CR>
 nnoremap <leader>wa :wa<CR>
+
+" Mostly for git commit message windows
+inoremap ;we <ESC>:x<CR>
 
 function! s:prettify_term_bufname() abort
   if !exists('b:term_bufname')
@@ -205,9 +209,6 @@ nnoremap <leader>wqq :call <SID>revert_term_bufname()
       \ \| exec 'mksession! ' .. $PWD .. '/' .. '.vimsession'
       \ \| wa
       \ \| qa<cr>
-
-" Mostly for git commit message windows
-inoremap ;we <ESC>:wq<CR>
 
 " Quick (`close` doesn't work well with floating windows)
 " https://github.com/dstein64/nvim-scrollview/issues/10
