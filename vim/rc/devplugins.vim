@@ -48,8 +48,10 @@ lua << EOF
         -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
         -- Using this option may slow down your editor, and you may see some duplicate highlights.
         -- Instead of true it can also be a list of languages
-        -- Sang: Python and Lua look the same. Enabling onlyl for vim for now.
-        additional_vim_regex_highlighting = {'vim'},
+        -- Sang:
+        --   - Python and Lua look the same
+        --   - Errors in vim when Lua code is in a file
+        additional_vim_regex_highlighting = {''},
       },
 
       -- For textobjects
