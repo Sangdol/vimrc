@@ -880,10 +880,33 @@ let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.9, 'relative': v:fal
 " and left only functions and commands
 Plug 'Sangdol/vim-markdown'
 
+" Select until the next same level or higher header
+" This is a mess, but it works.
+function! s:select_until_next_header()
+  normal ]hV
+  let header_line = line('.')
+
+  normal ][
+
+  if header_line == line('.')
+    " If the cursor didn't move, it means there is no next sibling header
+    " Select until the next header.
+    normal ]]
+
+    if header_line == line('.')
+      " If the cursor didn't move, it means there is no next header
+      " Select until the end of the file
+      normal G
+    else
+      normal k
+    endif
+  else
+    normal k
+  endif
+endfunction
+
 " Markdown section text object.
-" This doesn't work for the last section
-" since it doesn't have the next sibling.
-vmap im :<C-U>normal ]hV][k<CR>
+vmap im :<C-U>call <SID>select_until_next_header()<CR>
 omap im :normal Vim<CR>
 
 " fzf TOC
