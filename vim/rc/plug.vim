@@ -41,7 +41,6 @@ EOF
 endfunction
 
 " Edit vimrc
-nnoremap <silent> <Leader>vv :tabnew<CR>:e ~/.vimrc<CR>
 nnoremap <silent> <Leader>vp :tabnew<CR>:e ~/.vim/rc/plugins.vim<CR>
 nnoremap <silent> <Leader>vd :tabnew<CR>:e ~/.vim/rc/devplugins.vim<CR>
 nnoremap <silent> <Leader>vm :tabnew<CR>:e ~/.vim/rc/mappings.vim<CR>
