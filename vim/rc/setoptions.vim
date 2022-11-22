@@ -96,11 +96,6 @@ set jumpoptions+=stack
 " (default is 4000ms = 4s)
 set updatetime=300
 
-" Dictionary
-if has('mac')
-  set dictionary+=/usr/share/dict/words
-endif
-
 "
 " Style
 "
