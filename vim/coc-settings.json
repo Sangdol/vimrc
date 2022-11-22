@@ -18,6 +18,7 @@
   // Pyright
   // https://github.com/fannheyward/coc-pyright
   // https://github.com/fannheyward/coc-pyright#configurations
+  // https://github.com/fannheyward/coc-pyright/blob/master/package.json
   "pyright.inlayHints.variableTypes": false,
   "python.linting.mypyEnabled": true,
   "python.linting.flake8Enabled": true,
