@@ -880,9 +880,11 @@ let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.9, 'relative': v:fal
 " and left only functions and commands
 Plug 'Sangdol/vim-markdown'
 
-" yank / cut current section
-nmap <leader>my mz][ky'z
-nmap <leader>md mz][kd'z
+" Markdown section text object.
+" This doesn't work for the last section
+" since it doesn't have the next sibling.
+vmap im :<C-U>normal ]hV][k<CR>
+omap im :normal Vim<CR>
 
 " fzf TOC
 "
