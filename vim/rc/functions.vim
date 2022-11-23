@@ -87,15 +87,31 @@ endfunction
 nnoremap <Leader>b :call <SID>browser()<CR><CR>
 
 " Google it
-" https://vi.stackexchange.com/a/9002/3225
-function! s:google_search()
-    let searchterm = getreg("g")
-    let escapedTerm = substitute(searchterm, ' ', '+', "g")
-    let escapedTerm = substitute(escapedTerm, '\n', '+', "g")
-    let escapedTerm = substitute(escapedTerm, '*', '', "g")
-    exec '!open "http://google.com/search?q=' . escapedTerm . '" &'
+" https://www.reddit.com/r/vim/comments/ebaoku/function_to_google_any_text_object/
+function! GoogleText(type, ...)
+  let sel_save = &selection
+  let &selection = "inclusive"
+  let reg_save = @@
+
+  if a:0  " Invoked from Visual mode, use '< and '> marks.
+    silent exe "normal! `<" . a:type . "`>y"
+  elseif a:type == 'line'
+    silent exe "normal! '[V']y"
+  elseif a:type == 'block'
+    silent exe "normal! `[\<C-V>`]y"
+  else
+    silent exe "normal! `[v`]y"
+  endif
+
+  let search = substitute(trim(@@), ' \+', '+', 'g')
+  exec '!open "http://google.com/search?q=' . search . '" &'
+
+  let &selection = sel_save
+  let @@ = reg_save
 endfunction
-vnoremap <Leader>g "gy<Esc>:call <SID>google_search()<CR><CR>
+
+nmap <silent> ga :set opfunc=GoogleText<CR>g@
+vmap <silent> ga :<C-u>call GoogleText(visualmode(), 1)<Cr>
 
 " Save to the notes dir
 function! s:save_to_temp_with_timestamp() abort
