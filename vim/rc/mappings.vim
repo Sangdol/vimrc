@@ -379,9 +379,6 @@ set lcs=tab:›\ ,trail:·,eol:¬,nbsp:_
 set fcs=fold:-
 nnoremap <silent> <leader>i :set nolist!<CR>
 
-" qq to record, Q to replay
-nnoremap Q @q
-
 " Copy file path to clipboard
 " https://vim.fandom.com/wiki/Get_the_name_of_the_current_file
 " full path
