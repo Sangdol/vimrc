@@ -353,6 +353,10 @@ nnoremap <leader>mx :call <SID>toggle_markdown_bullet_tick('x')<CR>
 
 nnoremap <silent> <Leader>n :noh<CR>
 
+" star without moving cursor
+" https://vi.stackexchange.com/questions/22886/how-to-highlight-all-occurrences-of-a-search-without-moving-the-cursor
+nnoremap <Space>* <Cmd>let @/='\<'.expand('<cword>').'\>'<bar>set hlsearch<CR>
+
 " For easier use of registers
 nnoremap , "
 vnoremap , "
