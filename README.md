@@ -184,6 +184,10 @@ The lists below are the structure of normal mode mappings. I use them to structu
 * y
 * z: Conjure
 
+### `<Meta>`
+
+* n, p: vim-illuminate
+
 ### Etc.
 
 * `UP/DOWN`: move to previous/next tab
