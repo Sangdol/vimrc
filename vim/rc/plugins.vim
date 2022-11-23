@@ -654,7 +654,7 @@ Plug 'tpope/vim-fugitive'
 
 nnoremap <leader>gg :wa \| :Git add . \| :tab Git commit -v<CR>
 nnoremap <leader>gk :w \| :Gw \| :tab Git commit -v<CR>
-nnoremap <leader>gs :Git<CR>
+nnoremap <leader>gx :Git<CR>
 nnoremap <leader>gd :tab Git diff<CR>
 nnoremap <leader>gid :tab Git diff --cached<CR>
 nnoremap <leader>g- :Git switch -<CR>
@@ -814,7 +814,7 @@ nnoremap <leader>ft :call <SID>escape_abnormal_buf_and('Filetypes')<CR>
 nnoremap <leader>fw :call <SID>escape_abnormal_buf_and('Windows')<CR>
 
 " git
-nnoremap <leader>gx :call <SID>escape_abnormal_buf_and('GFiles?')<CR>
+nnoremap <leader>gs :call <SID>escape_abnormal_buf_and('GFiles?')<CR>
 nnoremap <leader>gl :call <SID>escape_abnormal_buf_and('Commits')<CR>
 
 " 'GFiles?', but to open diff
