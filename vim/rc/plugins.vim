@@ -3,6 +3,13 @@
 "
 
 "
+" targets.vim {{{1
+"
+Plug 'wellle/targets.vim'
+
+"}}}
+
+"
 " En Masse {{{1
 "
 Plug 'Olical/vim-enmasse'
