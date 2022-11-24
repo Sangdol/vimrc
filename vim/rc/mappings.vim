@@ -98,6 +98,10 @@ nnoremap <silent> <DOWN> :tabprevious<CR>
 inoremap <silent> <UP> <ESC>:tabnext<CR>
 inoremap <silent> <DOWN> <ESC>:tabprevious<CR>
 
+" Move
+nnoremap <M-l> :tabmove +1<CR>
+nnoremap <M-h> :tabmove -1<CR>
+
 " New Tab
 nnoremap <silent> <Leader>l :tabnew<CR>
 
