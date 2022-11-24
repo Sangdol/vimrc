@@ -790,6 +790,21 @@ let g:fzf_preview_window = ['down:50%', 'ctrl-/']
 " [[B]Commits] Customize the options used by 'git log':
 let g:fzf_commits_log_options = '--graph --color=always --format="%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"'
 
+" From https://github.com/junegunn/fzf/blob/master/README-VIM.md
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  copen
+  cc
+endfunction
+
+let g:fzf_action = {
+  \ 'ctrl-q': function('s:build_quickfix_list'),
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.9, 'relative': v:false } }
+
 " Move out of NERDTree, Voomtree, etc. buffers.
 " This doesn't work if the second buffer is not a normal buffer.
 " Fix it if it bothers.
@@ -862,21 +877,20 @@ nnoremap <leader>fpr :call <SID>escape_abnormal_buf_and('FZF ~/projects')<CR>
 nnoremap <leader>fpl :call <SID>escape_abnormal_buf_and('FZF ~/.vim/plugged')<CR>
 nnoremap <leader>fpg :call <SID>escape_abnormal_buf_and('FZF ~/github-projects')<CR>
 
-" From https://github.com/junegunn/fzf/blob/master/README-VIM.md
-function! s:build_quickfix_list(lines)
-  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
-  copen
-  cc
-endfunction
+" Global line completion (not just open buffers. ripgrep required.)
+" https://github.com/junegunn/fzf.vim#custom-completion
+inoremap <expr> <c-a> fzf#vim#complete(fzf#wrap({
+  \ 'prefix': '^.*$',
+  \ 'source': 'rg -n ^ --color always',
+  \ 'options': '--ansi --delimiter : --nth 3..',
+  \ 'reducer': { lines -> join(split(lines[0], ':\zs')[2:], '') }}))
 
-let g:fzf_action = {
-  \ 'ctrl-q': function('s:build_quickfix_list'),
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
-  \ 'ctrl-v': 'vsplit' }
-
-let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.9, 'relative': v:false } }
-
+" Local line complement (only open buffers)
+inoremap <expr> <c-f> fzf#vim#complete(fzf#wrap({
+  \ 'prefix': '^.*$',
+  \ 'source': 'rg -n ^ --color always ' .. expand('%:p'),
+  \ 'options': '--ansi --delimiter : --nth 3..',
+  \ 'reducer': { lines -> join(split(lines[0], ':\zs')[2:], '') }}))
 "}}}
 
 "
