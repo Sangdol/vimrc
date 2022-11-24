@@ -889,8 +889,9 @@ inoremap <expr> <c-a> fzf#vim#complete(fzf#wrap({
 inoremap <expr> <c-f> fzf#vim#complete(fzf#wrap({
   \ 'prefix': '^.*$',
   \ 'source': 'rg -n ^ --color always ' .. expand('%:p'),
-  \ 'options': '--ansi --delimiter : --nth 3..',
-  \ 'reducer': { lines -> join(split(lines[0], ':\zs')[2:], '') }}))
+  \ 'options': '--ansi --delimiter : --nth 2..',
+  \ 'reducer': { lines -> join(split(lines[0], ':\zs')[1:], '') }}))
+
 "}}}
 
 "
