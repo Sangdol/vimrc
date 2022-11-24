@@ -87,9 +87,10 @@ for i in range(1, 8)
 endfor
 
 " Go to last active tab (from https://superuser.com/a/675119/81915)
+" :tablast can't be used to go back and forth
 au TabLeave * let g:lasttab = tabpagenr()
-nnoremap <leader><leader>t :exe "tabn ".g:lasttab<cr>
-tnoremap <leader><leader>t <C-\><C-n>:exe "tabn ".g:lasttab<cr>
+nnoremap <M-t> :exe "tabn ".g:lasttab<cr>
+tnoremap <M-t> <C-\><C-n>:exe "tabn ".g:lasttab<cr>
 
 " Next / prev tab
 nnoremap <silent> <UP> :tabnext<CR>

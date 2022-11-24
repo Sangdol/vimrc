@@ -186,6 +186,7 @@ The lists below are the structure of normal mode mappings. I use them to structu
 
 ### `<Meta>`
 
+* t: go to previous tab
 * n, p: vim-illuminate
 
 ### Etc.
