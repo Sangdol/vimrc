@@ -125,6 +125,9 @@ for i in range(1, 6)
   execute 'nnoremap <silent> 'i . '<BS> :' . i . 'wincmd c<CR>'
 endfor
 
+" Go to last window
+nnoremap <Leader><Leader> :wincmd l<CR>
+
 function! s:close_last_window()
   execute FocusableWinCount() .. 'wincmd c'
 endfunction
