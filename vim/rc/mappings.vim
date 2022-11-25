@@ -126,9 +126,9 @@ for i in range(1, 6)
 endfor
 
 function! s:close_last_window()
-  execute winnr('$') .. 'wincmd c'
+  execute FocusableWinCount() .. 'wincmd c'
 endfunction
-nnoremap 0<BS> :call <SID>close_last_window()<CR>
+nnoremap <Leader><BS> :call <SID>close_last_window()<CR>
 
 function! CloseVisibleWindows()
   for i in range(1, FocusableWinCount())
