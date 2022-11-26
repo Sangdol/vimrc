@@ -1,5 +1,9 @@
 "
-" Plugins {{{1
+" Plugins
+"
+
+"
+" Gutentags {{{1
 "
 
 Plug 'ludovicchabant/vim-gutentags'
@@ -832,7 +836,7 @@ nnoremap <leader>fb :call <SID>escape_abnormal_buf_and('Buffers')<CR>
 nnoremap <leader>ft :call <SID>escape_abnormal_buf_and('Filetypes')<CR>
 nnoremap <leader>fw :call <SID>escape_abnormal_buf_and('Windows')<CR>
 
-" fzf symbols 
+" fzf symbols
 nnoremap <leader>fs :call <SID>escape_abnormal_buf_and('Tags')<CR>
 " fzf (tag) outline
 nnoremap <leader>fo :call <SID>escape_abnormal_buf_and('BTags')<CR>
