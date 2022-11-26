@@ -367,6 +367,9 @@ endfunction
 nnoremap <leader>mv :call <SID>toggle_markdown_bullet_tick('v')<CR>
 nnoremap <leader>mx :call <SID>toggle_markdown_bullet_tick('x')<CR>
 
+" Paste without autoindent in markdown
+autocmd FileType markdown inoremap <buffer> <C-R> <C-R><C-O>
+
 "}}}
 
 "
