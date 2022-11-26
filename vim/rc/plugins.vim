@@ -832,6 +832,9 @@ nnoremap <leader>fb :call <SID>escape_abnormal_buf_and('Buffers')<CR>
 nnoremap <leader>ft :call <SID>escape_abnormal_buf_and('Filetypes')<CR>
 nnoremap <leader>fw :call <SID>escape_abnormal_buf_and('Windows')<CR>
 
+" fzf symbols 
+nnoremap <leader>fs :call <SID>escape_abnormal_buf_and('Tags')<CR>
+
 " git
 nnoremap <leader>gs :call <SID>escape_abnormal_buf_and('GFiles?')<CR>
 nnoremap <leader>gl :call <SID>escape_abnormal_buf_and('Commits')<CR>
