@@ -1,6 +1,10 @@
 "
-" Plugins
+" Plugins {{{1
 "
+
+Plug 'ludovicchabant/vim-gutentags'
+
+"}}}
 
 "
 " targets.vim {{{1
