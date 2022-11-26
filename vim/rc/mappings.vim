@@ -244,8 +244,22 @@ command! Qa qa
 command! Wqa wqa
 
 " Go to next window
-nnoremap <C-q> <C-w>w
-inoremap <C-q> <ESC><C-w>w
+"nnoremap <C-q> <C-w>w
+"inoremap <C-q> <ESC><C-w>w
+
+" Go to previous window
+function! s:go_to_previous_window()
+  let current_win = winnr()
+
+  wincmd p
+
+  if current_win == winnr()
+    wincmd w
+  endif
+endfunction
+
+nnoremap <silent> <C-q> :call <SID>go_to_previous_window()<CR>
+inoremap <silent> <C-q> <ESC>:call <SID>go_to_previous_window()<CR>
 
 " Open a file in vertical split
 nnoremap <c-w>F <c-w>vgf
