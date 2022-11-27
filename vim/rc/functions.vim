@@ -104,6 +104,7 @@ function! GoogleText(type, ...)
   endif
 
   let search = substitute(trim(@@), ' \+', '+', 'g')
+  let @+ = search
   exec '!open "http://google.com/search?q=' . search . '" &'
 
   let &selection = sel_save
