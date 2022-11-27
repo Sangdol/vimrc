@@ -210,4 +210,4 @@ function! Ask() abort
   call append(line('$'), split(output, "\n"))
 endfunction
 
-nnoremap <leader>wa :call Ask()<CR>
+nnoremap <leader>eg :call Ask()<CR>

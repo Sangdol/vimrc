@@ -174,6 +174,7 @@ endfunction
 nnoremap <leader>u :update<CR>
 " = ZZ
 nnoremap <leader>we :x<CR>
+nnoremap <leader>wa :wa<CR>
 
 " Mostly for git commit message windows
 inoremap ;we <ESC>:x<CR>
