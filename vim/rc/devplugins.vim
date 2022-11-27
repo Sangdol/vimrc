@@ -230,6 +230,55 @@ nnoremap <silent> <leader>xl :TestLast<CR>
 " Python {{{1
 "
 
+" iron.vim - REPL for Python
+Plug 'hkupty/iron.nvim'
+
+lua << EOF
+  table.insert(plugin_callbacks, function()
+    local iron = require("iron.core")
+
+    iron.setup {
+      config = {
+        -- Whether a repl should be discarded or not
+        scratch_repl = true,
+        -- Your repl definitions come here
+        repl_definition = {
+          sh = {
+            -- Can be a table or a function that
+            -- returns a table (see below)
+            command = {"zsh"}
+          }
+        },
+        -- How the repl window will be displayed
+        -- See below for more information
+        repl_open_cmd = require('iron.view').split.vertical.botright(100)
+      },
+      -- Iron doesn't set keymaps by default anymore.
+      -- You can set them here or manually add keymaps to the functions in iron.core
+      keymaps = {
+        send_motion = "<space>zs",
+        visual_send = "<space>zs",
+        send_file = "<space>zf",
+        send_line = "<space>zz",
+        send_mark = "<space>zd",
+        mark_motion = "<space>zm",
+        mark_visual = "<space>zm",
+        remove_mark = "<space>zr",
+        cr = "<space>z<cr>",
+        interrupt = "<space>zc<space>",
+        exit = "<space>zq",
+        clear = "<space>zl",
+      },
+      -- If the highlight is on, you can change how it looks
+      -- For the available options, check nvim_set_hl
+      highlight = {
+        italic = true
+      },
+      ignore_blank_lines = true, -- ignore blank lines when sending visual select lines
+    }
+  end)
+EOF
+
 " Poet-v: Poetry and Pipenv integration
 "
 " :PoetvActivate

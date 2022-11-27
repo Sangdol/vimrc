@@ -182,7 +182,7 @@ The lists below are the structure of normal mode mappings. I use them to structu
   * pytest
   * docstring
 * y
-* z: Conjure
+* z: Conjure, iron.nvim
 
 ### `<Meta>`
 
