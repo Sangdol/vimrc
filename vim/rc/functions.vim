@@ -176,3 +176,38 @@ function! s:execute_macro_over_visual_range()
   echo "@".getcmdline()
   execute ":'<,'>normal @".nr2char(getchar())
 endfunction
+
+" GPT-3 playground
+" It only works for a file with a `gpt3` extension to avoid accidental use.
+function! Ask() abort
+  if expand('%:e') != 'gpt3'
+    echohl Error
+    echo 'This is not a gpt3 file.'
+    echohl None
+    return
+  endif
+
+  let text = join(getline(1, '$'), "\n")
+
+  if empty(text) || len(text) > 2048
+    echohl Error
+    echo 'The text is empty or longer than 2048 characters.'
+    echohl None
+    return
+  endif
+
+  echom 'Asking GPT-3 for "' .. text .. '"'
+
+  let openai_api_key = $OPENAI_API_KEY
+  let command = "curl -sS -H 'Content-Type: application/json'"
+        \.. " -H 'Authorization: Bearer " .. openai_api_key .. "'"
+        \.. " -d '{\"prompt\":\"" .. substitute(trim(text), '"', '\\"', "g") .. "\", "
+        \..       "\"max_tokens\": 100, \"model\": \"text-davinci-002\", \"temperature\": 0}'"
+        \.. " https://api.openai.com/v1/completions"
+  let curl_output = trim(system(command))
+  let output = trim(system("echo '" . curl_output . "' | jq --raw-output .choices[0].text"))
+
+  call append(line('$'), split(output, "\n"))
+endfunction
+
+nnoremap <leader>wa :call Ask()<CR>
