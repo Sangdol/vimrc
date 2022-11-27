@@ -21,7 +21,7 @@
   // https://github.com/fannheyward/coc-pyright/blob/master/package.json
   "pyright.inlayHints.variableTypes": false,
   "python.linting.mypyEnabled": true,
-  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Enabled": false,
   "pyright.organizeimports.provider": "isort",
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "/opt/homebrew/bin/black",
