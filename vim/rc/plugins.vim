@@ -244,6 +244,15 @@ Plug 'tpope/vim-surround'
 "}}}
 
 "
+" Repeat {{{1
+"
+" Tutorial: http://vimcasts.org/episodes/creating-repeatable-mappings-with-repeat-vim/
+"
+Plug 'tpope/vim-repeat'
+
+"}}}
+
+"
 " rename {{{1
 "
 Plug 'danro/rename.vim'
@@ -445,15 +454,6 @@ Plug 'Sangdol/vim-bbye'
 "  [crt] Some Long Identifier
 "
 Plug 'tpope/vim-abolish'
-
-"}}}
-
-"
-" Repeat {{{1
-"
-" Tutorial: http://vimcasts.org/episodes/creating-repeatable-mappings-with-repeat-vim/
-"
-Plug 'tpope/vim-repeat'
 
 "}}}
 
