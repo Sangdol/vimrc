@@ -581,10 +581,6 @@ let g:rooter_cd_cmd = 'lcd'
 " https://github.com/tpope/vim-markdown
 "
 
-" This make things slow https://github.com/gabrielelana/vim-markdown/issues/58
-" It's slow even in M1
-"let g:markdown_folding = 1
-
 set nofoldenable " to not fold when opening a file https://stackoverflow.com/questions/8316139/how-to-set-the-default-to-unfolded-when-you-open-a-file
 set conceallevel=2 " to conceal _, * used for italic or bold
 
@@ -918,6 +914,10 @@ inoremap <expr> <c-f> fzf#vim#complete(fzf#wrap({
 " Forked https://github.com/preservim/vim-markdown
 " and left only functions and commands
 Plug 'Sangdol/vim-markdown'
+
+" This make things slow https://github.com/gabrielelana/vim-markdown/issues/58
+" It's slow even in M1
+"let g:markdown_enable_folding = 1
 
 " Select until the next same level or higher header
 " This is a mess, but it works.
