@@ -799,6 +799,16 @@ endfunction
 "           while it doesn't generate messages on `echom` inside VoomUpdate().
 autocmd BufWinEnter *.md,*.vimrc,*.vim,*.py if (FocusableWinCount() == 2) | call VoomUpdate() | endif
 
+" Cut (dd)
+function! s:voom_cut() abort
+  Voomquit
+  call s:voom()
+  call voom#Oop('cut', 'n')
+  wincmd p
+endfunction
+
+nnoremap <silent> <Leader>md :call <sid>voom_cut()<cr>
+
 "}}}
 
 "
