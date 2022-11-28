@@ -919,8 +919,14 @@ Plug 'Sangdol/vim-markdown'
 " It's slow even in M1
 "let g:markdown_enable_folding = 1
 
-" Select until the next same level or higher header
-" This is a mess, but it works.
+" Select until the next same level or higher header. This is a mess, but it works.
+"
+" Known issues:
+"   - When there are headers `h1 h3| h1 h3`, and the cursor is at `|`,
+"     it selects `h3 h1 h3` altogether. It works when h3 is h2, e.g., `h1 h2| h1 h2`.
+"     This seems to be a bug of `][`.
+"   - When there are headers `h1| h2 h2` or `h1| h2 h2 h1`,
+"     it select only until before the first h2 instead of the entire h1.
 function! s:select_until_next_header()
   normal ]hV
   let header_line = line('.')
@@ -944,7 +950,7 @@ function! s:select_until_next_header()
   endif
 endfunction
 
-" Markdown section text object.
+" Markdown text object for sections
 vmap im :<C-U>call <SID>select_until_next_header()<CR>
 omap im :normal Vim<CR>
 
