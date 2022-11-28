@@ -581,6 +581,8 @@ let g:rooter_cd_cmd = 'lcd'
 " https://github.com/tpope/vim-markdown
 "
 
+" This is not documented, but it's in the code.
+let g:markdown_folding = 1
 set nofoldenable " to not fold when opening a file https://stackoverflow.com/questions/8316139/how-to-set-the-default-to-unfolded-when-you-open-a-file
 set conceallevel=2 " to conceal _, * used for italic or bold
 
