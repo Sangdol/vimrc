@@ -927,6 +927,8 @@ Plug 'Sangdol/vim-markdown'
 "     This seems to be a bug of `][`.
 "   - When there are headers `h1| h2 h2` or `h1| h2 h2 h1`,
 "     it select only until before the first h2 instead of the entire h1.
+"   - When there is a comment starting with '#' in a fenced code block, `][`
+"     regards it as a header.
 function! s:select_until_next_header()
   normal ]hV
   let header_line = line('.')
