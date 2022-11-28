@@ -582,12 +582,24 @@ let g:rooter_cd_cmd = 'lcd'
 "
 
 " This is not documented, but it's in the code.
-let g:markdown_folding = 1
+" Disabling this since, it makes large file slow to open. And EasyMotion gets slow as well.
+" Using the EnableMarkdownFolding function instead.
+"let g:markdown_folding = 1
 set nofoldenable " to not fold when opening a file https://stackoverflow.com/questions/8316139/how-to-set-the-default-to-unfolded-when-you-open-a-file
 set conceallevel=2 " to conceal _, * used for italic or bold
 
 " delete most of them as it slows down file loading - ['coffee', 'css', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sql', 'xml', 'java', 'python', 'sh', 'html', 'clojure', 'yaml', 'applescript', 'go', 'vim', 'awk', 'groovy']
 let g:markdown_fenced_languages = ['js=javascript', 'bash', 'sh', 'python', 'clojure', 'log', 'vim', 'sql', 'lua']
+
+" Code from: $NVIM_RUNTIME/ftplugin/markdown.vim
+function! EnableMarkdownFold()
+  setlocal foldexpr=MarkdownFold()
+  setlocal foldmethod=expr
+  setlocal foldtext=MarkdownFoldText()
+  let b:undo_ftplugin .= " foldexpr< foldmethod< foldtext<"
+endfunction
+
+nnoremap <silent> <Leader>mf :call EnableMarkdownFold()<CR>
 
 "}}}
 
