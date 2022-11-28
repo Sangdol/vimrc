@@ -181,31 +181,44 @@ endfunction
 " It only works for a file with a `gpt3` extension to avoid accidental use.
 function! Ask() abort
   if expand('%:e') != 'gpt3'
-    echohl Error
-    echo 'This is not a gpt3 file.'
-    echohl None
+    echoerr 'This is not a gpt3 file.'
     return
   endif
 
   let text = join(getline(1, '$'), "\n")
 
   if empty(text) || len(text) > 2048
-    echohl Error
-    echo 'The text is empty or longer than 2048 characters.'
-    echohl None
+    echoerr 'The text is empty or longer than 2048 characters.'
     return
   endif
 
   echom 'Asking GPT-3 for "' .. text .. '"'
 
-  let openai_api_key = $OPENAI_API_KEY
-  let command = "curl -sS -H 'Content-Type: application/json'"
-        \.. " -H 'Authorization: Bearer " .. openai_api_key .. "'"
-        \.. " -d '{\"prompt\":\"" .. substitute(trim(text), '"', '\\"', "g") .. "\", "
-        \..       "\"max_tokens\": 100, \"model\": \"text-davinci-002\", \"temperature\": 0}'"
-        \.. " https://api.openai.com/v1/completions"
-  let curl_output = trim(system(command))
-  let output = trim(system("echo '" . curl_output . "' | jq --raw-output .choices[0].text"))
+  let data = {
+        \ 'prompt': text,
+        \ 'max_tokens': 100,
+        \ 'temperature': 0,
+        \ 'model': 'text-davinci-002'
+        \ }
+  let url = "https://api.openai.com/v1/completions"
+  let headers = 
+        \' -H "Content-Type: application/json"' ..
+        \' -H "Authorization: Bearer ' .. $OPENAI_API_KEY .. '"'
+
+  let file = tempname()
+  call writefile([json_encode(data)], file)
+
+  echom 'File is saved to ' .. file
+
+  let res = system('curl -s -X POST ' .. headers .. ' --data @' .. file .. ' ' .. url)
+  let body = json_decode(res)
+
+  " Append the whole request and response when there was an error.
+  if has_key(body, 'error')
+    let output = res
+  else
+    let output = body.choices[0].text
+  endif
 
   call append(line('$'), split(output, "\n"))
 endfunction
