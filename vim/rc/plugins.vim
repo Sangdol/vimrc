@@ -809,6 +809,18 @@ endfunction
 
 nnoremap <silent> <Leader>md :call <sid>voom_cut()<cr>
 
+" Yank (yy)
+function! s:voom_yank() abort
+  Voomquit
+  call s:voom()
+  call voom#Oop('copy', 'n')
+  wincmd p
+
+  echo "Yanked!"
+endfunction
+
+nnoremap <silent> <Leader>my :call <sid>voom_yank()<cr>
+
 "}}}
 
 "
