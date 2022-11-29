@@ -3,6 +3,14 @@
 "
 
 "
+" Colorizer {{{1
+"
+" :ColorHighlight
+Plug 'chrisbra/Colorizer'
+
+"}}}
+
+"
 " Gutentags {{{1
 "
 
