@@ -198,10 +198,10 @@ function! Ask() abort
         \ 'prompt': text,
         \ 'max_tokens': 100,
         \ 'temperature': 0,
-        \ 'model': 'text-davinci-002'
+        \ 'model': 'text-davinci-003'
         \ }
   let url = "https://api.openai.com/v1/completions"
-  let headers = 
+  let headers =
         \' -H "Content-Type: application/json"' ..
         \' -H "Authorization: Bearer ' .. $OPENAI_API_KEY .. '"'
 
