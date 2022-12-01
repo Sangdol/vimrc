@@ -246,7 +246,7 @@ lua << EOF
           sh = {
             -- Can be a table or a function that
             -- returns a table (see below)
-            command = {"zsh"}
+            command = {"fish"}
           }
         },
         -- How the repl window will be displayed
