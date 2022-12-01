@@ -288,8 +288,8 @@ lua << EOF
 EOF
 
 " For some reson, vim enters insert mode after IronRepl and IronRestart.
-nnoremap <silent> <leader>zi :IronRepl<CR><ESC>
-nnoremap <silent> <leader>zr :IronRestart<CR><ESC>:IronRepl<CR><ESC>
+nnoremap <silent> <leader>zi :IronRepl<CR>
+nnoremap <silent> <leader>zr :IronRestart<CR>:IronRepl<CR>
 nnoremap <silent> <leader>zw :IronWatch file<CR>:echo 'Iron is watching file'<CR>
 
 "}}}
