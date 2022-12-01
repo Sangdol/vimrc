@@ -133,6 +133,8 @@ noremap <Leader>wtm :call <SID>save_to_temp_with_timestamp('~/workbench/vim-note
 noremap <Leader>wtp :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'py')<CR>
 noremap <Leader>wtj :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'js')<CR>
 noremap <Leader>wts :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'sh')<CR>
+noremap <Leader>wtl :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'lua')<CR>
+noremap <Leader>wtv :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'vim')<CR>
 
 " Translate the keyboard middle line characters to numbers
 " since numbers are too far from fingers.

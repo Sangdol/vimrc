@@ -261,9 +261,9 @@ lua << EOF
         send_file = "<space>zf",
         send_line = "<space>zz",
         send_mark = "<space>zd",
-        mark_motion = "<space>zm",
-        mark_visual = "<space>zm",
-        remove_mark = "<space>zr",
+        mark_motion = "<space>zma",
+        mark_visual = "<space>zma",
+        remove_mark = "<space>zmr",
         cr = "<space>z<cr>",
         interrupt = "<space>zc<space>",
         exit = "<space>zq",
@@ -279,7 +279,9 @@ lua << EOF
   end)
 EOF
 
-nnoremap <silent> <leader>zi :IronRepl<CR>
+" For some reson, vim enters insert mode after IronRepl and IronRestart.
+nnoremap <silent> <leader>zi :IronRepl<CR><ESC>
+nnoremap <silent> <leader>zr :IronRestart<CR><ESC>:IronRepl<CR><ESC>
 nnoremap <silent> <leader>zw :IronWatch file<CR>:echo 'Iron is watching file'<CR>
 
 " Poet-v: Poetry and Pipenv integration
