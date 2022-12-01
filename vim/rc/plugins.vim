@@ -607,7 +607,8 @@ function! EnableMarkdownFold()
   let b:undo_ftplugin .= " foldexpr< foldmethod< foldtext<"
 endfunction
 
-nnoremap <silent> <Leader>mf :call EnableMarkdownFold()<CR>
+command!  -nargs=0  EnableMarkdownFold call EnableMarkdownFold()
+nnoremap <silent> <Leader>mf :EnableMarkdownFold<CR>
 
 "}}}
 
