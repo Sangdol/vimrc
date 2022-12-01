@@ -1,4 +1,15 @@
-" Checkout markdown.vim file e.g., /usr/local/Cellar/vim/8.1.0150/share/vim/vim81/syntax/markdown.vim
+" 
+" Check out markdown.vim file e.g., /usr/local/Cellar/vim/8.1.0150/share/vim/vim81/syntax/markdown.vim
+"
+
+"
+" Custom colors
+"
+hi link markdownH1 SangH1
+hi link markdownH2 SangH2
+hi link markdownH3 SangH3
+hi markdownHeadingRule guifg=#8094b4
+
 "
 " To disable errors caused by '_' overriding `syn match markdownError "\w\@<=_\w\@="`
 " https://stackoverflow.com/questions/19137601/turn-off-highlighting-a-certain-pattern-in-vim/34448277#34448277

@@ -14,11 +14,20 @@ function! s:highlights() abort
   " To make unused variables less noticeable
   " :h coc-highlights
   "
-  " Default: 
-  "   CocUnusedHighlight -> CocFadeOut -> Conceal 
+  " Default:
+  "   CocUnusedHighlight -> CocFadeOut -> Conceal
   "   highlight Conceal ctermfg=7 ctermbg=242 guifg=LightGrey guibg=Black
   highlight CocFadeOut ctermfg=7 ctermbg=242 guifg=Black guibg=Black
   highlight CocHintSign guifg=gray
+
+  " Custom colors
+  highlight SangH1 guifg=#e4b854 gui=bold
+
+  syntax match VoomHeaderH2 /\v  . \|.+/
+  highlight SangH2 guifg=#701516 gui=bold
+
+  syntax match VoomHeaderH3 /\v  . . \|.+/
+  highlight SangH3 guifg=#6d8086
 endfunction
 
 " Why augroup? https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f
