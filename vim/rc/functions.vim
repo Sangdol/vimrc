@@ -114,22 +114,22 @@ endfunction
 nmap <silent> ga :set opfunc=GoogleText<CR>g@
 vmap <silent> ga :<C-u>call GoogleText(visualmode(), 1)<Cr>
 
-" Save to the notes dir
-function! s:save_to_temp_with_timestamp() abort
+" Save with a timestamp
+function! s:save_to_temp_with_timestamp(path, ext) abort
   let timestamp = strftime("%Y-%m-%d_%H%M%S")
-  let filename = 'vim_' .. timestamp .. '.md'
-  let target_path = expand('~/workbench/vim-notes/')
+  let filename = 'vim_' .. timestamp .. '.' .. a:ext
+  let target_path = expand(a:path)
 
   call CreateDirIfNotExist(target_path)
 
   if empty(bufname())
     exe 'w ' .. target_path .. filename
   else
-    echo 'This is already has a filename.'
+    echo 'This file already has a filename.'
   endif
 endfunction
 
-noremap <Leader>wt :call <SID>save_to_temp_with_timestamp()<CR>
+noremap <Leader>wt :call <SID>save_to_temp_with_timestamp('~/workbench/vim-notes/', 'md')<CR>
 
 " Translate the keyboard middle line characters to numbers
 " since numbers are too far from fingers.
@@ -224,6 +224,7 @@ function! Ask() abort
 endfunction
 
 nnoremap <leader>eg :call Ask()<CR>
+noremap <Leader>wg :call <SID>save_to_temp_with_timestamp('~/workbench/gpt3/', 'gpt')<CR>
 
 " Show the current syntax group
 " https://stackoverflow.com/a/9464929/524588
