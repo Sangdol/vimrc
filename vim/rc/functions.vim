@@ -129,7 +129,10 @@ function! s:save_to_temp_with_timestamp(path, ext) abort
   endif
 endfunction
 
-noremap <Leader>wt :call <SID>save_to_temp_with_timestamp('~/workbench/vim-notes/', 'md')<CR>
+noremap <Leader>wtm :call <SID>save_to_temp_with_timestamp('~/workbench/vim-notes/', 'md')<CR>
+noremap <Leader>wtp :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'py')<CR>
+noremap <Leader>wtj :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'js')<CR>
+noremap <Leader>wts :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'sh')<CR>
 
 " Translate the keyboard middle line characters to numbers
 " since numbers are too far from fingers.
@@ -224,7 +227,7 @@ function! Ask() abort
 endfunction
 
 nnoremap <leader>eg :call Ask()<CR>
-noremap <Leader>wg :call <SID>save_to_temp_with_timestamp('~/workbench/gpt3/', 'gpt')<CR>
+noremap <Leader>wtg :call <SID>save_to_temp_with_timestamp('~/workbench/gpt3/', 'gpt')<CR>
 
 " Show the current syntax group
 " https://stackoverflow.com/a/9464929/524588
