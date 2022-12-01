@@ -279,6 +279,9 @@ lua << EOF
   end)
 EOF
 
+nnoremap <silent> <leader>zi :IronRepl<CR>
+nnoremap <silent> <leader>zw :IronWatch file<CR>:echo 'Iron is watching file'<CR>
+
 " Poet-v: Poetry and Pipenv integration
 "
 " :PoetvActivate
