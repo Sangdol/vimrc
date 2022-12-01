@@ -25,7 +25,14 @@ endfunction
 
 command! -nargs=+ -complete=command Tab call Tab(<q-args>)
 
-" https://vim.fandom.com/wiki/Delete_files_with_a_Vim_command#Comments
+" message in new tab
+nnoremap <Leader>et :Tab mes<CR>
+" last command in new tab
+nnoremap <Leader>el :Tab <C-R>:<CR>
+
+"
+" From https://vim.fandom.com/wiki/Delete_files_with_a_Vim_command#Comments
+"
 function! DeleteFile(...)
   if(exists('a:1'))
     let theFile=a:1
@@ -52,6 +59,9 @@ com! Rm call DeleteFile()
 "delete the file and quit the buffer (quits vim if this was the last file)
 com! RM call DeleteFile() <Bar> q!
 
+"
+" Custom gx replacement
+"
 function! s:open_url(url)
   echom 'Opening "' .. a:url .. '"'
   if !empty(a:url)
@@ -86,8 +96,10 @@ endfunction
 " (Remove the last <CR> to debug)
 nnoremap <Leader>b :call <SID>browser()<CR><CR>
 
+"
 " Google it
 " https://www.reddit.com/r/vim/comments/ebaoku/function_to_google_any_text_object/
+"
 function! GoogleText(type, ...)
   let sel_save = &selection
   let &selection = "inclusive"
@@ -114,7 +126,9 @@ endfunction
 nmap <silent> ga :set opfunc=GoogleText<CR>g@
 vmap <silent> ga :<C-u>call GoogleText(visualmode(), 1)<Cr>
 
+"
 " Save with a timestamp
+"
 function! s:save_to_temp_with_timestamp(path, ext) abort
   let timestamp = strftime("%Y-%m-%d_%H%M%S")
   let filename = 'vim_' .. timestamp .. '.' .. a:ext
@@ -137,6 +151,7 @@ noremap <Leader>wts :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 
 noremap <Leader>wtl :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'lua')<CR>
 noremap <Leader>wtv :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'vim')<CR>
 
+"
 " Translate the keyboard middle line characters to numbers
 " since numbers are too far from fingers.
 "
@@ -183,8 +198,10 @@ function! s:execute_macro_over_visual_range()
   execute ":'<,'>normal @".nr2char(getchar())
 endfunction
 
+"
 " GPT-3 playground
 " It only works for a file with a `gpt3` extension to avoid accidental use.
+"
 function! Ask() abort
   if expand('%:e') != 'gpt3'
     echoerr 'This is not a gpt3 file.'
@@ -232,8 +249,10 @@ endfunction
 nnoremap <leader>eg :call Ask()<CR>
 noremap <Leader>wtg :call <SID>save_to_temp_with_timestamp('~/workbench/gpt3/', 'gpt')<CR>
 
+"
 " Show the current syntax group
 " https://stackoverflow.com/a/9464929/524588
+"
 function! SynStack()
   if !exists("*synstack")
     return

@@ -431,7 +431,6 @@ function! s:copy_path_to_clipboard(modifiers) abort
 endfunction
 
 nnoremap <Leader>es :set spell!<CR>
-nnoremap <Leader>et :Tab mes<CR>
 
 " vim source
 nnoremap <leader>vs :source %<CR>
