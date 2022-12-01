@@ -550,7 +550,7 @@ EOF
 " vim-anyfold {{{1
 "
 Plug 'pseewald/vim-anyfold'
-autocmd Filetype yaml,javascript,typescript,java,json AnyFoldActivate
+autocmd Filetype yaml,javascript,typescript,json,lua,python,vim AnyFoldActivate
 
 "}}}
 
