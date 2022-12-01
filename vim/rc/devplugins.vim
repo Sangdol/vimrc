@@ -227,10 +227,8 @@ nnoremap <silent> <leader>xl :TestLast<CR>
 " }}}
 
 "
-" Python {{{1
+" iron.nvim - REPL for Neovim {{{1
 "
-
-" iron.vim - REPL for Python
 Plug 'hkupty/iron.nvim'
 
 lua << EOF
@@ -283,6 +281,12 @@ EOF
 nnoremap <silent> <leader>zi :IronRepl<CR><ESC>
 nnoremap <silent> <leader>zr :IronRestart<CR><ESC>:IronRepl<CR><ESC>
 nnoremap <silent> <leader>zw :IronWatch file<CR>:echo 'Iron is watching file'<CR>
+
+"}}}
+
+"
+" Python {{{1
+"
 
 " Poet-v: Poetry and Pipenv integration
 "
