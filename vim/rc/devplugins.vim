@@ -208,23 +208,33 @@ nnoremap <leader>xb
 "}}}
 
 "
-" vim-test {{{1
+" neotest {{{1
 "
-Plug 'tpope/vim-dispatch'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'antoinemadec/FixCursorHold.nvim'
+Plug 'nvim-neotest/neotest'
+Plug 'nvim-neotest/neotest-python'
+Plug 'nvim-neotest/neotest-plenary'
 
-let g:dispatch_no_maps = 1
+lua << EOF
+  table.insert(plugin_callbacks, function()
+    require('neotest-config')
+  end)
+EOF
 
-Plug 'vim-test/vim-test'
+command!  -nargs=0  NeotestRun          lua  require("neotest").run.run()
+command!  -nargs=0  NeotestRunFile      lua  require("neotest").run.run(vim.fn.expand("%"))
+command!  -nargs=0  NeotestOutputPanel  lua  require("neotest").output_panel.open()
+command!  -nargs=0  NeotestSummary      lua  require("neotest").summary.toggle()
+command!  -nargs=0  NeoTestOutput       lua  require("neotest").output.open()
 
-let test#strategy = "dispatch"
-let test#python#runner = 'pytest'
+nnoremap <silent> <leader>xt :NeotestRun<CR>
+nnoremap <silent> <leader>xf :NeotestRunFile<CR>
+nnoremap <silent> <leader>xo :NeotestOutputPanel<CR>
+nnoremap <silent> <leader>xs :NeotestSummary<CR>
+nnoremap <silent> <leader>xp :NeoTestOutput<CR>
 
-nnoremap <silent> <leader>xt :TestNearest<CR>
-nnoremap <silent> <leader>xf :TestFile<CR>
-nnoremap <silent> <leader>xc :TestSuite<CR>
-nnoremap <silent> <leader>xl :TestLast<CR>
-
-" }}}
+"}}}
 
 "
 " iron.nvim - REPL for Neovim {{{1

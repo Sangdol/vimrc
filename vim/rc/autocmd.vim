@@ -24,8 +24,9 @@ augroup custom
   " For Voom, NERDTree, etc.
   autocmd VimEnter * wincmd l
 
-  " Terminal
-  autocmd TermOpen * startinsert
+  " Avoiding going to insert mode when a terminal is opened 
+  " while the cursor is in the editor: https://github.com/nvim-neotest/neotest/issues/2 
+  autocmd TermOpen *  if nvim_buf_get_name(0) =~# '^term://.*' | startinsert | endif
 
   " For some reason, vim starts in insert mode
   " when opening with a session file.
