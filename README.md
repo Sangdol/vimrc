@@ -167,7 +167,7 @@ The lists below are the structure of normal mode mappings. I use them to structu
   * Markdown
 * n: `noh`
 * o
-* p: Plug
+* p: Plug, paste
 * q: close window
 * r
   * re: rename

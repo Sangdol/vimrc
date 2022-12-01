@@ -282,6 +282,9 @@ nnoremap <silent> <Leader>dd ggdG
 " Yank all
 nnoremap <Leader>a :%y<CR>
 
+" Paste in a new line
+nnoremap <silent> <Leader>pp o<Esc>p
+
 " Create Blank Newlines and stay in Normal mode
 " http://superuser.com/a/607193/81915
 nnoremap <silent> zj :call append(line('.'), '')<CR>
