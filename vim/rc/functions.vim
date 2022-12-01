@@ -129,6 +129,7 @@ function! s:save_to_temp_with_timestamp(path, ext) abort
   endif
 endfunction
 
+noremap <Leader>wtt :call <SID>save_to_temp_with_timestamp('~/workbench/vim-notes/', 'txt')<CR>
 noremap <Leader>wtm :call <SID>save_to_temp_with_timestamp('~/workbench/vim-notes/', 'md')<CR>
 noremap <Leader>wtp :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'py')<CR>
 noremap <Leader>wtj :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'js')<CR>
