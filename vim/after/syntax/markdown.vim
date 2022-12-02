@@ -1,4 +1,4 @@
-" 
+"
 " Check out markdown.vim file e.g., /usr/local/Cellar/vim/8.1.0150/share/vim/vim81/syntax/markdown.vim
 "
 
