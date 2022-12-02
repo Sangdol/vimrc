@@ -6,23 +6,18 @@ vimrc for neovim
 Features
 ---
 
-* Modularized rc files
-* Blocked sections
-* Plugin code locality
+* Modularized rc files and blocked sections
 * Utility functions and unit tests written in [Vader](https://github.com/junegunn/vader.vim)
 * As hard to understand as other vimrc files
 
-Development Environment
+Languages that I use
 ---
-
-The languages that I mainly write with vim:
 
 * Python
 * Clojure
 * Lua
 * vimscript
-* bash script
-* fish script
+* bash, fish scripts
 
 Links
 ---
