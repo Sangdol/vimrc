@@ -8,7 +8,9 @@
 hi link markdownH1 SangH1
 hi link markdownH2 SangH2
 hi link markdownH3 SangH3
-hi markdownHeadingRule guifg=#8094b4
+hi link mkdInlineURL Link
+hi link markdownHeadingRule Line " Heading lines
+hi link markdownListMarker Bullet 
 
 "
 " To disable errors caused by '_' overriding `syn match markdownError "\w\@<=_\w\@="`

@@ -22,12 +22,11 @@ function! s:highlights() abort
 
   " Custom colors
   highlight SangH1 guifg=#e4b854 gui=bold
-
-  syntax match VoomHeaderH2 /\v  . \|.+/
   highlight SangH2 guifg=#701516 gui=bold
-
-  syntax match VoomHeaderH3 /\v  . . \|.+/
   highlight SangH3 guifg=#6d8086
+  highlight Link guifg=#87c095
+  highlight Line guifg=#8094b4
+  highlight Bullet guifg=#b30b00
 endfunction
 
 " Why augroup? https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f
