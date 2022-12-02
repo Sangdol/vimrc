@@ -24,7 +24,7 @@ function! s:highlights() abort
   highlight SangH1 guifg=#e4b854 gui=bold
   highlight SangH2 guifg=#701516 gui=bold
   highlight SangH3 guifg=#6d8086
-  highlight Link guifg=#87c095
+  highlight Link guifg=#3d6117
   highlight Line guifg=#8094b4
   highlight Bullet guifg=#b30b00
 endfunction
