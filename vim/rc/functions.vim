@@ -247,7 +247,7 @@ function! Ask() abort
 endfunction
 
 nnoremap <leader>eg :call Ask()<CR>
-noremap <Leader>wtg :call <SID>save_to_temp_with_timestamp('~/workbench/gpt3/', 'gpt')<CR>
+nnoremap <Leader>wtg :call <SID>save_to_temp_with_timestamp('~/workbench/gpt3/', 'gpt3')<CR>
 
 "
 " Show the current syntax group
