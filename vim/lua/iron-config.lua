@@ -16,6 +16,7 @@ iron.setup {
     -- See below for more information
     repl_open_cmd = require('iron.view').split.vertical.botright(100),
     scope = require("iron.scope").tab_based,
+    close_window_on_exit = true,
   },
   -- Iron doesn't set keymaps by default anymore.
   -- You can set them here or manually add keymaps to the functions in iron.core
