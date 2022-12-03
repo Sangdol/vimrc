@@ -259,7 +259,8 @@ lua << EOF
         },
         -- How the repl window will be displayed
         -- See below for more information
-        repl_open_cmd = require('iron.view').split.vertical.botright(100)
+        repl_open_cmd = require('iron.view').split.vertical.botright(100),
+        scope = require("iron.scope").tab_based,
       },
       -- Iron doesn't set keymaps by default anymore.
       -- You can set them here or manually add keymaps to the functions in iron.core
