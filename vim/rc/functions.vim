@@ -150,6 +150,16 @@ nnoremap <Leader>wtj :call <SID>save_to_temp_with_timestamp('~/workbench/code/',
 nnoremap <Leader>wts :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'sh')<CR>
 nnoremap <Leader>wtl :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'lua')<CR>
 nnoremap <Leader>wtv :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'vim')<CR>
+nnoremap <Leader>wtg :call <SID>save_to_temp_with_timestamp('~/workbench/gpt3/', 'gpt3')<CR>
+
+nnoremap <Leader>wot :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/vim-notes/', 'txt')<CR>
+nnoremap <Leader>wom :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/vim-notes/', 'md')<CR>
+nnoremap <Leader>wop :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'py')<CR>
+nnoremap <Leader>woj :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'js')<CR>
+nnoremap <Leader>wos :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'sh')<CR>
+nnoremap <Leader>wol :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'lua')<CR>
+nnoremap <Leader>wov :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'vim')<CR>
+nnoremap <Leader>wog :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/gpt3/', 'gpt3')<CR>
 
 "
 " Translate the keyboard middle line characters to numbers
@@ -245,7 +255,6 @@ function! Ask() abort
 endfunction
 
 nnoremap <leader>eg :call Ask()<CR>
-nnoremap <Leader>wtg :call <SID>save_to_temp_with_timestamp('~/workbench/gpt3/', 'gpt3')<CR>
 
 "
 " Show the current syntax group
