@@ -231,8 +231,6 @@ function! Ask() abort
   let file = tempname()
   call writefile([json_encode(data)], file)
 
-  echom 'File is saved to ' .. file
-
   let res = system('curl -s -X POST ' .. headers .. ' --data @' .. file .. ' ' .. url)
   let body = json_decode(res)
 
