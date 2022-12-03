@@ -27,8 +27,8 @@ iron.setup {
   keymaps = {
     send_motion = "<space>zs",
     visual_send = "<space>zs",
-    send_file = "<space>zf",
-    send_line = "<space>zz",
+    send_file = "<S-CR>",
+    send_line = "<C-CR>",
     send_mark = "<space>zd",
     mark_motion = "<space>zma",
     mark_visual = "<space>zma",
