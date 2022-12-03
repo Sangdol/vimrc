@@ -143,13 +143,13 @@ function! s:save_to_temp_with_timestamp(path, ext) abort
   endif
 endfunction
 
-noremap <Leader>wtt :call <SID>save_to_temp_with_timestamp('~/workbench/vim-notes/', 'txt')<CR>
-noremap <Leader>wtm :call <SID>save_to_temp_with_timestamp('~/workbench/vim-notes/', 'md')<CR>
-noremap <Leader>wtp :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'py')<CR>
-noremap <Leader>wtj :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'js')<CR>
-noremap <Leader>wts :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'sh')<CR>
-noremap <Leader>wtl :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'lua')<CR>
-noremap <Leader>wtv :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'vim')<CR>
+nnoremap <Leader>wtt :call <SID>save_to_temp_with_timestamp('~/workbench/vim-notes/', 'txt')<CR>
+nnoremap <Leader>wtm :call <SID>save_to_temp_with_timestamp('~/workbench/vim-notes/', 'md')<CR>
+nnoremap <Leader>wtp :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'py')<CR>
+nnoremap <Leader>wtj :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'js')<CR>
+nnoremap <Leader>wts :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'sh')<CR>
+nnoremap <Leader>wtl :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'lua')<CR>
+nnoremap <Leader>wtv :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'vim')<CR>
 
 "
 " Translate the keyboard middle line characters to numbers
