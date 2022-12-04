@@ -17,7 +17,8 @@ require("iron.core").setup {
     close_window_on_exit = true,
     repl_definition = {
      -- forcing a default
-      python = require("iron.fts.python").ipython
+      python = require("iron.fts.python").ipython,
+      sh = require("iron.fts.sh").sh
     }
   },
   -- If the highlight is on, you can change how it looks
