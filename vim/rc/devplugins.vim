@@ -216,11 +216,7 @@ Plug 'nvim-neotest/neotest'
 Plug 'nvim-neotest/neotest-python'
 Plug 'nvim-neotest/neotest-plenary'
 
-lua << EOF
-  table.insert(plugin_callbacks, function()
-    require('neotest-config')
-  end)
-EOF
+lua require_config('neotest-config')
 
 command!  -nargs=0  NeotestRun          lua  require("neotest").run.run()
 command!  -nargs=0  NeotestRunFile      lua  require("neotest").run.run(vim.fn.expand("%"))
