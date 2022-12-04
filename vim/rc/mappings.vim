@@ -433,6 +433,11 @@ endfunction
 nnoremap <Leader>es :set spell!<CR>
 
 " vim source
-nnoremap <leader>vs :source %<CR>
+autocmd FileType vim
+  \  nnoremap <silent><buffer> <C-CR> yy:@"<CR>
+  \| nnoremap <silent><buffer> <S-CR> :source %<CR>
+  \| inoremap <silent><buffer> <C-CR> <C-O>yy:@"<CR>
+  \| inoremap <silent><buffer> <S-CR> <C-O>:source %<CR>
+  \| vnoremap <silent><buffer> <C-CR> y:@"<CR>
 
 "}}}
