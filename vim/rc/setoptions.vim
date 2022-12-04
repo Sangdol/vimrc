@@ -18,7 +18,6 @@ set nocompatible
 " Needed for Syntax Highlighting
 filetype on
 filetype plugin indent on
-syntax enable
 
 " Default tab settings
 set smarttab
