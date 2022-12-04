@@ -180,13 +180,13 @@ Plug 'hkupty/iron.nvim'
 
 lua require_config('iron-config')
 
-" For some reson, vim enters insert mode after IronRepl and IronRestart.
-nnoremap <silent> <leader>zi :IronRepl<CR>
-nnoremap <silent> <leader>zr :IronRestart<CR>:IronRepl<CR>
-nnoremap <silent> <C-CR> :lua require("iron.core").send_line()<CR><CR>
-nnoremap <silent> <S-CR> :lua require("iron.core").send_file()<CR><CR>
-inoremap <silent> <C-CR> <C-O>:lua require("iron.core").send_line()<CR><CR>
-inoremap <silent> <S-CR> <C-O>:lua require("iron.core").send_file()<CR><CR>
+autocmd FileType python,javascript,lua,fish,sh,zsh 
+      \  nnoremap <silent><buffer> <leader>zi :IronRepl<CR>
+      \| nnoremap <silent><buffer> <leader>zr :IronRestart<CR>:IronRepl<CR>
+      \| nnoremap <silent><buffer> <C-CR> :lua require("iron.core").send_line()<CR><CR>
+      \| nnoremap <silent><buffer> <S-CR> :lua require("iron.core").send_file()<CR><CR>
+      \| inoremap <silent><buffer> <C-CR> <C-O>:lua require("iron.core").send_line()<CR><CR>
+      \| inoremap <silent><buffer> <S-CR> <C-O>:lua require("iron.core").send_file()<CR><CR>
 
 "}}}
 
