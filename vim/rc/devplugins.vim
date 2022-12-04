@@ -165,7 +165,7 @@ command!  -nargs=0  NeotestOutputPanel  lua  require("neotest").output_panel.ope
 command!  -nargs=0  NeotestSummary      lua  require("neotest").summary.toggle()
 command!  -nargs=0  NeoTestOutput       lua  require("neotest").output.open()
 
-nnoremap <silent> <leader>xt :NeotestRun<CR>
+nnoremap <silent> <leader>xx :NeotestRun<CR>
 nnoremap <silent> <leader>xf :NeotestRunFile<CR>
 nnoremap <silent> <leader>xo :NeotestOutputPanel<CR>
 nnoremap <silent> <leader>xs :NeotestSummary<CR>
