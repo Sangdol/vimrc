@@ -487,8 +487,11 @@ nnoremap <leader>9 :NvimTreeFindFile!<CR>
 nnoremap <leader>8 :NvimTreeResize 30<CR>
 
 augroup NvimTreeColors
-  " a list of groups can be found at `:help nvim_tree_highlight`
-  highlight NvimTreeFolderIcon guibg=blue
+  autocmd!
+  autocmd  ColorScheme  *  highlight  NvimTreeFolderIcon        guifg=#41535b
+  autocmd  ColorScheme  *  highlight  NvimTreeFolderName        guifg=#563d7c
+  autocmd  ColorScheme  *  highlight  NvimTreeEmptyFolderName   guifg=#563d7c
+  autocmd  ColorScheme  *  highlight  NvimTreeOpenedFolderName  guifg=#563d7c
 augroup END
 
 lua require_config('nvim-tree-config')
