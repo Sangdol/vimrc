@@ -147,7 +147,8 @@ nnoremap <Leader>wtt :call <SID>save_to_temp_with_timestamp('~/workbench/vim-not
 nnoremap <Leader>wtm :call <SID>save_to_temp_with_timestamp('~/workbench/vim-notes/', 'md')<CR>
 nnoremap <Leader>wtp :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'py')<CR>
 nnoremap <Leader>wtj :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'js')<CR>
-nnoremap <Leader>wts :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'sh')<CR>
+nnoremap <Leader>wtb :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'sh')<CR>
+nnoremap <Leader>wtf :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'fish')<CR>
 nnoremap <Leader>wtl :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'lua')<CR>
 nnoremap <Leader>wtv :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'vim')<CR>
 nnoremap <Leader>wtg :call <SID>save_to_temp_with_timestamp('~/workbench/gpt3/', 'gpt3')<CR>
@@ -156,7 +157,8 @@ nnoremap <Leader>wot :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbe
 nnoremap <Leader>wom :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/vim-notes/', 'md')<CR>
 nnoremap <Leader>wop :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'py')<CR>
 nnoremap <Leader>woj :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'js')<CR>
-nnoremap <Leader>wos :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'sh')<CR>
+nnoremap <Leader>wob :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'sh')<CR>
+nnoremap <Leader>wof :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'fish')<CR>
 nnoremap <Leader>wol :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'lua')<CR>
 nnoremap <Leader>wov :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'vim')<CR>
 nnoremap <Leader>wog :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/gpt3/', 'gpt3')<CR>
