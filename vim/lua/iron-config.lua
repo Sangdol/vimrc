@@ -1,6 +1,4 @@
-local iron = require("iron.core")
-
-iron.setup {
+require("iron.core").setup {
   config = {
     -- Whether a repl should be discarded or not
     scratch_repl = true,
