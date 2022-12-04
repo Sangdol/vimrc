@@ -30,6 +30,12 @@ nnoremap <leader>pc :PlugClean<cr>
 " Lua `require` calls are added to this global variable.
 lua << EOF
   plugin_callbacks = {}
+
+  function require_config(name)
+    table.insert(plugin_callbacks, function()
+      require(name)
+    end)
+  end
 EOF
 
 function! s:triggerPlugCallbacks() abort

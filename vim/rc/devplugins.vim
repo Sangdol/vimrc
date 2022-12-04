@@ -241,11 +241,7 @@ nnoremap <silent> <leader>xp :NeoTestOutput<CR>
 "
 Plug 'hkupty/iron.nvim'
 
-lua << EOF
-  table.insert(plugin_callbacks, function()
-    require('iron-config')
-  end)
-EOF
+lua require_config('iron-config')
 
 " For some reson, vim enters insert mode after IronRepl and IronRestart.
 nnoremap <silent> <leader>zi :IronRepl<CR>
