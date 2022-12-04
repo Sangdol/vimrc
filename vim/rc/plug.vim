@@ -31,6 +31,10 @@ nnoremap <leader>pc :PlugClean<cr>
 lua << EOF
   plugin_callbacks = {}
 
+  function add_callback(callback)
+    table.insert(plugin_callbacks, callback)
+  end
+
   function require_config(name)
     table.insert(plugin_callbacks, function()
       require(name)

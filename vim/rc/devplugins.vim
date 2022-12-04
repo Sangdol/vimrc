@@ -27,11 +27,7 @@ lua require_config('treesitter-config')
 
 Plug 'SmiteshP/nvim-gps'
 
-lua << EOF
-  table.insert(plugin_callbacks, function()
-    require("nvim-gps").setup()
-  end)
-EOF
+lua add_callback(function() require('nvim-gps').setup() end)
 
 "}}}
 
