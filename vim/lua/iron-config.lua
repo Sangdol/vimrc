@@ -18,7 +18,7 @@ require("iron.core").setup {
     repl_definition = {
      -- forcing a default
       python = require("iron.fts.python").ipython,
-      sh = require("iron.fts.sh").sh
+      sh = require("iron.fts.sh").bash
     }
   },
   -- If the highlight is on, you can change how it looks
