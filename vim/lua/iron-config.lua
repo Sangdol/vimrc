@@ -22,22 +22,6 @@ iron.setup {
       python = require("iron.fts.python").ipython
     }
   },
-  -- Iron doesn't set keymaps by default anymore.
-  -- You can set them here or manually add keymaps to the functions in iron.core
-  keymaps = {
-    send_motion = "<space>zs",
-    visual_send = "<space>zs",
-    send_file = "<S-CR>",
-    send_line = "<C-CR>",
-    send_mark = "<space>zd",
-    mark_motion = "<space>zma",
-    mark_visual = "<space>zma",
-    remove_mark = "<space>zmr",
-    cr = "<space>z<cr>",
-    interrupt = "<space>zc<space>",
-    exit = "<space>zq",
-    clear = "<space>zl",
-  },
   -- If the highlight is on, you can change how it looks
   -- For the available options, check nvim_set_hl
   highlight = {

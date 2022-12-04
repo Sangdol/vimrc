@@ -184,6 +184,8 @@ lua require_config('iron-config')
 nnoremap <silent> <leader>zi :IronRepl<CR>
 nnoremap <silent> <leader>zr :IronRestart<CR>:IronRepl<CR>
 nnoremap <silent> <leader>zw :IronWatch file<CR>:echo 'Iron is watching file'<CR>
+nnoremap <silent> <C-CR> :lua require("iron.core").send_line()<CR><CR>
+nnoremap <silent> <S-CR> :lua require("iron.core").send_file()<CR><CR>
 inoremap <silent> <C-CR> <C-O>:lua require("iron.core").send_line()<CR><CR>
 inoremap <silent> <S-CR> <C-O>:lua require("iron.core").send_file()<CR><CR>
 
