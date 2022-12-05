@@ -66,9 +66,9 @@ function! s:open_url(url)
   echom 'Opening "' .. a:url .. '"'
   if !empty(a:url)
     if has("mac")
-      exec "!open '"..a:url.."'"
+      silent exec "!open '"..a:url.."'"
     elseif has("unix")
-      exec "!google-chrome '"..a:url.."'"
+      silent exec "!google-chrome '"..a:url.."'"
     endif
   else
     echom "No URL found"
@@ -93,8 +93,7 @@ function! s:browser()
   endif
 endfunction
 
-" (Remove the last <CR> to debug)
-nnoremap <Leader>b :call <SID>browser()<CR><CR>
+nnoremap <Leader>b :call <SID>browser()<CR>
 
 "
 " Google it
