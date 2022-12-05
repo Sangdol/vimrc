@@ -20,13 +20,24 @@ function! s:highlights() abort
   highlight CocFadeOut ctermfg=7 ctermbg=242 guifg=Black guibg=Black
   highlight CocHintSign guifg=gray
 
-  " Custom colors
+  " Custom colors for markdown
   highlight SangH1 guifg=#e4b854 gui=bold
   highlight SangH2 guifg=#701516 gui=bold
   highlight SangH3 guifg=#6d8086
   highlight Link guifg=#3d6117
   highlight Line guifg=#8094b4
   highlight Bullet guifg=#b30b00
+
+  " Tabline
+  "
+  " Other candidates
+  " - jade: guifg=#458588 guibg=#458588
+  "
+  " Colors from CocList... highlights
+  highlight TablineSel guifg=#458588 guibg=#b16286
+  highlight TablineBg guifg=#282828
+  highlight! link Tabline TablineBg
+  highlight! link TablineFill TablineBg
 endfunction
 
 " Why augroup? https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f
