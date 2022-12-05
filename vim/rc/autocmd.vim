@@ -33,7 +33,7 @@ augroup custom
   autocmd SessionLoadPost * stopinsert
 
   " lua-hightlight / flash on yank
-  autocmd TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", timeout=200})
+  autocmd TextYankPost * silent! lua vim.highlight.on_yank({higroup="StatusLine", timeout=200})
 
 augroup END
 
