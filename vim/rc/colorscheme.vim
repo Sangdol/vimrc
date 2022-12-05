@@ -5,7 +5,7 @@
 function! s:highlights() abort
   " To have the same opacity as a terminal
   " https://stackoverflow.com/questions/37712730/set-vim-background-transparent
-  highlight Normal guibg=NONE ctermbg=NONE guifg=#cccccc
+  highlight Normal guibg=NONE ctermbg=NONE guifg=#bbbbbb
   " selection color
   highlight Visual term=reverse cterm=reverse guibg=Grey
 
