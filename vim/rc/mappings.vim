@@ -312,6 +312,34 @@ nnoremap <Leader>tt :tabnew \| terminal<CR>
 " Avoid adding gibberish: [32;2u
 tnoremap <S-Space> <Space>
 
+" Korean input
+tnoremap <C-ㅁ> <C-a>
+tnoremap <C-ㅠ> <C-b>
+tnoremap <C-ㅊ> <C-c>
+tnoremap <C-ㅇ> <C-d>
+tnoremap <C-ㄷ> <C-e>
+tnoremap <C-ㄹ> <C-f>
+tnoremap <C-ㅎ> <C-g>
+tnoremap <C-ㅗ> <C-h>
+tnoremap <C-ㅑ> <C-i>
+tnoremap <C-ㅓ> <C-j>
+tnoremap <C-ㅏ> <C-k>
+tnoremap <C-ㅣ> <C-l>
+tnoremap <C-ㅡ> <C-m>
+tnoremap <C-ㅜ> <C-n>
+tnoremap <C-ㅐ> <C-o>
+tnoremap <C-ㅔ> <C-p>
+tnoremap <C-ㅂ> <C-q>
+tnoremap <C-ㄱ> <C-r>
+tnoremap <C-ㄴ> <C-s>
+tnoremap <C-ㅅ> <C-t>
+tnoremap <C-ㅕ> <C-u>
+tnoremap <C-ㅍ> <C-v>
+tnoremap <C-ㅈ> <C-w>
+tnoremap <C-ㅌ> <C-x>
+tnoremap <C-ㅛ> <C-y>
+tnoremap <C-ㅋ> <C-z>
+
 " Excluding fzf floating windows
 autocmd TermOpen * if bufname() !~ '\.fzf'
       \| tnoremap <buffer> <UP> <C-\><C-n>:tabnext<CR>
