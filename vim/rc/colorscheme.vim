@@ -32,7 +32,7 @@ function! s:highlights() abort
   " - jade: guifg=#458588 guibg=#458588
   "
   " Colors from CocList... highlights
-  highlight TablineSel guifg=#458588 guibg=#b16286
+  highlight TablineSel guibg=#b16286 gui=None
   highlight TablineBg guifg=#282828
   highlight! link Tabline TablineBg
   highlight! link TablineFill TablineBg
