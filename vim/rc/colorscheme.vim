@@ -38,6 +38,9 @@ function! s:highlights() abort
   highlight TablineBg guifg=#282828
   highlight! link Tabline TablineBg
   highlight! link TablineFill TablineBg
+
+  " Etc.
+  highlight SangYankFlash guifg=#cc241d guibg=#282828
 endfunction
 
 " Why augroup? https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f
