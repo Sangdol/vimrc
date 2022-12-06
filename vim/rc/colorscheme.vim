@@ -40,6 +40,8 @@ function! s:highlights() abort
   " Frames
   highlight VertSplit guifg=None guibg=None
   highlight SignColumn guibg=None
+  highlight StatusLine guibg=None guifg=#8094b4 gui=None
+  highlight StatusLineNC guibg=None guifg=#515151 gui=None
 
   " Etc.
   highlight SangYankFlash guifg=#cc241d guibg=#282828
