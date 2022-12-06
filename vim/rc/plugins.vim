@@ -480,8 +480,8 @@ inoremap ;va <ESC>:w \| Vader %<CR>
 "
 " nvim tree {{{1
 "
-Plug 'kyazdani42/nvim-web-devicons' " for file icons
-Plug 'kyazdani42/nvim-tree.lua'
+Plug 'nvim-tree/nvim-web-devicons' " for file icons
+Plug 'nvim-tree/nvim-tree.lua'
 
 nnoremap <leader>0 :NvimTreeToggle<CR>
 " Add bang to make it work with multiple projects https://github.com/nvim-tree/nvim-tree.lua/issues/1590
