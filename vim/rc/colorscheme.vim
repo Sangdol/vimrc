@@ -43,6 +43,11 @@ function! s:highlights() abort
   highlight StatusLine guibg=None guifg=#8094b4 gui=None
   highlight StatusLineNC guibg=None guifg=#515151 gui=None
 
+  " Lines
+  highlight LineNr guifg=#41535b
+  highlight CursorLineNr guifg=#81939b
+  highlight CursorLine guibg=#181818
+
   " Etc.
   highlight SangYankFlash guifg=#cc241d guibg=#282828
 endfunction
