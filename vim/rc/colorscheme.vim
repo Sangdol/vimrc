@@ -9,8 +9,6 @@ function! s:highlights() abort
   " selection color
   highlight Visual term=reverse cterm=reverse guibg=Grey
 
-  highlight SignColumn guibg=gray10
-
   " To make unused variables less noticeable
   " :h coc-highlights
   "
@@ -38,6 +36,10 @@ function! s:highlights() abort
   highlight TablineBg guifg=#282828
   highlight! link Tabline TablineBg
   highlight! link TablineFill TablineBg
+
+  " Frames
+  highlight VertSplit guifg=None guibg=None
+  highlight SignColumn guibg=None
 
   " Etc.
   highlight SangYankFlash guifg=#cc241d guibg=#282828
