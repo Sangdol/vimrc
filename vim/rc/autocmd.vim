@@ -5,9 +5,6 @@
 augroup custom
   autocmd!
 
-  " Remove any trailing whitespace that is in the file
-  autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
-
   " Moves the cursor to the last position
   autocmd BufReadPost *
     \ if line("'\"") > 1 && line("'\"") <= line("$") |
