@@ -371,6 +371,8 @@ Plug 'dstein64/vim-startuptime'
 "
 Plug 'Sangdol/mintabline.vim'
 
+let g:mintabline_tab_max_chars = 20
+
 "}}}
 
 "
