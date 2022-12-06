@@ -832,6 +832,7 @@ nnoremap <leader>fm :call <SID>escape_abnormal_buf_and('Maps')<CR>
 nnoremap <leader>fb :call <SID>escape_abnormal_buf_and('Buffers')<CR>
 nnoremap <leader>ft :call <SID>escape_abnormal_buf_and('Filetypes')<CR>
 nnoremap <leader>fw :call <SID>escape_abnormal_buf_and('Windows')<CR>
+nnoremap <leader>fk :call <SID>escape_abnormal_buf_and('Marks')<CR>
 
 " fzf symbols
 nnoremap <leader>fs :call <SID>escape_abnormal_buf_and('Tags')<CR>
