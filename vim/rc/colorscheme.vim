@@ -38,7 +38,7 @@ function! s:highlights() abort
   highlight! link TablineFill TablineBg
 
   " Frames
-  highlight VertSplit guifg=None guibg=None
+  highlight VertSplit guifg=#191919 guibg=None
   highlight SignColumn guibg=None
   highlight StatusLine guibg=None guifg=#8094b4 gui=None
   highlight StatusLineNC guibg=None guifg=#515151 gui=None

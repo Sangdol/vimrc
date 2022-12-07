@@ -102,7 +102,7 @@ set background=dark
 set termguicolors
 
 " Be wary of the trailing whitespace
-set fillchars+=vert:\ ,eob:\ 
+set fillchars=vert:\│,eob:\ 
 
 " Notes
 " * `set cursorline` is needed to make the behavior consistent with terminal windows.
