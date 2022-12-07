@@ -129,8 +129,8 @@ vmap <silent> ga :<C-u>call GoogleText(visualmode(), 1)<Cr>
 " Save with a timestamp
 "
 function! s:save_to_temp_with_timestamp(path, ext) abort
-  let timestamp = strftime("%Y-%m-%d_%H%M%S")
-  let filename = 'vim_' .. timestamp .. '.' .. a:ext
+  let timestamp = strftime("%Y%m%d_%H%M%S")
+  let filename = timestamp .. '.' .. a:ext
   let target_path = expand(a:path)
 
   call CreateDirIfNotExist(target_path)
