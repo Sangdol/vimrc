@@ -7,7 +7,9 @@ Gstatus = {
   ahead = 0,
   behind = 0,
   statusbar = function(self)
-    return self.ahead..' '..self.behind..''
+    local ahead = self.ahead > 0 and self.ahead .. '↑' or ''
+    local behind = self.behind > 0 and self.behind .. '↓' or ''
+    return ahead .. behind
   end,
   reset = function(self)
     self.ahead = 0
@@ -30,7 +32,7 @@ local function update_gstatus()
       local ok, ahead, behind = pcall(string.match, res, "(%d+)%s*(%d+)")
       if not ok then ahead, behind = 0, 0 end
 
-      Gstatus:update(ahead, behind)
+      Gstatus:update(tonumber(ahead), tonumber(behind))
     end,
   }):start()
 end
