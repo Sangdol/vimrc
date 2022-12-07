@@ -643,9 +643,9 @@ nnoremap <leader>gx :Git<CR>
 nnoremap <leader>gd :tab Git diff<CR>
 nnoremap <leader>gid :tab Git diff --cached<CR>
 nnoremap <leader>g- :Git switch -<CR>
-nnoremap <leader>gp<leader> :Git push \| :call ClearPushedCount()<CR>
+nnoremap <leader>gp<leader> :Git push<CR>
 nnoremap <leader>gpp :Git push -u origin HEAD<CR>
-nnoremap <leader>gpu :Git pull --rebase \| :call ClearPulledCount()<CR>
+nnoremap <leader>gpu :Git pull --rebase<CR>
 
 " Stash
 "
