@@ -458,12 +458,14 @@ endfunction
 
 nnoremap <Leader>es :set spell!<CR>
 
-" vim source
+" Run scripts in the file
+"   - Visually selecting all lines instead of doing ':source %'
+"     to provide visual queue
 autocmd FileType vim
   \  nnoremap <silent><buffer> <C-CR> yy:@"<CR>
-  \| nnoremap <silent><buffer> <S-CR> :source %<CR>
+  \| nnoremap <silent><buffer> <S-CR> ggVGy:@"<CR>
   \| inoremap <silent><buffer> <C-CR> <C-O>yy:@"<CR>
-  \| inoremap <silent><buffer> <S-CR> <C-O>:source %<CR>
+  \| inoremap <silent><buffer> <S-CR> <C-O>ggVGy:@"<CR>
   \| vnoremap <silent><buffer> <C-CR> y:@"<CR>
 
 "}}}
