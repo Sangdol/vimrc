@@ -3,11 +3,6 @@
 -- https://www.reddit.com/r/neovim/comments/t48x5i/git_branch_aheadbehind_info_status_line_component/
 --
 
-if package.loaded['git-branch-status'] then
-  print('git-branch-status already loaded')
-  return
-end
-
 Gstatus = {
   ahead = 0,
   behind = 0,

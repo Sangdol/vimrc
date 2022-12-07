@@ -12,7 +12,7 @@ func! NvimGps() abort
 endf
 
 " Timer-based update
-lua require('git-branch-status')
+lua require('git-branch-status-timer')
 func! GBStatus() abort
   return luaeval("Gstatus:statusbar()") 
 endf
