@@ -431,7 +431,6 @@ nnoremap <silent> <leader>do :diffoff<CR>
 nnoremap <silent> <Leader>vx :tabnew<CR>:e $VIMRUNTIME/filetype.vim<CR>
 
 " Toggle invisibles
-set lcs=tab:›\ ,trail:·,eol:¬,nbsp:_
 nnoremap <silent> <leader>i :set nolist!<CR>
 
 " Copy file path to clipboard

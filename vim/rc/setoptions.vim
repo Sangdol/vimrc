@@ -98,6 +98,7 @@ set updatetime=300
 "
 " Style
 "
+set listchars=tab:›\ ,trail:·,eol:¬,nbsp:_
 set background=dark
 set termguicolors
 
