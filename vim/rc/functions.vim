@@ -142,6 +142,7 @@ function! s:save_to_temp_with_timestamp(path, ext) abort
   endif
 endfunction
 
+nnoremap <Leader>wtg :call <SID>save_to_temp_with_timestamp('~/workbench/gpt3/', 'gpt3')<CR>
 nnoremap <Leader>wtt :call <SID>save_to_temp_with_timestamp('~/workbench/vim-notes/', 'txt')<CR>
 nnoremap <Leader>wtm :call <SID>save_to_temp_with_timestamp('~/workbench/vim-notes/', 'md')<CR>
 nnoremap <Leader>wtp :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'py')<CR>
@@ -150,8 +151,9 @@ nnoremap <Leader>wtb :call <SID>save_to_temp_with_timestamp('~/workbench/code/',
 nnoremap <Leader>wtf :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'fish')<CR>
 nnoremap <Leader>wtl :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'lua')<CR>
 nnoremap <Leader>wtv :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'vim')<CR>
-nnoremap <Leader>wtg :call <SID>save_to_temp_with_timestamp('~/workbench/gpt3/', 'gpt3')<CR>
+nnoremap <Leader>wth :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'html')<CR>
 
+nnoremap <Leader>wog :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/gpt3/', 'gpt3')<CR>
 nnoremap <Leader>wot :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/vim-notes/', 'txt')<CR>
 nnoremap <Leader>wom :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/vim-notes/', 'md')<CR>
 nnoremap <Leader>wop :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'py')<CR>
@@ -160,7 +162,7 @@ nnoremap <Leader>wob :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbe
 nnoremap <Leader>wof :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'fish')<CR>
 nnoremap <Leader>wol :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'lua')<CR>
 nnoremap <Leader>wov :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'vim')<CR>
-nnoremap <Leader>wog :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/gpt3/', 'gpt3')<CR>
+nnoremap <Leader>woh :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'html')<CR>
 
 "
 " Translate the keyboard middle line characters to numbers
