@@ -73,6 +73,10 @@ nnoremap gl <Plug>(leap-forward-to)
 nnoremap gh <Plug>(leap-backward-to)
 nnoremap gs <Plug>(leap-cross-window)
 
+Plug 'ggandor/flit.nvim'
+
+lua add_callback(function() require('flit').setup() end)
+
 "}}}
 
 "
