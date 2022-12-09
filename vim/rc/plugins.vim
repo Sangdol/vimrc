@@ -98,7 +98,7 @@ vnoremap <leader>ec :OSCYank<CR>
 "
 Plug 'svermeulen/vim-subversive'
 
-nmap cz <plug>(SubversiveSubstitute)
+nmap cp <plug>(SubversiveSubstitute)
 nmap cc <plug>(SubversiveSubstituteLine)
 nmap cC <plug>(SubversiveSubstituteToEndOfLine)
 nmap cP ggVG<plug>(SubversiveSubstitute)
