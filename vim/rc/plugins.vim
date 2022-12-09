@@ -896,19 +896,29 @@ nnoremap <leader>fpg :call <SID>escape_abnormal_buf_and('FZF ~/github-projects')
 
 " Global line completion (not just open buffers. ripgrep required.)
 " https://github.com/junegunn/fzf.vim#custom-completion
-inoremap <expr> <c-a> fzf#vim#complete(fzf#wrap({
-  \ 'prefix': '^.*$',
-  \ 'source': 'rg -n ^ --color always',
-  \ 'options': '--ansi --delimiter : --nth 3..',
-  \ 'reducer': { lines -> join(split(lines[0], ':\zs')[2:], '') }}))
+function! s:fzf_complete_all()
+  return fzf#vim#complete(fzf#wrap({
+    \ 'prefix': '^.*$',
+    \ 'source': 'rg -n ^ --color always',
+    \ 'options': '--ansi --delimiter : --nth 3..',
+    \ 'window': { 'width': 0.95, 'height': 0.5, 'relative': v:true},
+    \ 'reducer': { lines -> join(split(lines[0], ':\zs')[2:], '') }}))
+endfunction
+inoremap <expr> <c-a> <SID>fzf_complete_all()
 
-" Local line complement (only open buffers)
-inoremap <expr> <c-f> fzf#vim#complete(fzf#wrap({
-  \ 'prefix': '^.*$',
-  \ 'source': 'rg -n ^ --color always ' .. expand('%:p'),
-  \ 'options': '--ansi --delimiter : --nth 2..',
-  \ 'reducer': { lines -> join(split(lines[0], ':\zs')[1:], '') }}))
 
+imap <c-x><c-l> <plug>(fzf-complete-buffer-line)	
+
+" Local line completion (only current buffer)
+function! s:fzf_complete_buffer()
+  return fzf#vim#complete(fzf#wrap({
+    \ 'prefix': '^.*$',
+    \ 'source': 'rg -n ^ --color always ' .. expand('%:p'),
+    \ 'options': '--ansi --delimiter : --nth 2..',
+    \ 'window': { 'width': 0.95, 'height': 0.5, 'relative': v:true},
+    \ 'reducer': { lines -> join(split(lines[0], ':\zs')[1:], '') }}))
+endfunction
+inoremap <expr> <c-f> <SID>fzf_complete_buffer()
 "}}}
 
 "
