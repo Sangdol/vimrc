@@ -896,13 +896,15 @@ nnoremap <leader>fpg :call <SID>escape_abnormal_buf_and('FZF ~/github-projects')
 
 " Global line completion (not just open buffers. ripgrep required.)
 " https://github.com/junegunn/fzf.vim#custom-completion
+" 
+" awk to remove trailing whitespaces
 function! s:fzf_complete_all()
   return fzf#vim#complete(fzf#wrap({
     \ 'prefix': '^.*$',
-    \ 'source': 'rg -n ^ --color always',
-    \ 'options': '--ansi --delimiter : --nth 3..',
+    \ 'source': 'rg ^ --color always |' .. " awk '{$1=$1;print}'" .. ' | sort | uniq',
+    \ 'options': '--ansi --delimiter : --nth 2..',
     \ 'window': { 'width': 0.95, 'height': 0.5, 'relative': v:true},
-    \ 'reducer': { lines -> join(split(lines[0], ':\zs')[2:], '') }}))
+    \ 'reducer': { lines -> join(split(lines[0], ':\zs')[1:], '') }}))
 endfunction
 inoremap <expr> <c-a> <SID>fzf_complete_all()
 
@@ -913,10 +915,10 @@ imap <c-x><c-l> <plug>(fzf-complete-buffer-line)
 function! s:fzf_complete_buffer()
   return fzf#vim#complete(fzf#wrap({
     \ 'prefix': '^.*$',
-    \ 'source': 'rg -n ^ --color always ' .. expand('%:p'),
-    \ 'options': '--ansi --delimiter : --nth 2..',
+    \ 'source': 'rg ^ --color always ' .. expand('%:p') .. ' |' .. " awk '{$1=$1;print}'" .. ' | sort | uniq',
+    \ 'options': '--ansi --delimiter : --nth 1..',
     \ 'window': { 'width': 0.95, 'height': 0.5, 'relative': v:true},
-    \ 'reducer': { lines -> join(split(lines[0], ':\zs')[1:], '') }}))
+    \ 'reducer': { lines -> join(split(lines[0], ':\zs')[0:], '') }}))
 endfunction
 inoremap <expr> <c-f> <SID>fzf_complete_buffer()
 "}}}
