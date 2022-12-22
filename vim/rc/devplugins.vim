@@ -134,17 +134,17 @@ let g:coc_global_extensions = [
     \'coc-fish'
     \]
 
-" Python Formatter (Black)
-let g:black_enabled = 1
+" COC Formatter 
+let g:coc_format_on_save = 1
 
-augroup black_on_save
+augroup coc_format_on_save
   autocmd!
-  autocmd BufWritePre *.py if g:black_enabled|call CocActionAsync('format')|endif
+  autocmd BufWritePre *.py,*.ts if g:coc_format_enabled|call CocActionAsync('format')|endif
 augroup end
 
-nnoremap <leader>xb
-      \ :let g:black_enabled = !g:black_enabled<CR>
-      \ :echo 'Black is ' . (g:black_enabled ? 'enabled' : 'disabled')<CR>
+nnoremap <leader>sx
+      \ :let g:coc_format_enabled = !g:coc_format_enabled<CR>
+      \ :echo 'coc-formatter is ' . (g:coc_format_enabled ? 'enabled' : 'disabled')<CR>
 
 "}}}
 
