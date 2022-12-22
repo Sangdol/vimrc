@@ -22,7 +22,14 @@ Gstatus = {
 }
 
 local function update_gstatus()
-  local Job = require'plenary.job'
+  local ok, Job = pcall(require, 'plenary.job')
+
+  if not ok then
+    print('plenary.job not found. git-branch-status-timer.lua will not work.')
+    _G.Gstatus_timer:stop()
+    return
+  end
+
   Job:new({
     command = 'git',
     args = { 'rev-list', '--left-right', '--count', 'HEAD...@{upstream}' },
