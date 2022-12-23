@@ -135,7 +135,7 @@ let g:coc_global_extensions = [
     \]
 
 " COC Formatter 
-let g:coc_format_on_save = 1
+let g:coc_format_enabled = 1
 
 augroup coc_format_on_save
   autocmd!
