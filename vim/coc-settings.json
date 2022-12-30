@@ -15,6 +15,10 @@
   // Enable codeLens feature, require neovim with set virtual text feature.
   "codeLens.enable": true,
 
+  // coc-tsserver
+  // https://github.com/neoclide/coc-tsserver/blob/master/package.json
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+
   // Pyright
   // https://github.com/fannheyward/coc-pyright
   // https://github.com/fannheyward/coc-pyright#configurations
