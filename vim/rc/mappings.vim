@@ -187,7 +187,8 @@ function! s:prettify_term_bufname() abort
   if exists('b:term_title')
     " Need a randome number to avoid bufname conflicts
     let rand = rand() % 1000
-    execute 'file '..rand..' '..b:term_title
+    let filename = rand.." "..b:term_title
+    execute 'file "'.. filename .. '"'
   endif
 endfunction
 
