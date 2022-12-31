@@ -622,7 +622,6 @@ endfunction
 autocmd! FileType GV nnoremap <buffer> <silent> + :call <sid>gv_expand()<cr>
 
 nnoremap <leader>gv :GV<CR>
-nnoremap <leader>g! :GV!<CR>
 
 " Git messenger
 "
@@ -853,6 +852,7 @@ nnoremap <leader>fo :call <SID>escape_abnormal_buf_and('BTags')<CR>
 " git
 nnoremap <leader>gs :call <SID>escape_abnormal_buf_and('GFiles?')<CR>
 nnoremap <leader>gl :call <SID>escape_abnormal_buf_and('Commits')<CR>
+nnoremap <leader>g! :call <SID>escape_abnormal_buf_and('BCommits')<CR>
 
 " 'GFiles?', but to open diff
 function! s:fzf_status_fugitive_diff(args) abort
