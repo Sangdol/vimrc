@@ -1035,8 +1035,9 @@ function! s:fzf_toc(...) abort
   endif
 endfunction
 
-" markdown outline
+" markdown outline 
 autocmd FileType markdown nnoremap <buffer> <leader>so :call <SID>escape_abnormal_buf_and('call <sid>fzf_toc()')<CR>
+autocmd FileType markdown nnoremap <buffer> <leader>vo :call <SID>escape_abnormal_buf_and('call <sid>fzf_toc()')<CR>
 " vim outline
 autocmd FileType vim nnoremap <buffer> <leader>vo :call <SID>escape_abnormal_buf_and('call <sid>fzf_toc()')<CR>
 
