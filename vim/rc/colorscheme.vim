@@ -33,15 +33,15 @@ function! s:highlights() abort
   "
   " Colors from CocList... highlights
   highlight TablineSel guibg=#b16286 gui=None
-  highlight TablineBg guifg=#282828
+  highlight TablineBg guifg=#282828 guibg=#181317
   highlight! link Tabline TablineBg
   highlight! link TablineFill TablineBg
 
   " Frames
   highlight VertSplit guifg=#191919 guibg=None
   highlight SignColumn guibg=None
-  highlight StatusLine guibg=None guifg=#8094b4 gui=None
-  highlight StatusLineNC guibg=None guifg=#515151 gui=None
+  highlight StatusLine guibg=#282327 guifg=#8094b4 gui=None
+  highlight StatusLineNC guibg=#181317 guifg=#515151 gui=None
 
   " Lines
   highlight LineNr guifg=#41535b
