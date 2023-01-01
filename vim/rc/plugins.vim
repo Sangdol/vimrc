@@ -3,6 +3,16 @@
 "
 
 "
+" vim-textobj
+"
+
+" Prerequisite 
+Plug 'kana/vim-textobj-user'
+
+" :h textobj-line
+Plug 'kana/vim-textobj-line'
+
+"
 " Colorizer {{{1
 "
 " :ColorHighlight
