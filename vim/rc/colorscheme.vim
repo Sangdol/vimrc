@@ -44,7 +44,7 @@ function! s:highlights() abort
   highlight StatusLineNC guibg=#181317 guifg=#515151 gui=None
 
   " Lines
-  highlight LineNr guifg=#41535b
+  highlight LineNr guifg=#080808
   highlight CursorLineNr guifg=#81939b
   highlight CursorLine guibg=#181818
 
