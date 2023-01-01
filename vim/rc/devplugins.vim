@@ -19,6 +19,7 @@ nnoremap <leader>ecs :Copilot status<cr>
 " :TSInstall <language_to_install>
 " :TSUninstall <language_to_uninstall>
 " :TSUpdate
+" :TSUpdate <target>
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-treesitter/playground'
