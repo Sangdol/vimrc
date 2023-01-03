@@ -254,18 +254,13 @@ nnoremap <leader>ed :Bdelete hidden<cr>
 " vim-surround {{{1
 " :h surround
 "
-" Visual mode:
-" - S`: abc -> `abc`
-
-" Normal mode:
-" - cs`': `abc` -> 'abc'
-" - ds`: `abc` -> abc
-" - ysaw`: abc -> `abc`
 Plug 'tpope/vim-surround'
 
 " 'Sr + language' for markdown code blocks
 " https://stackoverflow.com/questions/21049567/using-vim-surround-for-markdown
 let b:surround_{char2nr('r')} = "```\1language: \1\r```"
+" Anki cloze
+let b:surround_{char2nr('c')} = "{{c1::\r}}"
 
 "}}}
 
