@@ -12,7 +12,9 @@ source $HOME/.vim/rc/colorscheme.vim " This has to come after plug.vim.
 
 " To avoid python provider error on virtualenv
 " https://neovim.io/doc/user/provider.html
-let g:python3_host_prog = '/opt/homebrew/bin/python3'
+if has("mac")
+  let g:python3_host_prog = '/opt/homebrew/bin/python3'
+endif
 
 " For work environment configuration like a GitHub Enterprise URL, etc.
 let s:device_local_vimrc = '$HOME/.vim/rc/device_local.vim'
