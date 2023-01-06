@@ -6,7 +6,16 @@ function! CurrentDir()
   return fnamemodify(getcwd(), ':t')
 endfunction
 
+let s:nvim_gps_installed = v:null
 func! NvimGps() abort
+  if s:nvim_gps_installed == v:null
+    let s:nvim_gps_installed = luaeval('pcall(require, "nvim-gps")')
+  endif
+
+  if !s:nvim_gps_installed
+    return ''
+  endif
+
 	return luaeval("require'nvim-gps'.is_available()") ?
 		\ '[' .. luaeval("require'nvim-gps'.get_location()") .. ']' : ''
 endf
