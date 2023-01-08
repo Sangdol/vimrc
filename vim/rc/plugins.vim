@@ -12,6 +12,14 @@ Plug 'kana/vim-textobj-user'
 " :h textobj-line
 Plug 'kana/vim-textobj-line'
 
+" :h textobj-markdown
+Plug 'coachshea/vim-textobj-markdown'
+
+autocmd Filetype markdown omap <buffer> af <plug>(textobj-markdown-chunk-a)
+  \| omap <buffer> if <plug>(textobj-markdown-chunk-i)
+  \| omap <buffer> aF <plug>(textobj-markdown-Bchunk-a)
+  \| omap <buffer> iF <plug>(textobj-markdown-Bchunk-i)
+
 "
 " Colorizer {{{1
 "
