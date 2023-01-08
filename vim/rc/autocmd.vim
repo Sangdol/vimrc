@@ -23,7 +23,8 @@ augroup custom
 
   " Avoiding going to insert mode when a terminal is opened
   " while the cursor is in the editor: https://github.com/nvim-neotest/neotest/issues/2
-  autocmd TermOpen *  if nvim_buf_get_name(0) =~# '^term://.*' | startinsert | endif
+  " -> The trick doesn't work anymore. Disabling startinsert altogether.
+  "autocmd TermOpen *  if nvim_buf_get_name(0) =~# '^term://.*' | startinsert | endif
 
   " For some reason, vim starts in insert mode
   " when opening with a session file.
