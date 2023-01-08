@@ -29,14 +29,14 @@ endf
 function! StatuslineExpr()
 	let focused = g:statusline_winid == win_getid(winnr())
   let dir = focused ?
-        \ "%#DirColor#[%{CurrentDir()}]%#NONE#" : "%#DirColorNC#[%{CurrentDir()}]%#NONE#"
+        \ "%#DirColor#[%{CurrentDir()}]%#StatusLine#" : "%#DirColorNC#[%{CurrentDir()}]%#StatusLineNC#"
   let branch = "%{exists('*gitbranch#name') ? gitbranch#name() : ''}"
   let ro  = "%{&readonly ? 'RO ' : ''}"
   let ft  = "%{len(&filetype) ? &filetype . ' ' : ''}"
 
   " This slows down startup time (around 300ms).
   let pushpull = focused ? 
-        \ "%#GBStatusColor#%{GBStatus()}%#NONE#" : "%#GBStatusColorNC#%{GBStatus()}%#NONE#"
+        \ "%#GBStatusColor#%{GBStatus()}%#StatusLine#" : "%#GBStatusColorNC#%{GBStatus()}%#StatusLineNC#"
   let signify = "%{sy#repo#get_stats_decorated()}"
 
   let spl = "%{&spell ? 'S ' : ' '}"
