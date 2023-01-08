@@ -26,13 +26,17 @@ func! GBStatus() abort
   return luaeval("Gstatus:statusbar()") 
 endf
 
-function! s:statusline_expr()
+function! StatuslineExpr()
+	let focused = g:statusline_winid == win_getid(winnr())
+  let dir = focused ?
+        \ "%#DirColor#[%{CurrentDir()}]%#NONE#" : "%#DirColorNC#[%{CurrentDir()}]%#NONE#"
   let branch = "%{exists('*gitbranch#name') ? gitbranch#name() : ''}"
   let ro  = "%{&readonly ? 'RO ' : ''}"
   let ft  = "%{len(&filetype) ? &filetype . ' ' : ''}"
 
   " This slows down startup time (around 300ms).
-  let pushpull = "%{GBStatus()}"
+  let pushpull = focused ? 
+        \ "%#GBStatusColor#%{GBStatus()}%#NONE#" : "%#GBStatusColorNC#%{GBStatus()}%#NONE#"
   let signify = "%{sy#repo#get_stats_decorated()}"
 
   let spl = "%{&spell ? 'S ' : ' '}"
@@ -42,10 +46,11 @@ function! s:statusline_expr()
   let pos = ' %c'
   let gps = '%{NvimGps()}'
 
-  return ' [%{CurrentDir()}] %f ' .. ft .. ro .. spl .. coc .. '  ' .. gps ..
+  return ' ' .. dir .. ' %f ' .. ft .. ro .. spl .. coc .. '  ' .. gps ..
         \ sep ..
         \ branch .. ' ' .. pushpull .. ' ' .. signify ..
         \ pos .. ' '
 endfunction
 
-let &statusline = s:statusline_expr()
+"let &statusline = s:statusline_expr()
+set statusline=%!StatuslineExpr()

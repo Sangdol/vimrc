@@ -40,8 +40,12 @@ function! s:highlights() abort
   " Frames
   highlight VertSplit guifg=#191919 guibg=None
   highlight SignColumn guibg=None
-  highlight StatusLine guibg=#282327 guifg=#8094b4 gui=None
+  highlight StatusLine guibg=#282327 guifg=#905434 gui=None
   highlight StatusLineNC guibg=#181317 guifg=#515151 gui=None
+  highlight DirColor guibg=#282327 guifg=#ff2933 gui=None
+  highlight DirColorNC guibg=#181317 guifg=#aa0913 gui=None
+  highlight GBStatusColor guibg=#282327 guifg=#ffa61a gui=None
+  highlight GBStatusColorNC guibg=#181317 guifg=#ffa61a gui=None
 
   " Lines
   highlight LineNr guifg=#080808
