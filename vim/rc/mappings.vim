@@ -352,6 +352,7 @@ autocmd TermOpen * if bufname() !~ '\.fzf'
 
 " Enable copying from register in the fzf terminal
 " https://stackoverflow.com/a/41684444/524588
+" https://github.com/junegunn/fzf.vim/issues/672 - another approach
 autocmd! FileType fzf tnoremap <buffer> <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
 
 "}}}
