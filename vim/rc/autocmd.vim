@@ -21,6 +21,12 @@ augroup custom
   " For Voom, NERDTree, etc.
   autocmd VimEnter * wincmd l
 
+  " lua-hightlight / flash on yank
+  autocmd TextYankPost * silent! lua vim.highlight.on_yank({higroup="SangYankFlash", timeout=200})
+
+augroup END
+
+augroup custom_terminal
   " Avoiding going to insert mode when a terminal is opened
   " while the cursor is in the editor: https://github.com/nvim-neotest/neotest/issues/2
   " -> The trick doesn't work anymore. Disabling startinsert altogether.
@@ -32,11 +38,8 @@ augroup custom
 
   " For some reason, vim starts in insert mode
   " when opening with a session file.
-  autocmd SessionLoadPost * stopinsert
-
-  " lua-hightlight / flash on yank
-  autocmd TextYankPost * silent! lua vim.highlight.on_yank({higroup="SangYankFlash", timeout=200})
-
+  " => This seems to have been happening due to `startinsert` on TermOpen
+  "autocmd SessionLoadPost * stopinsert
 augroup END
 
 " Autosave
