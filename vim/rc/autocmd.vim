@@ -25,8 +25,10 @@ augroup custom
   " while the cursor is in the editor: https://github.com/nvim-neotest/neotest/issues/2
   " -> The trick doesn't work anymore. Disabling startinsert altogether.
   "autocmd TermOpen *  if nvim_buf_get_name(0) =~# '^term://.*' | startinsert | endif
-"
-  autocmd WinEnter *  if &buftype == 'terminal' | startinsert | endif
+
+  " This makes a problem when doing <Leader>wox on a terminal window
+  " since the mode changes to insert mode in the middle of the command.
+  "autocmd WinEnter *  if &buftype == 'terminal' | startinsert | endif
 
   " For some reason, vim starts in insert mode
   " when opening with a session file.
