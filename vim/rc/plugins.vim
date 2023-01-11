@@ -1080,5 +1080,6 @@ Plug 'MTDL9/vim-log-highlighting'
 Plug 'GEverding/vim-hocon'
 Plug 'dag/vim-fish'
 Plug 'vim-scripts/applescript.vim'
+Plug 'jvirtanen/vim-hcl'
 
 "}}}
