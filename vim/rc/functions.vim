@@ -234,7 +234,7 @@ function! Ask() abort
 
   let data = {
         \ 'prompt': text,
-        \ 'max_tokens': 100,
+        \ 'max_tokens': 1000,
         \ 'temperature': 0,
         \ 'model': 'text-davinci-003'
         \ }
