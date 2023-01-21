@@ -181,14 +181,19 @@ inoremap ;we <ESC>:x<CR>
 
 function! s:prettify_term_bufname() abort
   if !exists('b:term_bufname')
+    " Store the original buffer name to restore it when a session is saved.
     let b:term_bufname = bufname()
   endif
 
   if exists('b:term_title')
     " Need a randome number to avoid bufname conflicts
     let rand = rand() % 1000
-    let filename = rand.." "..b:term_title
-    execute 'file "'.. filename .. '"'
+    let original_filename = rand.." "..b:term_title
+    " Escaping vertical bars so that `:file` can take it as a whole.
+    let filename = substitute(original_filename, '|', '\\|', 'g')
+    " Enclosing `filename` with `"` doesn't work since `:file` doesn't want to
+    " change a filename with `"` in it.
+    execute 'file '.. filename 
   endif
 endfunction
 
