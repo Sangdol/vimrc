@@ -159,6 +159,7 @@ Plug 'nvim-neotest/neotest-python'
 Plug 'nvim-neotest/neotest-plenary'
 
 " For Mocha, etc.
+" NeoTestRun != TestNearest for Mocha. TestNearest is correct.
 Plug 'vim-test/vim-test'
 Plug 'nvim-neotest/neotest-vim-test'
 
