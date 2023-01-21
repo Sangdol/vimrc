@@ -3,7 +3,16 @@
 "
 
 "
-" vim-textobj
+" ccc (create color code) {{{1
+"
+Plug 'uga-rosa/ccc.nvim'
+
+lua add_callback(function() require('ccc').setup() end)
+
+"}}}
+
+"
+" vim-textobj {{{1
 "
 
 " Prerequisite 
@@ -19,6 +28,8 @@ autocmd Filetype markdown omap <buffer> af <plug>(textobj-markdown-chunk-a)
   \| omap <buffer> if <plug>(textobj-markdown-chunk-i)
   \| omap <buffer> aF <plug>(textobj-markdown-Bchunk-a)
   \| omap <buffer> iF <plug>(textobj-markdown-Bchunk-i)
+
+"}}}
 
 "
 " Colorizer {{{1
