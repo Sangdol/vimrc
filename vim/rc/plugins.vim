@@ -32,14 +32,6 @@ autocmd Filetype markdown omap <buffer> af <plug>(textobj-markdown-chunk-a)
 "}}}
 
 "
-" Colorizer {{{1
-"
-" :ColorHighlight
-Plug 'chrisbra/Colorizer'
-
-"}}}
-
-"
 " Gutentags {{{1
 "
 
