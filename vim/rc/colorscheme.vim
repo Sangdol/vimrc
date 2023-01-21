@@ -51,6 +51,8 @@ function! s:highlights() abort
 
   " Etc.
   highlight SangYankFlash guifg=#cc241d guibg=#282828
+  highlight Folded guifg=#cc99cc guibg=#0d0d0d
+
 endfunction
 
 " Why augroup? https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f

@@ -75,23 +75,26 @@ set mouse=a
 
 " Inspired by vim-anyfold
 function! MinimalFoldText() abort
-    let fs = v:foldstart
-    while getline(fs) !~ '\w'
-        let fs = nextnonblank(fs + 1)
-    endwhile
-    if fs > v:foldend
-        let line = getline(v:foldstart)
-    else
-        let line = substitute(getline(fs), '\t', repeat(' ', &tabstop), 'g')
-    endif
+  let fold_size_str = '[%s lines]'
+  let fold_level_str = '+'
 
-    let w = winwidth(0) - &foldcolumn - &number * &numberwidth
-    let foldSize = 1 + v:foldend - v:foldstart
-    let foldSizeStr = " " . substitute(g:anyfold_fold_size_str, "%s", string(foldSize), "g") . " "
-    let foldLevelStr = repeat(g:anyfold_fold_level_str, v:foldlevel)
-    let lineCount = line("$")
-    let expansionString = repeat(" ", w - strwidth(foldSizeStr.line.foldLevelStr))
-    return line . expansionString . foldSizeStr . foldLevelStr
+  let fs = v:foldstart
+  while getline(fs) !~ '\w'
+      let fs = nextnonblank(fs + 1)
+  endwhile
+  if fs > v:foldend
+      let line = getline(v:foldstart)
+  else
+      let line = substitute(getline(fs), '\t', repeat(' ', &tabstop), 'g')
+  endif
+
+  let w = winwidth(0) - &foldcolumn - &number * &numberwidth
+  let foldSize = 1 + v:foldend - v:foldstart
+  let foldSizeStr = " " . substitute(fold_size_str, "%s", string(foldSize), "g") . " "
+  let foldLevelStr = repeat(fold_level_str, v:foldlevel)
+  let lineCount = line("$")
+  let expansionString = repeat(" ", w - strwidth(foldSizeStr.line.foldLevelStr))
+  return line . foldSizeStr . expansionString . foldLevelStr
 endfunction
 
 set foldmethod=indent
