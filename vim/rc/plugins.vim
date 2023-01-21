@@ -21,9 +21,12 @@ Plug 'kana/vim-textobj-user'
 " :h textobj-line
 Plug 'kana/vim-textobj-line'
 
+" al: without end of line character
+" il: without leading spaces, trailing spaces and the end of line character
 " :h textobj-markdown
 Plug 'coachshea/vim-textobj-markdown'
 
+" aF, iF: search backward
 autocmd Filetype markdown omap <buffer> af <plug>(textobj-markdown-chunk-a)
   \| omap <buffer> if <plug>(textobj-markdown-chunk-i)
   \| omap <buffer> aF <plug>(textobj-markdown-Bchunk-a)
