@@ -28,11 +28,8 @@ function! s:highlights() abort
 
   " Tabline
   "
-  " Other candidates
-  " - jade: guifg=#458588 guibg=#458588
-  "
   " Colors from CocList... highlights
-  highlight TablineSel guibg=#b16286 gui=None
+  highlight TablineSel guibg=#458588 gui=None
   highlight TablineBg guifg=#282828 guibg=#181317
   highlight! link Tabline TablineBg
   highlight! link TablineFill TablineBg
@@ -40,10 +37,10 @@ function! s:highlights() abort
   " Frames
   highlight VertSplit guifg=#191919 guibg=None
   highlight SignColumn guibg=None
-  highlight StatusLine guibg=#282327 guifg=#905434 gui=None
+  highlight StatusLine guibg=#282327 guifg=#717171 gui=None
   highlight StatusLineNC guibg=#181317 guifg=#515151 gui=None
-  highlight DirColor guibg=#282327 guifg=#ff2933 gui=None
-  highlight DirColorNC guibg=#181317 guifg=#aa0913 gui=None
+  highlight DirColor guibg=#282327 guifg=#99cccc gui=None
+  highlight DirColorNC guibg=#181317 guifg=#cccccc gui=None
   highlight GBStatusColor guibg=#282327 guifg=#ffa61a gui=None
   highlight GBStatusColorNC guibg=#181317 guifg=#ffa61a gui=None
 
