@@ -73,20 +73,29 @@ set clipboard^=unnamed,unnamedplus
 " Enable mouse support in terminal
 set mouse=a
 
-"
-" Marker
-" triple '{' as a marker
-" http://vim.wikia.com/wiki/Folding
-"
-" zo - open
-" zc - close
-" za - toggle
-" zO / zC / zA - recursive
-" zr - reduces folding by opening one level
-" zR - open all
-" zm - gives more folding by closing one level
-" zM - close all
-set foldmethod=marker
+" Inspired by vim-anyfold
+function! MinimalFoldText() abort
+    let fs = v:foldstart
+    while getline(fs) !~ '\w'
+        let fs = nextnonblank(fs + 1)
+    endwhile
+    if fs > v:foldend
+        let line = getline(v:foldstart)
+    else
+        let line = substitute(getline(fs), '\t', repeat(' ', &tabstop), 'g')
+    endif
+
+    let w = winwidth(0) - &foldcolumn - &number * &numberwidth
+    let foldSize = 1 + v:foldend - v:foldstart
+    let foldSizeStr = " " . substitute(g:anyfold_fold_size_str, "%s", string(foldSize), "g") . " "
+    let foldLevelStr = repeat(g:anyfold_fold_level_str, v:foldlevel)
+    let lineCount = line("$")
+    let expansionString = repeat(" ", w - strwidth(foldSizeStr.line.foldLevelStr))
+    return line . expansionString . foldSizeStr . foldLevelStr
+endfunction
+
+set foldmethod=indent
+set foldtext=MinimalFoldText()
 
 " neovim only. browser-like jump stack.
 set jumpoptions+=stack

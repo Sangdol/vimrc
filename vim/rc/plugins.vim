@@ -1,6 +1,8 @@
 "
 " Plugins
 "
+" The markers, `{{{` and `}}}`, are used for voom and fzf toc outline.
+"
 
 "
 " ccc (create color code) {{{1
@@ -524,14 +526,6 @@ augroup NvimTreeColors
 augroup END
 
 lua require_config('nvim-tree-config')
-
-"}}}
-
-"
-" vim-anyfold {{{1
-"
-Plug 'pseewald/vim-anyfold'
-autocmd Filetype yaml,javascript,typescript,json,lua,python,vim AnyFoldActivate
 
 "}}}
 
