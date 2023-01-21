@@ -158,6 +158,12 @@ Plug 'nvim-neotest/neotest'
 Plug 'nvim-neotest/neotest-python'
 Plug 'nvim-neotest/neotest-plenary'
 
+" For Mocha, etc.
+Plug 'vim-test/vim-test'
+Plug 'nvim-neotest/neotest-vim-test'
+
+let g:test#javascript#mocha#file_pattern = '\v(tests?/.*|(test|spec))\.(js|jsx|coffee|ts|tsx)$'
+
 lua require_config('neotest-config')
 
 command!  -nargs=0  NeotestRun          lua  require("neotest").run.run()

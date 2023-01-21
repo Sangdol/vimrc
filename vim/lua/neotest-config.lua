@@ -9,5 +9,8 @@ require("neotest").setup {
       args = { "-vv", "-s" },
       runner = 'pytest',
     }),
+    require("neotest-vim-test")({
+      allow_file_types = { "typescript", "javascript" },
+    }),
   },
 }
