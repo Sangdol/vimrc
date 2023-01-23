@@ -49,9 +49,12 @@ function! s:highlights() abort
   highlight CursorLineNr guifg=#81939b
   highlight CursorLine guibg=#181818
 
+  " Fold
+  " None guibg to avoid visual clutters when a terminal is transparent.
+  highlight Folded guifg=#cc99cc guibg=None
+
   " Etc.
   highlight SangYankFlash guifg=#cc241d guibg=#282828
-  highlight Folded guifg=#cc99cc guibg=#0d0d0d
 
 endfunction
 
