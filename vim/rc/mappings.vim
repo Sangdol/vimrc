@@ -464,6 +464,7 @@ function! s:copy_path_to_clipboard(modifiers) abort
 endfunction
 
 nnoremap <Leader>es :set spell!<CR>
+nnoremap <Leader>eo :syntax on<CR>
 
 " Run scripts in the file
 "   - Visually selecting all lines instead of doing ':source %'
