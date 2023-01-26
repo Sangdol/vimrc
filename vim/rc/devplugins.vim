@@ -72,6 +72,7 @@ nmap <silent> <leader>sd <Plug>(coc-definition)
 nmap <silent> <leader>sz <Plug>(coc-type-definition)
 nmap <silent> <leader>si <Plug>(coc-implementation)
 nmap <silent> <leader>sr <Plug>(coc-references)
+nmap <silent> <leader>sj <Plug>(coc-float-jump)
 
 " fzf help: tab drop (from telescope)
 nnoremap <silent> <leader>st :call CocActionAsync('jumpDefinition', 'tab drop')<CR>
