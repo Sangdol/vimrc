@@ -225,7 +225,7 @@ function! Ask() abort
 
   let text = join(getline(1, '$'), "\n")
 
-  if empty(text) || len(text) > 2048
+  if empty(text) || len(text) > 4096
     echoerr 'The text is empty or longer than 2048 characters.'
     return
   endif
