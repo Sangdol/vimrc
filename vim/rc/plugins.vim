@@ -939,6 +939,39 @@ function! s:fzf_complete_buffer()
     \ 'reducer': { lines -> join(split(lines[0], ':\zs')[0:], '') }}))
 endfunction
 inoremap <expr> <c-f> <SID>fzf_complete_buffer()
+
+" Searching for test file and vice versa
+
+function! s:fzf_test_file_py() abort
+  let l:file = expand('%:t')
+
+  if l:file =~# 'test_'
+    let l:file = substitute(l:file, 'test_', '', '')
+  else
+    let l:file = 'test_' . l:file
+  endif
+
+  let l:path = expand('%:p:h:t') .. '/' .. l:file
+  call fzf#vim#files('', {'options': ['--query='..l:path]})
+endfunction
+
+function! s:fzf_test_file_ts() abort
+  let file = expand('%:t')
+
+  if file =~# 'spec.ts'
+    let file = substitute(file, 'spec.', '', '')
+  else
+    let name = expand('%:t:r')
+    let file = name .. '.spec.ts'
+  endif
+
+  let path = expand('%:p:h:t') .. '/' .. file
+  call fzf#vim#files('', {'options': ['--query='..path]})
+endfunction
+
+autocmd Filetype python nnoremap <leader>fa :call <SID>fzf_test_file_py()<CR>
+autocmd Filetype typescript nnoremap <leader>fa :call <SID>fzf_test_file_ts()<CR>
+
 "}}}
 
 "
