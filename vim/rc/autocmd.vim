@@ -24,6 +24,7 @@ augroup custom
   " lua-hightlight / flash on yank
   autocmd TextYankPost * silent! lua vim.highlight.on_yank({higroup="SangYankFlash", timeout=200})
 
+  autocmd BufReadPost *gpt3 set filetype=markdown
 augroup END
 
 augroup custom_terminal
