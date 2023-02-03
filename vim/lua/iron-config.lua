@@ -18,7 +18,17 @@ require("iron.core").setup {
     repl_definition = {
      -- forcing a default
       python = require("iron.fts.python").ipython,
-      sh = require("iron.fts.sh").bash
+      sh = require("iron.fts.sh").bash,
+      javascript = {
+        command = function(meta)
+          local filename = vim.api.nvim_buf_get_name(meta.current_bufnr)
+          if string.find(filename, "mongo.js") then
+            return {'mongosh'}
+          else
+            return {'node'}
+          end
+        end
+      },
     }
   },
   -- If the highlight is on, you can change how it looks

@@ -128,9 +128,14 @@ vmap <silent> ga :<C-u>call GoogleText(visualmode(), 1)<Cr>
 "
 " Save with a timestamp
 "
-function! s:save_to_temp_with_timestamp(path, ext) abort
+function! s:save_to_temp_with_timestamp(path, ext, suffix) abort
   let timestamp = strftime("%Y%m%d_%H%M%S")
   let filename = timestamp .. '.' .. a:ext
+
+  if !empty(a:suffix)
+    let filename = timestamp .. '_' .. a:suffix .. '.' .. a:ext
+  endif
+
   let target_path = expand(a:path)
 
   call CreateDirIfNotExist(target_path)
@@ -153,6 +158,7 @@ nnoremap <Leader>wtf :call <SID>save_to_temp_with_timestamp('~/workbench/code/',
 nnoremap <Leader>wtl :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'lua')<CR>
 nnoremap <Leader>wtv :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'vim')<CR>
 nnoremap <Leader>wth :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'html')<CR>
+nnoremap <Leader>wto :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'js', 'mongo')<CR>
 
 nnoremap <Leader>wog :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/gpt3/', 'gpt3')<CR>
 nnoremap <Leader>wox :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/vim-notes/', 'txt')<CR>
@@ -165,6 +171,7 @@ nnoremap <Leader>wof :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbe
 nnoremap <Leader>wol :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'lua')<CR>
 nnoremap <Leader>wov :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'vim')<CR>
 nnoremap <Leader>woh :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'html')<CR>
+nnoremap <Leader>woo :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'js', 'mongo')<CR>
 
 "
 " Translate the keyboard middle line characters to numbers
