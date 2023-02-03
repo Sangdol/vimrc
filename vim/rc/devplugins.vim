@@ -164,7 +164,7 @@ Plug 'nvim-neotest/neotest-plenary'
 Plug 'vim-test/vim-test'
 Plug 'nvim-neotest/neotest-vim-test'
 
-let g:test#javascript#mocha#file_pattern = '\vspec\.(ts|js)$'
+let g:test#javascript#mocha#file_pattern = '\v(spec|test)\.(ts|js)$'
 
 lua require_config('neotest-config')
 
