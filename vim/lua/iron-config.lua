@@ -2,21 +2,15 @@ require("iron.core").setup {
   config = {
     -- Whether a repl should be discarded or not
     scratch_repl = true,
-    -- Your repl definitions come here
-    repl_definition = {
-      sh = {
-        -- Can be a table or a function that
-        -- returns a table (see below)
-        command = {"fish"}
-      }
-    },
-    -- How the repl window will be displayed
-    -- See below for more information
     repl_open_cmd = require('iron.view').split.vertical.botright(100),
     scope = require("iron.scope").tab_based,
     close_window_on_exit = true,
     repl_definition = {
-     -- forcing a default
+      fish = {
+        -- Can be a table or a function that
+        -- returns a table (see below)
+        command = {"fish"}
+      },
       python = require("iron.fts.python").ipython,
       sh = require("iron.fts.sh").bash,
       javascript = {
@@ -26,6 +20,16 @@ require("iron.core").setup {
             return {'mongosh'}
           else
             return {'node'}
+          end
+        end
+      },
+      typescript = {
+        command = function(meta)
+          local filename = vim.api.nvim_buf_get_name(meta.current_bufnr)
+          if string.find(filename, "yarn.ts") then
+            return {'yarn', 'ts-node'}
+          else
+            return {'ts-node'}
           end
         end
       },

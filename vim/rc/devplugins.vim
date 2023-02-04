@@ -197,7 +197,7 @@ function! s:newline_if_line_end() abort
   endif
 endfunction
 
-autocmd FileType python,javascript,lua,fish,sh,zsh
+autocmd FileType python,javascript,lua,fish,sh,zsh,typescript
       \  nnoremap <silent><buffer> <leader>zi :IronRepl<CR>
       \| nnoremap <silent><buffer> <leader>zr :IronRestart<CR>:IronRepl<CR>
       \| nnoremap <silent><buffer> <C-CR> :lua require("iron.core").send_line()<CR><CR>
