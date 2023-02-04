@@ -45,7 +45,7 @@ function! s:highlights() abort
   highlight GBStatusColorNC guibg=#181317 guifg=#ffa61a gui=None
 
   " Lines
-  highlight LineNr guifg=#080808
+  highlight LineNr guifg=#000000 " Why can't I tone down the color?
   highlight CursorLineNr guifg=#81939b
   highlight CursorLine guibg=#181818
 
