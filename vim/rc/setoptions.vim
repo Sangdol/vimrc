@@ -35,8 +35,8 @@ autocmd FileType java setlocal shiftwidth=4 softtabstop=4 tabstop=4
 set wildmenu
 set wildmode=list:longest,full
 
-" Show line numbers
-set number
+" Show line numbers (trying diabling it)
+"set number 
 
 " Search settings
 set ignorecase

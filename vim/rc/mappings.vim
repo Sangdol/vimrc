@@ -413,6 +413,7 @@ autocmd FileType markdown inoremap <buffer> <C-R> <C-R><C-O>
 " Etc. {{{1
 "
 
+nnoremap <silent> <C-I> :set number!<CR>
 nnoremap <silent> <Leader>n :noh<CR>
 
 " star without moving cursor

@@ -217,33 +217,6 @@ vnoremap r<C-k><C-k> <ESC><Cmd>lua require'better-digraphs'.digraphs("gvr")<CR>
 "}}}
 
 "
-" numbertoggle (relative line number) {{{1
-"
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
-
-function! ToggleNumberToggle()
-  let g:number_toggle_enabled = !get(g:, 'number_toggle_enabled', 1)
-
-  if !get(g:, 'number_toggle_enabled', 1)
-    set norelativenumber
-  endif
-
-  " This has to be inside the function to add autocmd
-  " after the numbertoggle plugin.
-  augroup customnumbertoggle
-    autocmd!
-    autocmd BufEnter *
-          \  if !get(g:, 'number_toggle_enabled', 1)
-          \|   set norelativenumber
-          \| endif
-  augroup END
-endfunction
-
-nnoremap <leader>en :call ToggleNumberToggle()<CR>
-
-"}}}
-
-"
 " dial {{{1
 "
 Plug 'monaqa/dial.nvim'
