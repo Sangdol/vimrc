@@ -11,7 +11,6 @@
 " Emacs-like moving / editing
 inoremap <C-e> <Esc>A
 inoremap <C-a> <Esc>I
-inoremap <C-b> <C-o>h
 inoremap <C-f> <C-o>l
 inoremap <C-d> <C-o>x
 

@@ -938,7 +938,19 @@ function! s:fzf_complete_buffer()
     \ 'window': { 'width': 0.95, 'height': 0.5, 'relative': v:true},
     \ 'reducer': { lines -> join(split(lines[0], ':\zs')[0:], '') }}))
 endfunction
-inoremap <expr> <c-f> <SID>fzf_complete_buffer()
+inoremap <expr> <c-b> <SID>fzf_complete_buffer()
+
+" Select from visible window
+function! s:fzf_complete_visible_window()
+  let lines = getline(line('w0'), line('w$'))
+  return fzf#vim#complete(fzf#wrap({
+    \ 'prefix': '^.*$',
+    \ 'source': lines,
+    \ 'options': '--ansi --delimiter : --nth 1..',
+    \ 'window': { 'width': 0.95, 'height': 0.5, 'relative': v:true},
+    \ 'reducer': { lines -> join(split(lines[0], ':\zs')[0:], '') }}))
+endfunction
+inoremap <expr> <c-f> <SID>fzf_complete_visible_window()
 
 " Searching for test file and vice versa
 
