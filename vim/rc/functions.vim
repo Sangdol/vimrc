@@ -128,15 +128,19 @@ vmap <silent> ga :<C-u>call GoogleText(visualmode(), 1)<Cr>
 "
 " Save with a timestamp
 "
-function! s:save_to_temp_with_timestamp(path, ext, suffix) abort
-  let timestamp = strftime("%Y%m%d_%H%M%S")
-  let filename = timestamp .. '.' .. a:ext
+function! s:save_to_temp_with_timestamp(...) abort
+  let path = a:1
+  let ext = a:2
+  let suffix = get(a:, 3, '')
 
-  if !empty(a:suffix)
-    let filename = timestamp .. '_' .. a:suffix .. '.' .. a:ext
+  let timestamp = strftime("%Y%m%d_%H%M%S")
+  let filename = timestamp .. '.' .. ext
+
+  if !empty(suffix)
+    let filename = timestamp .. '_' .. suffix .. '.' .. ext
   endif
 
-  let target_path = expand(a:path)
+  let target_path = expand(path)
 
   call CreateDirIfNotExist(target_path)
 
