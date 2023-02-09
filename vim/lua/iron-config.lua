@@ -1,7 +1,7 @@
 require("iron.core").setup {
   config = {
     -- Whether a repl should be discarded or not
-    scratch_repl = true,
+    scratch_repl = false,
     repl_open_cmd = require('iron.view').split.vertical.botright(function()
         return vim.o.columns * 0.4
     end),
