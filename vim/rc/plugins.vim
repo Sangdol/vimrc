@@ -1101,3 +1101,12 @@ Plug 'vim-scripts/applescript.vim'
 Plug 'jvirtanen/vim-hcl'
 
 "}}}
+
+"
+" Built-in {{{1
+"
+
+" Avoid comment errors
+let g:vim_json_warnings = 0
+
+"}}}

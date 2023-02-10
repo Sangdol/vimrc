@@ -15,6 +15,10 @@ augroup custom
   " https://github.com/neoclide/coc.nvim/wiki/Using-the-configuration-file
   autocmd FileType json syntax match Comment +\/\/.\+$+
 
+  " To suppress coc errors on commments
+  " https://github.com/neoclide/coc-json/issues/27
+  autocmd FileType json set filetype=jsonc
+
   " For moving application windows across screens
   autocmd VimResized * wincmd =
 
