@@ -1,6 +1,6 @@
 require'nvim-treesitter.configs'.setup {
   -- One of "all", "maintained" (parsers with maintainers), or a list of languages
-  ensure_installed = {'lua', 'python', 'javascript', 'ruby', 'bash', 'css', 'html', 'json', 'sql', 'vim', 'help'},
+  ensure_installed = {'lua', 'python', 'typescript', 'javascript', 'ruby', 'bash', 'css', 'html', 'json', 'sql', 'vim', 'help'},
 
   -- Install languages synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -49,3 +49,23 @@ require'nvim-treesitter.configs'.setup {
     },
   },
 }
+
+-- Workaound for wrong multiline comment indentation
+-- https://github.com/nvim-treesitter/nvim-treesitter/issues/1167#issuecomment-920824125
+function _G.javascript_indent()
+  local line = vim.fn.getline(vim.v.lnum)
+  local prev_line = vim.fn.getline(vim.v.lnum - 1)
+  if line:match('^%s*[%*/]%s*') then
+    if prev_line:match('^%s*%*%s*') then
+      return vim.fn.indent(vim.v.lnum - 1)
+    end
+    if prev_line:match('^%s*/%*%*%s*$') then
+      return vim.fn.indent(vim.v.lnum - 1) + 1
+    end
+  end
+
+  return vim.fn['GetJavascriptIndent']()
+end
+
+vim.cmd[[autocmd FileType javascript setlocal indentexpr=v:lua.javascript_indent()]]
+vim.cmd[[autocmd FileType typescript setlocal indentexpr=v:lua.javascript_indent()]]
