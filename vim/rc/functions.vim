@@ -151,7 +151,7 @@ function! s:save_to_temp_with_timestamp(...) abort
   endif
 endfunction
 
-nnoremap <Leader>wtg :call <SID>save_to_temp_with_timestamp('~/workbench/gpt3/', 'gpt3')<CR>
+nnoremap <Leader>wtg :call <SID>save_to_temp_with_timestamp('~/workbench/gpt3/', 'md')<CR>
 nnoremap <Leader>wtx :call <SID>save_to_temp_with_timestamp('~/workbench/vim-notes/', 'txt')<CR>
 nnoremap <Leader>wtm :call <SID>save_to_temp_with_timestamp('~/workbench/vim-notes/', 'md')<CR>
 nnoremap <Leader>wtp :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'py')<CR>
@@ -164,7 +164,7 @@ nnoremap <Leader>wtv :call <SID>save_to_temp_with_timestamp('~/workbench/code/',
 nnoremap <Leader>wth :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'html')<CR>
 nnoremap <Leader>wto :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'js', 'mongo')<CR>
 
-nnoremap <Leader>wog :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/gpt3/', 'gpt3')<CR>
+nnoremap <Leader>wog :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/gpt3/', 'md')<CR>
 nnoremap <Leader>wox :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/vim-notes/', 'txt')<CR>
 nnoremap <Leader>wom :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/vim-notes/', 'md')<CR>
 nnoremap <Leader>wop :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'py')<CR>
@@ -226,18 +226,18 @@ endfunction
 
 "
 " GPT-3 playground
-" It only works for a file with a `gpt3` extension to avoid accidental use.
 "
 function! Ask() abort
-  if expand('%:e') != 'gpt3'
-    echoerr 'This is not a gpt3 file.'
+  if expand('%:e') != 'md'
+    echoerr 'This is not a markdown file.'
     return
   endif
 
   let text = join(getline(1, '$'), "\n")
 
-  if empty(text) || len(text) > 4096
-    echoerr 'The text is empty or longer than 2048 characters.'
+  let MAX_LENGTH = 4096
+  if empty(text) || len(text) > MAX_LENGTH
+    echoerr 'The text is empty or longer than ' . MAX_LENGTH . ' characters.'
     return
   endif
 
