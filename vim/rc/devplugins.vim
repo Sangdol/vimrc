@@ -133,7 +133,8 @@ let g:coc_global_extensions = [
     \'coc-tsserver',
     \'coc-highlight',
     \'coc-calc',
-    \'coc-fish'
+    \'coc-fish',
+    \'coc-prettier'
     \]
 
 " COC Formatter 
