@@ -583,11 +583,10 @@ let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 Plug 'mhinz/vim-signify'
 
 let g:signify_priority = 5 " Less than vimspector
-
 function! s:signify_highlights()
-  highlight SignifySignAdd    ctermfg=darkblue   guifg=#6d8086 cterm=NONE gui=NONE
-  highlight SignifySignDelete ctermfg=darkred    guifg=#e37933 cterm=NONE gui=NONE
-  highlight SignifySignChange ctermfg=darkyellow guifg=#ffa61a cterm=NONE gui=NONE
+  highlight SignifySignAdd    ctermfg=darkblue   guifg=#030303 cterm=NONE gui=NONE
+  highlight SignifySignDelete ctermfg=darkred    guifg=#700000 cterm=NONE gui=NONE
+  highlight SignifySignChange ctermfg=darkyellow guifg=#686800 cterm=NONE gui=NONE
 endfunction
 
 augroup SignifyColors
