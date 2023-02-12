@@ -12,7 +12,13 @@
 inoremap <C-e> <Esc>A
 inoremap <C-a> <Esc>I
 inoremap <C-f> <C-o>l
-inoremap <C-d> <C-o>x
+
+" Move to the end of the next/prev line
+inoremap <C-j> <Esc>jA
+inoremap <C-k> <Esc>kA
+
+" Use C-d for digraphs
+inoremap <C-d> <C-k>
 
 " Line up/down/left/right
 " https://vim.fandom.com/wiki/Moving_lines_up_or_down
