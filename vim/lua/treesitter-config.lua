@@ -64,6 +64,7 @@ function _G.javascript_indent()
     end
   end
 
+  -- The functions are in the `indent/` directory.
   return vim.fn['GetJavascriptIndent']()
 end
 
