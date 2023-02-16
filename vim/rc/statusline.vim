@@ -30,6 +30,7 @@ function! StatuslineExpr()
 	let focused = g:statusline_winid == win_getid(winnr())
   let dir = focused ?
         \ "%#DirColor#[%{CurrentDir()}]%#StatusLine#" : "%#DirColorNC#[%{CurrentDir()}]%#StatusLineNC#"
+  let filename = ' %f '
   let branch = "%{exists('*gitbranch#name') ? gitbranch#name() : ''}"
   let ro  = "%{&readonly ? 'RO ' : ''}"
   let ft  = "%{len(&filetype) ? &filetype . ' ' : ''}"
@@ -43,11 +44,13 @@ function! StatuslineExpr()
   let coc = " %{&runtimepath =~ 'coc.nvim' ? coc#status() : ''}"
 
   let sep = ' %= '
+  let truncateline = ' %< '
   let pos = ' %c'
   let gps = '%{NvimGps()}'
 
-  return ' ' .. dir .. ' %f ' .. ft .. ro .. spl .. coc .. '  ' .. gps ..
+  return ' ' .. dir .. filename .. ft .. ro .. spl .. coc .. '  ' .. gps ..
         \ sep ..
+        \ truncateline ..
         \ branch .. ' ' .. pushpull .. ' ' .. signify ..
         \ pos .. ' '
 endfunction
