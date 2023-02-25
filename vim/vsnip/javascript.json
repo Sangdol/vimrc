@@ -1,0 +1,9 @@
+{
+  "console.log": {
+    "prefix": ["con"],
+    "body": [
+      "console.log($1);",
+      "$0"
+    ]
+  }
+}
