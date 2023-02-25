@@ -5,6 +5,24 @@
 "
 
 "
+" vim-move {{{1
+"
+" from https://github.com/matze/vim-move
+Plug 'sangdol/vim-move'
+
+let g:move_map_keys = 0
+
+nmap <silent> <M-j> <Plug>MoveLineDown
+nmap <silent> <M-k> <Plug>MoveLineUp
+vmap <silent> <M-j> <Plug>MoveBlockDown
+vmap <silent> <M-k> <Plug>MoveBlockUp
+
+" Custom configuation in my fork
+autocmd FileType markdown let b:move_auto_indent = 0
+
+"}}}
+
+"
 " ccc (create color code) {{{1
 "
 Plug 'uga-rosa/ccc.nvim'

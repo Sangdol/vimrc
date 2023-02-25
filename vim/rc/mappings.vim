@@ -20,21 +20,13 @@ inoremap <C-k> <Esc>kA
 " Use C-d for digraphs
 inoremap <C-d> <C-k>
 
-" Line up/down/left/right
+" Line left/right
 " https://vim.fandom.com/wiki/Moving_lines_up_or_down
-nnoremap <silent> <C-j> :m .+1<CR>==
-nnoremap <silent> <C-k> :m .-2<CR>==
-vnoremap <silent> <C-j> :m '>+1<CR>gv=gv
-vnoremap <silent> <C-k> :m '<-2<CR>gv=gv
-nnoremap <silent> <C-h> <<
-nnoremap <silent> <C-l> >>
-
-" No indentation
-autocmd FileType markdown
-      \ nnoremap <silent> <buffer> <C-j> :m .+1<CR>
-      \| nnoremap <silent> <buffer> <C-k> :m .-2<CR>
-      \| vnoremap <silent> <buffer> <C-j> :m '>+1<CR>
-      \| vnoremap <silent> <buffer> <C-k> :m '<-2<CR>
+nnoremap <silent> <M-h> <<
+nnoremap <silent> <M-l> >>
+" Move and stay in visual mode
+vnoremap <silent> <M-h> <gv
+vnoremap <silent> <M-l> >gv
 
 " Cursor in the middle at the bottom
 nnoremap G Gzz
@@ -98,14 +90,14 @@ nnoremap <M-t> :exe "tabn ".g:lasttab<cr>
 tnoremap <M-t> <C-\><C-n>:exe "tabn ".g:lasttab<cr>
 
 " Next / prev tab
-nnoremap <silent> <UP> :tabnext<CR>
-nnoremap <silent> <DOWN> :tabprevious<CR>
-inoremap <silent> <UP> <ESC>:tabnext<CR>
-inoremap <silent> <DOWN> <ESC>:tabprevious<CR>
+nnoremap <silent> <C-k> :tabnext<CR>
+inoremap <silent> <C-k> <ESC>:tabnext<CR>
+nnoremap <silent> <C-j> :tabprevious<CR>
+inoremap <silent> <C-j> <ESC>:tabprevious<CR>
 
 " Move
-nnoremap <M-l> :tabmove +1<CR>
-nnoremap <M-h> :tabmove -1<CR>
+nnoremap <C-l> :tabmove +1<CR>
+nnoremap <C-h> :tabmove -1<CR>
 
 " New Tab
 nnoremap <silent> <Leader>l :tabnew<CR>
