@@ -273,23 +273,21 @@ nnoremap <leader>er :let @+=expand("%:t")<CR>:Rename <C-r>+<C-f>
 "}}}
 
 "
-" ultisnips {{{1
+" vsnip {{{1
 "
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+" Tutorials:
+" https://code.visualstudio.com/docs/editor/userdefinedsnippets#_snippet-syntax
+" https://github.com/Microsoft/language-server-protocol/blob/main/snippetSyntax.md
+"
 
-let g:UltiSnipsExpandTrigger="<C-l>"
-let g:UltiSnipsJumpForwardTrigger="<C-l>"
-let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
-let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsSnippetStorageDirectoryForUltiSnipsEdit = '~/.vim/UltiSnips'
+Plug 'hrsh7th/vim-vsnip'
 
-" For some reason, it's not documented.
-" https://vi.stackexchange.com/a/24744/3225
-let g:ultisnips_python_style = 'google'
+let g:vsnip_snippet_dir = '~/.vim/vsnip'
 
-nnoremap <leader>ee :UltiSnipsEdit<cr>
-nnoremap <leader>ef :call UltiSnips#RefreshSnippets()<cr>
+imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+
+nnoremap <leader>ee :VsnipOpen<cr>
 
 "}}}
 

@@ -1,0 +1,70 @@
+{
+  "link": {
+    "prefix": "link",
+    "body": "[${1:$TM_SELECTED_TEXT}]($2)"
+  },
+  "sql code fence": {
+    "prefix": ["`sql"],
+    "body": [
+      "```sql",
+      "$0",
+      "```"
+    ]
+  },
+  "js block quotes": {
+    "prefix": ["`js"],
+    "body": [
+      "```js",
+      "$0",
+      "```"
+    ]
+  },
+  "ts block quotes": {
+    "prefix": ["`ts"],
+    "body": [
+      "```ts",
+      "$0",
+      "```"
+    ]
+  },
+  "python block quotes": {
+    "prefix": ["`py", "`python"],
+    "body": [
+      "```python",
+      "$0",
+      "```"
+    ]
+  },
+  "sh block quotes": {
+    "prefix": ["`sh"],
+    "body": [
+      "```sh",
+      "$0",
+      "```"
+    ]
+  },
+  "log block quotes": {
+    "prefix": ["`log"],
+    "body": [
+      "```log",
+      "$0",
+      "```"
+    ]
+  },
+  "vim block quotes": {
+    "prefix": ["`vim"],
+    "body": [
+      "```vim",
+      "$0",
+      "```"
+    ]
+  },
+  "lua block quotes": {
+    "prefix": ["`lua"],
+    "body": [
+      "```lua",
+      "$0",
+      "```"
+    ]
+  }
+}
