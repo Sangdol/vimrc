@@ -1115,6 +1115,9 @@ Plug 'dag/vim-fish'
 Plug 'vim-scripts/applescript.vim'
 Plug 'jvirtanen/vim-hcl'
 
+Plug 'sam4llis/nvim-tundra'
+lua require_config('tundra-config')
+
 "}}}
 
 "

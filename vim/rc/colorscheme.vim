@@ -76,4 +76,4 @@ augroup END
 
 " This has to come after `plug#end()` to be able to
 " use colorscheme installed by Plug.
-colorscheme Tomorrow-Night-Eighties
+colorscheme tundra
