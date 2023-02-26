@@ -53,6 +53,8 @@ function! s:highlights() abort
   execute 'highlight DirColorNC guibg=' . statuslineNcBg . ' guifg=' . dirColorNcFg . ' gui=None'
   execute 'highlight GBStatusColor guibg=' . statuslineBg . ' guifg=' . gbStatusColorFg . ' gui=None'
   execute 'highlight GBStatusColorNC guibg=' . statuslineNcBg . ' guifg=' . gbStatusColorFg . ' gui=None'
+  execute 'highlight NvimGpsColor guibg=' . statuslineBg . ' guifg=' . gbStatusColorFg . ' gui=None'
+  execute 'highlight NvimGpsColorNC guibg=' . statuslineNcBg . ' guifg=' . gbStatusColorFg . ' gui=None'
 
   " Lines
   highlight LineNr guifg=#000000 " Why can't I tone down the color?

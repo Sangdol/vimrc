@@ -17,7 +17,7 @@ func! NvimGps() abort
   endif
 
 	return luaeval("require'nvim-gps'.is_available()") ?
-		\ '[' .. luaeval("require'nvim-gps'.get_location()") .. ']' : ''
+		\  luaeval("require'nvim-gps'.get_location()") : ''
 endf
 
 " Timer-based update
@@ -46,11 +46,14 @@ function! StatuslineExpr()
   let sep = ' %= '
   let truncateline = ' %< '
   let pos = ' %c'
-  let gps = '%{NvimGps()}'
+  " Put NvimGpsColor 
+  let gps = focused ? 
+        \ "%#NvimGpsColor#%{NvimGps()}%#StatusLine#" : "%#NvimGpsColorNC#%{NvimGps()}%#StatusLineNC#"
 
-  return ' ' .. dir .. filename .. ft .. ro .. spl .. coc .. '  ' .. gps ..
-        \ sep ..
+  return ' ' .. dir .. filename .. ft .. ro .. spl .. gps ..
+        \ coc .. 
         \ truncateline ..
+        \ sep .. 
         \ branch .. ' ' .. pushpull .. ' ' .. signify ..
         \ pos .. ' '
 endfunction
