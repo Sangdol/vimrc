@@ -14,8 +14,8 @@ inoremap <C-a> <Esc>I
 inoremap <C-f> <C-o>l
 
 " Move to the end of the next/prev line
-inoremap <C-j> <Esc>jA
-inoremap <C-k> <Esc>kA
+inoremap <M-n> <Esc>jA
+inoremap <M-p> <Esc>kA
 
 " Use C-d for digraphs
 inoremap <C-d> <C-k>
