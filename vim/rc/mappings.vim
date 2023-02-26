@@ -108,7 +108,7 @@ nnoremap <silent> <Leader>l :tabnew<CR>
 " Buffer and windows {{{1
 "
 
-" Window horizontal resize
+" Window vertical resize
 nnoremap <silent> <leader>w0 :resize<CR>
 nnoremap <silent> <leader>w1 :exec 'resize ' float2nr(&lines * 0.9)<CR>
 nnoremap <silent> <leader>w2 :exec 'resize ' (&lines / 2)<CR>
