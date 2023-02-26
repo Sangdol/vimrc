@@ -37,12 +37,22 @@ function! s:highlights() abort
   " Frames
   highlight VertSplit guifg=#191919 guibg=None
   highlight SignColumn guibg=None
-  highlight StatusLine guibg=#282327 guifg=#717171 gui=None
-  highlight StatusLineNC guibg=#181317 guifg=#515151 gui=None
-  highlight DirColor guibg=#282327 guifg=#99cccc gui=None
-  highlight DirColorNC guibg=#181317 guifg=#cccccc gui=None
-  highlight GBStatusColor guibg=#282327 guifg=#ffa61a gui=None
-  highlight GBStatusColorNC guibg=#181317 guifg=#ffa61a gui=None
+
+  " Statusline
+  let statuslineBg = "#484347"
+  let statuslineFg = "#717171"
+  let statuslineNcBg = "#383337"
+  let statuslineNcFg = "#515151"
+  let dirColorFg = "#b9ecec"
+  let dirColorNcFg = "#cccccc"
+  let gbStatusColorFg = "#ffa61a"
+
+  execute 'highlight StatusLine guibg=' . statuslineBg . ' guifg=' . statuslineFg . ' gui=None'
+  execute 'highlight StatusLineNC guibg=' . statuslineNcBg . ' guifg=' . statuslineNcFg . ' gui=None'
+  execute 'highlight DirColor guibg=' . statuslineBg . ' guifg=' . dirColorFg . ' gui=None'
+  execute 'highlight DirColorNC guibg=' . statuslineNcBg . ' guifg=' . dirColorNcFg . ' gui=None'
+  execute 'highlight GBStatusColor guibg=' . statuslineBg . ' guifg=' . gbStatusColorFg . ' gui=None'
+  execute 'highlight GBStatusColorNC guibg=' . statuslineNcBg . ' guifg=' . gbStatusColorFg . ' gui=None'
 
   " Lines
   highlight LineNr guifg=#000000 " Why can't I tone down the color?
