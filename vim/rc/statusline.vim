@@ -29,7 +29,7 @@ endf
 function! StatuslineExpr()
 	let focused = g:statusline_winid == win_getid(winnr())
   let dir = focused ?
-        \ "%#DirColor#[%{CurrentDir()}]%#StatusLine#" : "%#DirColorNC#[%{CurrentDir()}]%#StatusLineNC#"
+        \ "%#DirColor#%{CurrentDir()}%#StatusLine#" : "%#DirColorNC#%{CurrentDir()}%#StatusLineNC#"
   let filename = ' %f '
   let branch = "%{exists('*gitbranch#name') ? gitbranch#name() : ''}"
   let ro  = "%{&readonly ? 'RO ' : ''}"
