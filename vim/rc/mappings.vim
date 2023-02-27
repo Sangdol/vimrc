@@ -345,8 +345,8 @@ tnoremap <C-ㅋ> <C-z>
 
 " Excluding fzf floating windows
 autocmd TermOpen * if bufname() !~ '\.fzf'
-      \| tnoremap <buffer> <UP> <C-\><C-n>:tabnext<CR>
-      \| tnoremap <buffer> <DOWN> <C-\><C-n>:tabprevious<CR>
+      \| tnoremap <buffer> <C-k> <C-\><C-n>:tabnext<CR>
+      \| tnoremap <buffer> <C-j> <C-\><C-n>:tabprevious<CR>
       \| tnoremap <buffer> ;; <C-\><C-n>
       \| nnoremap <buffer> a :setlocal norelativenumber<CR>a
       \| tnoremap <buffer> <C-q> <C-\><C-n><C-w>p
