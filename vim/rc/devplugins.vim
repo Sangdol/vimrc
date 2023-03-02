@@ -112,7 +112,7 @@ nnoremap <leader>s! :CocRestart<CR>
 
 autocmd FileType typescript,python,lua,javascript,clojure,vim
       \ nnoremap <buffer><silent> <leader>so :CocFzfList outline<CR>
-      \ nnoremap <buffer><silent> <leader>vo :CocFzfList outline<CR>
+      \| nnoremap <buffer><silent> <leader>vo :CocFzfList outline<CR>
       \| nnoremap <buffer><silent> <leader>sg :CocFzfList diagnostics<CR>
       \| nnoremap <buffer><silent> <leader>ss :CocFzfList symbols<CR>
       \| nnoremap <buffer><silent> <leader>sf :CocFzfList symbols --kind Class<CR>
