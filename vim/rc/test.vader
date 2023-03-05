@@ -4,6 +4,7 @@
 
 Before (setup):
   source $HOME/.vim/rc/utility.vim
+  source $HOME/.vim/rc/gpt.vim
 
 " StartsWith
 Execute (StartsWith):
@@ -47,3 +48,17 @@ Execute (Zip / ZipMap):
 " StringToArray
 Execute (StringToArray):
   AssertEqual StringToArray('abc'), ['a', 'b', 'c']
+
+
+Execute (BuildMessages):
+  let res = BuildMessages("abc")
+  AssertEqual res, [{'role': 'user', 'content': 'abc'}]
+
+  let res = BuildMessages("abc \n---\n def")
+  AssertEqual res, [{'role': 'user', 'content': 'abc '}, 
+    \ {'role': 'assistant', 'content': ' def'}]
+
+  let res = BuildMessages("abc \n---\n def \n---\n ghi")
+  AssertEqual res, [{'role': 'user', 'content': 'abc '}, 
+    \ {'role': 'assistant', 'content': ' def '}, 
+    \ {'role': 'user', 'content': ' ghi'}]
