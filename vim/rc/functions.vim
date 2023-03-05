@@ -227,7 +227,7 @@ endfunction
 "
 " GPT-3 playground
 "
-function! Ask() abort
+function! GptComplete() abort
   if expand('%:e') != 'md'
     echoerr 'This is not a markdown file.'
     return
@@ -270,7 +270,7 @@ function! Ask() abort
   call append(line('$'), split(output, "\n"))
 endfunction
 
-nnoremap <leader>eg :call Ask()<CR>
+nnoremap <leader>eg :call GptComplete()<CR>
 
 "
 " Show the current syntax group
