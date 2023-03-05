@@ -6,6 +6,7 @@ source $HOME/.vim/rc/statusline.vim
 source $HOME/.vim/rc/utility.vim
 source $HOME/.vim/rc/autocmd.vim
 source $HOME/.vim/rc/functions.vim
+source $HOME/.vim/rc/gpt.vim
 source $HOME/.vim/rc/mappings.vim
 source $HOME/.vim/rc/plug.vim
 source $HOME/.vim/rc/colorscheme.vim " This has to come after plug.vim.
