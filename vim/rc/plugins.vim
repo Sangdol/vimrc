@@ -5,6 +5,24 @@
 "
 
 "
+" ChatGPT {{{1
+"
+" Dependencies: plenary.nvim, nui.nvim, telescope.nvim
+"
+
+Plug 'jackMort/ChatGPT.nvim'
+Plug 'MunifTanjim/nui.nvim'
+
+lua require_config('chatgpt-config')
+
+nnoremap <leader>cc :ChatGPT<CR>
+nnoremap <leader>ce :ChatGPTEditWithInstructions<CR>
+nnoremap <leader>ca :ChatGPTActAs<CR>
+nnoremap <leader>cp :ChatGPTCompleteCode<CR>
+
+"}}}
+
+"
 " vim-move {{{1
 "
 " from https://github.com/matze/vim-move
