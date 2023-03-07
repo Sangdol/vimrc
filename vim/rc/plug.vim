@@ -50,13 +50,6 @@ lua << EOF
 EOF
 endfunction
 
-" Edit vimrc
-nnoremap <silent> <Leader>vp :tabnew<CR>:e ~/.vim/rc/plugins.vim<CR>
-nnoremap <silent> <Leader>vd :tabnew<CR>:e ~/.vim/rc/devplugins.vim<CR>
-nnoremap <silent> <Leader>vm :tabnew<CR>:e ~/.vim/rc/mappings.vim<CR>
-nnoremap <silent> <Leader>vl :tabnew<CR>:e ~/.vim/rc/device_local.vim<CR>
-nnoremap <Leader>vr :source ~/.vimrc<CR>
-
 " Help
 function! s:plug_doc()
   let name = matchstr(getline('.'), '^- \zs\S\+\ze:')
