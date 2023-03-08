@@ -22,6 +22,7 @@ nnoremap <leader>ecs :Copilot status<cr>
 " :TSUpdate <target>
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'nvim-treesitter/playground'
 
 lua require_config('treesitter-config')
