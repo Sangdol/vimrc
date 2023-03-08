@@ -19,12 +19,13 @@ function! s:highlights() abort
   highlight CocHintSign guifg=gray
 
   " Custom colors for markdown
-  highlight SangH1 guifg=#e4b854 gui=bold
-  highlight SangH2 guifg=#701516 gui=bold
-  highlight SangH3 guifg=#6d8086
-  highlight Link guifg=#3d6117
-  highlight Line guifg=#8094b4
-  highlight Bullet guifg=#b30b00
+  highlight markdownH1 guifg=#e4b854 gui=bold
+  highlight markdownH2 guifg=#701516 gui=bold
+  highlight markdownH3 guifg=#6d8086
+  highlight markdownHeadingRule guifg=#8094b4
+  highlight markdownListMarker guifg=#b30b00
+  highlight mkdInlineURL guifg=#3d6117
+  highlight markdownLinkText guifg=#6c9fa2
 
   " Tabline
   "

@@ -3,16 +3,6 @@
 "
 
 "
-" Custom colors
-"
-hi link markdownH1 SangH1
-hi link markdownH2 SangH2
-hi link markdownH3 SangH3
-hi link mkdInlineURL Link
-hi link markdownHeadingRule Line " Heading lines
-hi link markdownListMarker Bullet 
-
-"
 " To disable errors caused by '_' overriding `syn match markdownError "\w\@<=_\w\@="`
 " https://stackoverflow.com/questions/19137601/turn-off-highlighting-a-certain-pattern-in-vim/34448277#34448277
 "
