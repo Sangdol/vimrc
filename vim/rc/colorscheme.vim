@@ -25,7 +25,7 @@ function! s:highlights() abort
   highlight markdownHeadingRule guifg=#8094b4
   highlight markdownListMarker guifg=#b30b00
   highlight mkdInlineURL guifg=#3d6117
-  highlight markdownLinkText guifg=#6cc172
+  highlight markdownLinkText guifg=#614100
 
   " Tabline
   "
