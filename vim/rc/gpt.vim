@@ -104,6 +104,49 @@ function! ChatGPT() abort
   call append(line('$'), '')
 endfunction
 
+" https://stackoverflow.com/a/6271254/524588
+function! s:get_visual_selection()
+    " Why is this not a built-in Vim script function?!
+    let [line_start, column_start] = getpos("'<")[1:2]
+    let [line_end, column_end] = getpos("'>")[1:2]
+    let lines = getline(line_start, line_end)
+    if len(lines) == 0
+        return ''
+    endif
+    let lines[-1] = lines[-1][: column_end - (&selection == 'inclusive' ? 1 : 2)]
+    let lines[0] = lines[0][column_start - 1:]
+    return join(lines, "\n")
+endfunction
+
+"
+" Call ChatGPT API for imporving English of code comments.
+"
+function! GPTImproveCodeComment() abort
+  let filetype = &filetype
+  let prompt = "Fix the grammar or improve the code comment: \n" ..
+        \ "```" .. filetype .. "\n" ..
+        \ "{placeholder}\n" ..
+        \ "```"
+  let comment = s:get_visual_selection()
+  
+  " replace placeholder with the selected text
+  let text = substitute(prompt, '{placeholder}', comment, '')
+  
+  let MAX_LENGTH = 4096
+  if empty(text) || len(text) > MAX_LENGTH
+    echoerr 'The text is empty or longer than ' . MAX_LENGTH . ' characters.'
+    return
+  endif
+
+  let messages = [{'role': 'user', 'content': text}]
+  let output = CallChatGPT(messages)
+
+  " Open the result in a new vertical buffer.
+  execute 'vnew'
+  call SaveToTempWithTimestamp('~/workbench/gpt3/', 'md')
+  call setline(1, split(output, "\n"))
+endfunction
+
 "
 " Call ChatGPT API.
 "
@@ -138,3 +181,4 @@ endfunction
 
 nnoremap <leader>eg :call GptComplete()<CR>
 nnoremap <leader>ep :call ChatGPT()<CR>
+vnoremap <leader>ei :call GPTImproveCodeComment()<CR>

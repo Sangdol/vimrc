@@ -128,7 +128,7 @@ vmap <silent> ga :<C-u>call GoogleText(visualmode(), 1)<Cr>
 "
 " Save with a timestamp
 "
-function! s:save_to_temp_with_timestamp(...) abort
+function! SaveToTempWithTimestamp(...) abort
   let path = a:1
   let ext = a:2
   let suffix = get(a:, 3, '')
@@ -151,31 +151,31 @@ function! s:save_to_temp_with_timestamp(...) abort
   endif
 endfunction
 
-nnoremap <Leader>wtg :call <SID>save_to_temp_with_timestamp('~/workbench/gpt3/', 'md')<CR>
-nnoremap <Leader>wtx :call <SID>save_to_temp_with_timestamp('~/workbench/vim-notes/', 'txt')<CR>
-nnoremap <Leader>wtm :call <SID>save_to_temp_with_timestamp('~/workbench/vim-notes/', 'md')<CR>
-nnoremap <Leader>wtp :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'py')<CR>
-nnoremap <Leader>wtj :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'js')<CR>
-nnoremap <Leader>wtt :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'ts')<CR>
-nnoremap <Leader>wtb :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'sh')<CR>
-nnoremap <Leader>wtf :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'fish')<CR>
-nnoremap <Leader>wtl :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'lua')<CR>
-nnoremap <Leader>wtv :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'vim')<CR>
-nnoremap <Leader>wth :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'html')<CR>
-nnoremap <Leader>wto :call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'js', 'mongo')<CR>
+nnoremap <Leader>wtg :call SaveToTempWithTimestamp('~/workbench/gpt3/', 'md')<CR>
+nnoremap <Leader>wtx :call SaveToTempWithTimestamp('~/workbench/vim-notes/', 'txt')<CR>
+nnoremap <Leader>wtm :call SaveToTempWithTimestamp('~/workbench/vim-notes/', 'md')<CR>
+nnoremap <Leader>wtp :call SaveToTempWithTimestamp('~/workbench/code/', 'py')<CR>
+nnoremap <Leader>wtj :call SaveToTempWithTimestamp('~/workbench/code/', 'js')<CR>
+nnoremap <Leader>wtt :call SaveToTempWithTimestamp('~/workbench/code/', 'ts')<CR>
+nnoremap <Leader>wtb :call SaveToTempWithTimestamp('~/workbench/code/', 'sh')<CR>
+nnoremap <Leader>wtf :call SaveToTempWithTimestamp('~/workbench/code/', 'fish')<CR>
+nnoremap <Leader>wtl :call SaveToTempWithTimestamp('~/workbench/code/', 'lua')<CR>
+nnoremap <Leader>wtv :call SaveToTempWithTimestamp('~/workbench/code/', 'vim')<CR>
+nnoremap <Leader>wth :call SaveToTempWithTimestamp('~/workbench/code/', 'html')<CR>
+nnoremap <Leader>wto :call SaveToTempWithTimestamp('~/workbench/code/', 'js', 'mongo')<CR>
 
-nnoremap <Leader>wog :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/gpt3/', 'md')<CR>
-nnoremap <Leader>wox :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/vim-notes/', 'txt')<CR>
-nnoremap <Leader>wom :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/vim-notes/', 'md')<CR>
-nnoremap <Leader>wop :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'py')<CR>
-nnoremap <Leader>woj :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'js')<CR>
-nnoremap <Leader>wot :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'ts')<CR>
-nnoremap <Leader>wob :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'sh')<CR>
-nnoremap <Leader>wof :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'fish')<CR>
-nnoremap <Leader>wol :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'lua')<CR>
-nnoremap <Leader>wov :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'vim')<CR>
-nnoremap <Leader>woh :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'html')<CR>
-nnoremap <Leader>woo :tabnew<CR>:call <SID>save_to_temp_with_timestamp('~/workbench/code/', 'js', 'mongo')<CR>
+nnoremap <Leader>wog :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/gpt3/', 'md')<CR>
+nnoremap <Leader>wox :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/vim-notes/', 'txt')<CR>
+nnoremap <Leader>wom :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/vim-notes/', 'md')<CR>
+nnoremap <Leader>wop :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'py')<CR>
+nnoremap <Leader>woj :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'js')<CR>
+nnoremap <Leader>wot :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'ts')<CR>
+nnoremap <Leader>wob :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'sh')<CR>
+nnoremap <Leader>wof :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'fish')<CR>
+nnoremap <Leader>wol :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'lua')<CR>
+nnoremap <Leader>wov :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'vim')<CR>
+nnoremap <Leader>woh :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'html')<CR>
+nnoremap <Leader>woo :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'js', 'mongo')<CR>
 
 "
 " Translate the keyboard middle line characters to numbers
