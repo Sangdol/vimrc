@@ -1,6 +1,10 @@
 "
 " GPT-3 playground
 "
+
+"
+" Ask GPT-3 to complete the text.
+"
 function! GptComplete() abort
   if expand('%:e') != 'md'
     echoerr 'This is not a markdown file.'
@@ -46,6 +50,9 @@ endfunction
 
 nnoremap <leader>eg :call GptComplete()<CR>
 
+"
+" Build ChatGPT messages from the text with separators.
+"
 function! BuildMessages(text, separator) abort
   let sections = split(a:text, a:separator)
 
@@ -64,6 +71,10 @@ function! BuildMessages(text, separator) abort
   return messages
 endfunction
 
+"
+" For ChatGPT conversaion.
+" Each dialogue is separated by a line of "---".
+"
 function! ChatGPT() abort
   if expand('%:e') != 'md'
     echoerr 'This is not a markdown file.'
@@ -93,6 +104,9 @@ function! ChatGPT() abort
   call append(line('$'), '')
 endfunction
 
+"
+" Call ChatGPT API.
+"
 function! CallChatGPT(messages) abort
   echom 'Asking ChatGPT...'
 
