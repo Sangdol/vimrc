@@ -78,10 +78,25 @@ function! ChatGPT() abort
     return
   endif
 
-  echom 'Asking ChatGPT...'
-
   let separator = "\n---\n"
   let messages = BuildMessages(text, separator)
+
+  let output = CallChatGPT(messages)
+
+  " First append separators before and after the output.
+  call append(line('$'), '')
+  call append(line('$'), split(separator, "\n"))
+  call append(line('$'), '')
+  call append(line('$'), split(output, "\n"))
+  call append(line('$'), '')
+  call append(line('$'), split(separator, "\n"))
+  call append(line('$'), '')
+endfunction
+
+function! CallChatGPT(messages) abort
+  echom 'Asking ChatGPT...'
+
+  let messages = a:messages
   let data = {
         \ 'model': 'gpt-3.5-turbo',
         \ 'messages': messages,
@@ -104,14 +119,7 @@ function! ChatGPT() abort
     let output = body.choices[0].message.content
   endif
 
-  " First append separators before and after the output.
-  call append(line('$'), '')
-  call append(line('$'), split(separator, "\n"))
-  call append(line('$'), '')
-  call append(line('$'), split(output, "\n"))
-  call append(line('$'), '')
-  call append(line('$'), split(separator, "\n"))
-  call append(line('$'), '')
+  return output
 endfunction
 
 nnoremap <leader>eg :call GptComplete()<CR>
