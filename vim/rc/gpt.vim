@@ -115,10 +115,34 @@ function! ChatGPTImproveCodeComment() abort range
         \ "{placeholder}\n" ..
         \ "```"
   let comment = GetVisualSelection()
-  
-  " replace placeholder with the selected text
   let text = substitute(prompt, '{placeholder}', comment, '')
   let messages = [{'role': 'user', 'content': text}]
+  let output = CallChatGPT(messages)
+
+  " Open the result in a new vertical buffer.
+  execute 'vnew'
+  call SaveToTempWithTimestamp('~/workbench/chatgpt/', 'md')
+  call setline(1, split(output, "\n"))
+endfunction
+
+"
+" Ask ChatGPT with a selected code.
+"
+function! ChatGPTAskCode() abort range
+  let filetype = &filetype
+  let text = GetVisualSelection()
+  let instruction = input('Ask: ')
+  let prompt = instruction .. "\n" ..
+        \ "```" .. filetype .. "\n" ..
+        \ "{placeholder}\n" ..
+        \ "```"
+  let code = GetVisualSelection()
+  let text = substitute(prompt, '{placeholder}', code, '')
+  let messages = [{'role': 'user', 'content': text}]
+
+  " Adding an empty line after instruction.
+  echom ''
+
   let output = CallChatGPT(messages)
 
   " Open the result in a new vertical buffer.
@@ -170,6 +194,7 @@ nnoremap <leader>cp :call GptComplete()<CR>
 "
 nnoremap <leader>cc :call ChatGPT()<CR>
 xnoremap <leader>ci :call ChatGPTImproveCodeComment()<CR>
+xnoremap <leader>ca :call ChatGPTAskCode()<CR>
 
 "
 " Editing API
