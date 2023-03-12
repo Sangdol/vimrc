@@ -4,6 +4,7 @@
 
 "
 " Ask GPT-3 to complete the text.
+" https://beta.openai.com/docs/api-reference/completions/create
 "
 function! GptComplete() abort
   if expand('%:e') != 'md'
@@ -104,81 +105,74 @@ function! ChatGPT() abort
   call append(line('$'), '')
 endfunction
 
-" https://stackoverflow.com/a/6271254/524588
-function! s:get_visual_selection()
-    " Why is this not a built-in Vim script function?!
-    let [line_start, column_start] = getpos("'<")[1:2]
-    let [line_end, column_end] = getpos("'>")[1:2]
-    let lines = getline(line_start, line_end)
-    if len(lines) == 0
-        return ''
-    endif
-    let lines[-1] = lines[-1][: column_end - (&selection == 'inclusive' ? 1 : 2)]
-    let lines[0] = lines[0][column_start - 1:]
-    return join(lines, "\n")
-endfunction
-
 "
 " Call ChatGPT API for imporving English of code comments.
 "
-function! GPTImproveCodeComment() abort
+function! ChatGPTImproveCodeComment() abort range
   let filetype = &filetype
   let prompt = "Fix the grammar or improve the code comment: \n" ..
         \ "```" .. filetype .. "\n" ..
         \ "{placeholder}\n" ..
         \ "```"
-  let comment = s:get_visual_selection()
+  let comment = GetVisualSelection()
   
   " replace placeholder with the selected text
   let text = substitute(prompt, '{placeholder}', comment, '')
-  
-  let MAX_LENGTH = 4096
-  if empty(text) || len(text) > MAX_LENGTH
-    echoerr 'The text is empty or longer than ' . MAX_LENGTH . ' characters.'
-    return
-  endif
-
   let messages = [{'role': 'user', 'content': text}]
   let output = CallChatGPT(messages)
 
   " Open the result in a new vertical buffer.
   execute 'vnew'
-  call SaveToTempWithTimestamp('~/workbench/gpt3/', 'md')
+  call SaveToTempWithTimestamp('~/workbench/chatgpt/', 'md')
   call setline(1, split(output, "\n"))
 endfunction
 
 "
-" Call ChatGPT API.
+" Get improved code comment from the GPT Editing API
 "
-function! CallChatGPT(messages) abort
-  echom 'Asking ChatGPT...'
+function! GPTEditComment() abort range
+  let filetype = &filetype
+  let instruction = "Fix the grammar or improve the " .. filetype .. " code comment."
+  let comment = GetVisualSelection()
+  
+  let output = CallGPTEditing(comment, instruction, 0)
 
-  let messages = a:messages
-  let data = {
-        \ 'model': 'gpt-3.5-turbo',
-        \ 'messages': messages,
-        \ }
-  let url = "https://api.openai.com/v1/chat/completions"
-  let headers =
-        \' -H "Content-Type: application/json"' ..
-        \' -H "Authorization: Bearer ' .. $OPENAI_API_KEY .. '"'
-
-  let file = tempname()
-  call writefile([json_encode(data)], file)
-
-  let res = system('curl -s -X POST ' .. headers .. ' --data @' .. file .. ' ' .. url)
-  let body = json_decode(res)
-
-  " Append the whole request and response when there was an error.
-  if has_key(body, 'error')
-    let output = res
-  else
-    let output = body.choices[0].message.content
-  endif
-
-  return output
+  " Paste the result below the visual selection.
+  call setline('.', split(output, "\n"))
 endfunction
 
-nnoremap <leader>eg :call GptComplete()<CR>
-nnoremap <leader>ep :call ChatGPT()<CR>
-vnoremap <leader>ei :call GPTImproveCodeComment()<CR>
+"
+" Get editing result from the GPT Editing API
+"
+function! GPTEditCode() abort range
+  let extension = expand('%:e')
+  let instruction = input('Instruction: ')
+  let code = GetVisualSelection()
+  
+  " Adding an empty line after instruction.
+  echom ''
+
+  let output = CallGPTEditing(code, instruction, 1)
+
+  " Open the result in a new vertical buffer.
+  execute 'vnew'
+  call SaveToTempWithTimestamp('~/workbench/refactoring/', extension)
+  call append(line('1'), split(output, "\n"))
+endfunction
+
+"
+" Completion API
+"
+nnoremap <leader>cp :call GptComplete()<CR>
+
+"
+" ChatGPT API
+"
+nnoremap <leader>cc :call ChatGPT()<CR>
+xnoremap <leader>ci :call ChatGPTImproveCodeComment()<CR>
+
+"
+" Editing API
+"
+xnoremap <leader>ce :call GPTEditComment()<CR>
+xnoremap <leader>cr :call GPTEditCode()<CR>
