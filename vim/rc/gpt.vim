@@ -49,8 +49,6 @@ function! GptComplete() abort
   call append(line('$'), split(output, "\n"))
 endfunction
 
-nnoremap <leader>eg :call GptComplete()<CR>
-
 "
 " Build ChatGPT messages from the text with separators.
 "
