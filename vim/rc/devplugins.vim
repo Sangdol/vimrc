@@ -3,6 +3,14 @@
 "
 
 "
+" LSP {{{1
+"
+Plug 'neovim/nvim-lspconfig'
+lua require_config('lsp-config')
+
+"}}}
+
+"
 " copilot {{{1
 "
 Plug 'github/copilot.vim'
@@ -10,6 +18,17 @@ Plug 'github/copilot.vim'
 nnoremap <leader>ece :Copilot enable<cr>
 nnoremap <leader>ecd :Copilot disable<cr>
 nnoremap <leader>ecs :Copilot status<cr>
+
+"}}}
+
+"
+" aerial {{{1
+"
+" requires LSP
+"
+Plug 'stevearc/aerial.nvim'
+
+lua require_config('aerial-config')
 
 "}}}
 
