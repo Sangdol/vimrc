@@ -66,5 +66,13 @@
       "$0",
       "```"
     ]
+  },
+  "yaml block quotes": {
+    "prefix": ["`yaml"],
+    "body": [
+      "```yaml",
+      "$0",
+      "```"
+    ]
   }
 }
