@@ -1,7 +1,7 @@
 "
 " GPT-3 playground
 "
-let separator = "\n---\n"
+let s:separator = "\n---\n"
 
 "
 " Ask GPT-3 to complete the text.
@@ -68,17 +68,17 @@ function! ChatGPT() abort
     return
   endif
 
-  let messages = BuildMessages(text, separator)
+  let messages = BuildMessages(text, s:separator)
 
   let output = CallChatGPT(messages)
 
   " First append separators before and after the output.
   call append(line('$'), '')
-  call append(line('$'), split(separator, "\n"))
+  call append(line('$'), split(s:separator, "\n"))
   call append(line('$'), '')
   call append(line('$'), split(output, "\n"))
   call append(line('$'), '')
-  call append(line('$'), split(separator, "\n"))
+  call append(line('$'), split(s:separator, "\n"))
   call append(line('$'), '')
 endfunction
 
@@ -107,25 +107,28 @@ endfunction
 "
 function! ChatGPTAskCode() abort range
   let filetype = &filetype
-  let text = GetVisualSelection()
   let instruction = input('Ask: ')
-  let prompt = instruction .. "\n" ..
+  let prompt = instruction .. "\n\n" ..
         \ "```" .. filetype .. "\n" ..
         \ "{placeholder}\n" ..
         \ "```"
   let code = GetVisualSelection()
-  let text = substitute(prompt, '{placeholder}', code, '')
-  let messages = [{'role': 'user', 'content': text}]
-
-  " Adding an empty line after instruction.
-  echom ''
+  let question = substitute(prompt, '{placeholder}', code, '')
+  let messages = [{'role': 'user', 'content': question}]
 
   let output = CallChatGPT(messages)
 
   " Open the result in a new vertical buffer.
   execute 'vnew'
   call SaveToTempWithTimestamp('~/workbench/chatgpt/', 'md')
-  call setline(1, split(output, "\n"))
+  call setline(1, split(question, "\n"))
+  call append(line('$'), '')
+  call append(line('$'), split(s:separator, "\n"))
+  call append(line('$'), '')
+  call append(line('$'), split(output, "\n"))
+  call append(line('$'), '')
+  call append(line('$'), split(s:separator, "\n"))
+  call append(line('$'), '')
 endfunction
 
 "
