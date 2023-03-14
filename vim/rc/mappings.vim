@@ -90,14 +90,14 @@ nnoremap <M-t> :exe "tabn ".g:lasttab<cr>
 tnoremap <M-t> <C-\><C-n>:exe "tabn ".g:lasttab<cr>
 
 " Next / prev tab
-nnoremap <silent> <C-k> :tabnext<CR>
-inoremap <silent> <C-k> <ESC>:tabnext<CR>
-nnoremap <silent> <C-j> :tabprevious<CR>
-inoremap <silent> <C-j> <ESC>:tabprevious<CR>
+nnoremap <silent> <C-l> :tabnext<CR>
+inoremap <silent> <C-l> <ESC>:tabnext<CR>
+nnoremap <silent> <C-h> :tabprevious<CR>
+inoremap <silent> <C-h> <ESC>:tabprevious<CR>
 
 " Move
-nnoremap <C-l> :tabmove +1<CR>
-nnoremap <C-h> :tabmove -1<CR>
+nnoremap <leader>el :<C-u>execute 'tabmove +' . v:count1<CR>
+nnoremap <leader>eh :<C-u>execute 'tabmove -' . v:count1<CR>
 
 " New Tab
 nnoremap <silent> <Leader>l :tabnew<CR>
@@ -118,7 +118,6 @@ nnoremap <silent> <leader>w4 :exec 'resize ' (&lines / 4)<CR>
 " Switch and close windows
 for i in range(1, 6)
   execute 'nnoremap <silent> <leader>' . i . ' :' . i . 'wincmd w<CR>'
-  execute 'nnoremap <silent> ' . i . '<Leader> :' . i . 'wincmd w<CR>'
   execute 'nnoremap <silent> 'i . '<BS> :' . i . 'wincmd c<CR>'
 endfor
 

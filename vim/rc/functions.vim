@@ -28,7 +28,7 @@ command! -nargs=+ -complete=command Tab call Tab(<q-args>)
 " message in new tab
 nnoremap <Leader>et :Tab mes<CR>
 " last command in new tab
-nnoremap <Leader>el :Tab <C-R>:<CR>
+nnoremap <Leader>en :Tab <C-R>:<CR>
 
 "
 " From https://vim.fandom.com/wiki/Delete_files_with_a_Vim_command#Comments
