@@ -1,6 +1,7 @@
 "
 " GPT-3 playground
 "
+let separator = "\n---\n"
 
 "
 " Ask GPT-3 to complete the text.
@@ -50,27 +51,6 @@ function! GptComplete() abort
 endfunction
 
 "
-" Build ChatGPT messages from the text with separators.
-"
-function! BuildMessages(text, separator) abort
-  let sections = split(a:text, a:separator)
-
-  let messages = []
-  " The first message is from user and the second is from the assistant.
-  " The third is from the user and so on.
-  for i in range(0, len(sections) - 1)
-    if i % 2 == 0
-      let role = 'user'
-    else
-      let role = 'assistant'
-    endif
-    let messages += [{'role': role, 'content': sections[i]}]
-  endfor
-
-  return messages
-endfunction
-
-"
 " For ChatGPT conversaion.
 " Each dialogue is separated by a line of "---".
 "
@@ -88,7 +68,6 @@ function! ChatGPT() abort
     return
   endif
 
-  let separator = "\n---\n"
   let messages = BuildMessages(text, separator)
 
   let output = CallChatGPT(messages)

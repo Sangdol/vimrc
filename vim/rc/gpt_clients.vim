@@ -32,6 +32,27 @@ function! CallChatGPT(messages) abort
 endfunction
 
 "
+" Build ChatGPT messages from the text with separators.
+"
+function! BuildMessages(text, separator) abort
+  let sections = split(a:text, a:separator)
+
+  let messages = []
+  " The first message is from user and the second is from the assistant.
+  " The third is from the user and so on.
+  for i in range(0, len(sections) - 1)
+    if i % 2 == 0
+      let role = 'user'
+    else
+      let role = 'assistant'
+    endif
+    let messages += [{'role': role, 'content': sections[i]}]
+  endfor
+
+  return messages
+endfunction
+
+"
 " Call GPT Editing API.
 " https://platform.openai.com/docs/api-reference/edits
 "
