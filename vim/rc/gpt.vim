@@ -141,8 +141,8 @@ function! GPTEditComment() abort range
   
   let output = CallGPTEditing(comment, instruction, 0)
 
-  " Paste the result below the visual selection.
-  call setline('.', split(output, "\n"))
+  " Append output below the visual selection.
+  call append("'>", split(output, "\n"))
 endfunction
 
 "
