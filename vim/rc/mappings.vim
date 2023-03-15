@@ -90,8 +90,8 @@ nnoremap <M-t> :exe "tabn ".g:lasttab<cr>
 tnoremap <M-t> <C-\><C-n>:exe "tabn ".g:lasttab<cr>
 
 " Next / prev tab
-nnoremap <silent> <C-l> :tabnext<CR>
-inoremap <silent> <C-l> <ESC>:tabnext<CR>
+nnoremap <silent> <C-j> :tabnext<CR>
+inoremap <silent> <C-j> <ESC>:tabnext<CR>
 nnoremap <silent> <C-h> :tabprevious<CR>
 inoremap <silent> <C-h> <ESC>:tabprevious<CR>
 
@@ -345,7 +345,7 @@ tnoremap <C-ㅋ> <C-z>
 " Excluding fzf floating windows
 autocmd TermOpen * if bufname() !~ '\.fzf'
       \| tnoremap <buffer> <C-h> <C-\><C-n>:tabnext<CR>
-      \| tnoremap <buffer> <C-l> <C-\><C-n>:tabprevious<CR>
+      \| tnoremap <buffer> <C-j> <C-\><C-n>:tabprevious<CR>
       \| tnoremap <buffer> ;; <C-\><C-n>
       \| nnoremap <buffer> a :setlocal norelativenumber<CR>a
       \| tnoremap <buffer> <C-q> <C-\><C-n><C-w>p
