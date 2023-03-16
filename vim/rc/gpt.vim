@@ -116,6 +116,11 @@ function! ChatGPTAskCode() abort range
   let question = substitute(prompt, '{placeholder}', code, '')
   let messages = [{'role': 'user', 'content': question}]
 
+  if empty(instruction)
+    echoerr 'The instruction is empty.'
+    return
+  end
+
   let output = CallChatGPT(messages)
 
   " Open the result in a new vertical buffer.
@@ -138,7 +143,6 @@ function! GPTEditComment() abort range
   let filetype = &filetype
   let instruction = "Fix the grammar or improve the " .. filetype .. " code comment."
   let comment = GetVisualSelection()
-  
   let output = CallGPTEditing(comment, instruction, 0)
 
   " Append output below the visual selection.
@@ -152,10 +156,12 @@ function! GPTEditCode() abort range
   let extension = expand('%:e')
   let instruction = input('Instruction: ')
   let code = GetVisualSelection()
-  
-  " Adding an empty line after instruction.
-  echom ''
 
+  if empty(instruction)
+    echoerr 'The instruction is empty.'
+    return
+  end
+  
   let output = CallGPTEditing(code, instruction, 1)
 
   " Open the result in a new vertical buffer.
