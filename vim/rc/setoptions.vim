@@ -129,11 +129,6 @@ set signcolumn=yes
 augroup settings
   autocmd!
 
-  autocmd InsertEnter * set nocursorline
-  autocmd InsertLeave * set cursorline
-  autocmd BufLeave    * set nocursorline
-  autocmd BufEnter    * set cursorline
-
   autocmd FileType tagbar,nerdtree,voomtree setlocal signcolumn=no
 
   " Terminal
