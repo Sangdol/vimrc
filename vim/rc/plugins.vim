@@ -106,6 +106,11 @@ let g:SignatureMap = {
   \ 'ListBufferMarkers'  :  "m?"
   \ }
 
+augroup SignatureColors
+  autocmd!
+  autocmd ColorScheme * highlight SignatureMarkText guifg=#928374
+augroup END
+
 "}}}
 
 "
