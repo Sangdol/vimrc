@@ -252,3 +252,15 @@ function! GetVisualSelection()
     let lines[0] = lines[0][column_start - 1:]
     return join(lines, "\n")
 endfunction
+
+"
+" https://superuser.com/questions/555011/vim-close-all-tabs-to-the-right
+"
+function! TabCloseRight(bang)
+    let cur=tabpagenr()
+    while cur < tabpagenr('$')
+        exe 'tabclose' . a:bang . ' ' . (cur + 1)
+    endwhile
+endfunction
+
+command! -bang Tabcloseright call TabCloseRight('<bang>')
