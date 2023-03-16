@@ -151,20 +151,11 @@ nnoremap <Leader>wj :below new<CR>
 nnoremap <Leader>wk :topleft new<CR>
 
 " Duplicate windows
-nnoremap <Leader>wdl :call <SID>close_abnormal_buf_and(':rightbelow vertical new \| :b#')<cr>
-nnoremap <Leader>wdh :call <SID>close_abnormal_buf_and(':leftabove vnew \| :b#')<cr>
-nnoremap <Leader>wdj :call <SID>close_abnormal_buf_and(':below new \| :b#')<cr>
-nnoremap <Leader>wdk :call <SID>close_abnormal_buf_and(':topleft new \| :b#')<cr>
-nnoremap <Leader>wdt :call <SID>close_abnormal_buf_and(':tabnew \| :b#')<cr>
-
-" Close abnormal window first to make more space
-function! s:close_abnormal_buf_and(cmd)
-  if FocusableWinCount() > 1 && !empty(getwinvar(1, '&buftype'))
-    1wincmd c
-  endif
-
-  execute(a:cmd)
-endfunction
+nnoremap <Leader>wdl :rightbelow vertical new \| :b#<cr>
+nnoremap <Leader>wdh :leftabove vnew \| :b#<cr>
+nnoremap <Leader>wdj :below new \| :b#<cr>
+nnoremap <Leader>wdk :topleft new \| :b#<cr>
+nnoremap <Leader>wdt :tabnew \| :b#<cr>
 
 nnoremap <leader>u :update<CR>
 nnoremap <leader>wa :wa<CR>
