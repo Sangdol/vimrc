@@ -145,6 +145,14 @@ function! GPTEditComment() abort range
   let comment = GetVisualSelection()
   let output = CallGPTEditing(comment, instruction, 0)
 
+  " Compare comment and output removing the leading and trailing spaces.
+  let stripped_comment = substitute(comment, '^\s\+\|\s\+$', '', 'g')
+  let stripped_output = substitute(output, '^\s\+\|\s\+$', '', 'g')
+  if stripped_comment ==# stripped_output
+    echom 'The result is the same as the input.'
+    return
+  endif
+
   " Append output below the visual selection.
   call append("'>", split(output, "\n"))
 endfunction
