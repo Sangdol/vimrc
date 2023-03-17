@@ -36,8 +36,7 @@ function! StatuslineExpr()
   let ft  = "%{len(&filetype) ? &filetype . ' ' : ''}"
 
   " This slows down startup time (around 300ms).
-  let pushpull = focused ? 
-        \ "%#GBStatusColor#%{GBStatus()}%#StatusLine#" : "%#GBStatusColorNC#%{GBStatus()}%#StatusLineNC#"
+  let pushpull = focused ? "%#GBStatusColor#%{GBStatus()}%#StatusLine#" : ""
   let signify = "%{sy#repo#get_stats_decorated()}"
 
   let spl = "%{&spell ? 'S ' : ' '}"
