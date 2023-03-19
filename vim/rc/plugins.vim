@@ -5,6 +5,15 @@
 "
 
 "
+" oil {{{1
+"
+Plug 'stevearc/oil.nvim'
+
+lua require_config('oil-config')
+
+"}}}
+
+"
 " vim-move {{{1
 "
 " from https://github.com/matze/vim-move
