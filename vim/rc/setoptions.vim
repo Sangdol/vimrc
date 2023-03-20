@@ -70,8 +70,10 @@ set scrolloff=5
 " https://stackoverflow.com/questions/30691466/what-is-difference-between-vims-clipboard-unnamed-and-unnamedplus-settings
 set clipboard^=unnamed,unnamedplus
 
-" Enable mouse support in terminal
-set mouse=a
+" Disable mouse support in terminal
+" https://vi.stackexchange.com/questions/13566/fully-disable-mouse-in-console-vim
+set mouse=
+set ttymouse=
 
 " Inspired by vim-anyfold
 function! MinimalFoldText() abort
