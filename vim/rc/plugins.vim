@@ -9,7 +9,7 @@
 "
 Plug 'm4xshen/smartcolumn.nvim'
 
-lua add_callback(function() require('smartcolumn').setup() end)
+lua require_config('smartcolumn-config')
 
 "}}}
 
