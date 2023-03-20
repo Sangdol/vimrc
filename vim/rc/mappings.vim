@@ -362,6 +362,7 @@ function! s:toggle_bullet()
 endfunction
 
 nnoremap <leader>m* :call <SID>toggle_bullet()<CR>
+vnoremap <leader>m* :call <SID>toggle_bullet()<CR>
 
 " Add markdown elements
 nnoremap <leader>m# m`^i### <esc>``4l
