@@ -9,7 +9,8 @@
 "
 Plug 'm4xshen/smartcolumn.nvim'
 
-lua require_config('smartcolumn-config')
+" turn off for now
+"lua require_config('smartcolumn-config')
 
 "}}}
 
