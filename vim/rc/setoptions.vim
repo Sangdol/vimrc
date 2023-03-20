@@ -73,7 +73,6 @@ set clipboard^=unnamed,unnamedplus
 " Disable mouse support in terminal
 " https://vi.stackexchange.com/questions/13566/fully-disable-mouse-in-console-vim
 set mouse=
-set ttymouse=
 
 " Inspired by vim-anyfold
 function! MinimalFoldText() abort
