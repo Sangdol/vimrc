@@ -587,7 +587,7 @@ set nofoldenable " to not fold when opening a file https://stackoverflow.com/que
 set conceallevel=2 " to conceal _, * used for italic or bold
 
 " delete most of them as it slows down file loading - ['coffee', 'css', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sql', 'xml', 'java', 'python', 'sh', 'html', 'clojure', 'yaml', 'applescript', 'go', 'vim', 'awk', 'groovy']
-let g:markdown_fenced_languages = ['js=javascript', 'ts=typescript', 'bash', 'sh', 'python', 'clojure', 'log', 'vim', 'sql', 'lua']
+let g:markdown_fenced_languages = ['js=javascript', 'ts=typescript', 'javascript', 'typescript', 'bash', 'sh', 'python', 'clojure', 'log', 'vim', 'sql', 'lua']
 
 " Code from: $NVIM_RUNTIME/ftplugin/markdown.vim
 function! EnableMarkdownFold()
