@@ -649,6 +649,7 @@ endfunction
 autocmd! FileType GV nnoremap <buffer> <silent> + :call <sid>gv_expand()<cr>
 
 nnoremap <leader>gv :GV<CR>
+xnoremap <leader>gv :GV<CR>
 
 " Git messenger
 "
