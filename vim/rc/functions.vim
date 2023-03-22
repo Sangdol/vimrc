@@ -267,3 +267,4 @@ function! TabCloseRight(bang)
 endfunction
 
 command! -bang Tabcloseright call TabCloseRight('<bang>')
+nnoremap <Leader>tr :Tabcloseright<CR>
