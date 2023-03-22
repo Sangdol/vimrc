@@ -164,7 +164,6 @@ nnoremap <Leader>wtv :call SaveToTempWithTimestamp('~/workbench/code/', 'vim')<C
 nnoremap <Leader>wth :call SaveToTempWithTimestamp('~/workbench/code/', 'html')<CR>
 nnoremap <Leader>wto :call SaveToTempWithTimestamp('~/workbench/code/', 'js', 'mongo')<CR>
 
-nnoremap <Leader>wog :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/gpt3/', 'md')<CR>
 nnoremap <Leader>wox :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/vim-notes/', 'txt')<CR>
 nnoremap <Leader>wom :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/vim-notes/', 'md')<CR>
 nnoremap <Leader>wop :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'py')<CR>
@@ -176,6 +175,10 @@ nnoremap <Leader>wol :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/code/
 nnoremap <Leader>wov :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'vim')<CR>
 nnoremap <Leader>woh :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'html')<CR>
 nnoremap <Leader>woo :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'js', 'mongo')<CR>
+nnoremap <Leader>wog :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/gpt3/', 'md')<CR>
+
+" Add an easier mapping since it's used often.
+nnoremap <Leader>cn :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/gpt3/', 'md')<CR>
 
 "
 " Translate the keyboard middle line characters to numbers
