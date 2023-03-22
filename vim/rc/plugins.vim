@@ -4,6 +4,16 @@
 " The markers, `{{{` and `}}}`, are used for voom and fzf toc outline.
 "
 
+"
+" MRU (most recently used) {{{1
+"
+Plug 'yegappan/mru'
+
+" p for previous
+nnoremap <leader>ep :MRU<CR>
+
+"}}}
+
 " 
 " smartcolumn {{{1
 "
