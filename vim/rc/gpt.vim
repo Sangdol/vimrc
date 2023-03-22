@@ -85,9 +85,10 @@ endfunction
 "
 " Call ChatGPT API for imporving English of code comments.
 "
-function! ChatGPTImproveCodeComment() abort range
+function! ChatGPTImproveEnglish() abort range
   let filetype = &filetype
-  let prompt = "Fix the grammar or improve the code comment: \n" ..
+  let prompt = "Fix the grammar or improve the English. " ..
+        \ "The provided text can be a code comment. \n" ..
         \ "```" .. filetype .. "\n" ..
         \ "{placeholder}\n" ..
         \ "```"
@@ -187,7 +188,7 @@ nnoremap <leader>cp :call GptComplete()<CR>
 " ChatGPT API
 "
 nnoremap <leader>cc :call ChatGPT()<CR>
-xnoremap <leader>ci :call ChatGPTImproveCodeComment()<CR>
+xnoremap <leader>ci :call ChatGPTImproveEnglish()<CR>
 xnoremap <leader>ca :call ChatGPTAskCode()<CR>
 
 "
