@@ -104,9 +104,9 @@ function! ChatGPTImproveEnglish() abort range
 endfunction
 
 "
-" Ask ChatGPT with a selected code.
+" Ask ChatGPT with a visual selection.
 "
-function! ChatGPTAskCode() abort range
+function! ChatGPTAsk() abort range
   let filetype = &filetype
   let instruction = input('Ask: ')
   let prompt = instruction .. "\n\n" ..
@@ -189,7 +189,7 @@ nnoremap <leader>cp :call GptComplete()<CR>
 "
 nnoremap <leader>cc :call ChatGPT()<CR>
 xnoremap <leader>ci :call ChatGPTImproveEnglish()<CR>
-xnoremap <leader>ca :call ChatGPTAskCode()<CR>
+xnoremap <leader>ca :call ChatGPTAsk()<CR>
 
 "
 " Editing API
