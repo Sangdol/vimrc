@@ -159,7 +159,6 @@ nnoremap <Leader>wdt :tabnew \| :b#<cr>
 
 nnoremap <leader>u :update<CR>
 nnoremap <leader>wa :wa<CR>
-nnoremap <leader>ww :w<CR>
 " Write and quit = ZZ
 nnoremap <leader>we :x<CR>
 
