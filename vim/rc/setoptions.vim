@@ -67,7 +67,7 @@ set splitbelow
 set scrolloff=5
 
 " Trying fixing: 'redrawtime' exceeded, syntax highlighting disabled
-set regexpengine=1
+set regexpengine=2
 
 " clipboard
 " https://stackoverflow.com/questions/30691466/what-is-difference-between-vims-clipboard-unnamed-and-unnamedplus-settings
