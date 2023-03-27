@@ -7,7 +7,7 @@ function! CallChatGPT(messages) abort
 
   let messages = a:messages
   let data = {
-        \ 'model': 'gpt-3.5-turbo',
+        \ 'model': 'gpt-4',
         \ 'messages': messages,
         \ }
   let url = "https://api.openai.com/v1/chat/completions"
