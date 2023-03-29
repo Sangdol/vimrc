@@ -18,6 +18,7 @@ Plug 'github/copilot.vim'
 nnoremap <leader>ece :Copilot enable<cr>
 nnoremap <leader>ecd :Copilot disable<cr>
 nnoremap <leader>ecs :Copilot status<cr>
+nnoremap <leader>ecr :Copilot restart<cr>
 
 "}}}
 
