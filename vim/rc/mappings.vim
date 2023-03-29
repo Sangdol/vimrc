@@ -17,9 +17,6 @@ inoremap <C-f> <C-o>l
 inoremap <M-n> <Esc>jA
 inoremap <M-p> <Esc>kA
 
-" Use C-d for digraphs
-inoremap <C-d> <C-k>
-
 " Line left/right
 " https://vim.fandom.com/wiki/Moving_lines_up_or_down
 nnoremap <silent> <M-h> <<
