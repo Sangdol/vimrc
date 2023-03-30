@@ -718,9 +718,9 @@ Plug 'tpope/vim-rhubarb'
 " m: master branch
 " .: root
 nnoremap <leader>gbo :GBrowse<CR>
-nnoremap <leader>gbc :.GBrowse<CR>
+nnoremap <leader>gb. :.GBrowse<CR>
 nnoremap <leader>gbm :GBrowse origin/master:%<CR>
-nnoremap <leader>gb. :GBrowse .<CR>
+nnoremap <leader>gbr :GBrowse .<CR>
 
 " gcp: [g]it [c]heckout [p]r
 nnoremap <leader>gch :!gh pr checkout<space>
