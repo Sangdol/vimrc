@@ -2,6 +2,11 @@
 " Call ChatGPT API.
 " https://platform.openai.com/docs/api-reference/chat
 "
+function! GPTCurl(file, url) abort
+  let res = system('curl -s -X POST ' .. headers .. ' --data @' .. file .. ' --max-time 10 ' .. url)
+  return json_decode(res)
+endfunction
+
 function! CallChatGPT(messages) abort
   echom 'Asking ChatGPT...'
 
@@ -18,8 +23,7 @@ function! CallChatGPT(messages) abort
   let file = tempname()
   call writefile([json_encode(data)], file)
 
-  let res = system('curl -s -X POST ' .. headers .. ' --data @' .. file .. ' ' .. url)
-  let body = json_decode(res)
+  let body = GPTCurl(file, url)
 
   " Append the whole request and response when there was an error.
   if has_key(body, 'error')
@@ -76,8 +80,8 @@ function! CallGPTEditing(input, instruction, is_code)
   let file = tempname()
   call writefile([json_encode(data)], file)
 
-  let res = system('curl -s -X POST ' .. headers .. ' --data @' .. file .. ' ' .. url)
-  let body = json_decode(res)
+  let body = GPTCurl(file, url)
+
   if has_key(body, 'error')
     let output = res
   else
