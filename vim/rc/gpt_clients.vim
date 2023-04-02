@@ -3,7 +3,7 @@
 " https://platform.openai.com/docs/api-reference/chat
 "
 function! GPTCurl(file, url) abort
-  let res = system('curl -s -X POST ' .. headers .. ' --data @' .. file .. ' --max-time 10 ' .. url)
+  let res = system('curl -s -X POST ' .. headers .. ' --data @' .. file .. ' --max-time 20 ' .. url)
   return json_decode(res)
 endfunction
 
