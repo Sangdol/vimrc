@@ -8,7 +8,7 @@ function! GPTCurl(file, url) abort
   let headers =
         \' -H "Content-Type: application/json"' ..
         \' -H "Authorization: Bearer ' .. $OPENAI_API_KEY .. '"'
-  let res = system('curl -s -X POST ' .. headers .. ' --data @' .. file .. ' --max-time 20 ' .. url)
+  let res = system('curl -s -X POST ' .. headers .. ' --data @' .. file .. ' ' .. url)
   return json_decode(res)
 endfunction
 
