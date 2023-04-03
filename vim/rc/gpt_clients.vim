@@ -3,6 +3,11 @@
 " https://platform.openai.com/docs/api-reference/chat
 "
 function! GPTCurl(file, url) abort
+  let file = a:file
+  let url = a:url
+  let headers =
+        \' -H "Content-Type: application/json"' ..
+        \' -H "Authorization: Bearer ' .. $OPENAI_API_KEY .. '"'
   let res = system('curl -s -X POST ' .. headers .. ' --data @' .. file .. ' --max-time 20 ' .. url)
   return json_decode(res)
 endfunction
@@ -16,9 +21,6 @@ function! CallChatGPT(messages) abort
         \ 'messages': messages,
         \ }
   let url = "https://api.openai.com/v1/chat/completions"
-  let headers =
-        \' -H "Content-Type: application/json"' ..
-        \' -H "Authorization: Bearer ' .. $OPENAI_API_KEY .. '"'
 
   let file = tempname()
   call writefile([json_encode(data)], file)
@@ -73,10 +75,6 @@ function! CallGPTEditing(input, instruction, is_code)
         \ 'instruction': instruction,
         \ }
   let url = "https://api.openai.com/v1/edits"
-  let headers =
-        \' -H "Content-Type: application/json"' ..
-        \' -H "Authorization: Bearer ' .. $OPENAI_API_KEY .. '"'
-
   let file = tempname()
   call writefile([json_encode(data)], file)
 
