@@ -29,7 +29,7 @@ function! CallChatGPT(messages) abort
 
   " Append the whole request and response when there was an error.
   if has_key(body, 'error')
-    let output = res
+    let output = json_encode(body)
   else
     let output = body.choices[0].message.content
   endif
@@ -81,7 +81,7 @@ function! CallGPTEditing(input, instruction, is_code)
   let body = GPTCurl(file, url)
 
   if has_key(body, 'error')
-    let output = res
+    let output = json_encode(body)
   else
     let output = body.choices[0].text
   endif
