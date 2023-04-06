@@ -94,6 +94,7 @@ nmap <silent> <leader>sz <Plug>(coc-type-definition)
 nmap <silent> <leader>si <Plug>(coc-implementation)
 nmap <silent> <leader>sr <Plug>(coc-references)
 nmap <silent> <leader>sj <Plug>(coc-float-jump)
+nmap <silent> <leader>sc <Plug>(coc-float-jump):%y<CR>:q<CR>P<plug>NERDCommenterToggle
 
 " fzf help: tab drop (from telescope)
 nnoremap <silent> <leader>st :call CocActionAsync('jumpDefinition', 'tab drop')<CR>
@@ -128,7 +129,6 @@ nmap <leader>re <Plug>(coc-rename)
 " coc-fzf
 Plug 'antoinemadec/coc-fzf'
 
-nnoremap <leader>sc :CocFzfList commands<CR>
 nnoremap <leader>s! :CocRestart<CR>
 
 autocmd FileType typescript,python,lua,javascript,clojure,vim
