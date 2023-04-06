@@ -177,6 +177,19 @@ nnoremap <Leader>woh :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/code/
 nnoremap <Leader>woo :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'js', 'mongo')<CR>
 nnoremap <Leader>wog :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/gpt3/', 'md')<CR>
 
+nnoremap <Leader>wvx :rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/vim-notes/', 'txt')<CR>
+nnoremap <Leader>wvm :rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/vim-notes/', 'md')<CR>
+nnoremap <Leader>wvp :rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'py')<CR>
+nnoremap <Leader>wvj :rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'js')<CR>
+nnoremap <Leader>wvt :rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'ts')<CR>
+nnoremap <Leader>wvb :rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'sh')<CR>
+nnoremap <Leader>wvf :rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'fish')<CR>
+nnoremap <Leader>wvl :rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'lua')<CR>
+nnoremap <Leader>wvv :rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'vim')<CR>
+nnoremap <Leader>wvh :rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'html')<CR>
+nnoremap <Leader>wvo :rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'js', 'mongo')<CR>
+nnoremap <Leader>wvg :rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/gpt3/', 'md')<CR>
+
 " Add an easier mapping since it's used often.
 nnoremap <Leader>cn :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/gpt3/', 'md')<CR>
 
