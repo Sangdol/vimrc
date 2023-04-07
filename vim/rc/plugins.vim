@@ -870,7 +870,8 @@ function! s:escape_abnormal_buf_and(cmd)
 endfunction
 
 nnoremap <leader>'  :call <SID>escape_abnormal_buf_and('Files')<CR>
-nnoremap <leader>fj :call <SID>escape_abnormal_buf_and('Lines')<CR>
+nnoremap <leader>fl :call <SID>escape_abnormal_buf_and('Lines')<CR>
+nnoremap <leader>fj :call <SID>escape_abnormal_buf_and('BLines')<CR>
 nnoremap <leader>fc :call <SID>escape_abnormal_buf_and('Commands')<CR>
 nnoremap <leader>fi :call <SID>escape_abnormal_buf_and('History')<CR>
 nnoremap <leader>f: :call <SID>escape_abnormal_buf_and('History:')<CR>
