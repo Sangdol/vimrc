@@ -1,6 +1,15 @@
 "
 " Sang's Vim Configuration
 "
+
+lua << EOF
+  -- Delete the module from the loaded table and reload it.
+  function load(file)
+    package.loaded[file] = nil
+    require(file)
+  end
+EOF
+
 source $HOME/.vim/rc/setoptions.vim
 source $HOME/.vim/rc/statusline.vim
 source $HOME/.vim/rc/utility.vim

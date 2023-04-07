@@ -1,3 +1,3 @@
 " load lua/gpt-config.lua
-lua require("gpt-clients")
-lua require("gpt-config")
+lua load("gpt-clients")
+lua load("gpt-config")

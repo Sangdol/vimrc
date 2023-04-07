@@ -37,7 +37,7 @@ lua << EOF
 
   function require_config(name)
     table.insert(plugin_callbacks, function()
-      require(name)
+      load(name)
     end)
   end
 EOF
