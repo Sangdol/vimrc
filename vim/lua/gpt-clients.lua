@@ -56,34 +56,3 @@ function BuildMessages(text, separator)
 
   return messages
 end
-
---
--- Call GPT Editing API.
--- (This is not used at the moment since it's much inferior to the GPT4 API.)
--- https://platform.openai.com/docs/api-reference/edits
---
-function CallGPTEditing(input, instruction, is_code)
-  print('Asking GPT-3 for Editing')
-
-  local model = is_code and 'code-davinci-edit-001' or 'text-davinci-edit-001'
-  local data = {
-    model = model,
-    temperature = 0,
-    input = input,
-    instruction = instruction,
-  }
-  local url = "https://api.openai.com/v1/edits"
-  local file = vim.fn.tempname()
-  vim.fn.writefile({vim.fn.json_encode(data)}, file)
-
-  local body = GPTCurl(file, url)
-
-  local output
-  if body['error'] then
-    output = vim.fn.json_encode(body)
-  else
-    output = body.choices[1].text
-  end
-
-  return output
-end

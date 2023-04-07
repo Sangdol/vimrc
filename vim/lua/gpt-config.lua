@@ -127,48 +127,6 @@ function ChatGPTAsk()
   vim.api.nvim_buf_set_lines(0, -1, -1, false, {""})
 end
 
---
--- Get improved code comment from the GPT Editing API
---
-function GPTEditComment()
-  local filetype = vim.bo.filetype
-  local instruction = "Fix the grammar or improve the " .. filetype .. " code comment."
-  local comment = vim.fn.GetVisualSelection()
-  local output = CallGPTEditing(comment, instruction, 0)
-
-  -- Compare comment and output removing the leading and trailing spaces.
-  local stripped_comment = string.gsub(comment, "^%s+|%s+$", "")
-  local stripped_output = string.gsub(output, "^%s+|%s+$", "")
-  if stripped_comment == stripped_output then
-    print("The result is the same as the input.")
-    return
-  end
-
-  -- Append output below the visual selection.
-  vim.api.nvim_buf_set_text(0, vim.fn.line("'>"), 0, -1, vim.split(output, "\n"))
-end
-
---
--- Get editing result from the GPT Editing API
---
-function GPTEditCode()
-  local extension = vim.fn.expand("%:e")
-  local instruction = vim.fn.input("Instruction: ")
-  local code = vim.fn.GetVisualSelection()
-
-  if instruction == "" then
-    vim.api.nvim_err_writeln("The instruction is empty.")
-    return
-  end
-
-  local output = CallGPTEditing(code, instruction, 1)
-
-  -- Open the result in a new vertical buffer.
-  vim.cmd("vnew")
-  vim.fn.SaveToTempWithTimestamp("~/workbench/refactoring/", extension)
-  vim.api.nvim_buf_set_lines(0, 0, -1, false, vim.split(output, "\n"))
-end
-
 -- Completion API
 vim.api.nvim_set_keymap('n', '<leader>cp', ':lua GptComplete()<CR>', {noremap = true, silent = true})
 
@@ -176,7 +134,3 @@ vim.api.nvim_set_keymap('n', '<leader>cp', ':lua GptComplete()<CR>', {noremap = 
 vim.api.nvim_set_keymap('n', '<leader>cc', ':lua ChatGPT()<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('x', '<leader>ci', ':lua ChatGPTImproveEnglish()<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('x', '<leader>ca', ':lua ChatGPTAsk()<CR>', {noremap = true, silent = true})
-
--- Editing API
-vim.api.nvim_set_keymap('x', '<leader>ce', ':lua GPTEditComment()<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('x', '<leader>cr', ':lua GPTEditCode()<CR>', {noremap = true, silent = true})
