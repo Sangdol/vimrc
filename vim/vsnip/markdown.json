@@ -75,4 +75,12 @@
       "```"
     ]
   }
+  "css block quotes": {
+    "prefix": ["`css"],
+    "body": [
+      "```css",
+      "$0",
+      "```"
+    ]
+  }
 }
