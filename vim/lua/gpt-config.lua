@@ -65,13 +65,9 @@ function ChatGPT()
   local output = CallChatGPT(messages)
 
   -- First append separators before and after the output.
-  vim.fn.append('$', '')
   vim.fn.append('$', vim.split(separator, "\n"))
-  vim.fn.append('$', '')
   vim.fn.append('$', vim.split(output, "\n"))
-  vim.fn.append('$', '')
   vim.fn.append('$', vim.split(separator, "\n"))
-  vim.fn.append('$', '')
 end
 
 -- Call ChatGPT API for improving English of code comments.
@@ -118,13 +114,9 @@ function ChatGPTAsk()
   vim.cmd("vnew")
   vim.fn.SaveToTempWithTimestamp("~/workbench/chatgpt/", "md")
   vim.api.nvim_buf_set_lines(0, 0, -1, false, vim.split(question, "\n"))
-  vim.api.nvim_buf_set_lines(0, -1, -1, false, {""})
   vim.api.nvim_buf_set_lines(0, -1, -1, false, vim.split(separator, "\n"))
-  vim.api.nvim_buf_set_lines(0, -1, -1, false, {""})
   vim.api.nvim_buf_set_lines(0, -1, -1, false, vim.split(output, "\n"))
-  vim.api.nvim_buf_set_lines(0, -1, -1, false, {""})
   vim.api.nvim_buf_set_lines(0, -1, -1, false, vim.split(separator, "\n"))
-  vim.api.nvim_buf_set_lines(0, -1, -1, false, {""})
 end
 
 -- Completion API
