@@ -8,27 +8,36 @@
 "
 " Usage:
 "   :Tab ls
-"   :Tab echo g:
-function! Tab(cmd)
+"   :Tab mes vnew
+function! Tab(...)
+  let cmd = a:1
+
+  " Where to put the result?
+  " E.g., tabnew, vnew, new, etc.
+  let wintype = get(a:, 2, 'tabnew')
+
   redir => message
-  silent execute a:cmd
+  silent execute cmd
   redir END
   if empty(message)
     echoerr "no output"
   else
-    " use "new" instead of "tabnew" below if you prefer split windows instead of tabs
-    tabnew
+    execute wintype
     setlocal buftype=nofile bufhidden=wipe noswapfile nobuflisted nomodified
     silent put=message
   endif
 endfunction
 
-command! -nargs=+ -complete=command Tab call Tab(<q-args>)
+command! -nargs=+ -complete=command Tab call Tab(<f-args>)
 
 " message in new tab
-nnoremap <Leader>et :Tab mes<CR>
+nnoremap <Leader>emt :Tab mes<CR>
+
+" message in vertical split
+nnoremap <Leader>eml :Tab mes vnew<CR>
+
 " last command in new tab
-nnoremap <Leader>en :Tab <C-R>:<CR>
+nnoremap <Leader>emm :Tab <C-R>:<CR>
 
 "
 " From https://vim.fandom.com/wiki/Delete_files_with_a_Vim_command#Comments
