@@ -120,9 +120,9 @@ function ChatGPTAsk()
 end
 
 -- Completion API
-vim.api.nvim_set_keymap('n', '<leader>cp', ':lua GptComplete()<CR>', {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>cp', ':lua GptComplete()<CR>', {noremap = true, silent = true})
 
 -- ChatGPT API
-vim.api.nvim_set_keymap('n', '<leader>cc', ':lua ChatGPT()<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('x', '<leader>ci', ':lua ChatGPTImproveEnglish()<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('x', '<leader>ca', ':lua ChatGPTAsk()<CR>', {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>cc', ':lua ChatGPT()<CR>', {noremap = true, silent = true})
+vim.keymap.set('x', '<leader>ci', ':lua ChatGPTImproveEnglish()<CR>', {noremap = true, silent = true})
+vim.keymap.set('x', '<leader>ca', ':lua ChatGPTAsk()<CR>', {noremap = true, silent = true})
