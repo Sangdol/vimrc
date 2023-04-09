@@ -242,7 +242,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 
 let g:mkdp_auto_close = 0
 
-nnoremap <leader>em :MarkdownPreview<CR>
+nnoremap <leader>mp :MarkdownPreview<CR>
 
 "}}}
 

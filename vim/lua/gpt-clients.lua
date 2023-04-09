@@ -6,7 +6,7 @@ function GPTCurl(file, url)
   local headers =
         ' -H "Content-Type: application/json"' ..
         ' -H "Authorization: Bearer ' .. vim.env.OPENAI_API_KEY .. '"'
-  local res = vim.fn.system('curl -s -X POST ' .. headers .. ' --data @' .. file .. ' --max-time 20 ' .. url)
+  local res = vim.fn.system('curl -s -X POST ' .. headers .. ' --data @' .. file .. ' ' .. url)
   return vim.fn.json_decode(res)
 end
 
