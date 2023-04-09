@@ -981,6 +981,7 @@ inoremap <expr> <c-b> <SID>fzf_complete_buffer()
 " Select from visible window
 function! s:fzf_complete_visible_window()
   let lines = getline(line('w0'), line('w$'))
+  let lines = uniq(sort(lines))
   return fzf#vim#complete(fzf#wrap({
     \ 'prefix': '^.*$',
     \ 'source': lines,
