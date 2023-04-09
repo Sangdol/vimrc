@@ -1,3 +1,3 @@
 " load lua/gpt-config.lua
-lua load("gpt-clients")
-lua load("gpt-config")
+lua load("chatgpt-client")
+lua load("chatgpt-config")
