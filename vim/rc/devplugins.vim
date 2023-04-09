@@ -1,6 +1,13 @@
 "
-" Plugins used for coding
+" Plugins used for coding 
 "
+
+"
+" Custom ChatGPT {{{1
+"
+lua require_config('chatgpt-config')
+
+"}}}
 
 "
 " LSP {{{1
