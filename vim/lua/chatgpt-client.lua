@@ -9,8 +9,7 @@
 local M = {}
 local Job = require('plenary.job')
 
-local function gpt_curl(file, url, callback)
-
+function M.gpt_curl(file, url, callback)
   Job:new({
     command = 'curl',
     args = {
@@ -27,9 +26,7 @@ local function gpt_curl(file, url, callback)
           return
         end
 
-        local result = j:result()
-        local decoded_result = vim.fn.json_decode(table.concat(result, "\n"))
-        callback(decoded_result)
+        callback(table.concat(j:result(), "\n"))
       end)
     end,
   }):start()
@@ -55,31 +52,6 @@ function M.build_messages(text, separator)
   end
 
   return messages
-end
-
-function M.call(messages, callback)
-  print(' == Asking ChatGPT.. ==')
-
-  local data = {
-    model = 'gpt-4',
-    messages = messages,
-  }
-  local url = "https://api.openai.com/v1/chat/completions"
-
-  local file = vim.fn.tempname()
-  vim.fn.writefile({vim.fn.json_encode(data)}, file)
-
-  gpt_curl(file, url, function(body)
-    -- Append the whole request and response when there was an error.
-    local output
-    if body['error'] then
-      output = vim.fn.json_encode(body)
-    else
-      output = body.choices[1].message.content
-    end
-
-    callback(output)
-  end)
 end
 
 return M
