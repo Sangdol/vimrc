@@ -7,6 +7,18 @@
 "
 " MRU (most recently used) {{{1
 "
+"   <Enter>	- open the file under cursor
+"   o		- open the file under cursor in a horizontally split window
+"   <S-Enter>	- idem
+"   O		- open the file under cursor in a vertically split window
+"   v		- open the file under cursor in read-only mode
+"   t		- open the file under cursor in a tab page
+"   p		- open the file under cursor in the preview window
+"   u		- update (refresh) the MRU list
+"   d		- delete the file name under cursor from the MRU list
+"   q		- close the MRU window
+"   <Esc>	- idem
+"
 Plug 'yegappan/mru'
 
 " p for previous
