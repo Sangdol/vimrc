@@ -248,16 +248,6 @@ autocmd FileType python,javascript,lua,fish,sh,zsh,typescript
 " :PoetvDeactivate
 Plug 'petobens/poet-v', { 'for': 'python' }
 
-" Virtual Env
-"
-" TODO: customize it for me
-"
-" :h virtualenv
-" :VirtualEnvDeactivate
-" :VirtualEnvList
-" :VirtualEnvActivate <name>
-Plug 'jmcantrell/vim-virtualenv'
-
 " This requires `pip install doq`
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python' }
 
