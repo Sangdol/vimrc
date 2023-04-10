@@ -6,20 +6,6 @@ function! CurrentDir()
   return fnamemodify(getcwd(), ':t')
 endfunction
 
-let s:nvim_gps_installed = v:null
-func! NvimGps() abort
-  if s:nvim_gps_installed == v:null
-    let s:nvim_gps_installed = luaeval('pcall(require, "nvim-gps")')
-  endif
-
-  if !s:nvim_gps_installed
-    return ''
-  endif
-
-	return luaeval("require'nvim-gps'.is_available()") ?
-		\  luaeval("require'nvim-gps'.get_location()") : ''
-endf
-
 " Timer-based update
 lua require('git-branch-status-timer')
 func! GBStatus() abort
@@ -45,11 +31,8 @@ function! StatuslineExpr()
   let sep = ' %= '
   let truncateline = ' %< '
   let pos = ' %c'
-  " Put NvimGpsColor 
-  let gps = focused ? 
-        \ "%#NvimGpsColor#%{NvimGps()}%#StatusLine#" : "%#NvimGpsColorNC#%{NvimGps()}%#StatusLineNC#"
 
-  return ' ' .. dir .. filename .. ft .. ro .. spl .. gps ..
+  return ' ' .. dir .. filename .. ft .. ro .. spl .. 
         \ coc .. 
         \ truncateline ..
         \ sep .. 

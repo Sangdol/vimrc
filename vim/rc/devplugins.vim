@@ -54,10 +54,6 @@ Plug 'nvim-treesitter/playground'
 
 lua require_config('treesitter-config')
 
-Plug 'SmiteshP/nvim-gps'
-
-lua add_callback(function() require('nvim-gps').setup() end)
-
 "}}}
 
 "
