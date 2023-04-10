@@ -10,14 +10,6 @@ lua require_config('chatgpt-config')
 "}}}
 
 "
-" LSP {{{1
-"
-Plug 'neovim/nvim-lspconfig'
-lua require_config('lsp-config')
-
-"}}}
-
-"
 " copilot {{{1
 "
 Plug 'github/copilot.vim'
