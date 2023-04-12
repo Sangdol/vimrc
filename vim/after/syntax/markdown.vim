@@ -40,23 +40,6 @@ hi def link mkdInlineCode              Comment
 " Deep list highlight
 syn match markdownListMarker "\%(\t\| \{0,12\}\)[-*+]\%(\s\+\S\)\@=" contained
 
-"
-" Diabling hiding code block fences
-" Code copied from $NVIM_RUNTIME/syntax/markdown.vim
-"
-let s:concealends = ''
-
-let s:done_include = {}
-for s:type in g:markdown_fenced_languages
-  if has_key(s:done_include, matchstr(s:type,'[^.]*'))
-    continue
-  endif
-  exe 'syn region markdownHighlight'.substitute(matchstr(s:type,'[^=]*$'),'\..*','','').' matchgroup=markdownCodeDelimiter start="^\s*````*\s*\%({.\{-}\.\)\='.matchstr(s:type,'[^=]*').'}\=\S\@!.*$" end="^\s*````*\ze\s*$" keepend contains=@markdownHighlight'.substitute(matchstr(s:type,'[^=]*$'),'\.','','g') . s:concealends
-  let s:done_include[matchstr(s:type,'[^.]*')] = 1
-endfor
-unlet! s:type
-unlet! s:done_include
-
 " Markdown link URL conceal
 " https://vi.stackexchange.com/questions/26825/conceal-markdown-links-and-extensions
 syn region markdownLink matchgroup=markdownLinkDelimiter start="(" end=")" keepend contained conceal contains=markdownUrl
@@ -66,3 +49,27 @@ syn region markdownLinkText matchgroup=markdownLinkTextDelimiter
     \ contains=@markdownInline,markdownLineStart
     \ concealends
 syn match markdownExt /{[.:#][^}]*}/ conceal contains=ALL
+
+"
+" Diabling hiding code block fences
+" Code copied from $NVIM_RUNTIME/syntax/markdown.vim
+"
+" This sets concealends to '' for the code block fences, 
+" so that the code block fences are not hidden.
+"
+" It's supposed to set to ' concealends' when the conceallevel is 2 or higher.
+" I need conceallevel 2 to hide _text_ or *text* but I don't want to hide the code block fences.
+"
+let s:concealends = ''
+
+let s:done_include = {}
+for s:type in g:markdown_fenced_languages
+  if has_key(s:done_include, matchstr(s:type,'[^.]*'))
+    continue
+  endif
+  exe 'syn region markdownHighlight_'.substitute(matchstr(s:type,'[^=]*$'),'\..*','','').' matchgroup=markdownCodeDelimiter start="^\s*\z(`\{3,\}\)\s*\%({.\{-}\.\)\='.matchstr(s:type,'[^=]*').'}\=\S\@!.*$" end="^\s*\z1\ze\s*$" keepend contains=@markdownHighlight_'.tr(matchstr(s:type,'[^=]*$'),'.','_') . s:concealends
+  exe 'syn region markdownHighlight_'.substitute(matchstr(s:type,'[^=]*$'),'\..*','','').' matchgroup=markdownCodeDelimiter start="^\s*\z(\~\{3,\}\)\s*\%({.\{-}\.\)\='.matchstr(s:type,'[^=]*').'}\=\S\@!.*$" end="^\s*\z1\ze\s*$" keepend contains=@markdownHighlight_'.tr(matchstr(s:type,'[^=]*$'),'.','_') . s:concealends
+  let s:done_include[matchstr(s:type,'[^.]*')] = 1
+endfor
+unlet! s:type
+unlet! s:done_include
