@@ -756,6 +756,8 @@ let g:EasyMotion_use_smartsign_us = 1 " US layout
 let g:EasyMotion_keys = 'asdghklqwertyuiopzxcvbnmfj'
 nmap <Leader>j <Plug>(easymotion-j)
 nmap <Leader>k <Plug>(easymotion-k)
+vmap <Leader>j <Plug>(easymotion-j)
+vmap <Leader>k <Plug>(easymotion-k)
 
 "}}}
 
