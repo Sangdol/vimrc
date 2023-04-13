@@ -398,6 +398,11 @@ autocmd FileType markdown inoremap <buffer> <C-R> <C-R><C-O>
 " Etc. {{{1
 "
 
+" en dash
+imap <M--> –
+" em dash
+imap <M-_> —
+
 nnoremap <silent> <C-s> :set number!<CR>
 nnoremap <silent> <Leader>n :noh<CR>
 
