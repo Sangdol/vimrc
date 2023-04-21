@@ -316,3 +316,9 @@ endfunction
 
 command! -bang Tabcloseright call TabCloseRight('<bang>')
 nnoremap <Leader>tr :Tabcloseright<CR>
+
+"
+" Literal search
+" https://vi.stackexchange.com/a/17474/3225
+"
+command! -nargs=1 Search :let @/='\V'.escape(<q-args>, '\\')| normal! n
