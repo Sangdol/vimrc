@@ -76,7 +76,7 @@ end
 --
 function ChatGPTImproveEnglish()
   local filetype = vim.bo.filetype
-  local prompt = "Fix the grammar or improve the English. " ..
+  local prompt = "Provide a suggestion to improve the grammar and sentence structure of the following message. " ..
         "The provided text can be a code comment. \n" ..
         "```" .. filetype .. "\n" ..
         "{placeholder}\n" ..
