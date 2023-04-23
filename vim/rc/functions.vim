@@ -227,6 +227,9 @@ xnoremap <Leader>wvg y:rightbelow vertical new<CR>:call SaveToTempWithTimestamp(
 
 " Add an easier mapping since it's used often.
 nnoremap <Leader>cn :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/gpt3/', 'md')<CR>
+nnoremap <Leader>cl :rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/gpt3/', 'md')<CR>
+xnoremap <Leader>cn y:tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/gpt3/', 'md')<CR>:put<CR>
+xnoremap <Leader>cl y:rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/gpt3/', 'md')<CR>:put<CR>
 
 "
 " Translate the keyboard middle line characters to numbers
