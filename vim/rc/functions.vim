@@ -160,7 +160,7 @@ function! SaveToTempWithTimestamp(...) abort
   endif
 endfunction
 
-nnoremap <Leader>wwg :call SaveToTempWithTimestamp('~/workbench/gpt3/', 'md')<CR>
+nnoremap <Leader>wwg :call SaveToTempWithTimestamp('~/workbench/gpt/', 'md')<CR>
 nnoremap <Leader>wwx :call SaveToTempWithTimestamp('~/workbench/vim-notes/', 'txt')<CR>
 nnoremap <Leader>wwm :call SaveToTempWithTimestamp('~/workbench/vim-notes/', 'md')<CR>
 nnoremap <Leader>wwp :call SaveToTempWithTimestamp('~/workbench/code/', 'py')<CR>
@@ -184,7 +184,7 @@ nnoremap <Leader>wol :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/code/
 nnoremap <Leader>wov :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'vim')<CR>
 nnoremap <Leader>woh :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'html')<CR>
 nnoremap <Leader>woo :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'js', 'mongo')<CR>
-nnoremap <Leader>wog :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/gpt3/', 'md')<CR>
+nnoremap <Leader>wog :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/gpt/', 'md')<CR>
 
 xnoremap <Leader>wox y:tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/vim-notes/', 'txt')<CR>:put<CR>
 xnoremap <Leader>wom y:tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/vim-notes/', 'md')<CR>:put<CR>
@@ -197,7 +197,7 @@ xnoremap <Leader>wol y:tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/code
 xnoremap <Leader>wov y:tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'vim')<CR>:put<CR>
 xnoremap <Leader>woh y:tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'html')<CR>:put<CR>
 xnoremap <Leader>woo y:tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'js', 'mongo')<CR>:put<CR>
-xnoremap <Leader>wog y:tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/gpt3/', 'md')<CR>:put<CR>
+xnoremap <Leader>wog y:tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/gpt/', 'md')<CR>:put<CR>
 
 nnoremap <Leader>wvx :rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/vim-notes/', 'txt')<CR>
 nnoremap <Leader>wvm :rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/vim-notes/', 'md')<CR>
@@ -210,7 +210,7 @@ nnoremap <Leader>wvl :rightbelow vertical new<CR>:call SaveToTempWithTimestamp('
 nnoremap <Leader>wvv :rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'vim')<CR>
 nnoremap <Leader>wvh :rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'html')<CR>
 nnoremap <Leader>wvo :rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'js', 'mongo')<CR>
-nnoremap <Leader>wvg :rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/gpt3/', 'md')<CR>
+nnoremap <Leader>wvg :rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/gpt/', 'md')<CR>
 
 xnoremap <Leader>wvx y:rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/vim-notes/', 'txt')<CR>:put<CR>
 xnoremap <Leader>wvm y:rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/vim-notes/', 'md')<CR>:put<CR>
@@ -223,13 +223,13 @@ xnoremap <Leader>wvl y:rightbelow vertical new<CR>:call SaveToTempWithTimestamp(
 xnoremap <Leader>wvv y:rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'vim')<CR>:put<CR>
 xnoremap <Leader>wvh y:rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'html')<CR>:put<CR>
 xnoremap <Leader>wvo y:rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/code/', 'js', 'mongo')<CR>:put<CR>
-xnoremap <Leader>wvg y:rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/gpt3/', 'md')<CR>:put<CR>
+xnoremap <Leader>wvg y:rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/gpt/', 'md')<CR>:put<CR>
 
 " Add an easier mapping since it's used often.
-nnoremap <Leader>cn :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/gpt3/', 'md')<CR>
-nnoremap <Leader>cl :rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/gpt3/', 'md')<CR>
-xnoremap <Leader>cn y:tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/gpt3/', 'md')<CR>:put<CR>
-xnoremap <Leader>cl y:rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/gpt3/', 'md')<CR>:put<CR>
+nnoremap <Leader>cn :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/gpt/', 'md')<CR>
+nnoremap <Leader>cl :rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/gpt/', 'md')<CR>
+xnoremap <Leader>cn y:tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/gpt/', 'md')<CR>:put<CR>
+xnoremap <Leader>cl y:rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/gpt/', 'md')<CR>:put<CR>
 
 "
 " Translate the keyboard middle line characters to numbers
