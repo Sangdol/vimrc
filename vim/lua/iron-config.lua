@@ -19,7 +19,7 @@ require("iron.core").setup {
         command = function(meta)
           local filename = vim.api.nvim_buf_get_name(meta.current_bufnr)
           if string.find(filename, "mongo.js") then
-            return {'mongosh'}
+            return {'mongosh', vim.env.MONGO_CONNECTION_STRING}
           else
             return {'node'}
           end
