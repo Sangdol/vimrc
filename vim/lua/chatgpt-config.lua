@@ -85,11 +85,18 @@ function ChatGPTImproveEnglish()
   local text = string.gsub(prompt, '{placeholder}', comment)
   local messages = {{role='user', content=text}}
 
-  local buf = vim.api.nvim_get_current_buf()
-  local line_count = vim.api.nvim_buf_line_count(buf)
+  local current_tab = vim.api.nvim_win_get_tabpage(0)
+  local current_win = vim.api.nvim_get_current_win()
 
   ChatGPTCall(messages, function(output)
-    vim.api.nvim_buf_set_lines(buf, line_count, line_count, false, vim.split(output, "\n"))
+    -- Restore the current tab and window.
+    vim.api.nvim_set_current_tabpage(current_tab)
+    vim.api.nvim_set_current_win(current_win)
+
+    -- Open the result in a new vertical buffer.
+    vim.cmd('vnew')
+    vim.fn.SaveToTempWithTimestamp('~/workbench/chatgpt/', 'md')
+    vim.fn.setline(1, vim.split(output, "\n"))
   end)
 end
 
