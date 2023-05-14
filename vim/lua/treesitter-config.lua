@@ -56,12 +56,23 @@ require'nvim-treesitter.configs'.setup {
 function _G.javascript_indent()
   local line = vim.fn.getline(vim.v.lnum)
   local prev_line = vim.fn.getline(vim.v.lnum - 1)
+
+  -- if `/` or `*` is the first non-whitespace character, indent the current line
   if line:match('^%s*[%*/]%s*') then
+
+    -- if the previous line has `*`, use the same indentation.
     if prev_line:match('^%s*%*%s*') then
       return vim.fn.indent(vim.v.lnum - 1)
     end
+
+    -- if the previous line has `/**`
     if prev_line:match('^%s*/%*%*%s*$') then
       return vim.fn.indent(vim.v.lnum - 1) + 1
+    end
+
+    -- if the previous line has `//`
+    if prev_line:match('^%s*//%s*$') then
+      return vim.fn.indent(vim.v.lnum - 1)
     end
   end
 
