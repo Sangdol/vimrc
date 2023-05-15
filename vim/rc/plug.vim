@@ -79,6 +79,8 @@ if has("mac")
   source $HOME/.vim/rc/devplugins.vim
 endif
 
+source $HOME/.vim/rc/custom-plugins.vim
+
 call plug#end()
 
 "}}}

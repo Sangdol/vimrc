@@ -3,13 +3,6 @@
 "
 
 "
-" Custom ChatGPT {{{1
-"
-lua require_config('chatgpt-config')
-
-"}}}
-
-"
 " copilot {{{1
 "
 Plug 'github/copilot.vim'
