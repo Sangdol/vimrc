@@ -731,7 +731,7 @@ Plug 'tpope/vim-rhubarb'
 " .: root
 nnoremap <leader>gbo :GBrowse<CR>
 nnoremap <leader>gb. :.GBrowse<CR>
-nnoremap <leader>gbm :GBrowse origin/master:%<CR>
+nnoremap <leader>gbm :.GBrowse origin/master:%<CR>
 nnoremap <leader>gbr :GBrowse .<CR>
 
 " gcp: [g]it [c]heckout [p]r
