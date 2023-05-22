@@ -7,14 +7,16 @@
 " https://unix.stackexchange.com/questions/8101/how-to-insert-the-result-of-a-command-into-the-text-in-vim/8296#8296
 "
 " Usage:
-"   :Tab ls
-"   :Tab mes vnew
+"   :Tab tabnew ls
+"   :Tab vnew mes vnew
+"   :Tab tabnew echo 'hello'
 function! Tab(...)
-  let cmd = a:1
-
   " Where to put the result?
   " E.g., tabnew, vnew, new, etc.
-  let wintype = get(a:, 2, 'tabnew')
+  let wintype = get(a:, 1)
+
+  " join from the second argument
+  let cmd = join(a:000[1:], ' ')
 
   redir => message
   silent execute cmd
@@ -29,15 +31,17 @@ function! Tab(...)
 endfunction
 
 command! -nargs=+ -complete=command Tab call Tab(<f-args>)
+command! -nargs=+ -complete=command Tabt call Tab('tabnew', <f-args>)
+command! -nargs=+ -complete=command Tabl call Tab('vnew', <f-args>)
 
 " message in new tab
-nnoremap <Leader>emt :Tab mes<CR>
+nnoremap <Leader>emt :Tabt mes<CR>
 
 " message in vertical split
-nnoremap <Leader>eml :Tab mes vnew<CR>
+nnoremap <Leader>eml :Tabl mes<CR>
 
 " last command in new tab
-nnoremap <Leader>emm :Tab <C-R>:<CR>
+nnoremap <Leader>emm :Tabt <C-R>:<CR>
 
 "
 " From https://vim.fandom.com/wiki/Delete_files_with_a_Vim_command#Comments
