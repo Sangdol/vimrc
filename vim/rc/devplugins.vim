@@ -229,7 +229,7 @@ autocmd FileType python,javascript,lua,fish,sh,zsh,typescript
 "
 " :PoetvActivate
 " :PoetvDeactivate
-Plug 'petobens/poet-v', { 'for': 'python' }
+Plug 'petobens/poet-v', { 'on': 'PoetvActivate' }
 
 " This requires `pip install doq`
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python' }
