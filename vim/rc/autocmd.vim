@@ -55,7 +55,7 @@ augroup autosave
         \|   update
         \| endif
 
-  autocmd FileType clojure,python let b:autosave_enabled = 0
+  autocmd FileType clojure let b:autosave_enabled = 0
   autocmd BufLeave,FocusLost *.clj,*.py update
 augroup END
 
