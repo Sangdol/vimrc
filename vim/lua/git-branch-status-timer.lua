@@ -50,14 +50,16 @@ local function safe_update_gstatus()
   if not success then
     print("An error occurred in update_gstatus: " .. message)
     _G.Gstatus_timer:stop()
+    _G.Gstatus_timer:close()
   end
 end
 
-if _G.Gstatus_timer == nil then
-  _G.Gstatus_timer = vim.loop.new_timer()
-else
+if _G.Gstatus_timer ~= nil then
   _G.Gstatus_timer:stop()
+  _G.Gstatus_timer:close()
 end
 
+print("Starting Gstatus timer")
+_G.Gstatus_timer = vim.loop.new_timer()
 _G.Gstatus_timer:start(0, 2000, vim.schedule_wrap(safe_update_gstatus))
 
