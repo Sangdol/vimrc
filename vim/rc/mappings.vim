@@ -363,6 +363,7 @@ vnoremap <leader>m* :call <SID>toggle_bullet()<CR>
 " Add markdown elements
 nnoremap <leader>m# m`^i### <esc>``4l
 nnoremap <leader>m> m`^i> <esc>``2l
+xnoremap <leader>m> :s/^/> /<CR>
 
 " line: * todo
 " mark: v
