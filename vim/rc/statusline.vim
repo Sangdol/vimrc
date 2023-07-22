@@ -6,12 +6,6 @@ function! CurrentDir()
   return fnamemodify(getcwd(), ':t')
 endfunction
 
-" Timer-based update
-lua require('git-branch-status-timer')
-func! GBStatus() abort
-  return luaeval("Gstatus:statusbar()") 
-endf
-
 function! StatuslineExpr()
 	let focused = g:statusline_winid == win_getid(winnr())
   let dir = focused ?
@@ -20,9 +14,6 @@ function! StatuslineExpr()
   let branch = "%{exists('*gitbranch#name') ? gitbranch#name() : ''}"
   let ro  = "%{&readonly ? 'RO ' : ''}"
   let ft  = "%{len(&filetype) ? &filetype . ' ' : ''}"
-
-  " This slows down startup time (around 300ms).
-  let pushpull = focused ? "%#GBStatusColor#%{GBStatus()}%#StatusLine#" : ""
   let signify = "%{sy#repo#get_stats_decorated()}"
 
   let spl = "%{&spell ? 'S ' : ' '}"
@@ -36,7 +27,7 @@ function! StatuslineExpr()
         \ coc .. 
         \ truncateline ..
         \ sep .. 
-        \ branch .. ' ' .. pushpull .. ' ' .. signify ..
+        \ branch .. ' ' .. signify ..
         \ pos .. ' '
 endfunction
 
