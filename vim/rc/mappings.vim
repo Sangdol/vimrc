@@ -201,7 +201,8 @@ autocmd TermLeave * call s:prettify_term_bufname()
 
 " ScrollViewDisable is needed due to the scrollview and nvim bug
 " Always store the session in the directory where the vim is started.
-nnoremap <leader>wqq :call <SID>revert_term_bufname()
+nnoremap <leader>wqq :exec 'Bdelete hidden' 
+      \ \| call <SID>revert_term_bufname()
       \ \| ScrollViewDisable
       \ \| exec 'mksession! ' .. $PWD .. '/' .. '.vimsession'
       \ \| wa
@@ -267,9 +268,6 @@ nnoremap <c-w>[ <C-w><C-]><C-w>T
 
 " Delete all
 nnoremap <silent> <Leader>dd ggdG
-
-" Yank all
-nnoremap <Leader>a :%y<CR>
 
 " Paste in a new line
 nnoremap <silent> <Leader>pp o<Esc>p
@@ -396,6 +394,38 @@ autocmd FileType markdown inoremap <buffer> <C-R> <C-R><C-O>
 "}}}
 
 "
+" Yank {{{1
+"
+
+" Yank all
+nnoremap <Leader>aa :%y<CR>
+
+" Copy file path to clipboard
+" https://vim.fandom.com/wiki/Get_the_name_of_the_current_file
+" full path
+nnoremap <Leader>a1 :call <SID>copy_path_to_clipboard("%:p")<CR>
+" full directory
+nnoremap <Leader>a2 :call <SID>copy_path_to_clipboard("%:p:h")<CR>
+" relative path https://stackoverflow.com/questions/4525261/getting-relative-paths-in-vim
+nnoremap <Leader>a3 :call <SID>copy_relative_path_to_clipboard()<CR>
+" filename
+nnoremap <Leader>a4 :call <SID>copy_path_to_clipboard("%:t")<CR>
+
+function! s:copy_relative_path_to_clipboard() abort
+  let path = fnamemodify(expand("%"), ":~:.")
+  let @+ = path
+  echom path .. ' is copied to clipboard.'
+endfunction
+
+function! s:copy_path_to_clipboard(modifiers) abort
+  let path = expand(a:modifiers)
+  let @+ = path
+  echom path .. ' is copied to clipboard.'
+endfunction
+
+"}}}
+
+"
 " Etc. {{{1
 "
 
@@ -430,29 +460,6 @@ nnoremap <silent> <Leader>vx :tabnew<CR>:e $VIMRUNTIME/filetype.vim<CR>
 
 " Toggle invisibles
 nnoremap <silent> <leader>i :set nolist!<CR>
-
-" Copy file path to clipboard
-" https://vim.fandom.com/wiki/Get_the_name_of_the_current_file
-" full path
-nnoremap <Leader>e1 :call <SID>copy_path_to_clipboard("%:p")<CR>
-" full directory
-nnoremap <Leader>e2 :call <SID>copy_path_to_clipboard("%:p:h")<CR>
-" relative path https://stackoverflow.com/questions/4525261/getting-relative-paths-in-vim
-nnoremap <Leader>e3 :call <SID>copy_relative_path_to_clipboard()<CR>
-" filename
-nnoremap <Leader>e4 :call <SID>copy_path_to_clipboard("%:t")<CR>
-
-function! s:copy_relative_path_to_clipboard() abort
-  let path = fnamemodify(expand("%"), ":~:.")
-  let @+ = path
-  echom path .. ' is copied to clipboard.'
-endfunction
-
-function! s:copy_path_to_clipboard(modifiers) abort
-  let path = expand(a:modifiers)
-  let @+ = path
-  echom path .. ' is copied to clipboard.'
-endfunction
 
 nnoremap <Leader>es :set spell!<CR>
 nnoremap <Leader>eo :syntax on<CR>
