@@ -59,6 +59,10 @@ function _G.javascript_indent()
 
   -- if `/` or `*` is the first non-whitespace character, indent the current line
   if line:match('^%s*[%*/]%s*') then
+    -- if the previous line has `//`
+    if prev_line:match('^%s*//.*$') then
+      return vim.fn.indent(vim.v.lnum - 1)
+    end
 
     -- if the previous line has `*`, use the same indentation.
     if prev_line:match('^%s*%*%s*') then
@@ -68,11 +72,6 @@ function _G.javascript_indent()
     -- if the previous line has `/**`
     if prev_line:match('^%s*/%*%*%s*$') then
       return vim.fn.indent(vim.v.lnum - 1) + 1
-    end
-
-    -- if the previous line has `//`
-    if prev_line:match('^%s*//%s*$') then
-      return vim.fn.indent(vim.v.lnum - 1)
     end
   end
 
