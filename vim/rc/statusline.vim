@@ -6,12 +6,21 @@ function! CurrentDir()
   return fnamemodify(getcwd(), ':t')
 endfunction
 
+" [Git(master)] => master
+function! CustomGitBranch()
+  let fugitive_status = FugitiveStatusline()
+  if fugitive_status == ''
+    return ''
+  endif
+  return matchstr(fugitive_status, '\[Git(\zs[^]]*\ze)]')
+endfunction
+
 function! StatuslineExpr()
 	let focused = g:statusline_winid == win_getid(winnr())
   let dir = focused ?
         \ "%#DirColor#%{CurrentDir()}%#StatusLine#" : "%#DirColorNC#%{CurrentDir()}%#StatusLineNC#"
   let filename = ' %f '
-  let branch = "%{exists('*gitbranch#name') ? gitbranch#name() : ''}"
+  let branch = "%{CustomGitBranch()}"
   let ro  = "%{&readonly ? 'RO ' : ''}"
   let ft  = "%{len(&filetype) ? &filetype . ' ' : ''}"
   let signify = "%{sy#repo#get_stats_decorated()}"

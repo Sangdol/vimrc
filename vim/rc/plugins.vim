@@ -741,9 +741,6 @@ nnoremap <leader>gch :!gh pr checkout<space>
 Plug 'stsewd/fzf-checkout.vim'
 nnoremap <leader>gco :GBranches checkout --locals<CR>
 
-" gitbranch to show branch name instead of [Git(master)] of fugitive
-Plug 'itchyny/vim-gitbranch'
-
 "}}}
 
 "
