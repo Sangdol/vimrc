@@ -114,7 +114,6 @@ nnoremap <silent> <leader>w4 :exec 'resize ' (&lines / 4)<CR>
 
 " Switch and close windows
 for i in range(1, 6)
-  execute 'nnoremap <silent> <leader>' . i . ' :' . i . 'wincmd w<CR>'
   execute 'nnoremap <silent> 'i . '<BS> :' . i . 'wincmd c<CR>'
 endfor
 
