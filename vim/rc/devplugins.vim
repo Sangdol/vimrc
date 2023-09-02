@@ -3,6 +3,15 @@
 "
 
 "
+" block.nvim {{{1
+"
+Plug 'HampusHauffman/block.nvim'
+
+lua require_config('block-config')
+
+"}}}
+
+"
 " copilot {{{1
 "
 Plug 'github/copilot.vim'
