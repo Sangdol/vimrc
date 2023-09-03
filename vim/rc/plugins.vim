@@ -933,6 +933,10 @@ function! RgCurrentDir()
   execute 'Rg'
 endfunction
 
+" Rg with hidden files
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep("rg --hidden --column --line-number --no-heading --color=always --smart-case -- ".shellescape(<q-args>), fzf#vim#with_preview(), <bang>0)
+
 nnoremap <silent> <leader>fd :call <SID>escape_abnormal_buf_and('call RgCurrentDir()')<CR>
 nnoremap <silent> <C-Space> :call <SID>escape_abnormal_buf_and('Rg')<CR>
 
