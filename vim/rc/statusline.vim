@@ -8,6 +8,10 @@ endfunction
 
 " [Git(master)] => master
 function! CustomGitBranch()
+  if !exists('*FugitiveStatusline')
+    return ''
+  endif
+
   let fugitive_status = FugitiveStatusline()
   if fugitive_status == ''
     return ''
