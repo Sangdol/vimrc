@@ -673,6 +673,12 @@ autocmd! FileType GV nnoremap <buffer> <silent> + :call <sid>gv_expand()<cr>
 nnoremap <leader>gv :GV<CR>
 xnoremap <leader>gv :GV<CR>
 
+" diffview 
+Plug 'sindrets/diffview.nvim'
+
+nnoremap <leader>gdo :DiffviewOpen<CR>
+nnoremap <leader>gdh :DiffviewFileHistory<CR>
+
 " Git messenger
 "
 " q	Close the popup window
@@ -697,8 +703,6 @@ Plug 'tpope/vim-fugitive'
 nnoremap <leader>gg :wa \| :Git add . \| :tab Git commit -v<CR>
 nnoremap <leader>gk :w \| :Gw \| :tab Git commit -v<CR>
 nnoremap <leader>gx :Git<CR>
-nnoremap <leader>gd :tab Git diff<CR>
-nnoremap <leader>gid :tab Git diff --cached<CR>
 nnoremap <leader>g- :Git switch -<CR>
 nnoremap <leader>gp<leader> :Git push<CR>
 nnoremap <leader>gpp :Git push -u origin HEAD<CR>
