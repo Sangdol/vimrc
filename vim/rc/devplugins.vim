@@ -2,6 +2,7 @@
 " Plugins used for coding 
 "
 
+
 "
 " block.nvim {{{1
 "
@@ -155,7 +156,8 @@ let g:coc_global_extensions = [
     \'coc-highlight',
     \'coc-calc',
     \'coc-fish',
-    \'coc-prettier'
+    \'coc-prettier',
+    \'coc-symbol-line'
     \]
 
 " COC Formatter 
@@ -169,6 +171,9 @@ augroup end
 nnoremap <leader>sx
       \ :let g:coc_format_enabled = !g:coc_format_enabled<CR>
       \ :echo 'coc-formatter is ' . (g:coc_format_enabled ? 'enabled' : 'disabled')<CR>
+
+" for coc-symbol-line
+lua require_config('winbar-config')
 
 "}}}
 
