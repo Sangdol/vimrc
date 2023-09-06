@@ -233,10 +233,10 @@ xnoremap <Leader>wvo y:rightbelow vertical new<CR>:call SaveToTempWithTimestamp(
 xnoremap <Leader>wvg y:rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/gpt/', 'md')<CR>:put<CR>
 
 " Add an easier mapping since it's used often.
-nnoremap <Leader>cn :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/gpt/', 'md')<CR>
-nnoremap <Leader>cl :rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/gpt/', 'md')<CR>
-xnoremap <Leader>cn y:tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/gpt/', 'md')<CR>:put<CR>
-xnoremap <Leader>cl y:rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/gpt/', 'md')<CR>:put<CR>
+nnoremap <Leader>cn :tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/md/', 'md')<CR>
+nnoremap <Leader>cl :rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/md/', 'md')<CR>
+xnoremap <Leader>cn y:tabnew<CR>:call SaveToTempWithTimestamp('~/workbench/md/', 'md')<CR>:put<CR>
+xnoremap <Leader>cl y:rightbelow vertical new<CR>:call SaveToTempWithTimestamp('~/workbench/md/', 'md')<CR>:put<CR>
 
 "
 " Translate the keyboard middle line characters to numbers
