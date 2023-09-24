@@ -221,9 +221,9 @@ nnoremap <Plug>IncreaseWindowWidth 3<C-w>>
   \ :call repeat#set("\<Plug>IncreaseWindowWidth")<CR>
 
 " Insert mode scroll
-inoremap ;zt <ESC>zti
-inoremap ;zz <ESC>zzi
-inoremap ;z- <ESC>z-i
+inoremap ;zt <ESC>zta
+inoremap ;zz <ESC>zza
+inoremap ;z- <ESC>z-a
 
 " Mistake proofing
 command! -nargs=* W w <args>

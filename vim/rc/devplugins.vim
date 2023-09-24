@@ -2,6 +2,12 @@
 " Plugins used for coding 
 "
 
+"
+" lsp-lens {{{1
+"
+Plug 'VidocqH/lsp-lens.nvim'
+
+lua require_config('lsp-lens-config')
 
 "
 " block.nvim {{{1
