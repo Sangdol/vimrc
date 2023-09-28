@@ -728,6 +728,10 @@ autocmd FileType gitcommit nnoremap <buffer> <leader>gk :echo "Noooo!"<CR>
 " GitHub extension for fugitive
 Plug 'tpope/vim-rhubarb'
 
+" For some reason, netrw stopped working for fugitive.
+" Maybe it's an issue of nvim 0.9.2.
+command! -nargs=1 Browse :silent execute "!open " . shellescape(<q-args>, 1)
+
 " Open in Browser
 " o: open (current)
 " c: current line
