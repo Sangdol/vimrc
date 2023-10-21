@@ -76,7 +76,12 @@ source $HOME/.vim/rc/plugins.vim
 
 if has("mac")
   " things not needed in servers
-  source $HOME/.vim/rc/devplugins.vim
+
+  if exists("g:vscode")
+    source $HOME/.vim/rc/vscode.vim
+  else
+    source $HOME/.vim/rc/devplugins.vim
+  endif
 endif
 
 source $HOME/.vim/rc/custom-plugins.vim
