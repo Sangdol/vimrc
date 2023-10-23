@@ -13,6 +13,9 @@ nmap <silent> [e <Cmd>call VSCodeNotify('editor.action.marker.prev')<CR>
 nmap <C-q> <C-w>w
 imap <C-q> <ESC><C-w>w
 
+nmap <leader>a1 <Cmd>call VSCodeNotify('copyFilePath')<CR>
+nmap <leader>a3 <Cmd>call VSCodeNotify('copyRelativeFilePath')<CR>
+
 "
 " Git
 "
