@@ -27,6 +27,9 @@ augroup custom
 
   " lua-hightlight / flash on yank
   autocmd TextYankPost * silent! lua vim.highlight.on_yank({higroup="SangYankFlash", timeout=200})
+
+  " Prevent from editing in readonly mode
+  autocmd BufEnter * if &readonly | set nomodifiable | endif
 augroup END
 
 augroup custom_terminal
