@@ -700,6 +700,7 @@ nnoremap <leader>gm :GitMessenger<CR>
 "  Rebase: r?
 Plug 'tpope/vim-fugitive'
 
+nnoremap <leader>gcc :tab Git commit -v<CR>
 nnoremap <leader>gg :wa \| :Git add . \| :tab Git commit -v<CR>
 nnoremap <leader>gk :w \| :Gw \| :tab Git commit -v<CR>
 nnoremap <leader>gx :Git<CR>
