@@ -42,13 +42,11 @@ end
 -- Main function for calling ChatGPT API.
 --
 function ChatGPTCall(messages, callback)
-  print(' == Asking ChatGPT.. ==')
-
   -- Current filename without directory and extension
   local current_filename = vim.fn.expand('%:t:r')
 
   local data = {
-    model = 'gpt-4',
+    model = 'gpt-3.5-turbo-1106',
     messages = messages,
   }
   local url = "https://api.openai.com/v1/chat/completions"
@@ -69,35 +67,8 @@ function ChatGPTCall(messages, callback)
     callback(output)
     log_raw_response(current_filename, #messages, res)
   end)
-end
 
---
--- Call ChatGPT API for improving English of code comments.
---
-function ChatGPTImproveEnglish()
-  local filetype = vim.bo.filetype
-  local prompt = "Provide a suggestion to improve the grammar and sentence structure of the following message. " ..
-        "The provided text can be a code comment. \n" ..
-        "```" .. filetype .. "\n" ..
-        "{placeholder}\n" ..
-        "```"
-  local comment = vim.fn.GetVisualSelection()
-  local text = string.gsub(prompt, '{placeholder}', comment)
-  local messages = {{role='user', content=text}}
-
-  local current_tab = vim.api.nvim_win_get_tabpage(0)
-  local current_win = vim.api.nvim_get_current_win()
-
-  ChatGPTCall(messages, function(output)
-    -- Restore the current tab and window.
-    vim.api.nvim_set_current_tabpage(current_tab)
-    vim.api.nvim_set_current_win(current_win)
-
-    -- Open the result in a new vertical buffer.
-    vim.cmd('vnew')
-    vim.fn.SaveToTempWithTimestamp('~/workbench/chatgpt/', 'md')
-    vim.fn.setline(1, vim.split(output, "\n"))
-  end)
+  print(' == Asking ChatGPT using model ' .. data.model .. ' == ')
 end
 
 --
@@ -167,5 +138,4 @@ function ChatGPT()
 end
 
 vim.keymap.set('n', '<leader>cc', ':lua ChatGPT()<CR>', {noremap = true, silent = true})
-vim.keymap.set('x', '<leader>ci', ':lua ChatGPTImproveEnglish()<CR>', {noremap = true, silent = true})
 vim.keymap.set('x', '<leader>ca', ':lua ChatGPTAsk()<CR>', {noremap = true, silent = true})
