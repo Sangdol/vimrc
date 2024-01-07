@@ -115,6 +115,9 @@ set jumpoptions+=stack
 " (default is 4000ms = 4s)
 set updatetime=300
 
+" Auto update file if changed outside vim
+set autoread
+
 "
 " Style
 "
