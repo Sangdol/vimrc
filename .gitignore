@@ -16,4 +16,4 @@ vim/spell/*spl
 
 # Etc.
 vim/backup/*~
-vim/swap/*.sw*
+vim/swap/*.s*

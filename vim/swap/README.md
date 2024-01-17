@@ -1,1 +1,1 @@
-A directory for swap files. `*.sw*` files will be ignored.
+A directory for swap files. `*.s*` files will be ignored.
