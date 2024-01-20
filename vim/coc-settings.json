@@ -1,5 +1,6 @@
 // Schema https://github.com/neoclide/coc.nvim/blob/master/data/schema.json
 {
+  "diagnostic.virtualText": true,
   "diagnostic.hintSign": ".",
   "coc.preferences.formatOnSaveFiletypes": ["clojure"],
   "coc.source.emoji.triggerCharacters": ["|"],
