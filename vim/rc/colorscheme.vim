@@ -7,6 +7,15 @@ function! s:highlights() abort
   " https://stackoverflow.com/questions/37712730/set-vim-background-transparent
   highlight Normal guibg=NONE ctermbg=NONE
 
+  " Custom colors for markdown
+  highlight markdownH1 guifg=#e4b854 gui=bold
+  highlight markdownH2 guifg=#701516 gui=bold
+  highlight markdownH3 guifg=#6d8086
+  highlight markdownHeadingRule guifg=#8094b4
+  highlight markdownListMarker guifg=#b30b00
+  highlight mkdInlineURL guifg=#3d6117
+  highlight markdownLinkText guifg=#614100
+
   " Etc.
   highlight SangYankFlash guifg=#cc241d guibg=#282828
 
