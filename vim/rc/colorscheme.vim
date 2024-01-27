@@ -16,6 +16,21 @@ function! s:highlights() abort
   highlight mkdInlineURL guifg=#3d6117
   highlight markdownLinkText guifg=#614100
 
+  " Statusline
+  let statuslineBg = "#484347"
+  let statuslineFg = "#717171"
+  let statuslineNcBg = "#383337"
+  let statuslineNcFg = "#515151"
+  let dirColorFg = "#b9ecec"
+  let dirColorNcFg = "#cccccc"
+  let gbStatusColorFg = "#ffa61a"
+
+  execute 'highlight StatusLine guibg=' . statuslineBg . ' guifg=' . statuslineFg . ' gui=None'
+  execute 'highlight StatusLineNC guibg=' . statuslineNcBg . ' guifg=' . statuslineNcFg . ' gui=None'
+  execute 'highlight DirColor guibg=' . statuslineBg . ' guifg=' . dirColorFg . ' gui=None'
+  execute 'highlight DirColorNC guibg=' . statuslineNcBg . ' guifg=' . dirColorNcFg . ' gui=None'
+  execute 'highlight GBStatusColor guibg=' . statuslineBg . ' guifg=' . gbStatusColorFg . ' gui=None'
+
   " Etc.
   highlight SangYankFlash guifg=#cc241d guibg=#282828
 
