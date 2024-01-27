@@ -5,7 +5,7 @@
 function! s:highlights() abort
   " To have the same opacity as a terminal
   " https://stackoverflow.com/questions/37712730/set-vim-background-transparent
-  highlight Normal guibg=NONE ctermbg=NONE
+  highlight Normal guibg=NONE ctermbg=NONE guifg=#bbbbbb
 
   " Custom colors for markdown
   highlight markdownH1 guifg=#e4b854 gui=bold
