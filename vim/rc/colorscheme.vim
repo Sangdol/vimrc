@@ -7,6 +7,15 @@ function! s:highlights() abort
   " https://stackoverflow.com/questions/37712730/set-vim-background-transparent
   highlight Normal guibg=NONE ctermbg=NONE guifg=#bbbbbb
 
+  " To make unused variables less noticeable
+  " :h coc-highlights
+  "
+  " Default:
+  "   CocUnusedHighlight -> CocFadeOut -> Conceal
+  "   highlight Conceal ctermfg=7 ctermbg=242 guifg=LightGrey guibg=Black
+  highlight CocFadeOut ctermfg=7 ctermbg=242 guifg=Black guibg=Black
+  highlight CocHintSign guifg=gray
+
   " Custom colors for markdown
   highlight markdownH1 guifg=#e4b854 gui=bold
   highlight markdownH2 guifg=#701516 gui=bold
@@ -30,6 +39,10 @@ function! s:highlights() abort
   execute 'highlight DirColor guibg=' . statuslineBg . ' guifg=' . dirColorFg . ' gui=None'
   execute 'highlight DirColorNC guibg=' . statuslineNcBg . ' guifg=' . dirColorNcFg . ' gui=None'
   execute 'highlight GBStatusColor guibg=' . statuslineBg . ' guifg=' . gbStatusColorFg . ' gui=None'
+
+  " Fold
+  " None guibg to avoid visual clutters when a terminal is transparent.
+  highlight Folded guifg=#cc99cc guibg=None
 
   " Etc.
   highlight SangYankFlash guifg=#cc241d guibg=#282828
