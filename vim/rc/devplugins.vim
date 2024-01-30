@@ -148,13 +148,15 @@ autocmd FileType typescript,python,lua,javascript,clojure,vim
 
 " coc-fish is only for completion
 " https://github.com/oncomouse/coc-fish
+"
+" Excluded
+" - 'coc-vimlsp' takes up more than 1 GB memory
 let g:coc_global_extensions = [
     \'coc-conjure',
     \'coc-json',
     \'coc-lua',
     \'coc-syntax',
     \'coc-snippets',
-    \'coc-vimlsp',
     \'coc-word',
     \'coc-pyright',
     \'coc-emoji',
