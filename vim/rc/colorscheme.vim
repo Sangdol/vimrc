@@ -42,6 +42,10 @@ function! s:dark_colorscheme() abort
   let dirColorNcFg = "#cccccc"
   let gbStatusColorFg = "#ffa61a"
 
+  " Cursorline
+  highlight CursorLineNr guifg=#81939b
+  highlight CursorLine guibg=#181818
+
   execute 'highlight StatusLine guibg=' . statuslineBg . ' guifg=' . statuslineFg . ' gui=None'
   execute 'highlight StatusLineNC guibg=' . statuslineNcBg . ' guifg=' . statuslineNcFg . ' gui=None'
   execute 'highlight DirColor guibg=' . statuslineBg . ' guifg=' . dirColorFg . ' gui=None'
