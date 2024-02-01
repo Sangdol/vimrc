@@ -10,6 +10,15 @@ lua << EOF
   end
 EOF
 
+" Project local 
+" This should come colorscheme.vim to be called after colorscheme is set.
+function! RunProjectLocalVimrc()
+  let s:project_local_vimrc = '.project_local.vim'
+  if filereadable(expand(s:project_local_vimrc))
+    execute 'source ' .. s:project_local_vimrc
+  endif
+endfunction
+
 source $HOME/.vim/rc/setoptions.vim
 source $HOME/.vim/rc/statusline.vim
 source $HOME/.vim/rc/utility.vim
@@ -37,13 +46,5 @@ let s:device_local_vimrc = '$HOME/.vim/rc/device_local.vim'
 if filereadable(expand(s:device_local_vimrc))
   execute 'source ' .. s:device_local_vimrc
 endif
-
-" Project local
-function! RunProjectLocalVimrc()
-  let s:project_local_vimrc = '.project_local.vim'
-  if filereadable(expand(s:project_local_vimrc))
-    execute 'source ' .. s:project_local_vimrc
-  endif
-endfunction
 
 call RunProjectLocalVimrc()
