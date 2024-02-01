@@ -73,6 +73,9 @@ function! s:highlights() abort
   elseif match(tolower(current_colorscheme), 'light') >= 0
     call s:light_colorscheme()
   endif
+
+  " Apply project local vimrc colors
+  call RunProjectLocalVimrc()
 endfunction
 
 " Why augroup? https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f
