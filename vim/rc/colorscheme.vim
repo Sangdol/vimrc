@@ -88,5 +88,5 @@ augroup END
 " use colorscheme installed by Plug.
 colorscheme github_dark_default
 
-nnoremap <silent> <leader>ed :colorscheme github_dark_default<CR>
-nnoremap <silent> <leader>el :colorscheme github_light_default<CR>
+nnoremap <silent> <leader>e[ :colorscheme github_dark_default<CR>
+nnoremap <silent> <leader>e] :colorscheme github_light_default<CR>
