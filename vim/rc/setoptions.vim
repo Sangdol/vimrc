@@ -56,7 +56,10 @@ set undolevels=1000
 " You should make the directories
 set backup
 set backupdir=~/.vim/backup
-set directory=~/.vim/swap
+
+" 'set autoread' should be enough.
+set noswapfile
+"set directory=~/.vim/swap
 
 " encoding and line ending settings
 set encoding=utf8
