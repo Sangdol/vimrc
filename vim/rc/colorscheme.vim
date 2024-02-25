@@ -84,9 +84,53 @@ augroup CustomColors
   autocmd ColorScheme * call s:highlights()
 augroup END
 
+function! EnableDarkColorscheme() abort
+  colorscheme github_dark_default
+endfunction
+
+function! EnableLightColorscheme() abort
+  colorscheme github_light_default
+endfunction
+
 " This has to come after `plug#end()` to be able to
 " use colorscheme installed by Plug.
-colorscheme github_dark_default
+call EnableDarkColorscheme()
 
-nnoremap <silent> <leader>e[ :colorscheme github_dark_default<CR>
-nnoremap <silent> <leader>e] :colorscheme github_light_default<CR>
+nnoremap <silent> <leader>e[ :call EnableDarkColorscheme()<CR>
+nnoremap <silent> <leader>e] :call EnableLightColorscheme()<CR>
+
+"
+" Auto switch colorscheme based on the current style
+" https://miro.com/app/board/uXjVNcjz7WM=/?moveToWidget=3458764579352079522&cot=14
+"
+
+" Function to read the style from the file
+function! ReadStyle()
+  let l:style_file = $HOME . '/.iterm_vim_theme'
+  if filereadable(l:style_file)
+    let l:style = readfile(l:style_file)[0]
+    return l:style
+  else
+    return ''
+  endif
+endfunction
+
+" Autocommand that triggers on VimEnter and FocusGained events
+augroup ColorSchemeSwitch
+  autocmd!
+  autocmd VimEnter,FocusGained * call s:SwitchColorScheme()
+augroup END
+
+" Function to switch colorscheme based on the style
+function! s:SwitchColorScheme()
+  let l:style = ReadStyle()
+  if l:style == ''
+    return
+  endif
+
+  if l:style == 'dark'
+    call EnableDarkColorscheme()
+  elseif l:style == 'light'
+    call EnableLightColorscheme()
+  endif
+endfunction
