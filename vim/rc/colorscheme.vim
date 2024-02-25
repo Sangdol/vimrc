@@ -86,10 +86,14 @@ augroup END
 
 function! EnableDarkColorscheme() abort
   colorscheme github_dark_default
+  " Need to manually call s:highlights() to apply the colorscheme
+  " since autocmd doesn't propagate the colorscheme change.
+  call s:highlights()
 endfunction
 
 function! EnableLightColorscheme() abort
   colorscheme github_light_default
+  call s:highlights()
 endfunction
 
 " This has to come after `plug#end()` to be able to
