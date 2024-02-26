@@ -86,14 +86,10 @@ augroup END
 
 function! EnableDarkColorscheme() abort
   colorscheme github_dark_default
-  " Need to manually call s:highlights() to apply the colorscheme
-  " since autocmd doesn't propagate the colorscheme change.
-  call s:highlights()
 endfunction
 
 function! EnableLightColorscheme() abort
   colorscheme github_light_default
-  call s:highlights()
 endfunction
 
 " This has to come after `plug#end()` to be able to
@@ -123,6 +119,9 @@ endfunction
 augroup ColorSchemeSwitch
   autocmd!
   autocmd VimEnter,FocusGained * call s:SwitchColorScheme()
+  " Need to manually trigger the colorscheme autocmd
+  " https://vimdoc.sourceforge.net/htmldoc/autocmd.html
+  autocmd VimEnter,FocusGained * doau ColorScheme 
 augroup END
 
 " Function to switch colorscheme based on the style
