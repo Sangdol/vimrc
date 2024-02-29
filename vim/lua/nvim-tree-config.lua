@@ -72,6 +72,9 @@ end
 
 require'nvim-tree'.setup {
   on_attach = on_attach,
+  git = {
+    enable = false
+  },
   renderer = {
     highlight_git = true,
     indent_markers = {
