@@ -11,7 +11,7 @@ lua << EOF
 EOF
 
 " Project local 
-" This should come colorscheme.vim to be called after colorscheme is set.
+" This should run after colorscheme.vim to override the colorscheme.
 function! RunProjectLocalVimrc()
   let s:project_local_vimrc = '.project_local.vim'
   if filereadable(expand(s:project_local_vimrc))
