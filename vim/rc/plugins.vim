@@ -571,8 +571,8 @@ lua require_config('nvim-tree-config')
 "
 Plug 'mileszs/ack.vim'  " :h ack
 
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
+if executable('rg')
+  let g:ackprg = 'rg --vimgrep'
 endif
 
 "}}}
