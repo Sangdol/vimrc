@@ -23,6 +23,19 @@ lua require_config('block-config')
 "
 Plug 'github/copilot.vim'
 
+function! ToggleCopilot()
+    if exists("g:copilot_enabled") && g:copilot_enabled
+        Copilot disable
+        let g:copilot_enabled = 0
+        echo "Copilot disabled"
+    else
+        Copilot enable
+        let g:copilot_enabled = 1
+        echo "Copilot enabled"
+    endif
+endfunction
+
+nnoremap <leader>co :call ToggleCopilot()<CR>
 nnoremap <leader>ece :Copilot enable<cr>
 nnoremap <leader>ecd :Copilot disable<cr>
 nnoremap <leader>ecs :Copilot status<cr>
