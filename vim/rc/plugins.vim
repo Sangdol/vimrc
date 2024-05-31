@@ -741,6 +741,7 @@ command! -nargs=1 Browse :silent execute "!open " . shellescape(<q-args>, 1)
 nnoremap <leader>gbo :GBrowse<CR>
 nnoremap <leader>gb. :.GBrowse<CR>
 nnoremap <leader>gbm :.GBrowse origin/master:%<CR>
+nnoremap <leader>gbn :.GBrowse origin/main:%<CR>
 nnoremap <leader>gbr :GBrowse .<CR>
 
 " gcp: [g]it [c]heckout [p]r
