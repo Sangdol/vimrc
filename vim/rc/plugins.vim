@@ -876,7 +876,7 @@ let g:fzf_action = {
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 
-let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.9, 'relative': v:false } }
+let g:fzf_layout = { 'window': { 'width': 0.70, 'height': 0.9, 'relative': v:false } }
 
 " Move out of NERDTree, Voomtree, etc. buffers.
 " This doesn't work if the second buffer is not a normal buffer.
