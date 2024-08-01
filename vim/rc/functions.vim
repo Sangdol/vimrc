@@ -318,15 +318,14 @@ endfunction
 "
 " https://superuser.com/questions/555011/vim-close-all-tabs-to-the-right
 "
-function! TabCloseRight(bang)
+function! CloseRightTabs(bang)
     let cur=tabpagenr()
     while cur < tabpagenr('$')
         exe 'tabclose' . a:bang . ' ' . (cur + 1)
     endwhile
 endfunction
 
-command! -bang Tabcloseright call TabCloseRight('<bang>')
-nnoremap <Leader>tr :Tabcloseright<CR>
+command! -bang CloseRightTabs call CloseRightTabs('<bang>')
 
 "
 " Literal search

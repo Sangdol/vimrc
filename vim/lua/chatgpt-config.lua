@@ -46,7 +46,7 @@ function ChatGPTCall(messages, callback)
   local current_filename = vim.fn.expand('%:t:r')
 
   local data = {
-    model = 'gpt-3.5-turbo-1106',
+    model = 'gpt-4o',
     messages = messages,
   }
   local url = "https://api.openai.com/v1/chat/completions"
