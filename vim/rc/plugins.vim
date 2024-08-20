@@ -622,6 +622,11 @@ endfunction
 command!  -nargs=0  EnableMarkdownFold call EnableMarkdownFold()
 nnoremap <silent> <Leader>mf :EnableMarkdownFold<CR>
 
+" Why are these not set by default?
+" https://github.com/nordtheme/vim/issues/84#issuecomment-351954329
+hi! link markdownItalic Italic
+hi! link markdownBold Bold
+
 "}}}
 
 "
