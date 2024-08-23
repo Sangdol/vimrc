@@ -66,6 +66,9 @@ autocmd FileType markdown let b:move_auto_indent = 0
 "
 " ccc (create color code) {{{1
 "
+" Usage: 
+" - Show highlight: `:Tabt hi` => `:CccHighlighterEnable`
+"
 Plug 'uga-rosa/ccc.nvim'
 
 lua add_callback(function() require('ccc').setup() end)
