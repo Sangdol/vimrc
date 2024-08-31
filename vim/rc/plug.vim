@@ -31,6 +31,12 @@ nnoremap <leader>pc :PlugClean<cr>
 lua << EOF
   plugin_callbacks = {}
 
+  -- Delete the module from the loaded table and reload it.
+  function load(file)
+    package.loaded[file] = nil
+    require(file)
+  end
+
   function add_callback(callback)
     table.insert(plugin_callbacks, callback)
   end

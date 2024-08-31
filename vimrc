@@ -2,14 +2,6 @@
 " Sang's Vim Configuration
 "
 
-lua << EOF
-  -- Delete the module from the loaded table and reload it.
-  function load(file)
-    package.loaded[file] = nil
-    require(file)
-  end
-EOF
-
 " Project local 
 " This should run after colorscheme.vim to override the colorscheme.
 function! RunProjectLocalVimrc()
