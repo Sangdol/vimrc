@@ -28,6 +28,13 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = {''},
   },
 
+  indent = {
+    enable = true,
+    disable = {
+      "markdown"
+    },
+  },
+
   -- For textobjects
   textobjects = {
     select = {
