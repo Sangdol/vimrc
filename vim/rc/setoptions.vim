@@ -31,10 +31,6 @@ set autoindent
 autocmd FileType python setlocal shiftwidth=4 softtabstop=4 tabstop=4
 autocmd FileType java setlocal shiftwidth=4 softtabstop=4 tabstop=4
 
-" Override the default tab settings for markdown
-" :4verbose set tabstop?
-autocmd FileType markdown setlocal shiftwidth=2 softtabstop=2 tabstop=2
-
 " Command-line completion
 set wildmenu
 set wildmode=list:longest,full

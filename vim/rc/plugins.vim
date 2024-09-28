@@ -611,6 +611,10 @@ let g:rooter_cd_cmd = 'lcd'
 set nofoldenable " to not fold when opening a file https://stackoverflow.com/questions/8316139/how-to-set-the-default-to-unfolded-when-you-open-a-file
 set conceallevel=2 " to conceal _, * used for italic or bold
 
+" Disable default tabstop
+" https://neovim.io/doc/user/filetype.html#ft-markdown-plugin
+let g:markdown_recommended_style=0
+
 " delete most of them as it slows down file loading - ['coffee', 'css', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sql', 'xml', 'java', 'python', 'sh', 'html', 'clojure', 'yaml', 'applescript', 'go', 'vim', 'awk', 'groovy']
 let g:markdown_fenced_languages = ['js=javascript', 'ts=typescript', 'javascript', 'typescript', 'bash', 'sh', 'python', 'clojure', 'log', 'vim', 'sql', 'lua']
 
