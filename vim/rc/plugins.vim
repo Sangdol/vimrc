@@ -199,7 +199,7 @@ Plug 'svermeulen/vim-subversive'
 
 nmap cp <plug>(SubversiveSubstitute)
 nmap cc <plug>(SubversiveSubstituteLine)
-nmap cC <plug>(SubversiveSubstituteToEndOfLine)
+nmap cL <plug>(SubversiveSubstituteToEndOfLine)
 nmap cP ggVG<plug>(SubversiveSubstitute)
 xmap cc <plug>(SubversiveSubstitute)
 xmap p <plug>(SubversiveSubstitute)
