@@ -106,7 +106,7 @@ nnoremap <silent> <leader>e] :call EnableLightColorscheme()<CR>
 
 " Function to read the style from the file
 function! ReadStyle()
-  let l:style_file = $HOME . '/.iterm_vim_theme'
+  let l:style_file = $HOME . '/.sang_storage/theme'
   if filereadable(l:style_file)
     let l:style = readfile(l:style_file)[0]
     return l:style
