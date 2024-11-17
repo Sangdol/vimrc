@@ -188,7 +188,7 @@ Plug 'mechatroner/rainbow_csv'
 "
 Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 
-vnoremap <leader>ec :OSCYankVisual<CR>
+vnoremap <leader>ey :OSCYankVisual<CR>
 
 "}}}
 
