@@ -15,6 +15,10 @@ function! s:common_colorscheme() abort
   " None guibg to avoid visual clutters when a terminal is transparent.
   highlight Folded guifg=#cc99cc guibg=None
 
+  " Tabline
+  highlight TabLine guibg=None guifg=#040404
+  highlight TabLineSel guibg=None guifg=#cccccc
+
   " Etc.
   highlight SangYankFlash guifg=#cc241d guibg=#282828
 endfunction
