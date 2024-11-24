@@ -443,6 +443,8 @@ Plug 'Sangdol/mintabline.vim'
 
 let g:mintabline_tab_max_chars = 20
 
+command! -nargs=* Tablabel let t:tab_label=<q-args> | redrawtabline
+
 "}}}
 
 "
