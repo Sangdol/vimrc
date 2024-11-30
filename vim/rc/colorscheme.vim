@@ -15,10 +15,6 @@ function! s:common_colorscheme() abort
   " None guibg to avoid visual clutters when a terminal is transparent.
   highlight Folded guifg=#cc99cc guibg=None
 
-  " Tabline
-  highlight TabLine guibg=None guifg=#040404
-  highlight TabLineSel guibg=None guifg=#cccccc
-
   " Etc.
   highlight SangYankFlash guifg=#cc241d guibg=#282828
 endfunction
@@ -50,6 +46,10 @@ function! s:dark_colorscheme() abort
   highlight CursorLineNr guifg=#81939b
   highlight CursorLine guibg=#181818
 
+  " Tabline
+  highlight TabLine guibg=None guifg=#040404
+  highlight TabLineSel guibg=None guifg=#cccccc
+
   execute 'highlight StatusLine guibg=' . statuslineBg . ' guifg=' . statuslineFg . ' gui=None'
   execute 'highlight StatusLineNC guibg=' . statuslineNcBg . ' guifg=' . statuslineNcFg . ' gui=None'
   execute 'highlight DirColor guibg=' . statuslineBg . ' guifg=' . dirColorFg . ' gui=None'
@@ -61,6 +61,10 @@ function! s:light_colorscheme() abort
   " To have the same opacity as a terminal
   " https://stackoverflow.com/questions/37712730/set-vim-background-transparent
   highlight Normal guibg=NONE ctermbg=NONE 
+
+  " Tabline
+  highlight TabLineSel guibg=None guifg=#040404
+  highlight TabLine guibg=None guifg=#cccccc
 endfunction
 
 function! s:highlights() abort
