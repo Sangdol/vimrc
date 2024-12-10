@@ -402,7 +402,8 @@ command -bang -nargs=? MkSession
 Plug 'folke/which-key.nvim'
 
 " Popup delay
-set timeoutlen=200
+" This also affects the key sequence delay.
+set timeoutlen=1000
 
 function! s:whichkey_highlights() abort
   highlight WhichKeyFloat guibg=gray10
