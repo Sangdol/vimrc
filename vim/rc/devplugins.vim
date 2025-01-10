@@ -151,7 +151,7 @@ Plug 'antoinemadec/coc-fzf'
 
 nnoremap <leader>s! :CocRestart<CR>
 
-autocmd FileType typescript,python,lua,javascript,clojure,vim
+autocmd FileType typescript,typescriptreact,python,lua,javascript,clojure,vim
       \ nnoremap <buffer><silent> <leader>so :CocFzfList outline<CR>
       \| nnoremap <buffer><silent> <leader>vo :CocFzfList outline<CR>
       \| nnoremap <buffer><silent> <leader>sg :CocFzfList diagnostics<CR>
