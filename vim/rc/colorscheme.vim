@@ -35,6 +35,7 @@ function! s:dark_colorscheme() abort
   " To have the same opacity as a terminal
   " https://stackoverflow.com/questions/37712730/set-vim-background-transparent
   highlight Normal guibg=NONE ctermbg=NONE guifg=#bbbbbb
+  highlight NormalNC guifg=#bbbbbb
 
   " Statusline
   let statuslineBg = "#484347"
