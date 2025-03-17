@@ -124,6 +124,11 @@ for i in range(1, 6)
   execute 'nnoremap <silent> 'i . '<BS> :' . i . 'wincmd c<CR>'
 endfor
 
+" Use <M-1> to <M-6> to switch to the first to the sixth window
+for i in range(1, 6)
+  execute 'nnoremap <silent> <M-' . i . '> :' . i . 'wincmd w<CR>'
+endfor
+
 " Go to the last window
 nnoremap <Leader><Leader> :execute FocusableWinCount() . 'wincmd w'<CR>
 
