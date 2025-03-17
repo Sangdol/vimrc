@@ -299,6 +299,9 @@ nnoremap <Leader>tt :tabnew \| terminal<CR>
 " Avoid adding gibberish: [32;2u
 tnoremap <S-Space> <Space>
 
+" To use undo in the terminal
+tnoremap <[47;5u> <C-_>
+
 " Korean input
 tnoremap <C-ㅁ> <C-a>
 tnoremap <C-ㅠ> <C-b>
