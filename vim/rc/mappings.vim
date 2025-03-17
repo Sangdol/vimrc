@@ -80,6 +80,12 @@ for i in range(1, 8)
   exec 'nnoremap ' .. i .. ', ' .. i .. 'gt'
 endfor
 
+" Numbering with <C-n>
+for i in range(1, 8)
+  exec 'nnoremap <C-' .. i .. '> ' .. i .. 'gt'
+endfor
+nnoremap <C-9> :tablast<CR>
+
 " Go to last active tab (from https://superuser.com/a/675119/81915)
 " :tablast can't be used to go back and forth
 au TabLeave * let g:lasttab = tabpagenr()
