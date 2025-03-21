@@ -75,11 +75,6 @@ nnoremap <silent> <leader>wf :call ToggleQuickFix()<cr>
 " Tab {{{1
 "
 
-" Numbering
-for i in range(1, 8)
-  exec 'nnoremap ' .. i .. ', ' .. i .. 'gt'
-endfor
-
 " Numbering with <C-n>
 for i in range(1, 8)
   exec 'nnoremap <C-' .. i .. '> ' .. i .. 'gt'
