@@ -336,13 +336,17 @@ tnoremap <C-ㅌ> <C-x>
 tnoremap <C-ㅛ> <C-y>
 tnoremap <C-ㅋ> <C-z>
 
-" Excluding fzf floating windows
+" Excluding fzf floating windows 
 autocmd TermOpen * if bufname() !~ '\.fzf'
       \| tnoremap <buffer> <C-j> <C-\><C-n>:tabnext<CR>
       \| tnoremap <buffer> <C-h> <C-\><C-n>:tabprevious<CR>
       \| tnoremap <buffer> ;; <C-\><C-n>
-      \| nnoremap <buffer> a :setlocal norelativenumber<CR>a
       \| tnoremap <buffer> <C-q> <C-\><C-n><C-w>p
+      \| for i in range(1, 8) |
+      \    execute 'tnoremap <buffer> <C-' . i . '> <C-\><C-n>' . i . 'gt' |
+      \  endfor
+      \| tnoremap <buffer> <C-9> <C-\><C-n>:tablast<CR>
+      \| nnoremap <buffer> a :setlocal norelativenumber<CR>a
       \| endif
 
 " Enable copying from register in the fzf terminal
