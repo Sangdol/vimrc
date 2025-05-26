@@ -188,6 +188,9 @@ Plug 'mechatroner/rainbow_csv'
 "
 Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 
+" Why don't I just use "y" based on a env var?
+"   It wouldn't replace all yank, especially for text objects.
+"   Just leave it like it to reduce confusion.
 vnoremap <leader>ey :OSCYankVisual<CR>
 
 "}}}
