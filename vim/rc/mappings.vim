@@ -272,6 +272,9 @@ nnoremap <c-w>[ <C-w><C-]><C-w>T
 " Default
 " = - indent
 
+" Overwrite all
+nmap cP ggdGP
+
 " Delete all
 nnoremap <silent> <Leader>dd ggdG
 
