@@ -272,8 +272,8 @@ nnoremap <c-w>[ <C-w><C-]><C-w>T
 " Default
 " = - indent
 
-" Overwrite all
-nmap cP ggdGP
+" Overwrite the entire buffer with whatever is in the unnamed register
+nnoremap cP gg"_dGP
 
 " Delete all
 nnoremap <silent> <Leader>dd ggdG
