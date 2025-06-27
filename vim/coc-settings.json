@@ -14,7 +14,7 @@
   "calc.replaceOriginalExpression": false,
 
   // Enable codeLens feature, require neovim with set virtual text feature.
-  "codeLens.enable": true,
+  "codeLens.enable": false,
 
   // coc-tsserver
   // https://github.com/neoclide/coc-tsserver/blob/master/package.json
