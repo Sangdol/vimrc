@@ -14,7 +14,7 @@
   "calc.replaceOriginalExpression": false,
 
   // Enable codeLens feature, require neovim with set virtual text feature.
-  "codeLens.enable": false,
+  "codeLens.enable": true,
 
   // coc-tsserver
   // https://github.com/neoclide/coc-tsserver/blob/master/package.json
@@ -30,6 +30,10 @@
   "pyright.organizeimports.provider": "isort",
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "/opt/homebrew/bin/black",
+
+  "[python]": {
+    "inlayHint.enable": false
+  },
 
   "languageserver": {
     "clojure-lsp": {
