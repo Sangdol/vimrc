@@ -421,11 +421,17 @@ nnoremap <Leader>aa :%y<CR>
 " full path
 nnoremap <Leader>a1 :call <SID>copy_path_to_clipboard("%:p")<CR>
 " full directory
-nnoremap <Leader>a2 :call <SID>copy_path_to_clipboard("%:p:h")<CR>
+nnoremap <Leader>a2 :call <SID>copy_relative_path_to_clipboard_with_line()<CR>
 " relative path https://stackoverflow.com/questions/4525261/getting-relative-paths-in-vim
 nnoremap <Leader>a3 :call <SID>copy_relative_path_to_clipboard()<CR>
 " filename
 nnoremap <Leader>a4 :call <SID>copy_path_to_clipboard("%:t")<CR>
+
+function! s:copy_relative_path_to_clipboard_with_line() abort
+  let path = fnamemodify(expand("%"), ":~:.") . ':' . line('.')
+  let @+ = path
+  echom path . ' is copied to clipboard.'
+endfunction
 
 function! s:copy_relative_path_to_clipboard() abort
   let path = fnamemodify(expand("%"), ":~:.")
