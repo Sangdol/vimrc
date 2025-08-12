@@ -187,7 +187,7 @@ let g:coc_format_enabled = 1
 
 augroup coc_format_on_save
   autocmd!
-  autocmd BufWritePre *.py,*.ts if g:coc_format_enabled|call CocActionAsync('format')|endif
+  autocmd BufWritePre *.ts if g:coc_format_enabled|call CocActionAsync('format')|endif
 augroup end
 
 nnoremap <leader>sx
