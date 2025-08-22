@@ -67,10 +67,3 @@ function! ToggleAutosave()
 endfunction
 
 nnoremap <leader>ea :call ToggleAutosave()<CR>
-
-" I don't know why syntax keeps turning off on markdown files,
-" but just turn it on again.
-augroup MarkdownSyntaxOn
-  autocmd!
-  autocmd BufEnter *.md,*.markdown if !exists("g:syntax_on") | syntax on | endif
-augroup END
