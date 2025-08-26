@@ -422,6 +422,7 @@ nnoremap <Leader>aa :%y<CR>
 nnoremap <Leader>a1 :call <SID>copy_path_to_clipboard("%:p")<CR>
 " full directory
 nnoremap <Leader>a2 :call <SID>copy_full_path_to_clipboard_with_line()<CR>
+vnoremap <Leader>a2 :<C-U>call <SID>copy_full_path_to_clipboard_with_line()<CR>
 " relative path https://stackoverflow.com/questions/4525261/getting-relative-paths-in-vim
 nnoremap <Leader>a3 :call <SID>copy_relative_path_to_clipboard()<CR>
 " filename
@@ -441,7 +442,24 @@ function! s:copy_relative_path_to_clipboard() abort
 endfunction
 
 function! s:copy_full_path_to_clipboard_with_line() abort
-  let path = expand('%:p') . ':' . line('.')
+  let path = expand('%:p')
+  
+  " Check if we're in visual mode by checking if the marks exist and differ
+  let start_line = line("'<")
+  let end_line = line("'>")
+  
+  " If called from visual mode and we have a range
+  if mode() ==# 'v' || mode() ==# 'V' || mode() ==# "\<C-v>" || (start_line != end_line && start_line > 0)
+    if start_line == end_line
+      let path = path . ':' . start_line
+    else
+      let path = path . ':' . start_line . '-' . end_line
+    endif
+  else
+    " Normal mode - just use current line
+    let path = path . ':' . line('.')
+  endif
+  
   let @+ = path
   echom path . ' is copied to clipboard.'
 endfunction
