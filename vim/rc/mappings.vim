@@ -422,7 +422,7 @@ nnoremap <Leader>aa :%y<CR>
 nnoremap <Leader>a1 :call <SID>copy_path_to_clipboard("%:p")<CR>
 " full directory
 nnoremap <Leader>a2 :call <SID>copy_full_path_to_clipboard_with_line()<CR>
-vnoremap <Leader>a2 :<C-U>call <SID>copy_full_path_to_clipboard_with_line()<CR>
+vnoremap <Leader>a2 :<C-U>call <SID>copy_full_path_to_clipboard_with_line(1)<CR>
 " relative path https://stackoverflow.com/questions/4525261/getting-relative-paths-in-vim
 nnoremap <Leader>a3 :call <SID>copy_relative_path_to_clipboard()<CR>
 " filename
@@ -441,15 +441,17 @@ function! s:copy_relative_path_to_clipboard() abort
   echom path .. ' is copied to clipboard.'
 endfunction
 
-function! s:copy_full_path_to_clipboard_with_line() abort
+function! s:copy_full_path_to_clipboard_with_line(...) abort
   let path = expand('%:p')
   
-  " Get visual selection marks (will be used if in visual mode)
-  let start_line = line("'<")
-  let end_line = line("'>")
+  " Check if called from visual mode (parameter passed) or detect via visualmode()
+  let from_visual = a:0 > 0 ? a:1 : 0
   
-  " If called from visual mode and we have a range
-  if mode() ==# 'v' || mode() ==# 'V' || mode() ==# "\<C-v>"
+  if from_visual
+    " Get visual selection marks
+    let start_line = line("'<")
+    let end_line = line("'>")
+    
     if start_line == end_line
       let path = path . ':' . start_line
     else
