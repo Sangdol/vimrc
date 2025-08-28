@@ -444,12 +444,12 @@ endfunction
 function! s:copy_full_path_to_clipboard_with_line() abort
   let path = expand('%:p')
   
-  " Check if we're in visual mode by checking if the marks exist and differ
+  " Get visual selection marks (will be used if in visual mode)
   let start_line = line("'<")
   let end_line = line("'>")
   
   " If called from visual mode and we have a range
-  if mode() ==# 'v' || mode() ==# 'V' || mode() ==# "\<C-v>" || (start_line != end_line && start_line > 0)
+  if mode() ==# 'v' || mode() ==# 'V' || mode() ==# "\<C-v>"
     if start_line == end_line
       let path = path . ':' . start_line
     else
