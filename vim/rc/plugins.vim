@@ -194,16 +194,6 @@ nnoremap <leader>mp :MarkdownPreview<CR>
 "}}}
 
 "
-" tagbar {{{1
-"
-Plug 'majutsushi/tagbar'
-Plug 'lvht/tagbar-markdown'
-
-nnoremap <silent> <leader>mt :TagbarToggle<cr>
-
-"}}}
-
-"
 " Better digraphs {{{1
 "
 "
