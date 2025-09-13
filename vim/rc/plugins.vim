@@ -4,16 +4,6 @@
 " The markers, `{{{` and `}}}`, are used for voom and fzf toc outline.
 "
 
-" 
-" smartcolumn {{{1
-"
-Plug 'm4xshen/smartcolumn.nvim'
-
-" turn off for now
-"lua require_config('smartcolumn-config')
-
-"}}}
-
 "
 " oil {{{1
 "
