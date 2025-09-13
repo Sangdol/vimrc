@@ -170,36 +170,6 @@ xmap P <plug>(SubversiveSubstitute)
 "}}}
 
 "
-" vim-yoink {{{1
-"
-" Yank History manager
-"
-" :Yanks
-" :ClearYanks
-"
-Plug 'svermeulen/vim-yoink'
-
-nmap <c-n> <plug>(YoinkPostPasteSwapBack)
-nmap <c-p> <plug>(YoinkPostPasteSwapForward)
-
-nmap p <plug>(YoinkPaste_p)
-nmap P <plug>(YoinkPaste_P)
-
-nmap gp <plug>(YoinkPaste_gp)
-nmap gP <plug>(YoinkPaste_gP)
-
-nmap [y <plug>(YoinkRotateBack)
-nmap ]y <plug>(YoinkRotateForward)
-
-nmap <c-=> <plug>(YoinkPostPasteToggleFormat)
-
-" To make it work with auto-save
-" https://github.com/svermeulen/vim-yoink/issues/12
-let g:yoinkChangeTickThreshold  = 1
-
-"}}}
-
-"
 " vim-markdown-toc {{{1
 "
 " Markdown table of contents generator
