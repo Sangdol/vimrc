@@ -224,20 +224,3 @@ autocmd FileType python,javascript,lua,fish,sh,zsh,typescript
       \| vnoremap <silent><buffer> <C-CR> y:lua require("iron.core").send(nil, vim.fn.getreg('"'))<CR>
 
 "}}}
-
-"
-" Python {{{1
-"
-
-" Poet-v: Poetry and Pipenv integration
-"
-" :PoetvActivate
-" :PoetvDeactivate
-Plug 'petobens/poet-v', { 'on': 'PoetvActivate' }
-
-" This requires `pip install doq`
-Plug 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python' }
-
-let g:pydocstring_formatter = 'google'
-
-nmap <silent> <leader>xd <Plug>(pydocstring)
