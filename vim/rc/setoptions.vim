@@ -116,6 +116,9 @@ set updatetime=300
 
 " Auto update file if changed outside vim
 set autoread
+" More aggressively reload
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * checktime
+autocmd FileChangedShellPost * echo "File changed on disk. Buffer reloaded."
 
 "
 " Style

@@ -2,11 +2,6 @@
 " Plugins used for coding 
 "
 
-Plug 'nvim-lua/plenary.nvim'
-Plug 'greggh/claude-code.nvim'
-
-lua require_config('claude-code-config')
-
 "
 " lsp-lens {{{1
 "
