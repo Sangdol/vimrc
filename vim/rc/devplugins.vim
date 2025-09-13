@@ -200,39 +200,6 @@ lua require_config('winbar-config')
 "}}}
 
 "
-" neotest {{{1
-"
-
-"   Plug 'nvim-lua/plenary.nvim'
-"   Plug 'antoinemadec/FixCursorHold.nvim'
-"   Plug 'nvim-neotest/neotest'
-"   Plug 'nvim-neotest/neotest-python'
-"   Plug 'nvim-neotest/neotest-plenary'
-"
-"   " For Mocha, etc.
-"   " NeoTestRun != TestNearest for Mocha. TestNearest is correct.
-"   Plug 'vim-test/vim-test'
-"   Plug 'nvim-neotest/neotest-vim-test'
-"
-"   let g:test#javascript#mocha#file_pattern = '\v(spec|test)\.(ts|js)$'
-"
-"   lua require_config('neotest-config')
-"
-"   command!  -nargs=0  NeotestRun          lua  require("neotest").run.run()
-"   command!  -nargs=0  NeotestRunFile      lua  require("neotest").run.run(vim.fn.expand("%"))
-"   command!  -nargs=0  NeotestOutputPanel  lua  require("neotest").output_panel.open()
-"   command!  -nargs=0  NeotestSummary      lua  require("neotest").summary.toggle()
-"   command!  -nargs=0  NeoTestOutput       lua  require("neotest").output.open()
-"
-"   nnoremap <silent> <leader>xx :NeotestRun<CR>
-"   nnoremap <silent> <leader>xf :NeotestRunFile<CR>
-"   nnoremap <silent> <leader>xo :NeotestOutputPanel<CR>
-"   nnoremap <silent> <leader>xs :NeotestSummary<CR>
-"   nnoremap <silent> <leader>xp :NeoTestOutput<CR>
-
-"}}}
-
-"
 " iron.nvim - REPL for Neovim {{{1
 "
 Plug 'hkupty/iron.nvim'
