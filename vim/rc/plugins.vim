@@ -67,14 +67,6 @@ autocmd Filetype markdown omap <buffer> af <plug>(textobj-markdown-chunk-a)
 "}}}
 
 "
-" Gutentags {{{1
-"
-
-Plug 'ludovicchabant/vim-gutentags'
-
-"}}}
-
-"
 " targets.vim {{{1
 "
 Plug 'wellle/targets.vim'
