@@ -35,6 +35,7 @@ require("oil").setup({
   -- Set to `false` to remove a keymap
   -- See :help oil-actions for a list of all available actions
   keymaps = {
+    ["<C-h>"] = false,
     ["g?"] = "actions.show_help",
     ["<CR>"] = "actions.select",
     ["<C-v>"] = "actions.select_vsplit",
