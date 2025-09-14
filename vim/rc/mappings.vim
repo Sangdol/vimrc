@@ -475,6 +475,53 @@ endfunction
 "}}}
 
 "
+" Task Management {{{1
+"
+
+" Create markdown-specific mappings
+augroup MarkdownTaskManagement
+  autocmd!
+  " Move current markdown file to done/ subdirectory (markdown files only)
+  autocmd FileType markdown nnoremap <buffer> <leader>zd :call <SID>MoveFileToSubdir('done')<CR>
+  " Move current markdown file to hold/ subdirectory (markdown files only)
+  autocmd FileType markdown nnoremap <buffer> <leader>zh :call <SID>MoveFileToSubdir('hold')<CR>
+augroup END
+
+" Function to move file to a subdirectory
+function! s:MoveFileToSubdir(subdir) abort
+  let l:current_file = expand('%:p')
+  if empty(l:current_file)
+    echohl ErrorMsg | echo "No file in current buffer" | echohl None
+    return
+  endif
+  
+  let l:parent_dir = expand('%:p:h:h')  " Parent of current file's directory
+  let l:target_dir = l:parent_dir . '/' . a:subdir
+  let l:filename = expand('%:t')
+  let l:target_file = l:target_dir . '/' . l:filename
+  
+  " Create target directory if it doesn't exist
+  if !isdirectory(l:target_dir)
+    call mkdir(l:target_dir, 'p')
+  endif
+  
+  " Move the file
+  let l:cmd = 'mv ' . shellescape(l:current_file) . ' ' . shellescape(l:target_file)
+  let l:result = system(l:cmd)
+  
+  if v:shell_error
+    echohl ErrorMsg | echo "Failed to move file: " . l:result | echohl None
+    return
+  endif
+  
+  " Update buffer - edit the file at new location
+  execute 'edit ' . fnameescape(l:target_file)
+  echo "Moved to " . l:target_file
+endfunction
+
+" }}}
+
+"
 " Etc. {{{1
 "
 
