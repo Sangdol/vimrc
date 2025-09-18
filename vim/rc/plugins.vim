@@ -631,7 +631,7 @@ nnoremap <leader>g- :Git switch -<CR>
 nnoremap <leader>gp<leader> :Git push<CR>
 nnoremap <leader>gpp :Git push -u origin HEAD<CR>
 nnoremap <leader>gpu :Git pull --rebase<CR>
-nnoremap <leader>gam :Git add . \| :Git commit -v --amend<CR>
+nnoremap <leader>gam :execute confirm("Amend last commit?", "&Yes\n&No", 2) == 1 ? "Git add . \| Git commit -v --amend" : ""<CR>
 
 " Stash
 "
