@@ -16,6 +16,8 @@ Plug 'HampusHauffman/block.nvim'
 
 lua require_config('block-config')
 
+nnoremap <leader>eb :Block
+
 "}}}
 
 "
