@@ -1,4 +1,8 @@
 require("oil").setup({
+  -- Custom
+  delete_to_trash = true,
+  watch_for_changes = true,
+
   -- Id is automatically added at the beginning, and name at the end
   -- See :help oil-columns
   columns = {
