@@ -80,3 +80,44 @@ require("oil").setup({
     },
   },
 })
+
+local oil = require("oil")
+
+-- Helper function to show file info
+local function show_file_info()
+  local entry = oil.get_cursor_entry()
+  if not entry then
+    print("No file under cursor")
+    return
+  end
+
+  local path = oil.get_current_dir() .. entry.name
+  local stat = vim.loop.fs_stat(path)
+
+  if not stat then
+    print("Could not stat file: " .. path)
+    return
+  end
+
+  local info = {
+    "Path: " .. path,
+    "Type: " .. stat.type,
+    "Size: " .. stat.size .. " bytes",
+    "Access: " .. os.date("%Y-%m-%d %H:%M:%S", stat.atime.sec),
+    "Modify: " .. os.date("%Y-%m-%d %H:%M:%S", stat.mtime.sec),
+    "Change: " .. os.date("%Y-%m-%d %H:%M:%S", stat.ctime.sec),
+  }
+
+  vim.notify(table.concat(info, "\n"), vim.log.levels.INFO, { title = "File Info" })
+end
+
+-- Keymap only in Oil buffers
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "oil",
+  callback = function(event)
+    vim.keymap.set("n", "<leader>ef", show_file_info, {
+      buffer = event.buf,
+      desc = "Show file info in Oil",
+    })
+  end,
+})
