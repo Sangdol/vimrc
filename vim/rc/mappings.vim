@@ -530,6 +530,7 @@ imap <M--> –
 " em dash
 imap <M-_> —
 
+" Show line numbers
 nnoremap <silent> <C-s> :set number!<CR>
 nnoremap <silent> <Leader>n :noh<CR>
 
