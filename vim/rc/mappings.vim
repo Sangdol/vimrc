@@ -481,10 +481,10 @@ endfunction
 " Create markdown-specific mappings
 augroup MarkdownTaskManagement
   autocmd!
-  " Move current markdown file to done/ subdirectory (markdown files only)
+  " Move current markdown file to done, hold, ongoin subdirectory (markdown files only)
   autocmd FileType markdown nnoremap <buffer> <leader>zd :call <SID>MoveFileToSubdir('done')<CR>
-  " Move current markdown file to hold/ subdirectory (markdown files only)
   autocmd FileType markdown nnoremap <buffer> <leader>zh :call <SID>MoveFileToSubdir('hold')<CR>
+  autocmd FileType markdown nnoremap <buffer> <leader>zo :call <SID>MoveFileToSubdir('ongoing')<CR>
 augroup END
 
 " Function to move file to a subdirectory
