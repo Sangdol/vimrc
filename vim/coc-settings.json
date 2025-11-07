@@ -19,6 +19,7 @@
   // coc-tsserver
   // https://github.com/neoclide/coc-tsserver/blob/master/package.json
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  "tsserver.maxTsServerMemory": 6144,
 
   // Pyright
   // https://github.com/fannheyward/coc-pyright
