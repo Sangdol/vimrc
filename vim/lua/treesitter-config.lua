@@ -1,5 +1,6 @@
 require'nvim-treesitter.configs'.setup {
   -- One of "all", "maintained" (parsers with maintainers), or a list of languages
+  -- List: https://github.com/tree-sitter/tree-sitter/wiki/List-of-parsers
   ensure_installed = {'lua', 'python', 'typescript', 'javascript', 'ruby',
     'bash', 'css', 'html', 'json', 'sql', 'vim', 'vimdoc', 'yaml', 'tsx'},
 
