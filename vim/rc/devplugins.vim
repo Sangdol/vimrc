@@ -166,6 +166,7 @@ autocmd FileType typescript,typescriptreact,python,lua,javascript,clojure,vim
 " https://github.com/oncomouse/coc-fish
 
 " https://github.com/neoclide/coc-highlight
+" https://github.com/xiyaowong/coc-symbol-line
 "
 " Excluded
 " - 'coc-vimlsp' takes up more than 1 GB memory
