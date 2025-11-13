@@ -48,5 +48,9 @@
       }
     }
   },
-  "snippets.ultisnips.pythonPrompt": false
+  "snippets.ultisnips.pythonPrompt": false,
+
+  // Disable word completion sources
+  "coc.source.around.enable": false,
+  "coc.source.buffer.enable": false
 }
