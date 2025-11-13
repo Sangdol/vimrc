@@ -112,7 +112,7 @@ set jumpoptions+=stack
 
 " For a quicker coc and vim-signify signs update.
 " (default is 4000ms = 4s)
-set updatetime=300
+set updatetime=1000
 
 " Auto update file if changed outside vim
 set autoread
