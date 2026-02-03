@@ -59,16 +59,28 @@ function! s:dark_colorscheme() abort
   execute 'highlight DirColor guibg=' . statuslineBg . ' guifg=' . dirColorFg . ' gui=None'
   execute 'highlight DirColorNC guibg=' . statuslineNcBg . ' guifg=' . dirColorNcFg . ' gui=None'
   execute 'highlight GBStatusColor guibg=' . statuslineBg . ' guifg=' . gbStatusColorFg . ' gui=None'
+
+  " Diff highlights - guifg=NONE preserves syntax highlighting in diffview
+  highlight DiffAdd guibg=#2d4a3e guifg=NONE
+  highlight DiffDelete guibg=#4a2d2d guifg=NONE
+  highlight DiffChange guibg=#3d3a2d guifg=NONE
+  highlight DiffText guibg=#4a4a2d guifg=NONE
 endfunction
 
 function! s:light_colorscheme() abort
   " To have the same opacity as a terminal
   " https://stackoverflow.com/questions/37712730/set-vim-background-transparent
-  highlight Normal guibg=NONE ctermbg=NONE 
+  highlight Normal guibg=NONE ctermbg=NONE
 
   " Tabline
   highlight TabLineSel guibg=None guifg=#040404
   highlight TabLine guibg=None guifg=#cccccc
+
+  " Diff highlights - guifg=NONE preserves syntax highlighting in diffview
+  highlight DiffAdd guibg=#d4ead4 guifg=NONE
+  highlight DiffDelete guibg=#f0d4d4 guifg=NONE
+  highlight DiffChange guibg=#eeeac8 guifg=NONE
+  highlight DiffText guibg=#e0dca0 guifg=NONE
 endfunction
 
 function! s:highlights() abort
